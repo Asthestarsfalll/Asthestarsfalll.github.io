@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Nice to meet U!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>Long-Range-Feature-Propagating-for-Natural-Image-Matting | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Long-Range-Feature-Propagating-for-Natural-Image-Matting
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>基于远程特征传播的自然图像抠图</p>
+<span id="more"></span>
+<blockquote>
+<p>论文名称：<a target="_blank" rel="noopener" href="https://arxiv.org/ftp/arxiv/papers/2109/2109.12252.pdf">Long-Range Feature Propagating for Natural Image Matting</a></p>
+<p>作者：Qinglin Liu, Haozhe Xie, Shengping Zhang, Bineng Zhong, Rongrong Ji</p>
+<p>Code：</p>
+</blockquote>
+<h2 id="摘要">摘要</h2>
+<ol>
+<li>自然图像抠图从三分图（<code>trimap</code>）中的未知区域来预测<code>alpha</code>。近来，基于深度学习的方法根据已知区域（<code>known region</code>）与未知区域（<code>unknown region</code>）的相似性将<code>alpha</code>从已知区域传播到未知区域。然而我们发现，受限于普通卷积神经网络的较小感受野，未知区域中有超过50%的像素不能与已知区域相关联起来，这会导致预测不准确。</li>
+<li>本文提出了Long-Range Feature Propagating Network (LFPNet)，其能够在感受野之外学习长距离语义信息。实验结果表明，它在AlphaMatting和Adobe Image Matting数据上实现了SOTA。</li>
+</ol>
+<h2 id="介绍及相关工作">介绍及相关工作</h2>
+<h3 id="matting-problem">matting problem</h3>
+<p>数学上，一张图片<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span>可以被建模为前景<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span>和背景<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span>的线性组合:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>I</mi><mi>i</mi></msub><mo>=</mo><msub><mi>α</mi><mi>i</mi></msub><msub><mi>F</mi><mi>i</mi></msub><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><msub><mi>α</mi><mi>i</mi></msub><mo stretchy="false">)</mo><msub><mi>B</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">I_i=\alpha_iF_i+(1-\alpha_i)B_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>然而，上式只有<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span>是已知的，因此这是一个定义不明确的（<code>ill-defined</code>）<br>
+问题。<br>
+为了解决这个问题，多数方法需要一个<code>trimap</code>来表示一张图片中已知的前<br>
+景、背景和未知的部分。<br>
+这些方法可以分为三类：基于采样（sampling-based），基于传播<br>
+（propagation-based），基于学习（learning-based）。</p>
+<h3 id="sampling-based-methods">Sampling-based methods</h3>
+<p>基于采样的方法基于颜色关联的假设，从<code>已知区域</code>的<code>前景</code>和<code>背景</code>中为<code>未知区域</code>中的每一个像素选取最优的颜色对（<code>color pairs</code>）来进行预测。<br>
+这些方法通常会设计一个指标来衡量已知像素与未知像素的相似度，如:</p>
+<ul>
+<li>使用线性函数通过已知像素来得到未知像素的<code>alpha</code>；</li>
+<li>使用静态方法对前景和背景颜色进行聚类；</li>
+<li>使用贝叶斯定理最大化后验概率；</li>
+<li>使用临近区域（region）空间信息进行预测；</li>
+<li>使用边界（boundary）空间信息加速预测；</li>
+<li>同时考虑颜色和空间信息，并使用稀疏编码建立一个目标函数等……</li>
+</ul>
+<h3 id="propagation-based-methods">Propagation-based methods</h3>
+<p>基于传播的方法根据已知区域和未知区域的相似性将<code>alpha</code>从已知区域传播到未知区域，其通常使用局部平滑的先验（<code>priori of local smoothing</code>）设置一个代价函数来实现传播，如：</p>
+<ul>
+<li>使用泊松方程进行预测；</li>
+<li>基于<code>alpha</code>的封闭解建立线性颜色模型进行预测；</li>
+<li>使用大尺寸的拉普拉斯矩阵（Laplace matrix）进行预测；</li>
+<li>在高维空间中使用KNN进行预测；</li>
+<li>结合局部和全局信息进行预测等……</li>
+</ul>
+<h3 id="learning-based-methods">Learning-based methods</h3>
+<p>上述的两种传统方法对前景和背景的颜色分布重叠（<code>color distributions overlap</code>）都十分敏感（比如前景和背景颜色很接近的情况），然而这在自然图像中是十分常见的，而基于学习的方法可以同时学习图像中的颜色分布和自然结构，从而获得更好的表现。</p>
+<ul>
+<li>DIM提出了第一个大规模的抠图数据集和第一个端到端的模型；</li>
+<li>SampleNet使用前背景信息来监督网络进行学习；</li>
+<li>AdaMatting预测时优化trimap的表示；</li>
+<li>IndexNet通过学习下采样过程来优化上采样的恢复精度；</li>
+<li>GCAMatting设计了一个语义指导注意力模块捕捉语义信息；</li>
+<li>FBAMatting设计了一个网络同时预测前景背景和alpha并使用一阶贝叶斯公式来优化结果等……</li>
+</ul>
+<p>然而上述的所有方法都只能学习到局部的图像特征，因此提出了Long-Range Feature Propagating for Natural Image Matting.</p>
+<h2 id="motivation">Motivation</h2>
+<p>基于传播的方法通常根据已知区域与未知区域的相似度进行传播和预测，对Adobe Image Matting数据集中已知与未知区域的前背景像素计算欧氏距离，结果如下：</p>
+<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20211228171252233.png" alt="image-20211228171252233" style="zoom:50%;" />
+<p>其中：</p>
+<ul>
+<li>平均最短的距离为未知背景到已知背景，超过半数的像素之间的最近距离超过58px；</li>
+<li>平均最长的距离为未知背景到已知前景，超过半数的像素之间的最近距离超过167px，这远远超过了常用网络的感受野，如ResNet的75px；</li>
+<li>此外，25%的已知与未知像素之间的最短距离超过了500px。</li>
+</ul>
+<p>显然，我们需要考虑感受野之外更长距离的信息。</p>
+<h2 id="method">Method</h2>
+<p>LFPNet是一种基于patch、crop和stitch的方法，即将输入的图片和trimap crop为一个个patch，对每个patch进行预测alpha值，最后再stitch起来。<br>
+本网络使用两个输入，分别被称为<code>inner center patch</code>和<code>context patch</code>，后者面积为前者的四倍。<br>
+LFPNet包含两个模块——<code>propagating module</code>和<code>matting module</code>，<code>propagating module</code>以<code>context patch</code>作为输入，生成<code>context feature</code>和<code>context alpha matt</code>；<code>matting module</code>生成<code>inner center alpha matt</code>、<code>inner foreground\background patch</code>。</p>
+<img src="https://gitee.com/Thedeadleaf/images/raw/master/G2gD3s6NEdSzrTA.png" alt="image-20211228170835998" style="zoom:50%;" />
+<h3 id="propagating-module">Propagating Module</h3>
+<p>该模块主要负责获取长距离信息，由三部分组成：the context encoder, Center Surround Pyramid Pooling, the context decoder.</p>
+<h4 id="context-encoder">Context Encoder</h4>
+<p>语义编码器旨在以低算力消耗提取语义信息，为了实现该目的：</p>
+<ol>
+<li>使用<code>bicubic interpolation</code>和convolution对输入的<code>context patch</code>进行下采样；</li>
+<li>使用ResNet-50作为主干网络；</li>
+<li>为了继续增加感受野，将ResNet-50中block3和block4中的卷积替换为空洞卷积，参数分别为2和4.</li>
+</ol>
+<h4 id="center-surround-pyramid-pooling">Center-Surround Pyramid Pooling</h4>
+<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20211228175916841.png" alt="image-20211228175916841" style="zoom: 50%;" />
+<p>CSPP包含两个部分: Center Surround Pooling和Atrous Spatial Pyramid Pooling</p>
+<p><strong>Center-Surround Pooling (CSP)</strong></p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/PaperRead/">#PaperRead</a> <a href="/tags/Matting/">#Matting</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-12-27
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">介绍及相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#matting-problem"><span class="toc-text">matting problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sampling-based-methods"><span class="toc-text">Sampling-based methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#propagation-based-methods"><span class="toc-text">Propagation-based methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#learning-based-methods"><span class="toc-text">Learning-based methods</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#motivation"><span class="toc-text">Motivation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#method"><span class="toc-text">Method</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#propagating-module"><span class="toc-text">Propagating Module</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#context-encoder"><span class="toc-text">Context Encoder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#center-surround-pyramid-pooling"><span class="toc-text">Center-Surround Pyramid Pooling</span></a></li></ol></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

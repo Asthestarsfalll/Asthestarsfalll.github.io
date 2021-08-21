@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="在训练神经网络模型时，我们更偏爱大规模的数据集和复杂的网络结构。更大规模的数据集和更复杂的网络结构可以让我们的模型表征能力更强，但同时也对计算的时间和空间提出了挑战。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>分布式训练从入门到放弃 | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                分布式训练从入门到放弃
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>在训练神经网络模型时，我们更偏爱大规模的数据集和复杂的网络结构。虽然其可以让我们的模型表征能力更强，但同时也对计算的时间和空间提出了挑战。</p>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/52596192">参考</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/52596192">参考</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gbyy42299/article/details/103673840">参考</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/YoungF/p/13937784.html">参考</a></p>
+<h2 id="为什么要使用分布式训练">为什么要使用分布式训练</h2>
+<p>随着数据集体积的不断扩大，动辄TB甚至是PB的数据量使得单卡训练成为幻影，即使对于普通的数据集和模型，更快的速度，更大的显存，更高的显卡利用率，以及更大的batchsize带来更好的性能也都是我们所追求的。</p>
+<h2 id="一些分布式训练算法">一些分布式训练算法</h2>
+<p>所谓分布式，指的是计算节点之间不共享内存，需要通过网络通信的方式交换数据，以下介绍几种不同的分布式训练算法。</p>
+<h3 id="spark-mllib">Spark MLlib</h3>
+<p><strong>Spark的分布式计算原理：</strong></p>
+<p>首先需要了解一下Spark分布式计算原理</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/v2-13366ce2e12e3b7d25579d4a574eff44_r.jpg" alt="preview"></p>
+<p>额，<a target="_blank" rel="noopener" href="https://charming.blog.csdn.net/article/details/79912343?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-9.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-9.no_search_link">没太看懂</a>，大概就是</p>
+<ul>
+<li>
+<p>**Driver：**创建SparkContext，来提供程序运行所需要的环境，并且负责与Cluster Manager进行通信来实现资源申请、任务分配和监控等功能，当Executor关闭时，Driver同时将SparkContext关闭；</p>
+</li>
+<li>
+<p>**Executor：**工作节点（<strong>Worker Node</strong>）中的一个进程，负责运行Task；</p>
+</li>
+<li>
+<p>**Task：**运行在Executor上的工作单元；</p>
+</li>
+<li>
+<p>**RDD：**弹性分布式数据集，是分布式内存的一个抽象概念，提供了一种高度受限的共享内存模型，其具有以下性质：</p>
+<ol>
+<li>只读不能修改，只能通过转换生成新的RDD；</li>
+<li>可以分布在多台机器上并行处理；</li>
+<li>弹性：计算中内存不够会和磁盘进行数据交换；</li>
+<li>基于内存：可以全部或部分缓存在内存中，在多次计算间重用。</li>
+</ol>
+</li>
+<li>
+<p>**partition：**RDD基础处理单元是partition（分区），一个Work Node中有多个partition，每个partition的计算都在一个不同的task中进行</p>
+</li>
+<li>
+<p>**DAG：**有向无环图，反映RDD之间的依赖关系，在执行具体任务之前，Spark会将程序拆解成一个任务DAG；处理DAG最关键的过程是找到哪些是可以并行处理的部分，哪些是必须shuffle和reduce的部分。</p>
+</li>
+<li>
+<p>**shuffle：**指的是所有partition的数据必须进行洗牌后才能得到下一步的数据</p>
+</li>
+<li>
+<p>**Job：**一个Job包含多个RDD及作用于相应RDD上的各种操作；</p>
+</li>
+<li>
+<p>**Stage：**是Job的基本调度单位，一个Job会分为多组Task，每组Task被称为Stage，或者也被称为TaskSet，代表一组关联的，相互之间没有Shuffle依赖关系的任务组成的任务集；</p>
+</li>
+<li>
+<p>**Cluter Manager：**指的是在集群上获取资源的外部服务。目前有三种类型</p>
+<ol>
+<li>Standalon : spark原生的资源管理，由Master负责资源的分配；</li>
+<li>Apache Mesos:与hadoop MR兼容性良好的一种资源调度框架；</li>
+<li>Hadoop Yarn: 主要是指Yarn中的ResourceManager。</li>
+</ol>
+</li>
+</ul>
+<p><strong>Spark MLlib并行训练原理：</strong></p>
+<p>简单的<strong>数据并行</strong>，缺点如下：</p>
+<ol>
+<li><strong>采用全局广播的方式，在每轮迭代前广播全部模型参数。</strong></li>
+<li>**采用阻断式的梯度下降方式，每轮梯度下降由最慢的节点决定。**Spark等待所有节点计算完梯度之后再进行汇总。</li>
+<li><strong>Spark MLlib并不支持复杂网络结构和大量可调超参</strong>，对深度学习支持较弱。</li>
+</ol>
+<h3 id="parameter-server">Parameter Server</h3>
+<p>Parameter Server由李沐大佬提出，如今已被各个框架应用于分布式训练当中。<a target="_blank" rel="noopener" href="http://www.cs.cmu.edu/~muli/file/ps.pdf">论文地址</a></p>
+<p>在分布式训练当中，输入数据、模型、反向传播计算梯度都是可以<strong>并行</strong>的，但是<strong>更新参数</strong>依赖于所有的训练样本的梯度，这是<strong>不能并行</strong>的，如下图所示：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/1.drawio.svg" alt="1.drawio"></p>
+<p>Parameter Server包含一个参数（<strong>server</strong>）服务器（或者GPU等）来复制分发<strong>model</strong>到各个工作（<strong>worker</strong>）服务器上，计算示意图如下：</p>
+<p>![未命名绘图(1).drawio](<a target="_blank" rel="noopener" href="https://gitee.com/Thedeadleaf/images/raw/master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE(1).drawio">https://gitee.com/Thedeadleaf/images/raw/master/未命名绘图(1).drawio</a> (1).svg)</p>
+<ol>
+<li>将数据和初始化参数加载到server当中，若无法一次加载进来也可分多次加载；</li>
+<li>server将输入数据进行切片，分发给各个的worker；</li>
+<li>server复制模型，传递给各个worker；</li>
+<li>各个worker并行进行计算（forward和backward）；</li>
+<li>将各个worker求得的梯度求平均，返回server进行更新（push：worker将计算的梯度传送给server），同时回到第二步，重新分发更新过后的模型参数（pull：worker从server拉取参数）。</li>
+</ol>
+<p>通过上图可以看到每个worker之间没有任何信息交换，它们<strong>都只与server通信</strong>。</p>
+<p>上述过程貌似和Spark差不多，实际上PS中的server和worker中存在很多节点，它们分别组成<strong>server group</strong>和<strong>worker group</strong>，功能与上述基本一致，对于server group，存在<strong>server manager</strong>来维护和分配各个server node的数据，如下图所示：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/v2-622874fc4d30a12de71b7678068a97fe_720w.jpg" alt="img"></p>
+<p><strong>缺点</strong>：</p>
+<p>上文提到的Spark使用的是<strong>同步阻断</strong>的方式进行更新，只有等所有节点的梯度计算完成后才能进行参数更新，会浪费大量时间；</p>
+<p>对此，PS使用了<strong>异步非阻断</strong>的方式进行更新，当某个worker节点完成了push之后，其他节点没有进行push，这表示该节点无法进行pull来拉取新模型，此时该节点会直接再次进行计算，并且将当次计算的梯度在下一次push提交给server。</p>
+<p>这种取舍虽然使得训练速度大幅增加，但是却造成模型的一致性有所丧失，具体影响还是有待讨论。</p>
+<p>该方法可以通过<strong>最大延迟</strong>来限制这种异步操作，即某个worker节点最多只能超过server几轮迭代，超过之后必须停下来等待pull。</p>
+<p><strong>多server节点的协同和效率问题：</strong></p>
+<p>Spark效率低下的另一个原因是每次更新参数之后都需要使用单个master节点将模型参数广播至各个worker节点；</p>
+<p>由于Parameter Server使用了多server node结构的server group，每个server node负责模型参数中的K-V对，并行地进行数据传播，大大加快了速度；</p>
+<p>使用哈希一致性来保证每个server node负责对应的key range，并且能保证已有key range变化不大的情况下添加新的节点（看不懂）</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210923201858076.png" alt="image-20210923201858076"></p>
+<h3 id="ring-allreduce">Ring  AllReduce</h3>
+<p>摒弃了使用server来进行输入传输，而是将各个worker连成环，进行循环传递来达到“混合”的效果，主要流程：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100012827">演示</a></p>
+<ol>
+<li>对于N个worker，将其连成一个环，并且将每个worker中的梯度分成N份；</li>
+<li>对于第k个worker，其会将第k份梯度发送给下一个节点，同时从前一个节点收到第k-1份梯度；</li>
+<li>将收到的k-1份梯度和原有的梯度整合，循环N次，这样每个节点都会包含<strong>所有节点梯度的对应的一份</strong>；</li>
+<li>每个worker再将整合好的梯度发给下一个worker即可，需要注意的是，这里直接使用前一个worker的梯度覆盖当前的梯度，依然循环N次。</li>
+<li>最后每个worker都会得到所有梯度，除以N即可进行参数更新。</li>
+</ol>
+<p>更多算法请看<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79030485">此</a></p>
+<h3 id="nccl">NCCL</h3>
+<p>NCCL是Nvidia Collective multi-GPU Communication Library的简称，它是一个实现多GPU的collective。</p>
+<h2 id="pytorch-code">pytorch code</h2>
+<p>pytorch的分布式训练目前仅支持linux系统。</p>
+<p>pytorch数据分布式训练类型主要有：</p>
+<ol>
+<li>**单机单卡：**最简单的训练类型；</li>
+<li>**单机多卡：**代码改动较少；</li>
+<li>**多机多卡：**多台机器上的多张显卡，机制较为复杂；</li>
+<li>**其他：**其他的一些情况，不介绍。</li>
+</ol>
+<h3 id="dataparallel">DataParallel</h3>
+<p>单机多卡的情况，代码改动较少，主要基于<code>nn.DataParallel</code>，是一种<code>单进程多线程</code>的训练方式，存在GIL冲突。</p>
+<p><code>torch.nn.DataParallel</code>定义如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">torch</span>.<span class="title">nn</span>.<span class="title">DataParallel</span>(<span class="params">module, device_ids=<span class="literal">None</span>, output_device=<span class="literal">None</span>, dim=<span class="number">0</span></span>)</span></span><br></pre></td></tr></table></figure>
+<p>包含三个参数：</p>
+<ul>
+<li>module：表示需要Parallel的模型，实际上最终得到的是一个<code>nn.Module</code></li>
+<li>device_ids：表示训练用GPU的编号</li>
+<li>output_device：表示输出的device，用于汇总梯度和参数更新，默认选择0卡</li>
+<li>dim：表示处理loss的维度，默认0表示在batch上处理，使用了多少GPU就会返回多少个loss</li>
+</ul>
+<p>不想使用0卡可以用如下方式指定训练设备</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.environ[<span class="string">&quot;CUDA_DEVICE_ORDER&quot;</span>] = <span class="string">&quot;PCI_BUS_ID&quot;</span> <span class="comment"># 表示按照PCI_BUS_ID顺序从0开始排列GPU设备，不使用指定多卡时会报错</span></span><br><span class="line">os.environ[<span class="string">&quot;CUDA_VISIBLE_DEVICES&quot;</span>] = <span class="string">&quot;2, 3&quot;</span> <span class="comment"># -1表示禁用GPU</span></span><br></pre></td></tr></table></figure>
+<p>训练代码为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">device = torch.device(<span class="string">&#x27;cuda&#x27;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&#x27;cpu&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> torch.cuda.device_count()&gt;<span class="number">1</span>:</span><br><span class="line">    model = nn.DataParallel(model)</span><br><span class="line">model.to(device)</span><br></pre></td></tr></table></figure>
+<p>更优雅点可以这样：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.device_count() &gt; <span class="number">1</span>:</span><br><span class="line">    model = nn.DataParallel(model,device_ids=<span class="built_in">range</span>(torch.cuda.device_count())) <span class="comment"># 直接全用</span></span><br></pre></td></tr></table></figure>
+<p>也可以使用如下方式指定训练GPU：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">device_ids = [<span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">net = torch.nn.DataParallel(net, device_ids=device_ids)</span><br></pre></td></tr></table></figure>
+<p>机制很简单，即将模型复制到各个GPU上进行forward和backward，由server卡汇总计算平均梯度，再分发更新后的参数至各个worker。这就导致了一个问题——负载不均衡，server卡的占用会很高，其原因主要是<strong>在server上计算loss</strong>，可以在每个gpu上计算loss之后返回给server求平均。</p>
+<p>在保存和加载模型时</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存模型需要使用.module</span></span><br><span class="line">torch.save(net.module.state_dict(), path)</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">torch.save(net.module, path)</span><br><span class="line"><span class="comment"># 正常加载模型</span></span><br><span class="line">net.load_state_dict(torch.load(path))</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">net = torch.load(path)</span><br></pre></td></tr></table></figure>
+<p>另一个需要注意的点是，使用<code>DataParallel</code>时的<code>batch_size</code>表示总的batch_size，每个GPU上会分到n分之一。</p>
+<h3 id="distributeddataparallel">DistributedDataParallel</h3>
+<p>多机多卡的训练方式，<code>多进程</code>不存在GIL冲突，也适用于单机单卡，并且速度较快。</p>
+<p><code>DistributedDataParallel</code>需要一个<code>init_process_group</code>的步骤来启动</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">torch</span>.<span class="title">distributed</span>.<span class="title">init_process_group</span>(<span class="params">backend, </span></span></span><br><span class="line"><span class="params"><span class="class">                                     init_method=<span class="literal">None</span>, </span></span></span><br><span class="line"><span class="params"><span class="class">                                     timeout=datetime.timedelta(<span class="params"><span class="number">0</span>, <span class="number">1800</span></span>), </span></span></span><br><span class="line"><span class="params"><span class="class">                                     world_size=-<span class="number">1</span>, </span></span></span><br><span class="line"><span class="params"><span class="class">                                     rank=-<span class="number">1</span>, </span></span></span><br><span class="line"><span class="params"><span class="class">                                     store=<span class="literal">None</span></span>)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>backend：str：gloo，mpi，nccl 。指定当前要使用的通信后端，通常使用 nccl；</li>
+<li>init_method：指定当前进程组的初始化方式；</li>
+<li>timeout：指定每个进程的超时时间，仅可用于&quot;gloo&quot;后端；</li>
+<li>world_size：总进程数；</li>
+<li>store：所有 <code>worker</code> 可访问的 <code>key</code> / <code>value</code>，用于交换连接 / 地址信息。与 <code>init_method</code> 互斥。</li>
+</ul>
+<p>其他函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">torch.distributed.get_backend(group=group) <span class="comment"># group是可选参数，返回字符串表示的后端 group表示的是ProcessGroup类</span></span><br><span class="line">torch.distributed.get_rank(group=group) <span class="comment"># group是可选参数，返回int，执行该脚本的进程的rank</span></span><br><span class="line">torch.distributed.get_world_size(group=group) <span class="comment"># group是可选参数,返回全局的整个的进程数</span></span><br><span class="line">torch.distributed.is_initialized() <span class="comment"># 判断该进程是否已经初始化</span></span><br><span class="line">torch.distributed.is_mpi_avaiable() <span class="comment"># 判断MPI是否可用</span></span><br><span class="line">torch.distributed.is_nccl_avaiable() <span class="comment"># 判断nccl是否可用</span></span><br></pre></td></tr></table></figure>
+<p><strong>简单的使用</strong>：</p>
+<p>初始化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.distributed.init_process_group(backend=<span class="string">&#x27;nccl&#x27;</span>, init_method=<span class="string">&#x27;env://&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>DistributedSampler</code>：</p>
+<p>注意这里与DataParallel不同，batch_size的大小表示每个GPU上的大小，需要将dataloader切分。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">train_sampler = torch.utils.data.distributed.DistributedSampler(train_data)</span><br><span class="line">train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, shuffle=<span class="literal">False</span>,</span><br><span class="line">                                               num_workers=<span class="number">2</span>, pin_memory=<span class="literal">True</span>, sampler=train_sampler,)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里需要设置<code>shuffle=False</code>,然后在每个epoch前,通过调用<code>train_sampler.set_epoch(epoch)</code>来达到shuffle的效果.</p>
+<p>模型的初始化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank])</span><br></pre></td></tr></table></figure>
+<p>同步BN：</p>
+<p>BN层对于较大的batch_size有更好的性能，所以对于BN需要使用所有卡上的数据来进行计算。</p>
+<p>使用Apex：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> apex.parallel <span class="keyword">import</span> convert_syncbn_model</span><br><span class="line"><span class="keyword">from</span> apex.parallel <span class="keyword">import</span> DistributedDataParallel</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 注意顺序：三个顺序不能错</span></span><br><span class="line">model = convert_syncbn_model(UNet3d(n_channels=<span class="number">1</span>, n_classes=<span class="number">1</span>)).to(device)</span><br><span class="line">model, optimizer = amp.initialize(model, optimizer, opt_level=<span class="string">&#x27;O1&#x27;</span>)</span><br><span class="line">model = DistributedDataParallel(model, delay_allreduce=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>或者使用<a target="_blank" rel="noopener" href="https://github.com/MichaelFan01/STDC-Seg/tree/master/modules">这里</a>的代码来代替<code>nn.BatchNorm</code></p>
+<p>训练：</p>
+<p>提供了<code>torch.distributed.launch</code>用于启动训练</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 train.py</span><br></pre></td></tr></table></figure>
+<p>nproc_per_node参数指定为当前主机创建的进程数。一般设定为当前主机的 <code>GPU</code> 数量</p>
+<p>模板：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch.distributed <span class="keyword">as</span> dist</span><br><span class="line"><span class="keyword">import</span> torch.utils.data.distributed</span><br><span class="line"></span><br><span class="line"><span class="comment"># ......</span></span><br><span class="line">parser = argparse.ArgumentParser(description=<span class="string">&#x27;PyTorch distributed training on cifar-10&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--rank&#x27;</span>, default=<span class="number">0</span>,</span><br><span class="line">                    <span class="built_in">help</span>=<span class="string">&#x27;rank of current process&#x27;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--word_size&#x27;</span>, default=<span class="number">2</span>,</span><br><span class="line">                    <span class="built_in">help</span>=<span class="string">&quot;word size&quot;</span>)</span><br><span class="line">parser.add_argument(<span class="string">&#x27;--init_method&#x27;</span>, default=<span class="string">&#x27;tcp://127.0.0.1:23456&#x27;</span>,</span><br><span class="line">                    <span class="built_in">help</span>=<span class="string">&quot;init-method&quot;</span>)</span><br><span class="line">args = parser.parse_args()</span><br><span class="line"></span><br><span class="line"><span class="comment"># ......</span></span><br><span class="line">dist.init_process_group(backend=<span class="string">&#x27;nccl&#x27;</span>, init_method=args.init_method, rank=args.rank, world_size=args.word_size)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ......</span></span><br><span class="line">trainset = torchvision.datasets.CIFAR10(root=<span class="string">&#x27;./data&#x27;</span>, train=<span class="literal">True</span>, download=download, transform=transform)</span><br><span class="line">train_sampler = torch.utils.data.distributed.DistributedSampler(trainset)</span><br><span class="line">trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, sampler=train_sampler)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ......</span></span><br><span class="line">net = Net()</span><br><span class="line">net = net.cuda()</span><br><span class="line">net = torch.nn.parallel.DistributedDataParallel(net)</span><br></pre></td></tr></table></figure>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-09-22
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83"><span class="toc-text">为什么要使用分布式训练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%AD%E7%BB%83%E7%AE%97%E6%B3%95"><span class="toc-text">一些分布式训练算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#spark-mllib"><span class="toc-text">Spark MLlib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#parameter-server"><span class="toc-text">Parameter Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ring-allreduce"><span class="toc-text">Ring  AllReduce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nccl"><span class="toc-text">NCCL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pytorch-code"><span class="toc-text">pytorch code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dataparallel"><span class="toc-text">DataParallel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#distributeddataparallel"><span class="toc-text">DistributedDataParallel</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

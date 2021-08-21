@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="计算机音乐是一个涉及范围广泛的方向，而近年研究热点是人工智能与音乐的结合。本文主要介绍机器学习在音乐方面的应用。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>Computer Music | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Computer Music
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>计算机音乐是一个涉及范围广泛的方向，而近年研究热点是人工智能与音乐的结合。本文主要介绍机器学习在音乐方面的应用。</p>
+<span id="more"></span>
+<h1>音乐与计算</h1>
+<h2 id="音乐离不开计算">音乐离不开计算</h2>
+<p>首先给出很重要的图：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180214.jpg" alt=""></p>
+<p>我们可以看到mi和fa是半音关系，si和do也是半音关系，纯五度需要间隔7个半音，纯四度需要间隔5个半音。</p>
+<ol>
+<li>
+<p>十二平均律：在中国又被称作“三分损益法，五度相生率“</p>
+<ol>
+<li><strong>三分损益</strong>：将某个音定为基音，假设该音由一弦发出，“损”指将弦分为三份取其中两份，<strong>新弦长与原弦长比为2:3</strong>，即可得到基音上方纯五度音（即比基音频率高），“益”指将其分为三份，增加一份，<strong>新弦长与原弦长比为4:3</strong>，即可得到基音下方纯四度音。因此我们只要不断重复“损”，“增”，便可以得到一个八度内的全音，如图：</li>
+</ol>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180216.png" alt=""></p>
+<p>​	我们可以依次得到如下图所示的音</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180220.jpg" alt=""></p>
+<ol start="2">
+<li><strong>五度相生</strong>：即在<strong>新弦长与原弦长的比为1:2</strong>时，可得到基音上方八度音。</li>
+</ol>
+<p>这看起来似乎十分完美，但是注意我们通过do上方纯八度的do，然而2/1不可能是3/2的整数次方，也就是说，<strong>通过五度相生律得到的do和实际的do有区别</strong>，因此我们引入了十二平均律。</p>
+<ol start="3">
+<li>
+<p><strong>十二平均律</strong>：我们使用公式来表示不同音之间的频率关系：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mn>2</mn><mfrac><mi>x</mi><mn>12</mn></mfrac></msup></mrow><annotation encoding="application/x-tex">2^{\frac{x}{12}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89708em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.89708em;"><span style="top:-3.4130000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6915428571428572em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>纯律：在泛音列的基础上生成的音律，在分音列的第二分音和第三分音之间，加入第五分音，构成大三和弦的形式，依次找出所有的半音</p>
+</li>
+</ol>
+<p><a href="zhihu.com/question/310624478">三者不同</a>：<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164702.jpeg" alt="img"></p>
+<p>五度相生律：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164720.gif" alt="img"></p>
+<p>十二平均律：<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164731.jpeg" alt="img"></p>
+<p>最后，让我们看一下31平均律：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164802.jpeg" alt="img"></p>
+</li>
+</ol>
+<h2 id="计算机在音乐方面的应用">计算机在音乐方面的应用</h2>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180225.png" alt=""></p>
+<h3 id="计算机听觉-基于内容的音乐检索">计算机听觉（基于内容的音乐检索）</h3>
+<ol>
+<li>
+<p>音乐指纹</p>
+<ul>
+<li>
+<p>将音乐通过内容进行编码，方法如下</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180231.png" alt=""></p>
+<p>取一系列窗口进行短时傅里叶变换，ABS去除相位，将其按照频率分为不同的band，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064118em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>求出其能量值，最后进行编码。</p>
+<p>实现细节</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180235.png" alt=""></p>
+<p>Hop size：两个窗口之间的间隔，越短越能保证在任意时刻检索的准确性。</p>
+<p>bands：按照人类听觉范围划分为33个bands。</p>
+<p>该算法鲁棒性极高，即使信噪比为负，其匹配率也大于0.58。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>哼唱检索</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180239.png" alt=""></p>
+<p>难点：部分匹配（不哼唱整首歌），模糊匹配（哼唱和唱不一样），跑调。</p>
+</li>
+<li>
+<p>风格分析</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180244.png" alt=""></p>
+<p>通过x（已知特征）和y（输入）的联合概率和y的先验概率（这类音乐占总音乐的概率），通过贝叶斯定理即可求出y为何种风格的概率。</p>
+<p>有哪些特征</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180250.png" alt=""></p>
+<p>Chroma</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180254.png" alt=""></p>
+<ol start="2">
+<li>
+<p>计算机作曲</p>
+<p>通过分形进行作曲</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180258.png" alt=""></p>
+<p>马尔可夫方法</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180302.png" alt=""></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28849767">WaveNet</a></p>
+<p>通过排序算法作曲</p>
+<p>通过对音符进行切分重组作曲</p>
+</li>
+</ol>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dPeh3XVlmlE">音乐指挥</a></p>
+</li>
+</ol>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/Computer-Music/">#Computer Music</a> <a href="/tags/Deep-Learning/">#Deep Learning</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-05-07
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">音乐与计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E4%B9%90%E7%A6%BB%E4%B8%8D%E5%BC%80%E8%AE%A1%E7%AE%97"><span class="toc-text">音乐离不开计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9C%A8%E9%9F%B3%E4%B9%90%E6%96%B9%E9%9D%A2%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">计算机在音乐方面的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%AC%E8%A7%89-%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E9%9F%B3%E4%B9%90%E6%A3%80%E7%B4%A2"><span class="toc-text">计算机听觉（基于内容的音乐检索）</span></a></li></ol></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

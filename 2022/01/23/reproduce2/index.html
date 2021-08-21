@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Nice to meet U!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>快速上手框架，从零复现论文——模型篇上 | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                快速上手框架，从零复现论文——模型篇上
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>接上篇，本篇将会介绍RepVGG模型的复现过程，复现代码已开源，<a target="_blank" rel="noopener" href="https://github.com/Asthestarsfalll/RepVGG-MegEngine%E3%80%82">https://github.com/Asthestarsfalll/RepVGG-MegEngine。</a></p>
+<h2 id="阅读源码">阅读源码</h2>
+<p>在开始复现前，我们先简单的看一遍模型的代码，打开官方仓库中的<code>repvgg.py</code>，梳理清楚网络的组成和层次：</p>
+<h3 id="convbn">ConvBn</h3>
+<p>代码中首先定义了一个conv_bn，这是RepVGG的核心之一，训练完毕之后将会进行吸Bn的操作，即将Bn转化到Conv中去，不了解的可以看我之前的论文阅读笔记。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">conv_bn</span>(<span class="params">in_channels, out_channels, kernel_size, stride, padding, groups=<span class="number">1</span></span>):</span></span><br><span class="line">    result = nn.Sequential()</span><br><span class="line">    result.add_module(<span class="string">&#x27;conv&#x27;</span>, nn.Conv2d(in_channels=in_channels, out_channels=out_channels,</span><br><span class="line">                                                  kernel_size=kernel_size, stride=stride, padding=padding, groups=groups, bias=<span class="literal">False</span>))</span><br><span class="line">    result.add_module(<span class="string">&#x27;bn&#x27;</span>, nn.BatchNorm2d(num_features=out_channels))</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="repvggblock">RepVGGBlock</h3>
+<p>RepVGGBlock由三个分支组成，分别是3×3卷积+BN，1×1卷积+BN，和Identity+BN组成，如下图：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220128201156703.png" alt="image-20220128201156703"></p>
+<p>此外，RepVGGBlock还会有一个<code>use_se</code>参数来决定是否使用通道注意力模块SEBlock，对于其中的一些属性进行简单的讲解：</p>
+<ol>
+<li><code>self.deploy</code>表示网络所处的状态，训练时为False，当进行重参数化之后会变为True；</li>
+<li><code>padding_11 </code>表示1×1卷积所使用的padding，实际上就是0；</li>
+<li>当且仅当<strong>输入通道数等于输出通道数</strong>并且<strong>步长</strong>为1时，第三个分支才存在，其余情况不存在第三个分支；</li>
+</ol>
+<p>RepVGGBlock自身存在几个比较重要的方法：</p>
+<ol>
+<li><code>_fuse_bn_tensor</code>：该方法便是为了完成所谓的“吸Bn”，公式推导见论文阅读笔记，一个比较重要的点是当groups不为1时会比较特殊，将在后续进行说明；</li>
+<li><code>get_equivalent_kernel_bias</code>：该方法首先会调用<code>_fuse_bn_tensor</code>来得到融合过后的<strong>卷积核权重</strong>和<strong>偏置</strong>，然后将1×1的卷积核zero padding为3×3，直接将所有的卷积核权重和偏置分别相加便可以得到等效的kernel和bias；</li>
+<li><code>switch_to_deploy</code>：该方法用于训练完成后进行重参数化。</li>
+</ol>
+<h3 id="repvgg">RepVGG</h3>
+<p>RepVGG由5个stage组成，第一个stage只包含一个RepVGGBlock，用来调整通道数，一些比较重要的参数和属性如下：</p>
+<ol>
+<li><code>width_multiplier</code>：控制每一个通道的宽度，后面4个stage的通道基数分别是64，128，256，512；</li>
+<li><code>num_blocks</code>：控制每个stage的Block的数量；</li>
+<li><code>override_groups_map</code>：控制Block中的groups数；</li>
+<li><code>_make_stage</code>：根据输入的参数来搭建各个stage。</li>
+</ol>
+<h3 id="重参数化">重参数化</h3>
+<p>使用了一个函数来进行重参数化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">repvgg_model_convert</span>(<span class="params">model:torch.nn.Module, save_path=<span class="literal">None</span>, do_copy=<span class="literal">True</span></span>):</span></span><br><span class="line">    <span class="keyword">if</span> do_copy:</span><br><span class="line">        model = copy.deepcopy(model)</span><br><span class="line">    <span class="keyword">for</span> module <span class="keyword">in</span> model.modules():</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">hasattr</span>(module, <span class="string">&#x27;switch_to_deploy&#x27;</span>):</span><br><span class="line">            module.switch_to_deploy()</span><br><span class="line">    <span class="keyword">if</span> save_path <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        torch.save(model.state_dict(), save_path)</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
+<h2 id="复现模型">复现模型</h2>
+<p>对源码有了大概的了解，接下来开始模型的复现。</p>
+<h3 id="新建文件夹">新建文件夹</h3>
+<p>习惯上，对于较为简单的项目，我将模型代码放在名为model的文件里，参考<a target="_blank" rel="noopener" href="https://github.com/DingXiaoH/RepVGG">官方代码</a>可知，model里应该有如下文件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|- model</span><br><span class="line"> |-  __init__.py</span><br><span class="line"> |-  repvgg.py</span><br><span class="line"> |-  repvggplus.py</span><br><span class="line"> |-  se_block.py</span><br></pre></td></tr></table></figure>
+<p>让我们首先开始最简单的部分——se_block.py</p>
+<h3 id="seblock">SEBlock</h3>
+<p>由于我们是刚上手<code>MegEngine</code>这个框架，因此我们的每一步都需要参考<a target="_blank" rel="noopener" href="https://megengine.org.cn/doc/stable/zh/reference/index.html">官方文档</a>，以确保绝对正确，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SEBlock</span>(<span class="params">M.Module</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, input_channels, ratio: <span class="built_in">int</span> = <span class="number">16</span></span>):</span></span><br><span class="line">        <span class="built_in">super</span>(SEBlock, self).__init__()</span><br><span class="line">        internal_neurons = input_channels // ratio</span><br><span class="line">        <span class="keyword">assert</span> internal_neurons &gt; <span class="number">0</span></span><br><span class="line">        self.gap = M.AdaptiveAvgPool2d((<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line">        self.down = M.Conv2d(</span><br><span class="line">            in_channels=input_channels,</span><br><span class="line">            out_channels=internal_neurons,</span><br><span class="line">            kernel_size=<span class="number">1</span>,</span><br><span class="line">            bias=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        self.relu = M.ReLU()</span><br><span class="line">        self.up = M.Conv2d(</span><br><span class="line">            in_channels=internal_neurons,</span><br><span class="line">            out_channels=input_channels,</span><br><span class="line">            kernel_size=<span class="number">1</span>,</span><br><span class="line">            bias=<span class="literal">True</span></span><br><span class="line">        )</span><br><span class="line">        self.sigmoid = M.Sigmoid()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, inputs</span>):</span></span><br><span class="line">        x = self.sigmoid(self.up(self.relu(self.down(self.gap(inputs)))))</span><br><span class="line">        <span class="keyword">return</span> inputs * x</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>每次写完一个部分，我们都需要进行测试，来保证模型构建的准确无误：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    se = SEBlock(<span class="number">64</span>, <span class="number">16</span>)</span><br><span class="line">    a = mge.tensor(np.random.random((<span class="number">2</span>, <span class="number">64</span>, <span class="number">9</span>, <span class="number">9</span>)))</span><br><span class="line">    a = se(a)</span><br><span class="line">    <span class="built_in">print</span>(a.shape)</span><br></pre></td></tr></table></figure>
+<h3 id="convbn">ConvBn</h3>
+<p>最初这里和源码一样，我使用的是<code>M.Sequential</code>来实现，但是其并没有add_module的方法，但是查看官方文档，发现它是可以使用OrderedDict来传入名字和对应的模块。</p>
+<p>后来megengine官方发布了RepVGG的版本，我发现可以直接使用<code>M.ConvBn2d</code>，实际上pytorch也存在<code>nn.ConvBn2d</code>，可见API文档的重要性，能够省一些力气。</p>
+<h3 id="repvggblock">RepVGGBlock</h3>
+<p>这里的复现基本照抄稍作修改即可，不过在zero padding的时候出现了问题，当时megengine并未提供padding的算子，不过好在padding的情况不是很复杂，只需要创建一个hw为3×3的tensor，其中心值赋值为对应的数即可，后续1.6版本支持了F.nn.pad，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_zero_padding</span>(<span class="params">self, weight</span>):</span></span><br><span class="line">        <span class="keyword">if</span> weight <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># windows 1.6版本会报错，可使用以下代码</span></span><br><span class="line">            <span class="comment"># kernel = F.zeros((*weight.shape[:-2], 3, 3), device=weight.device)</span></span><br><span class="line">            <span class="comment"># kernel[..., 1:2, 1:2] = weight</span></span><br><span class="line">            kernel = F.nn.pad(</span><br><span class="line">                weight, [*[(<span class="number">0</span>, <span class="number">0</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(weight.ndim - <span class="number">2</span>)], (<span class="number">1</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">1</span>)])</span><br><span class="line">            <span class="keyword">return</span> kernel</span><br></pre></td></tr></table></figure>
+<p>抄完了剩下的代码之后我们需要进行验证，在主文件夹中新建一个<strong><a target="_blank" rel="noopener" href="http://verify.py">verify.py</a></strong>专门用来验证模型的构建，验证过程中我选择尽量的一次性验证最多的情况，对于RepVGGBlock来说，即<code>use_se=Ture</code>,<code>groups=2</code>,<code>in_ch=out_ch</code>，此外我还构建了一个分类器用于验证<code>switch_to_deploy</code>的正确与否，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> megengine <span class="keyword">as</span> mge</span><br><span class="line"><span class="keyword">import</span> megengine.functional <span class="keyword">as</span> F</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> model <span class="keyword">as</span> repvgg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Classifier</span>(<span class="params">mge.module.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, planes</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(Classifier, self).__init__()</span><br><span class="line">        self.downsample = mge.module.Conv2d(</span><br><span class="line">            in_channels=planes, </span><br><span class="line">            out_channels=planes, </span><br><span class="line">            kernel_size=<span class="number">3</span>,</span><br><span class="line">            stride=<span class="number">2</span>,</span><br><span class="line">            padding=<span class="number">1</span>,</span><br><span class="line">        )</span><br><span class="line">        self.gap = mge.module.AdaptiveAvgPool2d((<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line">        self.fc = mge.module.Linear(planes, <span class="number">1000</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, inputs</span>):</span></span><br><span class="line">        out = self.downsample(inputs)</span><br><span class="line">        out = self.gap(out)</span><br><span class="line">        out = F.flatten(out, <span class="number">1</span>)</span><br><span class="line">        out = self.fc(out)</span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calDiff</span>(<span class="params">out1, out2</span>):</span> <span class="comment"># 用来验证输出结果</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;___________test diff____________&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(out1.shape)</span><br><span class="line">    <span class="built_in">print</span>(out2.shape)</span><br><span class="line">    <span class="built_in">print</span>(F.argmax(out1, axis=<span class="number">1</span>))</span><br><span class="line">    <span class="built_in">print</span>(F.argmax(out2, axis=<span class="number">1</span>))</span><br><span class="line">    <span class="built_in">print</span>(((out1 - out2)**<span class="number">2</span>).<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">verifyBlock</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;___________RepVGGBlock____________&#x27;</span>)</span><br><span class="line">    inputs = mge.tensor(np.random.random((<span class="number">8</span>, <span class="number">16</span>, <span class="number">224</span>, <span class="number">224</span>)))</span><br><span class="line">    block = repvgg.RepVGGBlock(in_ch=<span class="number">16</span>, out_ch=<span class="number">16</span>, stride=<span class="number">1</span>,</span><br><span class="line">            groups=<span class="number">2</span>, deploy=<span class="literal">False</span>, use_se=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    downsampe = Classifier(<span class="number">16</span>)</span><br><span class="line">    downsampe.<span class="built_in">eval</span>()</span><br><span class="line">    block.<span class="built_in">eval</span>()</span><br><span class="line">    out1 = downsampe(block(inputs))</span><br><span class="line">    <span class="built_in">print</span>(block)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;___________RepVGGBlock switch to deploy____________&#x27;</span>)</span><br><span class="line">    block.switch_to_deploy()</span><br><span class="line">    block.<span class="built_in">eval</span>()</span><br><span class="line">    out2 = downsampe(block(inputs))</span><br><span class="line">    <span class="built_in">print</span>(block)</span><br><span class="line">    calDiff(out1, out2)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    verifyBlock()</span><br></pre></td></tr></table></figure>
+<p>没想到一运行就报错了，查看报错信息发现是吸BN的位置出错了，卷积核的形状有问题；</p>
+<p>遇到这种问题千万不要慌张，打开官方文档一看，原来MegEngine的分组卷积的卷积核形状不同：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220129203400887.png" alt="image-20220129203400887"></p>
+<p>打开PyTorch的官方文档进行对比：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220129203651789.png" alt="image-20220129203651789"></p>
+<p>果然不一样，因此我们需要对代码进行修改，当groups不为1时，将kernel reshape为相应的形状，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># self.groups_channel = in_ch % groups in_ch=out_ch</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span> <span class="built_in">isinstance</span>(branch, M.BatchNorm2d)  <span class="comment"># &quot;self.identity&quot;</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">hasattr</span>(self, <span class="string">&#x27;bn_identity&#x27;</span>):  <span class="comment"># 对于BN层，初始化时创建一个bn_identity</span></span><br><span class="line">    <span class="comment"># group convlution kernel shape:</span></span><br><span class="line">    <span class="comment"># [groups, out_channels // groups, in_channels // groups, kernel_size, kernel_size]</span></span><br><span class="line">    kernel_value = np.zeros(</span><br><span class="line">        (self.groups_channel * self.groups, self.groups_channel, <span class="number">3</span>, <span class="number">3</span>), dtype=np.float32)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(self.groups_channel * self.groups): <span class="comment"># out_channels</span></span><br><span class="line">        kernel_value[i, i % self.groups_channel, <span class="number">1</span>, <span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.groups &gt; <span class="number">1</span>:</span><br><span class="line">            kernel_value = kernel_value.reshape(</span><br><span class="line">                self.groups, self.groups_channel, self.groups_channel, <span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">            self.bn_identity = mge.Parameter(kernel_value)</span><br></pre></td></tr></table></figure>
+<p>修改完之后代码确实能跑通了，但是结果仍然有问题——<code>switch_to_deploy</code>之后分类器的结果不同，经过再三debug发现是赋值代码有问题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.reparam.weight.data = kernel</span><br><span class="line">self.reparam.bias.data = bias</span><br></pre></td></tr></table></figure>
+<p>MegEngine中不支持.data，因此改为深拷贝：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.reparam.weight[:] = kernel</span><br><span class="line">self.reparam.bias[:] = bias</span><br></pre></td></tr></table></figure>
+<h3 id="repvgg">RepVGG</h3>
+<p>剩下的部分直接根据官方文档照搬照抄即可，没有什么需要注意的点，在复现完毕后，同样需要写验证代码，在上文中的<strong><a target="_blank" rel="noopener" href="http://verify.py">verify.py</a></strong>中再添加如下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">verifyRepVGG</span>(<span class="params">model_name, state_dict=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;___________<span class="subst">&#123;model_name&#125;</span>____________&#x27;</span>)</span><br><span class="line">    inputs = mge.tensor(np.random.random((<span class="number">2</span>, <span class="number">3</span>, <span class="number">224</span>, <span class="number">224</span>)))</span><br><span class="line"></span><br><span class="line">    model = repvgg.__dict__[model_name](<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">if</span> state_dict <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        model.load_state_dict(state_dict)</span><br><span class="line">    model.<span class="built_in">eval</span>()</span><br><span class="line">    out1 = model(inputs)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;___________<span class="subst">&#123;model_name&#125;</span> switch to deploy____________&#x27;</span>)</span><br><span class="line">    model._switch_to_deploy_and_save(<span class="string">&#x27;./ckpt&#x27;</span>, <span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    model.<span class="built_in">eval</span>()</span><br><span class="line">    out2 = model(inputs)</span><br><span class="line"></span><br><span class="line">    calDiff(out1, out2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>经过检验没什么问题，至此<code>repvgg.py</code>和<code>se_block.py</code>算是复现完了，<code>repvgg_plus.py</code>留在下节介绍。</p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/BaseLearn/">#-- BaseLearn</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2022-01-23
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%85%E8%AF%BB%E6%BA%90%E7%A0%81"><span class="toc-text">阅读源码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#convbn"><span class="toc-text">ConvBn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#repvggblock"><span class="toc-text">RepVGGBlock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#repvgg"><span class="toc-text">RepVGG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-text">重参数化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E7%8E%B0%E6%A8%A1%E5%9E%8B"><span class="toc-text">复现模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">新建文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seblock"><span class="toc-text">SEBlock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#convbn"><span class="toc-text">ConvBn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#repvggblock"><span class="toc-text">RepVGGBlock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#repvgg"><span class="toc-text">RepVGG</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

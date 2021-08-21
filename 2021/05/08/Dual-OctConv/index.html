@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Octave Convolution针对MR图像重建的改进。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>Dual-OctCov（双八度卷积） | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Dual-OctCov（双八度卷积）
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>Octave Convolution针对MR图像重建的改进。</p>
+<span id="more"></span>
+<blockquote>
+<p>论文名称：<a target="_blank" rel="noopener" href="https://ask.qcloudimg.com/draft/8380959/0l1i7hwrpo.pdf">Dual-Octave Convolution for Accelerated Parallel MR Image Reconstruction</a></p>
+<p>作者：Chun-Mei Feng, Zhanyuan Yang， Geng Chen, Y ong Xu, Ling Shao</p>
+<p>Code：<a target="_blank" rel="noopener" href="http://github.com/chunmeifeng/Dual-OctConv">github.com/chunmeifeng/Dual-OctConv</a></p>
+</blockquote>
+<h1>摘要</h1>
+<ul>
+<li>核磁共振图像采集通常是一个漫长的过程，而核磁共振（MR)图像重建可通过并行同时获取多个欠采样图像来加速采集。</li>
+<li>本文提出了双八度卷积，能从<strong>实分量</strong>和<strong>虚分量</strong>中学习多尺度的空间<strong>频率</strong>特征，用于快速并行重建图像；在捕捉更多特征的同时，减少空间冗余。</li>
+<li>创新：
+<ol>
+<li>它鼓励不同空间频率下的实分量和虚分量进行信息交换。</li>
+<li>通过学习多个空间频率的特征扩大感受野。</li>
+</ol>
+</li>
+</ul>
+<h1>相关工作</h1>
+<ul>
+<li>
+<p>普通卷积是为实值自然图像设计的，不能处理复数值输入，早期的研究简单得抛弃了虚部，或者对其分别处理。</p>
+</li>
+<li>
+<p>为了避免信息丢失，近期有人提出使用复值卷积来处理，但其忽略了MR图像固有的多频特征，且有限的单尺度上下文信息和高空间冗余使其表现平平。</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508230840.png" alt="image-20210508134308260"></p>
+</li>
+</ul>
+<h1>主要方法</h1>
+<ul>
+<li>
+<p>MR扫描仪通过接收线圈获取<a target="_blank" rel="noopener" href="https://mall.pantsiao.com/entry/29">k空间</a>（简单来说就是图像的频谱）数据，然后利用多维傅里叶反变换得到最终的MR图像。在并行成像中，利用多个接收线圈同时获取扫描目标的<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_35907936/article/details/107244476?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162045056316780255294801%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=162045056316780255294801&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-107244476.first_rank_v2_pc_rank_v29&amp;utm_term=k%E7%A9%BA%E9%97%B4&amp;spm=1018.2226.3001.4187">k空间</a>数据。</p>
+</li>
+<li>
+<p>使用复杂的滤波器将多通道输入分解为高、低空间频率部分：</p>
+</li>
+<li>
+<p>使用一个复滤波器K与输入进行卷积：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508230838.png" alt="image-20210508133857871"></p>
+</li>
+<li>
+<p>卷积核：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508134055.png" alt=""></p>
+<p>注意，所有的内核和特征映射都由实矩阵表示。</p>
+</li>
+<li>
+<p>卷积过程：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508230834.png" alt="image-20210508134358677"></p>
+</li>
+<li>
+<p>网络结构：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508230830.png" alt="image-20210508135032464"></p>
+</li>
+</ul>
+<p>详细请看<a href="https://asthestarsfalll.icu/2021/05/07/Octave%20Convoluton/">Octave Convolution</a></p>
+<h1>总结</h1>
+<p>优点：</p>
+<ul>
+<li>能同时对采集的实分量和虚分量同时进行多尺度的空间频率特征学习。且大大减少空间冗余。</li>
+<li>峰值信噪比和相似指数都达到最优。</li>
+</ul>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/PaperRead/">#PaperRead</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-05-08
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">主要方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">总结</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

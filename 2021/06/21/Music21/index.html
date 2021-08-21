@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="music21是一个由MIT开发的功能强大的计算音乐学分析Python库。相比于pretty_midi库只能处理MIDI文件，music21可以处理包括MusicXML，MIDI，abc等多种格式的音乐文件，并可以从零开始构建音乐文件或对音乐进行分析。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>Music21 | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Music21
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>music21是一个由MIT开发的功能强大的计算音乐学分析Python库。相比于pretty_midi库只能处理MIDI文件，music21可以处理包括MusicXML，MIDI，abc等多种格式的音乐文件，并可以从零开始构建音乐文件或对音乐进行分析。</p>
+<span id="more"></span>
+<p><a target="_blank" rel="noopener" href="https://web.mit.edu/music21/doc/usersGuide/index.html">官方文档</a></p>
+<p>建议配合官方图片食用</p>
+<h2 id="音符-notes">音符（Notes）</h2>
+<p>标准音符的概念被包含在<code>note</code>的<code>Note</code>对象之中</p>
+<p>直接输入<code>note</code>便可得到该模块的位置</p>
+<p>如果你想知道<code>note</code>除了<code>Note</code>还包含什么，可以输入<code>dir(note)</code></p>
+<h3 id="创建音符">创建音符</h3>
+<p>让我们使用<code>note.Note</code>创建一个音符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = note.Note(<span class="string">&#x27;F5&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="音符的属性">音符的属性</h3>
+<p><code>F5</code>是这个音符的音名</p>
+<p>通过<code>.name</code> <code>.step</code>和<code>.octave</code>可以得到其音名、音级、八度（在第几个八度）信息</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.name f.step f.octave</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;F&#x27; &#x27;F&#x27; 5</span><br></pre></td></tr></table></figure>
+<p><code>.step</code>得到不包含变化音及八度信息的音名，这里成为音级严格来说并不准确</p>
+<p>当然也可以使用<code>.pitch</code>直接得到其音名</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.pitch</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;music21.pitch.Pitch F5&gt;</span><br></pre></td></tr></table></figure>
+<p>使用<code>.pitch.frequency</code>得到其频率</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.pitch.frequency</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">音高698.456462866008</span><br></pre></td></tr></table></figure>
+<p>使用<code>.pitch.pitchClass</code>同样可以得到其音级（距离同一个八度中<code>c</code>的半音数字），使用 <code>.pitch.pitchClassString</code>则可以得到一个<code>String</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.pitch.pitchClassf.pitch.pitchClassString <span class="built_in">type</span>(f.pitch.pitchClassString)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">音高5 &#x27;5&#x27; &lt;class&#x27;str&#x27;&gt;</span><br></pre></td></tr></table></figure>
+<p>在music21中，升降分别使用<code>#</code> 和<code>-</code>，我们创建一个新的音符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b_flat = note.Note(<span class="string">&quot;B2-&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>使用<code>.pitch.accidental</code>可获得其属性(<code>accidental</code>在音乐中表示变音记号)，使用<code>.pitch.accident.alter</code>获得其半音变化数量，使用<code>.pitch.accidental.name</code>获得其</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b_flat.pitch.accidental b_flat.pitch.accidental.alter b_flat.pitch.accidental.name</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;accidental flat&gt; -1.0 &#x27;flat&#x27;</span><br></pre></td></tr></table></figure>
+<p><strong>注意，这里是一个浮点数，这意味着music21支持四分音符之类现实中通常不使用的东西</strong></p>
+<p>此外，并不是每一个音符都有accidental的，某些音符会返回<code>None</code></p>
+<p>我们可以使用一个判断语句来解决：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> d.pitch.accidental <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">    <span class="built_in">print</span>(d.pitch.accidental.name)</span><br></pre></td></tr></table></figure>
+<p>如果你安装了<code>MusicXML</code>阅读器，使用<code>f.show()</code>可查看其五线谱</p>
+<h3 id="修改音符">修改音符</h3>
+<p>使用<code>.transpose</code>修改你的音符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = b_flat.transpose(<span class="string">&quot;M3&quot;</span>) <span class="comment">#将Bb上调大三度，变为D</span></span><br></pre></td></tr></table></figure>
+<p>这种用法并没有改变音符本身，而是返回一个变量</p>
+<p>可以使用<code>inplace=True</code>改变音符本身</p>
+<h3 id="休止符">休止符</h3>
+<p>使用<code>note.rest</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = note.rest() <span class="comment"># 记得加括号</span></span><br></pre></td></tr></table></figure>
+<p>最后提醒一个点，不要使用<code>note</code>作为音符的变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">note = note.Note(&quot;C4&quot;)</span><br></pre></td></tr></table></figure>
+<h2 id="音高-pitch-时值-duration">音高（Pitch），时值（Duration）</h2>
+<h3 id="音高">音高</h3>
+<p>使用<code>pitch.pitch()</code>创建一个音高对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p1 = pitch.Pitch(<span class="string">&#x27;b-4&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>有许多属性和<code>note</code>是一样的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pl.octave pl.name pl.pitchClass pl.accidental.alter </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 &#x27;B-&#x27; 10 -1.0</span><br></pre></td></tr></table></figure>
+<p><code>.transpose()</code>同样可以使用</p>
+<p><code>.nameWithOctave</code>和<code>.midi</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pl.nameWithOctave pl.midi</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;B-4&#x27; 70</span><br></pre></td></tr></table></figure>
+<p>这些属性大多数都可以修改</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pl.name = <span class="string">&quot;d#&quot;</span></span><br><span class="line">pl.octave = <span class="number">3</span></span><br><span class="line">pl.nameWithOctave </span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;D#3&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>这时pl代表的音符已经变为了<code>D#3</code></p>
+<p><strong>实际上，每一个Note对象内部，都有一个Pitch对象，我们对<code>note.Note</code>做的一切，都可以用<code>note.Note.pitch</code>对象代替</strong></p>
+<p>一些<code>note</code>不支持的属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">csharp.pitch.spanish <span class="comment"># 获得其西班牙名称</span></span><br></pre></td></tr></table></figure>
+<p>可以使用一些其他的方法，来更清晰地打印</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(csharp.pitch.unicodeName) </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C♯</span><br></pre></td></tr></table></figure>
+<p>获得一些同音的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>( csharp.pitch.getEnharmonic() )</span><br><span class="line"><span class="built_in">print</span>( csharp.pitch.getLowerEnharmonic() )</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D-4</span><br><span class="line"><span class="meta">B#</span><span class="bash"><span class="comment">#3</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="时值">时值</h3>
+<p>任何音符的存在都离不开时值<code>Duration</code></p>
+<p>创建一个二分音符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">halfDuration = duration.Duration(<span class="string">&#x27;half&#x27;</span>)</span><br><span class="line"><span class="comment"># ‘whole&#x27;,&#x27;half&#x27;,&#x27;quarter&#x27;,&#x27;eighth&#x27;,&#x27;16th&#x27;,&#x27;32th&#x27;,&#x27;64th&#x27; 一直到&#x27;2048th&#x27;，虽太小无法在乐谱上无法显示</span></span><br><span class="line"><span class="comment"># &#x27;breve&#x27;,&#x27;longa&#x27;,&#x27;maxima&#x27; 2,4,8个全音</span></span><br></pre></td></tr></table></figure>
+<p>另一种创建方法是说明他有多少个四分音符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dottedQuarter = duration.Duration(<span class="number">1.5</span>) </span><br></pre></td></tr></table></figure>
+<p>可以使用<code>.quarterLength</code>得到时值是多少个四分音符</p>
+<p>还可以使用<code>Note</code>创建</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = note.Note(<span class="string">&quot;C4&quot;</span>, <span class="built_in">type</span>=<span class="string">&#x27;whole&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>.type</code>可以得到一般类型，如’half’,‘quarter’</p>
+<p><code>.dots</code>可以得到音符有多少个附点</p>
+<p>使用<code>.lyric</code>添加歌词（具体看文档吧，不具体介绍了）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">otherNote = note.Note(<span class="string">&quot;F6&quot;</span>)</span><br><span class="line">otherNote.lyric = <span class="string">&quot;I&#x27;m the Queen of the Night!&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="流-stream">流(Stream)</h2>
+<p>我们可以通过列表对note等对象进行处理，但是它们对音乐一无所知，因此需要一个类似于列表的对象具有一定“智能”的对象，成为<code>Stream</code></p>
+<p>流有许多子类<code>Score</code>乐谱、<code>Part</code>声部、<code>Measure</code>小节</p>
+<h3 id="创建流">创建流</h3>
+<p><code>Stream</code>中储存的元素必须是music21对象，如果想加入不属于music21的对象，请将其放入<code>ElementWrapper</code></p>
+<p>使用<code>Stream()</code>创建流，<code>.append()</code>方法添加元素，<code>.repeatAppend()</code>方法添加多个相同的音符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">stream1 = stream.Stream()</span><br><span class="line">stream1.append(note1)</span><br><span class="line">stream1.append(note2)</span><br><span class="line">stream1.append(note3)</span><br><span class="line"></span><br><span class="line">stream2 = stream.Stream()</span><br><span class="line">n3 = note.Note(<span class="string">&#x27;D#5&#x27;</span>) <span class="comment"># octave values can be included in creation arguments</span></span><br><span class="line">stream2.repeatAppend(n3, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<p>使用<code>.show('text')</code>查看其中的内容及其偏移量（从0.0开始，一般1个偏移量指一个四分音符的长度）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stream1.show(<span class="string">&#x27;text&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;0.0&#125; &lt;music21.note.Note C&gt;</span><br><span class="line">&#123;2.0&#125; &lt;music21.note.Note F#&gt;</span><br><span class="line">&#123;3.0&#125; &lt;music21.note.Note B-&gt;</span><br></pre></td></tr></table></figure>
+<p>流的大部分方法和列表相同，如切片、索引（还可使用<code>.index()</code>访问）、<code>pop()</code>、<code>.append()</code>、<code>len()</code>等，并且流中也可以存放列表</p>
+<h3 id="按类分离元素">按类分离元素</h3>
+<p>提供一种过滤流以获取所需元素<code>.getElementByClass()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> thisNote <span class="keyword">in</span> stream1.getElementsByClass([<span class="string">&quot;Note&quot;</span>, <span class="string">&quot;Rest&quot;</span>]):</span><br><span class="line">    <span class="built_in">print</span>(thisNote, thisNote.offset)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;music21.note.Note C&gt; 0.0</span><br><span class="line">&lt;music21.note.Note F#&gt; 2.0</span><br><span class="line">&lt;music21.note.Note B-&gt; 3.0</span><br></pre></td></tr></table></figure>
+<p>此外也可使用<code>.notes</code>、<code>.notesAndRests</code>、<code>.pitches</code>等来进行过滤，直接使用会返回所有，如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stream1.pitches</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[&lt;music21.pitch.Pitch D#5&gt;,</span><br><span class="line"> &lt;music21.pitch.Pitch D#5&gt;,</span><br><span class="line"> &lt;music21.pitch.Pitch D#5&gt;,</span><br><span class="line"> &lt;music21.pitch.Pitch D#5&gt;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> thisNote <span class="keyword">in</span> stream1.notesAndRests:</span><br><span class="line">    <span class="built_in">print</span>(thisNote)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;music21.note.Note C&gt;</span><br><span class="line">&lt;music21.note.Note F#&gt;</span><br><span class="line">&lt;music21.note.Note B-&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="通过偏移量分离元素">通过偏移量分离元素</h3>
+<p><code>getElementsByOffset()</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sOut = stream1.getElementsByOffset(<span class="number">2</span>, <span class="number">3</span>).stream()</span><br><span class="line">sOut.show(<span class="string">&#x27;text&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;2.0&#125; &lt;music21.note.Note F#&gt;</span><br><span class="line">&#123;3.0&#125; &lt;music21.note.Note B-&gt;   </span><br></pre></td></tr></table></figure>
+<p>还有<code>getElementAtOrBefore()</code>（某个偏移量及其之前score = stream.Score()<br>
+1），<code>getElementAfterElement()</code>（某个偏移量之后）</p>
+<h3 id="更多功能">更多功能</h3>
+<p><code>.analyze('ambitus')</code>获得流中的音域范围</p>
+<p><code>.lowestOffset</code>返回偏移量的最小值</p>
+<p><code>__repr_</code></p>
+<p><code>.id</code>，可以自己设定，相当于名字，如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = stream.Score(<span class="built_in">id</span>=<span class="string">&#x27;mainScore&#x27;</span>)</span><br><span class="line">p0 = stream.Part(<span class="built_in">id</span>=<span class="string">&#x27;part0&#x27;</span>)</span><br><span class="line">p1 = stream.Part(<span class="built_in">id</span>=<span class="string">&#x27;part1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>.duration</code>储存Duration对象的属性</p>
+<h3 id="小节-measure">小节(Measure)</h3>
+<p>可以使用<code>corpus</code>访问大量的乐谱，使用<code>Parse()</code>从语料库中解析出<code>Score</code>（一种流的子类）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sBach = corpus.parse(<span class="string">&#x27;bach/bwv57.8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>它包含一个<code>Metadata</code>对象、一个 <code>StaffGroup</code>对象和四个 <code>Part</code>对象。</p>
+<p>可以使用<code>measures()</code>或<code>measure()</code>获取多个或一个小节，前者获取整个乐曲所有<code>Part</code>的小节，后者必须对一个<code>Measure</code>对象</p>
+<p>然而一个问题是，这与使用<code>getElementsByClass(stream.Measure)</code>并不相同，因为在乐曲中存在小节并不连续的情况</p>
+<h3 id="递归方法">递归方法</h3>
+<p><code>.recurse()</code>可以访问流中的每一个元素，若任何子元素也是流，他将访问该流中的每一个元素</p>
+<p>他会返回一个生成器，使用循环来访问每一个元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">recurseScore = s.recurse()</span><br><span class="line">recurseScore</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;music21.stream.iterator.RecursiveIterator for Score:mainScore @:0&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> el <span class="keyword">in</span> s.recurse():</span><br><span class="line">    <span class="built_in">print</span>(el.offset, el, el.activeSite)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0.0 &lt;music21.stream.Part part0&gt; &lt;music21.stream.Score mainScore&gt;</span><br><span class="line">0.0 &lt;music21.stream.Measure 1 offset=0.0&gt; &lt;music21.stream.Part part0&gt;</span><br><span class="line">0.0 &lt;music21.note.Note C&gt; &lt;music21.stream.Measure 1 offset=0.0&gt;</span><br><span class="line">4.0 &lt;music21.stream.Measure 2 offset=4.0&gt; &lt;music21.stream.Part part0&gt;</span><br><span class="line">0.0 &lt;music21.note.Note D&gt; &lt;music21.stream.Measure 2 offset=4.0&gt;</span><br><span class="line">0.0 &lt;music21.stream.Part part1&gt; &lt;music21.stream.Score mainScore&gt;</span><br><span class="line">0.0 &lt;music21.stream.Measure 1 offset=0.0&gt; &lt;music21.stream.Part part1&gt;</span><br><span class="line">0.0 &lt;music21.note.Note E&gt; &lt;music21.stream.Measure 1 offset=0.0&gt;</span><br><span class="line">4.0 &lt;music21.stream.Measure 2 offset=4.0&gt; &lt;music21.stream.Part part1&gt;</span><br><span class="line">0.0 &lt;music21.note.Note F&gt; &lt;music21.stream.Measure 2 offset=4.0&gt;					</span><br></pre></td></tr></table></figure>
+<p>大多数过滤方法也可以用于该生成器</p>
+<h3 id="扁平化流">扁平化流</h3>
+<p><code>.flat</code>可以将嵌套流打平，并赋予新的<code>offset</code></p>
+<h2 id="和弦-chord">和弦(Chord)</h2>
+<h3 id="创建和弦">创建和弦</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cMinor = chord.Chord([<span class="string">&quot;C4&quot;</span>,<span class="string">&quot;G4&quot;</span>,<span class="string">&quot;E5-&quot;</span>])  <span class="comment"># 通过音名的列表创建</span></span><br><span class="line"></span><br><span class="line">d = note.Note(<span class="string">&#x27;D4&#x27;</span>)</span><br><span class="line">fSharp = note.Note(<span class="string">&#x27;F#4&#x27;</span>)</span><br><span class="line">a = note.Note(<span class="string">&#x27;A5&#x27;</span>)</span><br><span class="line">dMajor = chord.Chord([d, fSharp, a]) <span class="comment"># 添加已有的音符</span></span><br><span class="line"></span><br><span class="line">e7 = chord.Chord(<span class="string">&quot;E4 G#4 B4 D5&quot;</span>) <span class="comment"># 通过带有空格的字符串创建</span></span><br><span class="line"></span><br><span class="line">es = chord.Chord(<span class="string">&quot;E- G B-&quot;</span>) <span class="comment"># 如果所有音符的都在一个八度内，则不需要八度信息</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="功能">功能</h3>
+<p><code>Chord</code>和<code>Note</code>对象都是<code>GneralNote</code>对象的子类，因此大部分Note的属性，Chord都能使用</p>
+<p>其中，音高由<code>.pitch</code>被替换为<code>.pitches</code></p>
+<p>一些其他功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cMinor.isMinorTriad() <span class="comment"># 是否是小三和弦</span></span><br><span class="line">cMinor.isMajorTriad() <span class="comment"># 是否是大三和弦</span></span><br><span class="line">cMinor.inversion() <span class="comment"># 是否处于转位状态</span></span><br><span class="line">cMinor.add() <span class="comment"># 添加音符</span></span><br><span class="line">cMinor.remove() <span class="comment"># 移除音符</span></span><br><span class="line">cClosed = cMinor.closedPosition() <span class="comment"># 封闭和弦，不会该改变原对象</span></span><br><span class="line">semiClosedPosition() <span class="comment"># 不太懂</span></span><br><span class="line">cn1 = cMinor.commonName <span class="comment"># 得到和弦的名字</span></span><br><span class="line">fMajor.fullName <span class="comment"># 包含step和时值</span></span><br><span class="line">fMajor.pitchedCommonName <span class="comment"># 加入了pitch信息</span></span><br></pre></td></tr></table></figure>
+<p>和弦和音符一样可以添加到流之中</p>
+<h2 id="加载文件">加载文件</h2>
+<p>使用<code>corpus.parse()</code>从语料库加载文件</p>
+<p>使用<code>converter.parse()</code>从本地磁盘或网络加载文件</p>
+<p>如果文件名没有后缀或者后缀有误，可以使用<code>format=&quot;FORMAT&quot;</code></p>
+<p>music21会在第一遍读取文件后保存优化版本，若下次读取时检测到没有更改文件，那么速度将会提升2到5倍（大概是通过检查文件修改时间是否变动，可以使用<code>forceSource=True</code>来保证重新加载原文件）</p>
+<p>使用<code>converter.Converter().subconvertersList('input')</code>得到其可以读入的所有格式</p>
+<p>使用<code>converter.Converter().subconvertersList('output')</code>得到其可以写的所有格式</p>
+<p>其可以使用的文件格式有<code>Humdrum</code>、<code>MusicXML</code>、<code>MusicXML</code>、<code>Musedata</code>、<code>MIDI</code>等</p>
+<h2 id="chordify">Chordify</h2>
+<p>Chordify ，顾名思义，ify后缀通常表示使动，即为使…变为和弦，可翻译为<code>和弦化</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b = corpus.parse(<span class="string">&#x27;bwv66.6&#x27;</span>) <span class="comment"># 读取乐谱，该乐谱有很多个声部</span></span><br><span class="line">bChords = b.chordify() <span class="comment"># 和弦化，多个声部变为一个和弦</span></span><br></pre></td></tr></table></figure>
+<p>看不懂了…</p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/Computer-Music/">#Computer Music</a> <a href="/tags/BaseLearn/">#BaseLearn</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-06-21
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E7%AC%A6-notes"><span class="toc-text">音符（Notes）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%9F%B3%E7%AC%A6"><span class="toc-text">创建音符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9F%B3%E7%AC%A6%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-text">音符的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%9F%B3%E7%AC%A6"><span class="toc-text">修改音符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%91%E6%AD%A2%E7%AC%A6"><span class="toc-text">休止符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E9%AB%98-pitch-%E6%97%B6%E5%80%BC-duration"><span class="toc-text">音高（Pitch），时值（Duration）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9F%B3%E9%AB%98"><span class="toc-text">音高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E5%80%BC"><span class="toc-text">时值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81-stream"><span class="toc-text">流(Stream)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%B5%81"><span class="toc-text">创建流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E7%B1%BB%E5%88%86%E7%A6%BB%E5%85%83%E7%B4%A0"><span class="toc-text">按类分离元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%81%8F%E7%A7%BB%E9%87%8F%E5%88%86%E7%A6%BB%E5%85%83%E7%B4%A0"><span class="toc-text">通过偏移量分离元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD"><span class="toc-text">更多功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E8%8A%82-measure"><span class="toc-text">小节(Measure)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95"><span class="toc-text">递归方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%81%E5%B9%B3%E5%8C%96%E6%B5%81"><span class="toc-text">扁平化流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%92%8C%E5%BC%A6-chord"><span class="toc-text">和弦(Chord)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E5%BC%A6"><span class="toc-text">创建和弦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-text">功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="toc-text">加载文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chordify"><span class="toc-text">Chordify</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

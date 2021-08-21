@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="注意力最近几年在深度学习各个领域被广泛使用，无论是图像分割、语音识别还是自然语言处理的各种不同类型的任务中，注意力机制都在其中大放异彩。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>注意力机制 | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                注意力机制
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>注意力最近几年在深度学习各个领域被广泛使用，无论是图像分割、语音识别还是自然语言处理的各种不同类型的任务中，注意力机制都在其中大放异彩</p>
+<span id="more"></span>
+<h2 id="介绍">介绍</h2>
+<p>注意力（attention）机制最初应用于机器翻译任务，现在已被广泛地应用于深度学习的各个领域，无论是图像分割、语音处理，还是在计算机视觉和自然语言处理的各种不同类型的任务，注意力机制都在其中大放异彩。</p>
+<p>在认知科学中，由于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86/9855337">信息处理</a>的瓶颈，人类会选择性地关注所有信息的一部分，同时忽略其他信息。同理，当神经网络处理大量的信息输入时，快速聚焦其中一些关键信息来进行处理，这便是注意力机制。</p>
+<blockquote>
+<p>决定需要关注输入的哪部分</p>
+<p>分配有限的信息处理资源给重要的部分</p>
+</blockquote>
+<p>注意力机制一般分为两种</p>
+<blockquote>
+<p><strong>聚焦式（Focus）注意力</strong>：自上而下的有意识的注意力</p>
+</blockquote>
+<p>这种注意力是需要设计或是经过学习才能产生的，所以称为自上而下的，或称为有意识的。在这一节我们主要对这种自上而下的注意力进行了解。</p>
+<blockquote>
+<p><strong>显著性（Saliency-Based）注意力</strong>：自下而上的无意识的注意力</p>
+</blockquote>
+<p>在很常见的卷积神经网络和循环神经网络中，可以将 <strong>池化（<code>max pooling</code>）、门控（<code>Gating</code>）</strong> 近似看作是自下而上的基于显著性的注意力机制。自下而上的意思是，这种注意力不需要策略和判断，也不需要经过学习，所以是无意识的。</p>
+<p>举个简单的例子，你和朋友走在大街上，在嘈杂的街道中你仍能听清你朋友的声音，这就是<strong>聚焦式注意力</strong>；这时你突然听到有人从后面喊你名字，这就是<strong>显著式</strong>注意力。</p>
+<h2 id="基础知识">基础知识</h2>
+<blockquote>
+<p>数学上，注意力机制是<strong>加权求和</strong></p>
+<p>形式上，注意力机制是<strong>键值查询</strong></p>
+<p>应用上，注意力机制是<strong>相似性度量</strong></p>
+</blockquote>
+<h3 id="简单注意力的计算">简单注意力的计算</h3>
+<p>NLP中，主要分为两步：</p>
+<ol>
+<li>在所有输入信息上计算<strong>注意力分布</strong></li>
+<li>根据注意力分布计算输入信息的加权和，以此选择关键信息</li>
+</ol>
+<h4 id="查询向量和打分函数">查询向量和打分函数</h4>
+<p>为了实现选择关键的信息来进行处理，我们引入了一个与任务相关的<strong>查询向量</strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span>，并且使用一个<strong>打分函数</strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span>来计算不同信息向量与查询向量的相关性。</p>
+<p>查询向量通过线性变换得到</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>Q</mi><mo>=</mo><msub><mi>W</mi><mi>Q</mi></msub><mi>X</mi></mrow><annotation encoding="application/x-tex">Q=W_QX
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.328331em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">Q</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span></span></p>
+<p>对于键值对模型</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>K</mi><mo>=</mo><msub><mi>W</mi><mi>K</mi></msub><mi>X</mi><mspace linebreak="newline"></mspace><mi>V</mi><mo>=</mo><msub><mi>W</mi><mi>V</mi></msub><mi>X</mi></mrow><annotation encoding="application/x-tex">K=W_KX\\
+V=W_VX
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07153em;">K</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span><span class="mspace newline"></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.22222em;">V</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span></span></p>
+<p>常见的打分函数有</p>
+<ul>
+<li><strong>加性模型</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>v</mi><mi>T</mi></msup><mi>tanh</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>W</mi><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>U</mi><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">v^T\tanh(Wx_i+Uq)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">tanh</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mclose">)</span></span></span></span></li>
+<li><strong>点积模型</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>x</mi><mi>i</mi><mi>T</mi></msubsup><mi>q</mi></mrow><annotation encoding="application/x-tex">x_i^Tq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0999949999999998em;vertical-align:-0.258664em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-2.441336em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.258664em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span></li>
+<li><strong>缩放点积模型</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><msubsup><mi>x</mi><mi>i</mi><mi>T</mi></msubsup><mi>q</mi></mrow><msqrt><mi>d</mi></msqrt></mfrac></mrow><annotation encoding="application/x-tex">\frac{x_i^Tq}{\sqrt d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.691565em;vertical-align:-0.538em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.153565em;"><span style="top:-2.5335085em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord sqrt mtight"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.937845em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal mtight" style="padding-left:0.833em;">d</span></span><span style="top:-2.8978450000000002em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail mtight" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.102155em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.5102em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9190928571428572em;"><span style="top:-2.214em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286em;"><span></span></span></span></span></span></span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">q</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.538em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li><strong>双线性模型</strong>：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>x</mi><mi>i</mi><mi>T</mi></msubsup><mi>W</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">x_i^TWq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0999949999999998em;vertical-align:-0.258664em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-2.441336em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.258664em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span></li>
+</ul>
+<p>其中<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo separator="true">,</mo><mi>U</mi><mo separator="true">,</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">W,U,v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span>为可训练的参数，d为输入向量的维度。</p>
+<p>点积模型相较于加性模型效率更高，但是当输入向量维度过高，点积模型通常有较大的方差，从而导致softmax函数梯度较小，而缩放点积模型可以很好地解决这个问题。</p>
+<p>双线性模型可以看作一种更泛化的点积模型，引入了非对称性。</p>
+<h4 id="注意力分布">注意力分布</h4>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为在给定<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mi>i</mi></msub><mtext>、</mtext><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">q_i、x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">、</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>时<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>被选择的概率。</p>
+<p>以最简单的softmax模型为例，</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.2500em" columnalign="right left" columnspacing="0em"><mtr><mtd class ="mtr-glue"></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><msub><mi>α</mi><mi>i</mi></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>p</mi><mo stretchy="false">(</mo><mi>z</mi><mo>=</mo><mi>i</mi><mi mathvariant="normal">∣</mi><mi>X</mi><mo separator="true">,</mo><mi>Q</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd class ="mtr-glue"></mtd><mtd class ="mml-eqn-num"></mtd></mtr><mtr><mtd class ="mtr-glue"></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>s</mi><mi>o</mi><mi>f</mi><mi>t</mi><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd class ="mtr-glue"></mtd><mtd class ="mml-eqn-num"></mtd></mtr><mtr><mtd class ="mtr-glue"></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mfrac><msup><mi>e</mi><mrow><mi>s</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></msup><mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msup><mi>e</mi><mrow><mi>s</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>q</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mrow></mstyle></mtd><mtd class ="mtr-glue"></mtd><mtd class ="mml-eqn-num"></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align}
+\alpha_i&amp;=p(z=i|X,Q)\\
+ &amp;=softmax(s(x_i,q_i))\\
+ &amp;=\frac{e^{s(x_i,q_i)}}{\sum_{j=1}^Ne^{s(x_i,q_i)}}
+\end{align}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:6.172049em;vertical-align:-2.8360245000000006em;"></span><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.3360244999999997em;"><span style="top:-6.0610245em;"><span class="pstrut" style="height:3.565em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-4.5610245em;"><span class="pstrut" style="height:3.565em;"></span><span class="mord"></span></span><span style="top:-2.3360244999999997em;"><span class="pstrut" style="height:3.565em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.8360245000000006em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.3360244999999997em;"><span style="top:-6.0610245em;"><span class="pstrut" style="height:3.565em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">p</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">i</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span></span></span><span style="top:-4.5610245em;"><span class="pstrut" style="height:3.565em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">so</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">))</span></span></span><span style="top:-2.3360244999999997em;"><span class="pstrut" style="height:3.565em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.565em;"><span style="top:-2.128769em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.981231em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.43581800000000004em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.814em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mopen mtight">(</span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mpunct mtight">,</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:-0.03588em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mopen mtight">(</span><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mpunct mtight">,</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3280857142857143em;"><span style="top:-2.357em;margin-left:-0.03588em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3070490000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.8360245000000006em;"><span></span></span></span></span></span></span></span><span class="tag"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:3.3360244999999997em;"><span style="top:-6.0610245em;"><span class="pstrut" style="height:3.565em;"></span><span class="eqn-num"></span></span><span style="top:-4.5610245em;"><span class="pstrut" style="height:3.565em;"></span><span class="eqn-num"></span></span><span style="top:-2.3360244999999997em;"><span class="pstrut" style="height:3.565em;"></span><span class="eqn-num"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:2.8360245000000006em;"><span></span></span></span></span></span></span></span></span></p>
+<h4 id="加权和">加权和</h4>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mi>t</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">(</mo><mi>X</mi><mo separator="true">,</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>α</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">attention(X,Q)=\sum_{i=1}^N\alpha_ix_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.106005em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283360000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>即为输入向量与其注意力分布点积之和。<strong>以上都是向量哦</strong></p>
+<p>加权和有两种模式：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507174924.png" alt="模式图"></p>
+<p>对于键值对模式，计算可分为三个部分：</p>
+<ol>
+<li>
+<p>依据q和k计算二者的相似度</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>S</mi><mi>i</mi></msub><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>Q</mi><mo separator="true">,</mo><msub><mi>k</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_i=F(Q,k_i)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal">Q</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+</li>
+<li>
+<p>使用softmax函数得到注意力分布</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>α</mi><mi>i</mi></msub><mo>=</mo><mi>s</mi><mi>o</mi><mi>f</mi><mi>t</mi><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><msub><mi>s</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\alpha_i=softmax(s_i)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">so</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+</li>
+<li>
+<p>加权和</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mi>t</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>K</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>α</mi><mi>i</mi></msub><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">attention((K,V),Q)=\sum_{i=1}^N\alpha_iv_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mopen">((</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.106005em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8283360000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.0037em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+</ol>
+<p><strong>即将输入向量以键值对的形式表达，K用来计算注意力分布，V用来聚合信息。</strong></p>
+<h3 id="其他注意力模型">其他注意力模型</h3>
+<h4 id="硬注意力机制">硬注意力机制</h4>
+<p>上述通过加权和计算是一种软注意力</p>
+<p>硬注意力机制只关注某一个输入向量，通常两种方法实现：</p>
+<ul>
+<li>直接选取概率最高的向量</li>
+<li>在注意力分布上随即采样选取某个向量</li>
+</ul>
+<p>然而使用最大或随机采样，损失函数与注意力分布之间的函数不可导，无法进行反向传播，这也是硬注意力机制的一大特征。</p>
+<h4 id="多头注意力机制">多头注意力机制</h4>
+<p>通过多个查询向量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><msub><mi>q</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mtext> </mtext><mo separator="true">,</mo><msub><mi>q</mi><mi>m</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[q_1,\cdots,q_m]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span>来并行地从输入中选取多组信息，每个注意力关注不同的部分。</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>a</mi><mi>t</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>K</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>Q</mi><mo stretchy="false">)</mo><mo>=</mo><mi>a</mi><mi>t</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>K</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><msub><mi>q</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>⊕</mo><mo>⋯</mo><mo>⊕</mo><mi>a</mi><mi>t</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>K</mi><mo separator="true">,</mo><mi>V</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><msub><mi>q</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">attention((K,V),Q)=attention((K,V),q_1)\oplus\cdots\oplus attention((K,V),q_m)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mopen">((</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">Q</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mopen">((</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mopen">((</span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<h4 id="自注意力机制">自注意力机制</h4>
+<p>减少对外部信息的依赖，尽可能地利用特征内部固有的信息进行注意力的交互。</p>
+<p>上述的普通模式和键值对模式都是一种自注意力模型</p>
+<p>另一方面，自注意力机制可以<strong>捕获长距离关系</strong>，nlp中，每个词与其他所有词都要进行计算。（具体表现在Softmax上）</p>
+<p>最为著名的模型即<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1810.04805.pdf">transformer</a>，具体可见<a href="https://asthestarsfalll.icu/2021/06/04/transformer/">此</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200324202147216.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RpbmsxOTk1,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="注意力机制在计算机视觉中的应用">注意力机制在计算机视觉中的应用</h2>
+<p>注意力机制没有严格的的数学定义，例如传统的局部图像特征提取、滑动窗口方法等都可以看做一种注意力机制。在神经网络中，注意力机制通常是一个额外的神经网络，能够硬性的选择输入某些部分，或者给输入的不同部分分配不同的权重。</p>
+<blockquote>
+<p>只要是能够从大量信息中筛选出有用的信息，就能够称为注意力机制。</p>
+</blockquote>
+<p>首先让我们关注硬注意力，它是一个0/1问题，上文已经提到，不可微是硬注意力的一个特点，其更关注每一个点，哪些点被关注是一目了然的。</p>
+<p>接下来关注应用更广的软注意力，通过域的划分可以分为以下几点</p>
+<h3 id="空间域">空间域</h3>
+<p>顾名思义，就是在图像的空间上进行筛选信息。</p>
+<h4 id="spatial-transformer-networks">Spatial Transformer Networks</h4>
+<p>我们希望我们的神经网络能具有空间不变性，即在目标进行平移、旋转、放大等操作后，网络仍然能够得到正确的结果，然而我们的CNN在这方面的能力是不够的，因此提出了STN（空间转换网络），其将原始图片变换到另一个空间</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/1160281-20180625211745670-2041077599.png" alt=""></p>
+<p>Spatial Transformer主要分为三个部分：</p>
+<ol>
+<li><strong>Localisation net</strong>：得到参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>，用于第二步使用</li>
+<li><strong>Grid generator</strong>：通过参数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span>得到目标坐标点</li>
+<li><strong>Sampler</strong>：填充</li>
+</ol>
+<p>具体可看论文。</p>
+<h4 id="reverse-attention-based-residual-network">Reverse Attention-Based Residual Network</h4>
+<p>RAS-net是显著性目标检测方向的一个网络，它添加了一种注意边缘的反向注意力模块来提升分割精度。</p>
+<p>其网络结构在主干网络之后分为几个侧输出，R为注意力模块，并由最后的输出向上开始反向实现注意力。</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210530192534965.png" alt="image-20210530192534965"></p>
+<p>其中注意力模块的结构为：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210530192546866.png" alt="image-20210530192546866"></p>
+<p>可以看到，对于某一层：</p>
+<ol>
+<li>其下一层的输出首先会做一个上采样，并使用一个Sigmoid函数生成一个0-1之间的权重图</li>
+<li>使用1减去权重图得到最终的注意力图，代码实现中我们使用<code>torch.sigmoid(-x)</code>来获得同样的效果 ，这里使用1减可能是为了获得对边缘的注意。</li>
+<li>与该层输入进行乘加操作</li>
+</ol>
+<h4 id="double-attention-networks">Double Attention Networks</h4>
+<p><img src="/home/czh/.config/Typora/typora-user-images/image-20210601200552199.png" alt="image-20210601200552199"></p>
+<p>主要分为一下几个部分：</p>
+<ol>
+<li>Feature Gathering：</li>
+</ol>
+<p>空间域的缺点便是忽略了通道信息。</p>
+<h3 id="通道域">通道域</h3>
+<p><strong>首先让我们从信号变换的角度理解通道中到底储存着什么信息</strong></p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511132218.png" alt=""></p>
+<p>推荐阅读：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/19763358">傅立叶变换</a></p>
+<p>池化《深度学习》一书中解释道：“<strong>卷积等效于使用傅里叶变化将输入与核都转换到频域、执行两个信号的逐点相乘，再使用傅里叶逆变换转换回时域。</strong>”，即通过卷积可将特征图的信息分解成n个不同卷积核上的信号分量。另外，这些信息分量的频率不同，低频特征主要表示轮廓，高频特征主要表示细节。考虑到特征图过多的通道数对于关键信息的贡献不同，我们可以给每个通道上的信号都添加一个权重，用来表示通道信息的重要程度。</p>
+<h4 id="squeeze-and-excitation-networks">Squeeze-and-Excitation Networks</h4>
+<p>SEnet通过<strong>全连接层的隐式学习</strong>来得到不同通道的重要程度</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507174936.png" alt=""></p>
+<p>SEnet主要分为两个部分：</p>
+<ol>
+<li><strong>Squeeze</strong>：对输入特征图进行全局平均池化</li>
+<li><strong>Excitation</strong>：使用一个Bottleneck结构与Sigmoid激活函数来获得权重</li>
+</ol>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507174938.png" alt=""></p>
+<p>最后直接与输入相乘就行了</p>
+<h4 id="sk-select-kernel-net：">SK（select kernel）net：</h4>
+<p>灵感来源是，我们在看不同尺寸不同远近的物体时，视觉皮层神经元接受域大小是会根据刺激来进行调节的。那么对应于CNN网络，一般来说对于特定任务特定模型，卷积核大小是确定的，那么是否可以构建一种模型，使网络可以根据输入信息的多个尺度自适应的调节接受域大小呢？</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507174941.png" alt=""></p>
+<p>SKnet分别使用3X3和5X5的卷积核（也可以使用更多不同大小的卷积核）来得到在不同感受野下的特征图，相加之后使用与SEnet相同的结构，但是在最后添加了一个softmax来获得两个特征图上通道的权重。</p>
+<h4 id="efficient-channel-attention-for-deep-convolutional-neural-networks">Efficient Channel Attention for Deep Convolutional Neural Networks</h4>
+<p>来自于<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1910.03151.pdf">CVPR2020</a>，类似于SE模块的结构，拥有更小的计算量和参数量</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210531085946419.png" alt="image-20210531085946419"></p>
+<p>不同于SEnet使用两层全连接层来得到通道权重，ECAnet直接使用一维卷积，其中卷积核的大小k通过通道数C来确定</p>
+<p>其中k的公式为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>K</mi><mo>=</mo><mi>ψ</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo><mo>=</mo><mi>o</mi><mi>d</mi><mi>d</mi><mo stretchy="false">(</mo><mfrac><mrow><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><mi>γ</mi></mfrac><mo>+</mo><mfrac><mi>b</mi><mi>γ</mi></mfrac><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">K= \psi(C)=odd(\frac{ \log_2(C)}{\gamma}+\frac{b}{\gamma})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">ψ</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.30744em;vertical-align:-0.8804400000000001em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">dd</span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.25188em;vertical-align:-0.8804400000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804400000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p>这里的odd表示最近的奇数</p>
+<p>使用卷积的好处有两点：</p>
+<ol>
+<li>
+<p>避免降维</p>
+<p>适当降维在一定程度上可以减缓信息冗余的情况（比如<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24015486">低维流形</a>的研究），但是过度的降维会造成关键信息损失，从而导致精度降低</p>
+</li>
+<li>
+<p>局部跨通道交互</p>
+<p>每一个通道权重都由相邻的几个通道嵌入信息通过卷积操作得来</p>
+</li>
+</ol>
+<p>相似可见<a href="https://asthestarsfalll.icu/2021/08/08/ECAnet/">此</a></p>
+<h4 id="gated-channel-transformation-for-visual-recognition">Gated Channel Transformation for Visual Recognition</h4>
+<p>来自CVPR2020的一篇论文，通过全局上下文嵌入、通道归一化、自适应门控三个部分来显式地建模通道之间的关系，促进其竞争或者合作。</p>
+<p>详细解读见<a href="https://asthestarsfalll.icu/2021/05/13/GCT/index.html">此</a></p>
+<h4 id="global-second-order-pooling-convolutional-networks">Global Second-Order Pooling Convolutional Networks</h4>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507174944.png" alt=""></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chaosimple/p/3182157.html">协方差矩阵</a>：我们知道数据的标准差和方差可以描述数据的离散程度，但是这仅仅对于单个变量适用，对于多元变量，我们使用协方差矩阵，详细公式请自行百度或查阅书籍</p>
+<p>GPoS Block主要分为一下几个部分：</p>
+<ol>
+<li>对输入维度进行降维，以减小计算量</li>
+<li>首先进行协方差矩阵计算</li>
+<li>使用卷积和激活函数</li>
+<li>逐行卷积进行放缩</li>
+<li>降维得到最终的权重张量</li>
+</ol>
+<h4 id="frequency-channel-attention-networks">Frequency Channel Attention Networks</h4>
+<p>来自<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2012.11879.pdf">CVPR2020</a>，主要思想是DCT（离散余弦变换）（有点难，等我有时间看论文）</p>
+<p>详细见<a href="https://asthestarsfalll.icu/2021/08/08/FcaNet/">此</a></p>
+<h3 id="自注意力">自注意力</h3>
+<h4 id="non-local">Non-Local</h4>
+<p>Non-Local旨在建立长距离依赖，著名的transformer可以看作Non-Local的一个实例；自Non-Local以后，越來越多的工作在长距离关系建模上做出贡献，具体可见<a target="_blank" rel="noopener" href="https://ml.akasaki.space/unlimited-paper-works/%5B27%5DNon-local-Neural-Networks.html">此</a></p>
+<p><img src="https://ml.akasaki.space/assets/img/image-20210712150626557.0f02e669.png" alt=""></p>
+<h4 id="global-context-networks">Global Context Networks</h4>
+<p>针对Non-Local的不足——其对于每一个位置学习<strong>不受位置关系</strong>依赖的注意力，这造成大量浪费；经过实验证明，Non-Local模块学习的的全局上下文信息在不同位置几乎是相同的，如下图：</p>
+<p><img src="https://ml.akasaki.space/assets/img/image-20210712213203846.54eff39a.png" alt=""></p>
+<p>因此，提出了简化版的Global Context Block</p>
+<p><img src="https://ml.akasaki.space/assets/img/image-20210713161721108.f07c4820.png" alt=""></p>
+<p>并且提出了一种Global Context Modeling Framework用于指导以后的工作，其示意图如下：</p>
+<p><img src="https://ml.akasaki.space/assets/img/image-20210713161721108.f07c4820.png" alt=""></p>
+<p>详细解读可见<a target="_blank" rel="noopener" href="https://ml.akasaki.space/unlimited-paper-works/%5B28%5DGCNet-Non-local-Networks-Meet-Squeeze-Excitation-Networks-and-Beyond.html">此</a></p>
+<h4 id="disentangled-non-local">Disentangled Non-Local</h4>
+<p>本文认为像素之间除了存在成对（pair-wise）关系之外，其还具有一种一元（Unary）的显著信息，因此提出对Non-Local模块进行解耦，详细见<a target="_blank" rel="noopener" href="https://ml.akasaki.space/unlimited-paper-works/%5B29%5DDisentangled-Non-Local-Neural-Networks.html">此</a></p>
+<h4 id="criss-cross-attention">Criss-Cross Attention</h4>
+<p>2018年的工作，提出使用连续的稀疏连接来代替密集连接，在保证极低计算复杂度的同时，实现了对全局上下文信息的聚合。具体见<a href="https://asthestarsfalll.icu/2021/08/14/CCnet/">此</a></p>
+<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210816135006656.png" style="zoom:67%;" />
+<h4 id="polarized-self-attention">Polarized Self-Attention</h4>
+<p>极化自注意力针对语义分割等密集预测任务，探索了在保持高分辨率的同时，如何高效的进行自注意力的计算</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210805155514030.png" alt=""></p>
+<p>具体见<a href="https://asthestarsfalll.icu/2021/08/04/PSA-Attention/">此</a></p>
+<h3 id="outlook-attention">OutLook Attention</h3>
+<h4 id="volo">VOLO</h4>
+<p>本文认为Transformer在中等数据集上表现差强人意的原因是因为其细粒度特征编码效率低下，不同于全局上的粗略关系建模，提出OutLook Attention，在像素领域上进行更加精细化的关系建模。</p>
+<p>OutLooker的提出主要基于以下两点：</p>
+<ol>
+<li>每个空间位置的特征都具有足够的代表性，可以生成聚集了局部邻近信息的注意力权重；</li>
+<li>密集的局部空间聚合信息可以有效地编码精细层次的信息。</li>
+</ol>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210723151620803.png" alt=""></p>
+<p>具体可见<a href="https://asthestarsfalll.icu/2021/07/23/VOLO/">此</a></p>
+<h3 id="注意力结构">注意力结构</h3>
+<h4 id="bilateral-segmentation-network">Bilateral Segmentation Network</h4>
+<p>网络分为两个分支，Spatial Path只下采样到1/8保留大量的空间信息，Context Path进行快速下采样，实现对高级语义信息的编码，使用ARM提取语义信息，FFM模块融合语义信息与空间信息，从而达到快速语义分割。具体见<a target="_blank" rel="noopener" href="https://ml.akasaki.space/unlimited-paper-works/%5B24%5DBiSeNet-Bilateral-Segmentation-Network-for-Real-time-Semantic-Segmentation.html">此</a></p>
+<p><img src="https://ml.akasaki.space/assets/img/image-20210704141854108.e3992500.png" alt=""></p>
+<h4 id="short-term-dense-concatenate-network">Short-Term Dense Concatenate network</h4>
+<p>对BiseNet的改进，其认为Spatial Path非常耗时，因此将两个分支合二为一，并且使用了辅助训练模块来直到对空间信息的提取，从而实现了更加高效精准的快速语义分割。具体见<a target="_blank" rel="noopener" href="https://ml.akasaki.space/unlimited-paper-works/%5B25%5DRethinking-BiSeNet-For-Real-time-Semantic-Segmentation.html">此</a></p>
+<p><img src="https://ml.akasaki.space/assets/img/image-20210719100139212.672ebcac.png" alt=""></p>
+<h3 id="混合域-结合空间域与通道域">混合域（结合空间域与通道域）</h3>
+<h4 id="residual-attentionnetwork-for-image-classification">Residual attentionnetwork for image classification</h4>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210531211726411.png" alt="image-20210531211726411"></p>
+<p>大意为在原来网络的基础上添加一个attention分支，并且进行残差连接。</p>
+<h4 id="convolutional-block-attention-module">Convolutional Block Attention Module</h4>
+<p>CBAM是一种即插即用的、结合了空间（spatial）和通道（channel）的注意力机制模块。相比于SENet只关注通道（channel）的注意力机制可以取得更好的效果。</p>
+<p>详细解读见<a href="https://asthestarsfalll.icu/2021/05/12/CBAM/index.html">此</a></p>
+<h4 id="simam">SimAM</h4>
+<p>本文提出了一种简单有效的3D注意力模块，基于著名的神经科学理论，提出了一种能量函数，并且推导出其快速解析解，能够为每一个神经元分配权重。详细见<a href="https://asthestarsfalll.icu/2021/07/22/SimAm/">此</a></p>
+<h3 id="时间域">时间域</h3>
+<p>对于时间</p>
+<h3 id="pyramid-attentio">Pyramid Attentio</h3>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/CV/">#CV</a> <a href="/tags/BaseLearn/">#BaseLearn</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-05-12
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-text">简单注意力的计算</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%90%91%E9%87%8F%E5%92%8C%E6%89%93%E5%88%86%E5%87%BD%E6%95%B0"><span class="toc-text">查询向量和打分函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E5%8A%9B%E5%88%86%E5%B8%83"><span class="toc-text">注意力分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E6%9D%83%E5%92%8C"><span class="toc-text">加权和</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%A8%A1%E5%9E%8B"><span class="toc-text">其他注意力模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AC%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="toc-text">硬注意力机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%A4%B4%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="toc-text">多头注意力机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="toc-text">自注意力机制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">注意力机制在计算机视觉中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%9F%9F"><span class="toc-text">空间域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#spatial-transformer-networks"><span class="toc-text">Spatial Transformer Networks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reverse-attention-based-residual-network"><span class="toc-text">Reverse Attention-Based Residual Network</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#double-attention-networks"><span class="toc-text">Double Attention Networks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E9%81%93%E5%9F%9F"><span class="toc-text">通道域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#squeeze-and-excitation-networks"><span class="toc-text">Squeeze-and-Excitation Networks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sk-select-kernel-net%EF%BC%9A"><span class="toc-text">SK（select kernel）net：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#efficient-channel-attention-for-deep-convolutional-neural-networks"><span class="toc-text">Efficient Channel Attention for Deep Convolutional Neural Networks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#gated-channel-transformation-for-visual-recognition"><span class="toc-text">Gated Channel Transformation for Visual Recognition</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#global-second-order-pooling-convolutional-networks"><span class="toc-text">Global Second-Order Pooling Convolutional Networks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frequency-channel-attention-networks"><span class="toc-text">Frequency Channel Attention Networks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E6%B3%A8%E6%84%8F%E5%8A%9B"><span class="toc-text">自注意力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#non-local"><span class="toc-text">Non-Local</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#global-context-networks"><span class="toc-text">Global Context Networks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#disentangled-non-local"><span class="toc-text">Disentangled Non-Local</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#criss-cross-attention"><span class="toc-text">Criss-Cross Attention</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#polarized-self-attention"><span class="toc-text">Polarized Self-Attention</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outlook-attention"><span class="toc-text">OutLook Attention</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#volo"><span class="toc-text">VOLO</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%BB%93%E6%9E%84"><span class="toc-text">注意力结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#bilateral-segmentation-network"><span class="toc-text">Bilateral Segmentation Network</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#short-term-dense-concatenate-network"><span class="toc-text">Short-Term Dense Concatenate network</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E5%9F%9F-%E7%BB%93%E5%90%88%E7%A9%BA%E9%97%B4%E5%9F%9F%E4%B8%8E%E9%80%9A%E9%81%93%E5%9F%9F"><span class="toc-text">混合域（结合空间域与通道域）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#residual-attentionnetwork-for-image-classification"><span class="toc-text">Residual attentionnetwork for image classification</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#convolutional-block-attention-module"><span class="toc-text">Convolutional Block Attention Module</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#simam"><span class="toc-text">SimAM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%9F%9F"><span class="toc-text">时间域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pyramid-attentio"><span class="toc-text">Pyramid Attentio</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="与卷积性质完全相反，广义上的自注意力：「内卷」，可以在更长距离建模，降低通道信息冗余，以获得SOTA性能。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>超越卷积、自注意力：神经网络新算子「内卷(Involution)」 | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                超越卷积、自注意力：神经网络新算子「内卷(Involution)」
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>与卷积性质完全相反，广义上的自注意力：「内卷」，可以在更长距离建模，降低通道信息冗余，获得SOTA性能。</p>
+<span id="more"></span>
+<blockquote>
+<p>论文名称：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.06255"><em>Involution: Inverting the Inherence of Convolution for Visual Recognition</em></a></p>
+<p>作者：Duo Li， Jie Hu， Changhu Wang， Xiangtai Li， Qi She， Lei Zhu， Tong Zhang， Qifeng Chen</p>
+<p>Code:：<a target="_blank" rel="noopener" href="https://github.com/d-li14/involution">https://github.com/d-li14/involution</a></p>
+</blockquote>
+<h2 id="convolution">Convolution</h2>
+<p>卷积有以下性质</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1805.12177.pdf">空间无关性(spatial agnostic)</a>：same kernel for different position
+<ul>
+<li>优点：参数共享，平移等变</li>
+<li>缺点：不能灵活改变参数，卷积核尺寸不能过大，只能通过堆叠来扩大感受野、捕捉长距离关系</li>
+</ul>
+</li>
+<li>通道特异性(channel specific)：different kernels for different channels
+<ul>
+<li>优点：充分提取不同通道上的信息</li>
+<li>缺点：有冗余</li>
+</ul>
+</li>
+</ol>
+<p>Convolution kernel 尺寸为 B,<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">C_{out}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>,<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">C_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">in</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>,K,K</p>
+<h2 id="involution">Involution</h2>
+<p>Involution的出发点便是实现一个与卷积性质<strong>完全相反</strong>的kernel，称为Inverted Convolution，简称为Involution</p>
+<ol>
+<li>
+<p>空间特异性：kernel privatized for different position</p>
+<p>与卷积在空间上共享参数不同，Involution为每一个像素生成一个单独的核</p>
+</li>
+<li>
+<p>通道不变性：kernel shared across different channels</p>
+<p>为所有通道使用同一个核</p>
+</li>
+</ol>
+<p>involution kernel 的尺寸为B,G,KK,H,W.</p>
+<h2 id="how-to-generate-involution-kernels">how to generate involution kernels</h2>
+<blockquote>
+<p>kernel generated based on input featrue map（self-attention的一种体现） to ensure kernel size aligned with the input tensor size</p>
+</blockquote>
+<p>一种简单的kernel generation function，方便起见以一个像素为例</p>
+<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507124123.png" alt="image-20210426192156487" style="zoom:67%;" />
+<ol>
+<li>inputs为维度1×1×C；</li>
+<li>线性变换：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">W_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>：通道压缩，节省计算量；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">W_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>：首先变为1×1×(K×K×G)，再拆分为G组，最后变换为K×K×G；（其生成的卷积核包含了该位置所有通道上的信息，对不同通道之间的信息交换有一定的作用）</li>
+<li>生成的kernel与(i,j)领域进行乘加操作，因为维度不同，需要进行广播，得到大小为k×k×C；</li>
+<li>最后进行聚合（在h，w的维度进行求和），输出大小为1×1×C。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Involution</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, channel, group, kernel, s</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(Involution, self).__init__()</span><br><span class="line">        self.channel = channel</span><br><span class="line">        self.group = group</span><br><span class="line">        self.kernel_size = kernel</span><br><span class="line">        ratio=<span class="number">4</span></span><br><span class="line"></span><br><span class="line">        self.o = nn.AvgPool2d(s, s) <span class="keyword">if</span> s &gt; <span class="number">1</span> <span class="keyword">else</span> nn.Identity()</span><br><span class="line">        self.reduce = nn.Sequential(</span><br><span class="line">            nn.Conv2d(channel, channel//ratio, <span class="number">1</span>),</span><br><span class="line">            nn.BatchNorm2d(channel//ratio),</span><br><span class="line">            nn.ReLU(inplace=<span class="literal">True</span>)</span><br><span class="line">        )</span><br><span class="line">        self.span = nn.Conv2d(channel//ratio, kernel**<span class="number">2</span>*group, <span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 从一个Batch中提取出卷积滑动的局部区域块，有点类似于im2col，较难理解，建议自行百度</span></span><br><span class="line">        <span class="comment"># 普通的卷积操作实际上就相当于将feature map unfold与conv kernel乘加之后再fold</span></span><br><span class="line">        self.unfold = nn.Unfold(</span><br><span class="line">            kernel_size=kernel, padding=(kernel-<span class="number">1</span>)//<span class="number">2</span>, stride=s)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        kernel = self.span(self.reduce(self.o(x)))  <span class="comment"># B,KKG,H,W</span></span><br><span class="line">        B, _, H, W = kernel.shape</span><br><span class="line">        kernel = kernel.view(B, self.group, self.kernel_size **</span><br><span class="line">                             <span class="number">2</span>, H, W).unsqueeze(<span class="number">2</span>)  <span class="comment"># B,G,1,kk,H,W，unsqueeze：增加一个维度用于广播</span></span><br><span class="line">        <span class="comment">#这里的1体现通道不变性，kk表示在某个像素的邻域上计算</span></span><br><span class="line"></span><br><span class="line">        x_unfolded = self.unfold(x)  <span class="comment"># B,CKK,HW</span></span><br><span class="line">        x_unfolded = x_unfolded.view(</span><br><span class="line">            B, self.group, self.channel//self.group, self.kernel_size**<span class="number">2</span>, H, W)<span class="comment"># B,G,C/G,KK,H,W</span></span><br><span class="line">		</span><br><span class="line">        out = (kernel * x_unfolded).<span class="built_in">sum</span>(dim=<span class="number">3</span>)  <span class="comment"># B,G,C/G,H,W，在每个像素的邻域上进行求和</span></span><br><span class="line">        out = out.view(B, self.channel, H, W) <span class="comment"># B,C,H,w</span></span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="involution-vs-convolution">Involution	vs	Convolution</h2>
+<p>优点：</p>
+<ol>
+<li>
+<p>参数量和计算量都很少</p>
+<ul>
+<li>
+<p>对于Convolution，其参数量为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>K</mi><mn>2</mn></msup><msub><mi>C</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub><msub><mi>C</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">K^2C_{in}C_{out}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0141079999999998em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">in</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>计算量大约为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mi>W</mi><msup><mi>K</mi><mn>2</mn></msup><msub><mi>C</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub><msub><mi>C</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msub></mrow><annotation encoding="application/x-tex">HWK^2C_{in}C_{out}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0141079999999998em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">in</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</li>
+<li>
+<p>对于Involution，其参数量为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><msup><mi>C</mi><mn>2</mn></msup><mo>+</mo><mi>C</mi><mi>G</mi><msup><mi>K</mi><mn>2</mn></msup></mrow><mi>r</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac{C^2+CGK^2}{r}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.177108em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">CG</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>计算量大约为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>H</mi><mi>W</mi><msup><mi>K</mi><mn>2</mn></msup><mi>C</mi></mrow><annotation encoding="application/x-tex">HWK^2C
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641079999999999em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span></span></p>
+</li>
+</ul>
+<p>可以看到，involution的计算量与通道数呈线性关系，并且参数量不会随着kernel_size的增大而增加太多</p>
+</li>
+<li>
+<p>能有效建模长距离关系</p>
+<p>相较于Convolution，involution kernel可以使用更大的卷积核而不过多增加其参数量，其感受野也就越大。</p>
+</li>
+<li>
+<p>involution是动态的，其对每一个位置都生成一个核，而convolution是静态的。</p>
+</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>
+<p>通道间的信息交换在一定程度上受到影响</p>
+<p>虽然同一组内共享同一个kernel，但是不同组通道间的信息交换还是会受到影响。</p>
+</li>
+<li>
+<p>速度相较于Convolution没有优势，involution的优化并没有convolution好，也没有相应硬件的支持，因此虽然参数量和计算量都减小了，但是实际并没有convolution快，作者建议使用CUDA编写Involution。</p>
+</li>
+</ol>
+<h2 id="relation-to-self-attention">Relation to Self-Attention</h2>
+<blockquote>
+<p>self-attention可以看作广义involution的一种实例</p>
+</blockquote>
+<p>可以看到与self-attention之间的相似性：</p>
+<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507124139.png" alt="image-20210427212347084" style="zoom: 67%;" />
+<p>相似：</p>
+<ol>
+<li>其中H可以类比为involution中的G，即多头类似于分组；</li>
+<li>self-attention中每个位置的attention map可以类比为involution中每个位置的kernel。</li>
+</ol>
+<p>不同：</p>
+<ol>
+<li>相比于self-attention，Involution潜在编码了位置信息，而self-attention需要position encoding来区分位置信息.</li>
+<li>不再需要使用Q-K，仅依靠单个像素生成kernel，而非依靠像素间的关系生成attention map.</li>
+</ol>
+<p>总结：self-attention是Involution的一种实例化，且Involution的表达更为宽泛和简洁。</p>
+<h2 id="ablantion-analysis">Ablantion    Analysis</h2>
+<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507124142.png" alt="image-20210427213135224" style="zoom:67%;" />
+<p>可以看到：</p>
+<ul>
+<li>Involution能在不显著提升参数量和计算量的前提下，增大感受野，提升网络性能;</li>
+<li>在显著降低计算量和参数量的情况下，准确度损失却不大。</li>
+</ul>
+<h2 id="思考">思考</h2>
+<p>Involution实际上提出了一种动态核（dynamic kernel）的范式，但我对相关工作没有太多了解，就写一些我阅读论文的思考吧。</p>
+<ol>
+<li>
+<p>关于卷积的可替代性</p>
+<p>原论文实际上没有将所有的卷积都替换为Involution，而是使用了Convolution-Involution的混合结构，我认为Involution的应用场景有两种：</p>
+<ol>
+<li>特征在空间位置上差异明显，我们更需要注意长距离关系时，involution或许是个好的选择；</li>
+<li>对于<strong>实例分割</strong>和<strong>全景分割</strong>，Involution或许会有效果，因为Convolution的一个性质是<strong>平移不变性</strong>，与<strong>语义分割</strong>不同，实例分割和全景分割不光要学习相同类别内的<strong>共性</strong>，还要学习相同类别内的<strong>差异性</strong>以区分不同的实例，卷积的性质让实例分割和全景分割难以做到全卷积（<a href="https://asthestarsfalll.icu/2021/08/17/FCN-PanopticSeg/">Fully Convolutional Networks for Panoptic Segmentation</a>使用全卷积网络来进行全景分割，但是实际上其中也有动态核的身影），而Involution为每个像素都生成一个独一无二的核，我相信它能天然的区分学习到相同类别内的差异性。</li>
+</ol>
+</li>
+<li>
+<p>训练与优化</p>
+<p>不同于convolution，involution实际上是二阶优化（很多dynamic kernel都是二阶优化，如），需要优化的并不是kernel，而是kernel生成函数里的参数，这就会造成很多问题（最近的transformer优化过程也有很多问题），作者建议对于某些网络需要使用gradient clipping等方法来进行更好的优化。</p>
+</li>
+<li>
+<p>注意力机制和动态核</p>
+<p>作者虽然提及其与自注意力有异曲同工之妙，但是实际上Involution最多只能算是local attention，local attention也是最近研究的热点，<a href="https://asthestarsfalll.icu/2021/07/23/VOLO/">VOLO: Vision Outlooker for Visual Recognition</a>是一个与Involution十分相似的工作，不同于transformer，VOLO旨在进行像素邻域上的精细化建模，最佳论文的swin transformer实际上也是local attention和动态核，<a href="https://asthestarsfalll.icu/2021/10/21/Demystifying-Local-Vision-Transformer/">Demystifying Local Vision Transformer: Sparse Connectivity, Weight Sharing, and Dynamic Weight</a>讨论了local attention，dynamic weight和weight share，证明了local attention拥有不输self attention的能力。</p>
+</li>
+<li>
+<p>权重生成方式</p>
+<p>本文只是提出了一种简单的生成方法，可以探索更多的权重生成方式，比如不同的稀疏连接和权重共享模式等。</p>
+</li>
+</ol>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/CV/">#CV</a> <a href="/tags/PaperRead/">#PaperRead</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-05-07
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#convolution"><span class="toc-text">Convolution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#involution"><span class="toc-text">Involution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#how-to-generate-involution-kernels"><span class="toc-text">how to generate involution kernels</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#involution-vs-convolution"><span class="toc-text">Involution	vs	Convolution</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#relation-to-self-attention"><span class="toc-text">Relation to Self-Attention</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ablantion-analysis"><span class="toc-text">Ablantion    Analysis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-text">思考</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

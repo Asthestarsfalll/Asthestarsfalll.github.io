@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="小样本学习综述">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>A Survey on Few-Shot Learning | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                A Survey on Few-Shot Learning
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>小样本学习综述</p>
+<span id="more"></span>
+<blockquote>
+<p>论文名称：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1904.05046.pdf">Generalizing from a Few Examples: A Survey on Few-Shot Learning</a></p>
+<p>作者：YAQING WANG，QUANMING YAO，JAMES T. KWOK，LIONEL M. NI</p>
+</blockquote>
+<h2 id="摘要">摘要</h2>
+<ul>
+<li>
+<p>机器学习在数据密集型任务中取得了成功，但是当数据集较小时其往往会受到阻碍；</p>
+</li>
+<li>
+<p>提出了小样本学习（Few-Shot Learning），利用<strong>先验知识</strong>，FSL可以快速推广到仅拥有少量监督信息的样本的新任务；本文给出了FSL与几个相关机器学习任务的区别，并且指出FSl的核心问题是经验风险优化器（empirical risk minimizer）不可靠；基于如何使用先验知识来处理这个核心问题，从三个角度对FSL方法进行分类：</p>
+<ol>
+<li>数据，其使用先验知识来增强监督经验；</li>
+<li>模型，其使用先验知识来减少假设空间的大小；</li>
+<li>算法，其使用先验知识来改变对给定假设空间中最佳假设的搜索。</li>
+</ol>
+<p>基于此，讨论每个类别的优缺点，为未来的研究提供见解。</p>
+</li>
+</ul>
+<p>关键词：<strong>先验知识</strong>，<strong>元学习</strong>，<strong>学习范式</strong></p>
+<h2 id="介绍">介绍</h2>
+<p>论文有详细介绍</p>
+<p>本文的贡献主要如下：</p>
+<ol>
+<li>给出了FSL正式具体的定义，并且与机器学习中的定义相联系；</li>
+<li>列举了与FSL相关的学习问题，并举例说明它们与FSL的联系和区别；</li>
+<li>指出了FSL的核心问题是不可靠的经验风险最小化；</li>
+<li>从数据、模型和算法对FSL进行了统一的分类，并讨论优缺点；</li>
+<li>提出了FSL未来的发展方向。</li>
+</ol>
+<p><strong>符号和术语</strong>：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210812195628139.png" alt="image-20210812195628139"></p>
+<p>简单来说，FSL就是拟合一个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span></span></span></span>​​​到<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>​​​的最优假设<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>h</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9578799999999998em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">h</span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>​​​，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>h</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9578799999999998em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9578799999999998em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">h</span></span><span style="top:-3.26344em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span></span></span></span></span></span></span>​​​存在于假设空间<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">H</mi></mrow><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathcal" style="margin-right:0.00965em;">H</span></span></span></span>​​​​中，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mo>⋅</mo><mo separator="true">;</mo><mi>θ</mi><mo stretchy="false">)</mo><mtext>表示</mtext></mrow><annotation encoding="application/x-tex">h(\cdot;\theta)表示</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord">⋅</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span><span class="mord cjk_fallback">表示</span></span></span></span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>​使用的参数，通过FSL算法在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">H</mi></mrow><annotation encoding="application/x-tex">\mathcal{H}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathcal" style="margin-right:0.00965em;">H</span></span></span></span>中来搜索到参数化最佳的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span></span></span></span>​。​​​</p>
+<h2 id="概述">概述</h2>
+<h3 id="问题定义">问题定义</h3>
+<p>首先回顾一下文献当中是如何定义机器学习的：</p>
+<blockquote>
+<p><strong>Machine Learning</strong>：A computer program is said to learn from experience E with respect to some classes of task T and performance measure P if its performance can improve with E on T measured by P.</p>
+</blockquote>
+<p>如果一个计算机程序的性能可以通过P来测量E对T的改善，那么就说它可以从经验E中学习某些有关类别任务T和性能度量P</p>
+<p>例如一个图像分类任务T，机器学习可以通过对大量标记图像（例如Imagenet数据集）的训练获得的E（Experience）来提高其分类精度P</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210812202237055.png" alt="image-20210812202237055"></p>
+<p>如此，定义了FSL：</p>
+<blockquote>
+<p><strong>Few-Shot Learning</strong>：FSL is a type of machine learning problems (specified by E, T and P), where E contains only a limited number of examples with supervised information for the target T</p>
+</blockquote>
+<p>少样本学习是一种机器学习问题（由E、T和p指定），其中E仅包含有限数量的事例，并且目标T具有监督信息</p>
+<p>一些FSL的例子</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210812202316002.png" alt="image-20210812202316002"></p>
+<p>FSL方法将E中可用的监督信息与先验信息相结合，使得任务T变得可行 。一个非常经典FSL算法就是贝叶斯学习。</p>
+<p>当仅有一个样本具有监督信息时，其被称为One-Shot Learning；当没有任何样本具有监督信息时，其被称为Zero-Shot Learning。</p>
+<h3 id="相关学习问题">相关学习问题</h3>
+<p>这一节介绍机器学习中一些与FSL相关的问题，以及他们之间的联系和区别：</p>
+<h4 id="弱监督学习">弱监督学习</h4>
+<p>弱监督学习从仅仅包含弱监督（比如监督信息不完整、不准确）的E中学习；与FSL最相关的是只有少量样本具有监督信息的弱监督学习。根据使用的是oracle（专家）或是人工干预，可以进一步分为以下几类：</p>
+<ol>
+<li>Semi-supervised learning：半监督学习从E中少量的标记样本和大量（通常）的非标记样本当中学习。通常应用于文本或网页分类。</li>
+<li>Active learning：主动学习</li>
+</ol>
+<p>差异：</p>
+<ol>
+<li>弱监督学习仅包含分类和回归任务，而FSL还包括强化学习；</li>
+<li>弱监督学习主要使用未标注的样本作为E的附加数据，而FSL利用各种先验知识，譬如预训练模型、来自其他领域的监督数据，并且对使用标记数据与否没有限制；</li>
+</ol>
+<p>因此，当先验知识是为标记数据、任务是分类或者回归时，FSL就成为弱监督学习问题。</p>
+<h4 id="不平衡学习">不平衡学习</h4>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hren_ron/article/details/81172044">不平衡学习</a>从E中学习y的偏态分布，解决不平衡问题的一种方式就是通过改变采样方式。</p>
+<p>相比之下，FSL通过几个样本对y进行训练和测试，同时可能将其他y作为学习的先验知识。</p>
+<h4 id="迁移学习">迁移学习</h4>
+<p>迁移学习将知识从训练数据丰富的源域/任务转移到训练数据稀缺的目标域/任务，迁移学习在FSL中被广泛应用，先验知识从源任务迁移到FSL任务当中</p>
+<h4 id="元学习">元学习</h4>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/langb2014/article/details/84953307">元学习</a>通过提供的数据集和元学习元知识提高了任务T的P。</p>
+<h2 id="核心问题">核心问题</h2>
+<p>机器学习的任何任务都会存在预测误差，本节将会说明有监督学习中基于<strong>误差分解</strong>的FSL的核心问题。</p>
+<h3 id="经验风险最小化">经验风险最小化</h3>
+<p>给定一个假设h，我们希望最小化其预期风险R，即相对于P(x,y)测量的损失</p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/Deep-Learning/">#Deep Learning</a> <a href="/tags/OneShot/">#OneShot</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021-09-20
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89"><span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98"><span class="toc-text">相关学习问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B1%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-text">弱监督学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%B9%B3%E8%A1%A1%E5%AD%A6%E4%B9%A0"><span class="toc-text">不平衡学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="toc-text">迁移学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%83%E5%AD%A6%E4%B9%A0"><span class="toc-text">元学习</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E9%97%AE%E9%A2%98"><span class="toc-text">核心问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E9%A3%8E%E9%99%A9%E6%9C%80%E5%B0%8F%E5%8C%96"><span class="toc-text">经验风险最小化</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>
