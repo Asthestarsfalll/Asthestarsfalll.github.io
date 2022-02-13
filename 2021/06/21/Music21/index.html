@@ -120,7 +120,7 @@
 <p>使用<code>.transpose</code>修改你的音符</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = b_flat.transpose(<span class="string">&quot;M3&quot;</span>) <span class="comment">#将Bb上调大三度，变为D</span></span><br></pre></td></tr></table></figure>
 <p>这种用法并没有改变音符本身，而是返回一个变量</p>
-<p>可以使用<code>inplace=True</code>改变音符本身</p>
+<p>可以使用<code>inplace=True</code>进行原地操作</p>
 <h3 id="休止符">休止符</h3>
 <p>使用<code>note.rest</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = note.rest() <span class="comment"># 记得加括号</span></span><br></pre></td></tr></table></figure>
@@ -192,7 +192,7 @@
 <h3 id="更多功能">更多功能</h3>
 <p><code>.analyze('ambitus')</code>获得流中的音域范围</p>
 <p><code>.lowestOffset</code>返回偏移量的最小值</p>
-<p><code>__repr_</code></p>
+<p><code>__repr__</code></p>
 <p><code>.id</code>，可以自己设定，相当于名字，如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = stream.Score(<span class="built_in">id</span>=<span class="string">&#x27;mainScore&#x27;</span>)</span><br><span class="line">p0 = stream.Part(<span class="built_in">id</span>=<span class="string">&#x27;part0&#x27;</span>)</span><br><span class="line">p1 = stream.Part(<span class="built_in">id</span>=<span class="string">&#x27;part1&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p><code>.duration</code>储存Duration对象的属性</p>
