@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Nice to meet U!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>opencv | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                opencv
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p><a target="_blank" rel="noopener" href="http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/tutorials.html">http://www.opencv.org.cn/opencvdoc/2.3.2/html/doc/tutorials/tutorials.html</a></p>
+<span id="more"></span>
+<h2 id="mat">Mat</h2>
+<h3 id="简述">简述</h3>
+<p>Mat是OpenCV中基本的图像容器，用户不需要为其手动的开辟空间和释放。</p>
+<p>Mat是一个类，有两个部分组成——数据头（包含矩阵尺寸、储存方法、储存地址等信息）和一个指向储存着所有像素值的矩阵的指针。</p>
+<p>众所周知图片的像素量与边长呈二次型增长，而OpenCV是一个图像处理库，包含了大量的图片处理函数，显然我们不应该直接传递或者拷贝图像。</p>
+<p>OpenCV使用了引用计数机制，其思路是让每个 <em>Mat</em> 对象有自己的信息头，但共享同一个矩阵。这通过让矩阵指针指向同一地址而实现。拷贝构造函数则 <strong>只拷贝信息头和矩阵指针</strong> ，而不拷贝矩阵。</p>
+<p>当引用计数清零之后矩阵便会被销毁。</p>
+<p>另一个比较妙的功能是可以只创建引用部分数据的信息头——比如想要创建一个感兴趣区域（ROI），则只需要创建包含边界信息的信息头：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Mat <span class="title">D</span> <span class="params">(A, Rect(<span class="number">10</span>, <span class="number">10</span>, <span class="number">100</span>, <span class="number">100</span>) )</span></span>; <span class="comment">// using a rectangle</span></span><br><span class="line">Mat E = <span class="built_in">A</span>(Range:<span class="built_in">all</span>(), <span class="built_in">Range</span>(<span class="number">1</span>,<span class="number">3</span>)); <span class="comment">// using row and column boundaries</span></span><br></pre></td></tr></table></figure>
+<p>使用<code>clone()</code>或者<code>copyTo()</code>可以拷贝图像矩阵本身，而不是信息头。</p>
+<p>总结一下：</p>
+<ol>
+<li>OpenCV函数中输出图像的内存分配是自动完成的（如果不特别指定的话）。</li>
+<li>使用OpenCV的C++接口时不需要考虑内存释放问题。</li>
+<li>赋值运算符和拷贝构造函数（ ctor ）只拷贝信息头。</li>
+<li>使用函数 clone() 或者 copyTo() 来拷贝一副图像的矩阵。</li>
+</ol>
+<h3 id="储存方法">储存方法</h3>
+<p>OpenCV需要指定颜色空间和数据类型。颜色空间是<strong>指对一个给定的颜色，如何组合颜色元素以对其编码</strong>。最简单的颜色空间便是灰度级空间，只处理黑色和白色，对它们进行组合可以产生不同程度的灰色。</p>
+<p>对于彩色则有更多种类的颜色空间，但不论哪种方式都是把颜色分成三个或者四个基元素，通过组合基元素可以产生所有的颜色。RGB颜色空间是最常用的一种颜色空间，这归功于它也是人眼内部构成颜色的方式。它的基色是红色、绿色和蓝色，有时为了表示透明颜色也会加入第四个元素 alpha (A)。</p>
+<p>很多的颜色系统各有自身优势：</p>
+<ul>
+<li>RGB是最常见的，因为这是人眼采用相似的工作机制；</li>
+<li>HSV和HLS把颜色分解成色调、饱和度和亮度/明度。这是描述颜色更自然的方式，比如可以通过抛弃最后一个元素，使算法对输入图像的光照条件不敏感。</li>
+<li>YCrCb在JPEG图像格式中广泛使用。</li>
+<li>CIE Lab是一种在感知上均匀的颜色空间，它适合用来度量两个颜色之间的 <em>距离</em> 。</li>
+</ul>
+<p>储存的最小数据类型是 <em>char</em> ，占一个字节（8位），可以是有符号型（0～55）或无符号型（-127～+127）。尽管使用三个 <em>char</em> 型元素已经可以表示1600万种可能的颜色（使用RGB颜色空间），但若使用float（4字节，32位）或double（8字节，64位）则能给出更加精细的颜色分辨能力。</p>
+<h3 id="显式地创建mat">显式地创建Mat</h3>
+<p>除了使用imread来得到一个Mat之外，还有很多方法来显示地创建一个Mat。</p>
+<p>Mat不仅是一个图像容器类，还是一个通用的矩阵类，可以用来创建和操作多个矩阵。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Mat <span class="title">M</span><span class="params">(<span class="number">2</span>,<span class="number">2</span>, CV_8UC3, Scalar(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>))</span></span>; </span><br><span class="line">cout &lt;&lt; <span class="string">&quot;M = &quot;</span> &lt;&lt; endl &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; M &lt;&lt; endl &lt;&lt; endl;  </span><br></pre></td></tr></table></figure>
+<p><em>CV_8UC3</em> 表示使用8位的 unsigned char 型，每个像素由三个元素组成三通道。预先定义的通道数可以多达四个。 Scalar 是个short型vector。指定这个能够使用指定的定制化值来初始化矩阵。当然，如果你需要更多通道数，你可以使用大写的宏并把通道数放在小括号中，比如这样：CV_8UC(10)</p>
+<p>实际上，其定义如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CV_[The number of bits per item][Signed <span class="keyword">or</span> Unsigned][Type Prefix]C[The channel number]</span><br></pre></td></tr></table></figure>
+<p>比如CV_32FC3表示32位float型、三个通道。</p>
+<p>为已存在IplImage指针创建信息头:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IplImage* img = <span class="built_in">cvLoadImage</span>(<span class="string">&quot;greatwave.png&quot;</span>, <span class="number">1</span>);</span><br><span class="line"><span class="function">Mat <span class="title">mtx</span><span class="params">(img)</span></span>; <span class="comment">// convert IplImage* -&gt; Mat</span></span><br></pre></td></tr></table></figure>
+<p>IplImage是OpenCV2.1版本前使用的图像储存格式，可以使用mtx()直接进行转换。</p>
+<p>还可以使用create()函数来创建</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M.<span class="built_in">create</span>(<span class="number">4</span>,<span class="number">4</span>, <span class="built_in">CV_8UC</span>(<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<p>但是这种方法不能为矩阵设置初始值。</p>
+<p>可以使用MATLAB形式的初始化方式： zeros()，ones()， eyes() ，使用以下方式指定尺寸和数据类型</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Mat E = Mat::<span class="built_in">eye</span>(<span class="number">4</span>, <span class="number">4</span>, CV_64F);    </span><br><span class="line"></span><br><span class="line">Mat O = Mat::<span class="built_in">ones</span>(<span class="number">2</span>, <span class="number">2</span>, CV_32F);    </span><br><span class="line"></span><br><span class="line">Mat Z = Mat::<span class="built_in">zeros</span>(<span class="number">3</span>,<span class="number">3</span>, CV_8UC1);</span><br></pre></td></tr></table></figure>
+<p>对于小矩阵来说，我们可以这样赋初始值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Mat C = (Mat_&lt;<span class="keyword">double</span>&gt;(<span class="number">3</span>,<span class="number">3</span>) &lt;&lt; <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">5</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>); </span><br></pre></td></tr></table></figure>
+<p>调用函数 <a target="_blank" rel="noopener" href="http://opencv.itseez.com/modules/core/doc/operations_on_arrays.html#randu">randu()</a> 来对一个矩阵使用随机数填充，需要指定随机数的上界和下界：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Mat R = <span class="built_in">Mat</span>(<span class="number">3</span>, <span class="number">2</span>, CV_8UC3);</span><br><span class="line"><span class="built_in">randu</span>(R, Scalar::<span class="built_in">all</span>(<span class="number">0</span>), Scalar::<span class="built_in">all</span>(<span class="number">255</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="格式化打印">格式化打印</h3>
+<p>默认模式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;R (default) = &quot;</span> &lt;&lt; endl &lt;&lt;        R           &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/MatBasicContainerOut8.png" alt="Default Output"></p>
+<p>Python模式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;R (python)  = &quot;</span> &lt;&lt; endl &lt;&lt; format(R,<span class="string">&quot;python&quot;</span>) &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/MatBasicContainerOut16.png" alt="Default Output"></p>
+<p>以逗号分隔的数值 (CSV)：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;R (csv)     = &quot;</span> &lt;&lt; endl &lt;&lt; format(R,<span class="string">&quot;csv&quot;</span>   ) &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/MatBasicContainerOut10.png" alt="Default Output"></p>
+<p>Numpy：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;R (numpy)   = &quot;</span> &lt;&lt; endl &lt;&lt; format(R,<span class="string">&quot;numpy&quot;</span> ) &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/MatBasicContainerOut9.png" alt="Default Output"></p>
+<p>C语言：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; <span class="string">&quot;R (c)       = &quot;</span> &lt;&lt; endl &lt;&lt; format(R,<span class="string">&quot;C&quot;</span>     ) &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/MatBasicContainerOut11.png" alt="Default Output"></p>
+<h3 id="打印其他">打印其他</h3>
+<p>OpenCV支持使用运算符&lt;&lt;来打印其它常用OpenCV数据结构。</p>
+<p>二维点：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Point2f <span class="title">P</span><span class="params">(<span class="number">5</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Point (2D) = &quot;</span> &lt;&lt; P &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>三维点：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Point3f <span class="title">P3f</span><span class="params">(<span class="number">2</span>, <span class="number">6</span>, <span class="number">7</span>)</span></span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Point (3D) = &quot;</span> &lt;&lt; P3f &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>基于cv::Mat的std::vector：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="keyword">float</span>&gt; v;</span><br><span class="line">v.<span class="built_in">push_back</span>( (<span class="keyword">float</span>)CV_PI);   </span><br><span class="line">v.<span class="built_in">push_back</span>(<span class="number">2</span>);    </span><br><span class="line">v.<span class="built_in">push_back</span>(<span class="number">3.01f</span>);</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Vector of floats via Mat = &quot;</span> &lt;&lt; <span class="built_in">Mat</span>(v) &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<p>std::vector点：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">vector&lt;Point2f&gt; <span class="title">vPoints</span><span class="params">(<span class="number">20</span>)</span></span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">size_t</span> E = <span class="number">0</span>; E &lt; vPoints.<span class="built_in">size</span>(); ++E)</span><br><span class="line">vPoints[E] = <span class="built_in">Point2f</span>((<span class="keyword">float</span>)(E * <span class="number">5</span>), (<span class="keyword">float</span>)(E % <span class="number">7</span>));</span><br><span class="line"></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;A vector of 2D Points = &quot;</span> &lt;&lt; vPoints &lt;&lt; endl &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<h2 id="扫描图像-利用查找表和计时">扫描图像、利用查找表和计时</h2>
+<p>我们将探索以下问题的答案：</p>
+<ul>
+<li>如何遍历图像中的每一个像素？</li>
+<li>OpenCV的矩阵值是如何存储的？</li>
+<li>如何测试我们所实现算法的性能？</li>
+<li>查找表是什么？为什么要用它？</li>
+</ul>
+<h3 id="图像矩阵如何储存">图像矩阵如何储存</h3>
+<p>图像矩阵的大小取决于图像的像素数和所用的颜色空间，对于单通道，其储存方式便是最直观的二维矩阵，而对于多通道的矩阵，其储存矩阵并不是人们日常印象中的立体，而是如下图所示：</p>
+<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/154cd030d6aa7d29c35852ac468a3e3e14b882bf.png" alt=""></p>
+<p>这里储存的方式是BGR。</p>
+<p>很多情况下，因为内存足够大，可实现连续存储，因此，图像中的各行就能一行一行地连接起来，形成一个长行。连续存储有助于提升图像扫描速度，可以使用 <a target="_blank" rel="noopener" href="http://opencv.itseez.com/modules/core/doc/basic_structures.html#mat-iscontinuous">isContinuous()</a> 来去判断矩阵是否是连续存储的。</p>
+<h3 id="高效的访问">高效的访问</h3>
+<p>使用指针来获得最高效率的访问：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Mat&amp; <span class="title">ScanImageAndReduceC</span><span class="params">(Mat&amp; I, <span class="keyword">const</span> uchar* <span class="keyword">const</span> table)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// accept only char type matrices</span></span><br><span class="line">    <span class="built_in">CV_Assert</span>(I.<span class="built_in">depth</span>() != <span class="built_in"><span class="keyword">sizeof</span></span>(uchar));     </span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> channels = I.<span class="built_in">channels</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> nRows = I.rows * channels; </span><br><span class="line">    <span class="keyword">int</span> nCols = I.cols;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (I.<span class="built_in">isContinuous</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        nCols *= nRows;</span><br><span class="line">        nRows = <span class="number">1</span>;         </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    uchar* p; </span><br><span class="line">    <span class="keyword">for</span>( i = <span class="number">0</span>; i &lt; nRows; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        p = I.ptr&lt;uchar&gt;(i);</span><br><span class="line">        <span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; nCols; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            p[j] = table[p[j]];             </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> I; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/BaseLearn/">#BaseLearn</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2022-02-21
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mat"><span class="toc-text">Mat</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0"><span class="toc-text">简述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%82%A8%E5%AD%98%E6%96%B9%E6%B3%95"><span class="toc-text">储存方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E5%9C%B0%E5%88%9B%E5%BB%BAmat"><span class="toc-text">显式地创建Mat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0"><span class="toc-text">格式化打印</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E5%85%B6%E4%BB%96"><span class="toc-text">打印其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%AB%E6%8F%8F%E5%9B%BE%E5%83%8F-%E5%88%A9%E7%94%A8%E6%9F%A5%E6%89%BE%E8%A1%A8%E5%92%8C%E8%AE%A1%E6%97%B6"><span class="toc-text">扫描图像、利用查找表和计时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9F%A9%E9%98%B5%E5%A6%82%E4%BD%95%E5%82%A8%E5%AD%98"><span class="toc-text">图像矩阵如何储存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%95%88%E7%9A%84%E8%AE%BF%E9%97%AE"><span class="toc-text">高效的访问</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>
