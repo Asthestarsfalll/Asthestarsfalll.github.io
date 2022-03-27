@@ -101,7 +101,7 @@
 </li>
 </ol>
 <h2 id="understanding-local-attention">Understanding Local Attention</h2>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110241956165.png" alt="image-20211024150706152" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110241956165.png" alt="image-20211024150706152" style="zoom: 67%;" />
 <p>上图分别表示了(a)convolution,(b) global attention and spatial mixing MLP,© local attention and depth-wise convolution, (d) point-wise MLP or <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>×</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1×1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> convolution, (e) MLP (fully-connected layer)的连接模式。</p>
 <p>接下来将对其进行介绍——</p>
 <h3 id="sparse-connectivity-weight-sharing-and-dynamic-weight">Sparse Connectivity, Weight Sharing, and Dynamic Weight</h3>
@@ -156,7 +156,7 @@
 </li>
 </ol>
 <h3 id="关系图">关系图</h3>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110241956844.png" alt="image-20211024150634894" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110241956844.png" alt="image-20211024150634894" style="zoom: 67%;" />
 <p>提出了一个关系图，其包含了三种正则化方法——稀疏连接、动态权重和低秩。</p>
 <ol>
 <li>MLP在空间上稀疏连接便得到了标准卷积：
@@ -186,16 +186,16 @@
 <p>看论文</p>
 <h3 id="main-results">Main Results</h3>
 <p><strong>ImageNet classification</strong>：深度卷积版本的参数量和计算量都下降了约15%，动态版本的参数量大量上升，但复杂度几乎相同，性能几乎持平，同时比较了其他方法的性能</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110241957911.png" alt="image-20211024160713613" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110241957911.png" alt="image-20211024160713613" style="zoom:50%;" />
 <p><strong>COCO object detection</strong>、<strong>ADE Semantic Segmentation</strong>：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110241957276.png" alt="image-20211024161120185" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110241957276.png" alt="image-20211024161120185" style="zoom:50%;" />
 <h3 id="additional-studies">Additional Studies</h3>
 <p><strong>Weight sharing</strong>：研究了在通道间共享权重对深度卷积和Swin Transformer的影响</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110241957956.png" alt="image-20211024162356897" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110241957956.png" alt="image-20211024162356897" style="zoom:80%;" />
 <p><strong>Dynamic weight</strong>：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110241957433.png" alt="image-20211024162523601" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110241957433.png" alt="image-20211024162523601" style="zoom:80%;" />
 <p><strong>Cooperating with SE</strong>：SE是一个参数和计算效率较高的动态模块，DW可以从中受益，但是本身已是动态模块的Swin出现了掉点的情况。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110241957683.png" alt="image-20211024162949608" style="zoom: 80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110241957683.png" alt="image-20211024162949608" style="zoom: 80%;" />
 <p>更多看论文</p>
 <h2 id="dynamic-weight">Dynamic Weight</h2>
 <p>动态权重主要有两种类型——学习一致的权重（homogeneous connection weight），为每个位置或者区域生成不同的权重。</p>
@@ -207,7 +207,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DynamicDWConv</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, dim, kernel_size, bias=<span class="literal">True</span>, stride=<span class="number">1</span>, padding=<span class="number">1</span>, groups=<span class="number">1</span>, reduction=<span class="number">4</span></span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.dim = dim</span><br><span class="line">        self.kernel_size = kernel_size</span><br><span class="line">        self.stride = stride </span><br><span class="line">        self.padding = padding </span><br><span class="line">        self.groups = groups </span><br><span class="line"></span><br><span class="line">        self.pool = nn.AdaptiveAvgPool2d((<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line">        self.conv1 = nn.Conv2d(dim, dim // reduction, <span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">        self.bn = build_norm_layer(norm_cfg_global, dim // reduction)[<span class="number">1</span>]</span><br><span class="line">        self.relu = nn.ReLU(inplace=<span class="literal">True</span>)</span><br><span class="line">        self.conv2 = nn.Conv2d(dim // reduction, dim * kernel_size * kernel_size, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> bias:</span><br><span class="line">            self.bias = nn.Parameter(torch.zeros(dim))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.bias = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        b, c, h, w = x.shape</span><br><span class="line">        weight = self.conv2(self.relu(self.bn(self.conv1(self.pool(x)))))</span><br><span class="line">        weight = weight.view(b * self.dim, <span class="number">1</span>, self.kernel_size, self.kernel_size)</span><br><span class="line">        x = F.conv2d(x.reshape(<span class="number">1</span>, -<span class="number">1</span>, h, w), weight, self.bias.repeat(b), stride=self.stride, padding=self.padding, groups=b * self.groups)</span><br><span class="line">        x = x.view(b, c, x.shape[-<span class="number">2</span>], x.shape[-<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
 <h2 id="volo：outlook-attention">VOLO：OutLook Attention</h2>
 <p>VOLO也是一种Local Attention，并且性能表现优异，将其中的Local Attention的部分分别替换为self attention和深度卷积，可得到如下结果：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/202110242034232.png" alt="image-20211024203433183" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/202110242034232.png" alt="image-20211024203433183" style="zoom:80%;" />
 <p>同时替换了了SVT中的Local Attention部分，结果都是有所增加的。</p>
 
 

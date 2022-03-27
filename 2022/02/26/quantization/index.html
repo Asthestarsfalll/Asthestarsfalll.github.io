@@ -142,7 +142,7 @@ x_Q=clamp(−128,127,x_{int})
 <h3 id="量化网络的推理流程">量化网络的推理流程</h3>
 <p>对于现成网络，我们可以在每个卷积层前后加上量化与反量化的操作，这样就实现了用定点运算替代浮点运算的目的。</p>
 <p>我们也可以在整个网络推理过程中维护每个量化变量对应的scale变量，这样我们可以在不进行反量化的情况下走完 整个网络，这样我们除了带来极少量额外的scale计算开销外，便可以将整个网络的浮点运算转换成对应的定点运算。具体流程可以 参考下图。</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/quantization-inference.jpg" alt="quantization-inference.jpg"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/quantization-inference.png" alt="quantization-inference.jpg"></p>
 <p>只在输入输出进行量化和反量化。</p>
 <h2 id="量化基本流程">量化基本流程</h2>
 <p>目前工业界主要有两种量化技术：</p>
@@ -160,10 +160,10 @@ x_Q=clamp(−128,127,x_{int})
 <li>插入 Observer 和 FakeQuantize 算子，得到 Quantized-Float 模型（简称 QFloat 模型），量化感知训练；</li>
 <li>进行训练后量化，得到真正的 Quantized 模型（简称 Q 模型），即最终被用作推理的低比特模型。</li>
 </ol>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220226211626007.png" alt="image-20220226211626007"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/image-20220226211626007.png" alt="image-20220226211626007"></p>
 <p><strong>此时的量化感知训练 QAT 可被看作是在预训练好的 QFloat 模型上微调（Fine-tune），同时做了校准。</strong></p>
 <p>在不考虑训练开销的情况下，为了简化整体流程，可以直接构造 QFloat 模型，并进行训练与后量化：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220226211818907.png" alt="image-20220226211818907" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220226211818907.png" alt="image-20220226211818907" style="zoom:80%;" />
 <h2 id="代码">代码</h2>
 <h3 id="megengine">MegEngine</h3>
 <p>在 MegEngine 中，最上层的量化接口是配置如何量化的 <a target="_blank" rel="noopener" href="https://megengine.org.cn/doc/stable/zh/reference/api/megengine.quantization.QConfig.html#megengine.quantization.QConfig"><code>QConfig</code></a> 和模型转换模块里的 <a target="_blank" rel="noopener" href="https://megengine.org.cn/doc/stable/zh/reference/api/megengine.quantization.quantize_qat.html#megengine.quantization.quantize_qat"><code>quantize_qat</code></a> 与 <a target="_blank" rel="noopener" href="https://megengine.org.cn/doc/stable/zh/reference/api/megengine.quantization.quantize.html#megengine.quantization.quantize"><code>quantize</code></a> .</p>

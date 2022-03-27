@@ -85,7 +85,7 @@
 <h1>音乐与计算</h1>
 <h2 id="音乐离不开计算">音乐离不开计算</h2>
 <p>首先给出很重要的图：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180214.jpg" alt=""></p>
+<p><img src="D:/UserData/Downloads/images-master/images-master/20210507180214.jpg" alt=""></p>
 <p>我们可以看到mi和fa是半音关系，si和do也是半音关系，纯五度需要间隔7个半音，纯四度需要间隔5个半音。</p>
 <ol>
 <li>
@@ -93,9 +93,9 @@
 <ol>
 <li><strong>三分损益</strong>：将某个音定为基音，假设该音由一弦发出，“损”指将弦分为三份取其中两份，<strong>新弦长与原弦长比为2:3</strong>，即可得到基音上方纯五度音（即比基音频率高），“益”指将其分为三份，增加一份，<strong>新弦长与原弦长比为4:3</strong>，即可得到基音下方纯四度音。因此我们只要不断重复“损”，“增”，便可以得到一个八度内的全音，如图：</li>
 </ol>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180216.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180216.png" style="zoom:50%;" />
 <p>​	我们可以依次得到如下图所示的音</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180220.jpg" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180220.jpg" style="zoom:50%;" />
 <ol start="2">
 <li><strong>五度相生</strong>：即在<strong>新弦长与原弦长的比为1:2</strong>时，可得到基音上方八度音。</li>
 </ol>
@@ -111,17 +111,17 @@
 </li>
 </ol>
 <p><a href="zhihu.com/question/310624478">三者不同</a>：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164702.jpeg" alt="img" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210508164702.jpg" alt="img" style="zoom:50%;" />
 <p>五度相生律：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164720.gif" alt="img"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508164720.gif" alt="img"></p>
 <p>十二平均律：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164731.jpeg" alt="img" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210508164731.jpg" alt="img" style="zoom:50%;" />
 <p>最后，让我们看一下31平均律：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508164802.jpeg" alt="img"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508164802.jpg" alt="img"></p>
 </li>
 </ol>
 <h2 id="计算机在音乐方面的应用">计算机在音乐方面的应用</h2>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180225.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180225.png" style="zoom:50%;" />
 <h3 id="计算机听觉-基于内容的音乐检索">计算机听觉（基于内容的音乐检索）</h3>
 <ol>
 <li>
@@ -129,10 +129,10 @@
 <ul>
 <li>
 <p>将音乐通过内容进行编码，方法如下</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180231.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180231.png" style="zoom:50%;" />
 <p>取一系列窗口进行短时傅里叶变换，ABS去除相位，将其按照频率分为不同的band，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∑</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum x^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064118em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>求出其能量值，最后进行编码。</p>
 <p>实现细节</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180235.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180235.png" style="zoom:50%;" />
 <p>Hop size：两个窗口之间的间隔，越短越能保证在任意时刻检索的准确性。</p>
 <p>bands：按照人类听觉范围划分为33个bands。</p>
 <p>该算法鲁棒性极高，即使信噪比为负，其匹配率也大于0.58。</p>
@@ -141,24 +141,24 @@
 </li>
 <li>
 <p>哼唱检索</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180239.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180239.png" style="zoom:50%;" />
 <p>难点：部分匹配（不哼唱整首歌），模糊匹配（哼唱和唱不一样），跑调。</p>
 </li>
 <li>
 <p>风格分析</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180244.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180244.png" style="zoom:50%;" />
 <p>通过x（已知特征）和y（输入）的联合概率和y的先验概率（这类音乐占总音乐的概率），通过贝叶斯定理即可求出y为何种风格的概率。</p>
 <p>有哪些特征</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180250.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180250.png" style="zoom:50%;" />
 <p>Chroma</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180254.png" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180254.png" style="zoom: 67%;" />
 <ol start="2">
 <li>
 <p>计算机作曲</p>
 <p>通过分形进行作曲</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180258.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180258.png" style="zoom:50%;" />
 <p>马尔可夫方法</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507180302.png" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507180302.png" style="zoom:50%;" />
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28849767">WaveNet</a></p>
 <p>通过排序算法作曲</p>
 <p>通过对音符进行切分重组作曲</p>

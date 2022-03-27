@@ -92,7 +92,7 @@
 <li>针对任务：人体姿态估计问题（无关紧要）</li>
 <li>现有的大多数网络都是将feature map由高分辨率下采样到低分辨率，再由低分辨率到高分辨率，相反，HRNET在整个过程中一直保持着高分辨率表示，以高分辨率子网为第一stage，逐步增加低分辨率的子网，形成多个stage，通过反复的多尺度融合来获得更丰富的<strong>高分辨率表示</strong>：</li>
 </ul>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508194415.png" alt="image-20210508193944896"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508194415.png" alt="image-20210508193944896"></p>
 <h1>介绍</h1>
 <ul>
 <li>
@@ -106,16 +106,16 @@
 </li>
 <li>
 <p>相关网络：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508200403.png" alt="image-20210508194515403"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508200403.png" alt="image-20210508194515403"></p>
 <p>a图为Hourglass，b图为Cascade pyramid，c图为<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/140374702">SimpleBaseline</a>，d图使用了空洞卷积。</p>
 </li>
 </ul>
 <h1>具体方法及实现细节</h1>
 <h2 id="重复的多尺度特征融合：">重复的多尺度特征融合：</h2>
 <p>在并行自网络中加入交换单元：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508201812.png" alt="image-20210508201731604"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508201812.png" alt="image-20210508201731604"></p>
 <p>以stage3为例：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508204516.png" alt="image-20210508201809637"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508204516.png" alt="image-20210508201809637"></p>
 <p>其实十分简单，分为三种情况：</p>
 <ul>
 <li>hight to low使用步长为2的3X3卷积</li>
@@ -128,7 +128,7 @@
 <li>grountruth采用二维高斯分布，以每个关键点的grouptruth位置为中心，标准差为1像素生成。</li>
 </ul>
 <h2 id="网络结构">网络结构</h2>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508205635.jpeg" alt="preview"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508205635.jpg" alt="preview"></p>
 <ul>
 <li>包含四个stage和四个并行子网络，其分辨率逐渐减少一半，相应的通道数增加两倍。</li>
 <li>第一个stage包含四个残差单元，每个单元有一个宽度为64的bottleneck，后面紧跟一个3X3的卷积核减少通道数。</li>
@@ -139,19 +139,19 @@
 <p>对于四个分支的最终输出的选取，可以自己实验，主要有四种：</p>
 <ul>
 <li>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508205845.png" alt="image-20210508205843287"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508205845.png" alt="image-20210508205843287"></p>
 <p>只选择最高分辨率的输出</p>
 </li>
 <li>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508225939.png" alt="image-20210508205914647"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508225939.png" alt="image-20210508205914647"></p>
 <p>将其余三个上采样至原图大小caoncat，主要用于语义分割和面部关键点检测</p>
 </li>
 <li>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508210112.png" alt="image-20210508210002859"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508210112.png" alt="image-20210508210002859"></p>
 <p>在第二步基础上对所有的输出使用了一个特征金字塔，主要用于目标检测</p>
 </li>
 <li>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508210110.jpeg" alt="img"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508210110.jpg" alt="img"></p>
 <p>主要用于分类网络</p>
 </li>
 </ul>

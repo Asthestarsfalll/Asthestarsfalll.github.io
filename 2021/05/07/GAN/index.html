@@ -123,11 +123,11 @@
 <ul>
 <li>
 <p>GAN包括<strong>生成器</strong>和<strong>判别器</strong>，基础结构如下：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507175436.png" alt=""></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210507175436.png" alt=""></p>
 </li>
 <li>
 <p>Auto Encoder：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507175439.png" alt=""></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210507175439.png" alt=""></p>
 <p>我们对整个网络进行训练，但是最终只保留decoder部分，那么它与GAN有什么区别呢</p>
 </li>
 <li>
@@ -139,16 +139,16 @@
 <ul>
 <li>
 <p>生成器将输入的随机噪声由原来的分布映射到最终所需要的分布，并由判别器与其对抗来不断优化。</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507175442.png" alt=""></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210507175442.png" alt=""></p>
 </li>
 <li>
 <p>判别器训练：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507175445.png" alt=""></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210507175445.png" alt=""></p>
 <p>判别器训练时会冻结生成器的参数，<strong>且将生成的fake image标签置为0</strong>，其损失函数为二分类的交叉熵函数。</p>
 </li>
 <li>
 <p>生成器训练：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507175447.png" alt=""></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210507175447.png" alt=""></p>
 <p>生成器训练时同样会固定判别器的参数，此时判别器相当于一个损失函数。我们去掉不相关的部分可得到如下：</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>E</mi><mrow><mi>x</mi><msub><mi>P</mi><mi>g</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>log</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>D</mi><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">E_{xP_g}[\log(1-D(G(z)))]
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0973199999999999em;vertical-align:-0.34731999999999996em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833100000000004em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285716em;"><span style="top:-2.357em;margin-left:-0.13889em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">g</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2818857142857143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.34731999999999996em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mopen">(</span><span class="mord mathnormal">G</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span><span class="mclose">)))]</span></span></span></span></span></p>
@@ -181,9 +181,9 @@
 <li>
 <p>结构：</p>
 <p>最初的GAN：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507175454.png" alt=""></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210507175454.png" alt=""></p>
 <p>DCGAN(Deep Convlutional GAN)：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507175456.png" alt="img"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210507175456.png" alt="img"></p>
 <p>DCGAN主要做了一下改进：</p>
 <ol>
 <li>使用卷积层代替全连接层</li>
@@ -200,9 +200,9 @@
 <h2 id="lsgan">LSGAN</h2>
 <p>原始的GAN和DCGAN存在两个问题：<strong>模式坍塌，训练不稳定</strong></p>
 <p><strong>模式坍塌</strong>，即多样性不足：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210526101306552.png" alt="image-20210526101306552"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/image-20210526101306552.png" alt="image-20210526101306552"></p>
 <p>其原因是网络只学习到了真实分布的一部分。</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210526101404701.png" alt="image-20210526101404701"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/image-20210526101404701.png" alt="image-20210526101404701"></p>
 <p><strong>训练不稳定</strong></p>
 <p>函数函数函数首先让我们来推导GAN的损失函数存在的问题：</p>
 <p>判别器的损失函数</p>

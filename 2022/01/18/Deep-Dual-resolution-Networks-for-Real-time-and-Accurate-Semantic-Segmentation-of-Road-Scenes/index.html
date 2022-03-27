@@ -93,23 +93,23 @@
 <li>设计了一个上下文语义抽取器，被称为（Deep Aggregation pyramidpooling Module），用于扩大感受野，同时基于低分辨率特征图融合多尺度的上下文信息，而推理时间几乎没有增加；</li>
 <li>SOTA！</li>
 </ol>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118170841596.png" alt="image-20220118170841596" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118170841596.png" alt="image-20220118170841596" style="zoom: 67%;" />
 <h2 id="相关工作">相关工作</h2>
 <h3 id="high-performance-semantic-segmentation">High-performance Semantic Segmentation</h3>
 <p>目前，大多数最先进的（卷积）语义分割模型都是基于dilation的主干网络，同时需要网络保持高分辨率以获得良好的性能，然而高分辨率的计算量需求和dilation convolution的不充分优化注定了实时语义分割实现高性能的困难性。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118172904733.png" alt="image-20220118172904733" style="zoom: 80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118172904733.png" alt="image-20220118172904733" style="zoom: 80%;" />
 <h3 id="real-time-semantic-segmentation">Real-time Semantic Segmentation</h3>
 <p>几乎所有的实时语义分割模型都采用了两种基本方法：encoder-decoder和two-pathway，同时轻量级的编码器在这两种方法中扮演着重要作用。</p>
 <ol>
 <li>
 <p><strong>编码器-解码器结构</strong></p>
 <p>这种结构很直观的减少了计算量和推理时间，并且其编码器是可以在ImageNet上预先训练的轻量级主干网络，也可以是从头训练的高效变体，相关工作有SwiftNet、FANet、SFNet等。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118172921225.png" alt="image-20220118172921225" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118172921225.png" alt="image-20220118172921225" style="zoom:80%;" />
 </li>
 <li>
 <p><strong>双路结构</strong></p>
 <p>编码器-解码器结构虽然降低了计算量，但是在重复下采样中丢失了一些信息，为了缓解这个问题，提出了双路结构，除了一个提取语义信息的路径之外，另一条高分辨率的路径作为补充提供丰富的空间细节，相关工作有BiSeNetv1 v2、Fast SCNN、CABiNet等。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118173534151.png" alt="image-20220118173534151" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118173534151.png" alt="image-20220118173534151" style="zoom:80%;" />
 </li>
 <li>
 <p><strong>轻量级编码器</strong></p>
@@ -121,16 +121,16 @@
 <h2 id="method">Method</h2>
 <p>接下来介绍两个主要组件——Deep Dual-resolution Network和the Deep Aggregation Pyramid Pooling Module</p>
 <h3 id="deep-dual-resolution-network">Deep Dual-resolution Network</h3>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118175649123.png" alt="image-20220118175649123" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118175649123.png" alt="image-20220118175649123" style="zoom:67%;" />
 <p>对一些通用的分类主干网络（如ResNet）添加额外的高分辨率分支，为了实现分辨率和推理速度之间的均衡，在特征图大小为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>8</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac18</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>时添加高分辨率分支，高分辨率分支<strong>不包含任何下采样操作</strong>，并且与低分辨率分支具有一一对应的关系，然后会在不同的阶段进行多次双边融合，如上图所示。</p>
 <p>具体看论文。</p>
 <h3 id="deep-aggregation-pyramid-pooling-module">Deep Aggregation Pyramid Pooling Module</h3>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118190540337.png" alt="image-20220118190540337" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118190540337.png" alt="image-20220118190540337" style="zoom:67%;" />
 <p>DAPPM的结构如图所示，其会进行不同尺度（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator="true">,</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator="true">,</mo><mi>G</mi><mi>A</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\frac12,\frac14,\frac18,GAP</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">8</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">G</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>）的下采样，虽然看起来计算量比较大，但是该模块应用在低分辨率分支，对于1024×1024的输入图像，改模块的输入仅为16×16。</p>
 <h3 id="overall-archtecture">overall archtecture</h3>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118191013459.png" alt="image-20220118191013459" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118191013459.png" alt="image-20220118191013459" style="zoom: 67%;" />
 <p>网络的整体结构大致如图所示，其实和HRNet比较像，区别就是分支数量不同，并且额外添加了多尺度的特征提取模块，与HRNet的对比如下所示：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20220118212416473.png" alt="image-20220118212416473"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/image-20220118212416473.png" alt="image-20220118212416473"></p>
 
 
                             <!-- Meta -->

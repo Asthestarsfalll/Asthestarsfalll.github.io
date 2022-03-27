@@ -136,7 +136,7 @@
 <p>然而上述的所有方法都只能学习到局部的图像特征，因此提出了Long-Range Feature Propagating for Natural Image Matting.</p>
 <h2 id="motivation">Motivation</h2>
 <p>基于传播的方法通常根据已知区域与未知区域的相似度进行传播和预测，对Adobe Image Matting数据集中已知与未知区域的前背景像素计算欧氏距离，结果如下：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20211228171252233.png" alt="image-20211228171252233" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20211228171252233.png" alt="image-20211228171252233" style="zoom:50%;" />
 <p>其中：</p>
 <ul>
 <li>平均最短的距离为未知背景到已知背景，超过半数的像素之间的最近距离超过58px；</li>
@@ -148,7 +148,7 @@
 <p>LFPNet是一种基于patch、crop和stitch的方法，即将输入的图片和trimap crop为一个个patch，对每个patch进行预测alpha值，最后再stitch起来。<br>
 本网络使用两个输入，分别被称为<code>inner center patch</code>和<code>context patch</code>，后者面积为前者的四倍。<br>
 LFPNet包含两个模块——<code>propagating module</code>和<code>matting module</code>，<code>propagating module</code>以<code>context patch</code>作为输入，生成<code>context feature</code>和<code>context alpha matt</code>；<code>matting module</code>生成<code>inner center alpha matt</code>、<code>inner foreground\background patch</code>。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/G2gD3s6NEdSzrTA.png" alt="image-20211228170835998" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/G2gD3s6NEdSzrTA.png" alt="image-20211228170835998" style="zoom:50%;" />
 <h3 id="propagating-module">Propagating Module</h3>
 <p>该模块主要负责获取长距离信息，由三部分组成：the context encoder, Center Surround Pyramid Pooling, the context decoder.</p>
 <h4 id="context-encoder">Context Encoder</h4>
@@ -159,7 +159,7 @@ LFPNet包含两个模块——<code>propagating module</code>和<code>matting mo
 <li>为了继续增加感受野，将ResNet-50中block3和block4中的卷积替换为空洞卷积，参数分别为2和4.</li>
 </ol>
 <h4 id="center-surround-pyramid-pooling">Center-Surround Pyramid Pooling</h4>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20211228175916841.png" alt="image-20211228175916841" style="zoom: 50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/image-20211228175916841.png" alt="image-20211228175916841" style="zoom: 50%;" />
 <p>CSPP包含两个部分: Center Surround Pooling和Atrous Spatial Pyramid Pooling</p>
 <p><strong>Center-Surround Pooling (CSP)</strong></p>
 

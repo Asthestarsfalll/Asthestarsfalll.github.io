@@ -102,7 +102,7 @@
 <li>单纯叠加更多层并不总是能够扩大<strong>有效</strong>感受野，这表明卷积可能缺乏有限建模这些依赖的机制。</li>
 </ol>
 <p>为了解决这些问题，一些常见的方法是使用具有更少学习权重的Non-Local聚合信息，通常Non-Local都会创建一个密集的亲和矩阵，其包含各个成对位置的关系，然后将该矩阵作为注意力图进行加权平均聚合特征。然而，密集的注意力图涉及了大量的特征对（如背景和背景之间的关系），这会导致聚合的特征图包含大量<strong>噪声</strong>。</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/image-20210901164350517.png" alt="image-20210901164350517"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/image-20210901164350517.png" alt="image-20210901164350517"></p>
 <p>上图A显示了一些Non-Local模块的过程，其参数化滤波步骤仍然缺乏长距离依赖性，仅使用局部滤波器（通常是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>×</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">1\times 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>卷积）。</p>
 <p>图B显示了通过**<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40718664/article/details/106389802">图滤波器</a>**将全局聚合和局部滤波相结合，将这种视角称为Spectral View（光谱视图）。首先根据输入特征建立全连通图，包含不同位置间的相似性，使用可学习的图滤波器在捕捉长距离关系时拥有更大的灵活性。</p>
 <p>图信号是定义在图的节点上的，在进行图滤波时不光要考虑图信号的强度，还要考虑图的拓扑结构，这可能就是图滤波器相较于局部滤波器的优势所在。</p>

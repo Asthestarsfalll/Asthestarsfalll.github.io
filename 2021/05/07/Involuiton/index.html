@@ -122,7 +122,7 @@
 <p>kernel generated based on input featrue map（self-attention的一种体现） to ensure kernel size aligned with the input tensor size</p>
 </blockquote>
 <p>一种简单的kernel generation function，方便起见以一个像素为例</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507124123.png" alt="image-20210426192156487" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507124123.png" alt="image-20210426192156487" style="zoom:67%;" />
 <ol>
 <li>inputs为维度1×1×C；</li>
 <li>线性变换：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">W_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>：通道压缩，节省计算量；<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">W_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>：首先变为1×1×(K×K×G)，再拆分为G组，最后变换为K×K×G；（其生成的卷积核包含了该位置所有通道上的信息，对不同通道之间的信息交换有一定的作用）</li>
@@ -178,7 +178,7 @@
 <p>self-attention可以看作广义involution的一种实例</p>
 </blockquote>
 <p>可以看到与self-attention之间的相似性：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507124139.png" alt="image-20210427212347084" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507124139.png" alt="image-20210427212347084" style="zoom: 67%;" />
 <p>相似：</p>
 <ol>
 <li>其中H可以类比为involution中的G，即多头类似于分组；</li>
@@ -191,7 +191,7 @@
 </ol>
 <p>总结：self-attention是Involution的一种实例化，且Involution的表达更为宽泛和简洁。</p>
 <h2 id="ablantion-analysis">Ablantion    Analysis</h2>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210507124142.png" alt="image-20210427213135224" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210507124142.png" alt="image-20210427213135224" style="zoom:67%;" />
 <p>可以看到：</p>
 <ul>
 <li>Involution能在不显著提升参数量和计算量的前提下，增大感受野，提升网络性能;</li>

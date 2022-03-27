@@ -102,7 +102,7 @@
 </li>
 <li>
 <p>目前的分割网络的预测不够保真，边缘也很粗糙，<strong>这种情况说明目前的评估指标可能对目标边界的预测误差具有敏感性</strong>；</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508214210.png" alt="image-20210508214206239" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210508214210.png" alt="image-20210508214206239" style="zoom:80%;" />
 </li>
 <li>
 <p>在大量的论文中，AP最高可达到八九十，而很少有论文会提及他们mask的边界质量。</p>
@@ -110,7 +110,7 @@
 </ol>
 <h2 id="相关指标">相关指标</h2>
 <p>各种相关指标如下：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210508223158.png" alt="image-20210508222750295"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210508223158.png" alt="image-20210508222750295"></p>
 <p>首先解释几个名词：</p>
 <ol>
 <li>
@@ -124,7 +124,7 @@
 </li>
 <li>
 <p>三分图（Trimap）：对给定图像的一种粗略划分将给定图像划分为前景、背景和待求未知区域；</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509151808.png" alt="img" style="zoom: 150%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210509151808.png" alt="img" style="zoom: 150%;" />
 </li>
 <li>
 <p>Mask-based Measure：考虑物体的所有像素；</p>
@@ -138,49 +138,49 @@
 </ol>
 <p>通过分析各种相关指标的缺点，我们得出Boundary IoU应该拥有的特性：<strong>同时考虑分类、定位和分割质量。</strong></p>
 <p>另外，我们尤其需要注意<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">G_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>d</mi></msub><mo>∩</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">G_d\cap G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span>的区别，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">G_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是边界的两侧，而<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>d</mi></msub><mo>∩</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">G_d\cap G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span>则是边界的内侧部分：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511121300.png" alt="image-20210511121230297" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511121300.png" alt="image-20210511121230297" style="zoom:80%;" />
 <h3 id="mask-iou和pixel-accuracy">Mask IoU和Pixel Accuracy</h3>
 <p>所有像素对指标的贡献都是相同的，而物体内部的像素呈二次型增长，其边界仅会线性增长，因此<strong>对较大物体的边界不够敏感</strong>。</p>
 <p>Mask IoU计算方式示意图：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510161356.png" alt="image-20210510161350211" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510161356.png" alt="image-20210510161350211" style="zoom:80%;" />
 <h3 id="trimap-iou">Trimap IoU</h3>
 <p>基于边界的分割指标，其计算距离GT和pred边界d像素窄带内的IoU，计算方式示意图如下（方便起见，简化为矩形且只显示边界部分）：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509163907.png" alt="image-20210509163853163" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210509163907.png" alt="image-20210509163853163" style="zoom:80%;" />
 <p><strong>需要注意分母的</strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>d</mi></msub><mo>∩</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">G_d\cap G</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">G</span></span></span></span>。</p>
 <h3 id="feature-measure">Feature Measure</h3>
 <p>F-Measure最初被提出用于边缘检测，但它也被用于评价分割质量。在最初的公式中，使用二分图匹配来进行计算，对于高分辨率的图像来说计算成本很大；因此提出了一种允许重复匹配的近似算法，<strong>precision为pred轮廓中 \ 距离GT轮廓中像素 \ 在d个像素以内的 \ 像素 \ 所占pred的比例</strong>，recall同理。不是很理解，原文如下：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510151207.png" alt="image-20210510151147870" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510151207.png" alt="image-20210510151147870" style="zoom:80%;" />
 <p>Precision和Recall计算方式示意图如下：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510153516.png" alt="image-20210510152547915" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510153516.png" alt="image-20210510152547915" style="zoom:80%;" />
 <h3 id="boundary-iou">Boundary  IoU</h3>
 <p>Boundary IoU对大物体边界误差更加敏感，并且不会过分惩罚小物体。</p>
 <p>直观上就是GT和Pred轮廓的交集除以并集，但是<strong>这里的轮廓是在对象内部的</strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>G</mi><mi>d</mi></msub><mtext>、</mtext><msub><mi>P</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">G_d、P_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">、</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，不包括在对象外面的部分，详细在补充中有说明。</p>
 <p>虽然看起来和Trimap IoU很相似，但个人认为它是Mask IoU的边界升级版本，去除了对象内部巨量像素对整体的影响，使其拥有更优秀的性质。</p>
 <p>论文中给出的示意图如下：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510154511.png" alt="image-20210510153535293" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510154511.png" alt="image-20210510153535293" style="zoom: 67%;" />
 <p>我画的：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510154514.png" alt="image-20210510154509338" style="zoom: 67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510154514.png" alt="image-20210510154509338" style="zoom: 67%;" />
 <p>其实就是边界的IoU，</p>
 <h2 id="敏感性分析">敏感性分析</h2>
 <p>为了进行系统的比较，本文对GT进行处理形成伪预测，通过<strong>模拟</strong>不同的误差类型来尽可能的模拟真实误差类型，后面的部分主要通过实验来证明Boundary IoU的优越性。</p>
 <p><strong>尺度误差</strong></p>
 <p>通过对GT进行膨胀和腐蚀操作，误差严重程度由运算核半径控制。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509185613.png" alt="image-20210509185608432" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210509185613.png" alt="image-20210509185608432" style="zoom:67%;" />
 <p><strong>边界定位误差</strong></p>
 <p>将随机高斯噪声添加到GT上每一个多边形顶点的<strong>坐标</strong>上，误差严重程度由高斯噪声的标准差确定。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509185617.png" alt="image-20210509185545908" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210509185617.png" alt="image-20210509185545908" style="zoom:67%;" />
 <p><strong>物体定位误差</strong></p>
 <p>将GT中的对象随机偏移一些像素，误差严重程度由位移像素长度控制。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509185622.png" alt="image-20210509185530435" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210509185622.png" alt="image-20210509185530435" style="zoom:67%;" />
 <p><strong>边界近似误差</strong></p>
 <p>利用Sharply的简化公式来删除多边形顶点，同时保持简化多边形尽可能接近原始图像，误差严重程度由函数的容错参数控制。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509185624.png" alt="image-20210509185108649" style="zoom:80%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210509185624.png" alt="image-20210509185108649" style="zoom:80%;" />
 <p><strong>内部掩码误差</strong></p>
 <p>向GT中添加随机性形状的孔，虽然这种误差类型并不常见，但是本文将其包含进来，用以评估内部掩膜误差的影响。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509185630.png" alt="image-20210509185508685" style="zoom:67%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210509185630.png" alt="image-20210509185508685" style="zoom:67%;" />
 <h2 id="实验细节">实验细节</h2>
 <p><strong>数据集</strong>：作者从LVIS V0.5验证集中随机抽取实例掩码，因为该数据集拥有高质量的注释。</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509190212.png" alt=""></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210509190212.png" alt=""></p>
 <p><strong>实现过程</strong>：通过改变误差类型和误差的严重程度，记录每种类型的平均值和标准差，此外，还通过划分不同的区域，来比较对不同大小物体的指标评价。</p>
 <p>其中d设置为图像对角线的2%。</p>
 <h2 id="现有方法分析">现有方法分析</h2>
@@ -194,11 +194,11 @@
 <p><strong>尺度不变性</strong>基于一个假设，即GT标注中的边界误差也随着对象的大小而增长。</p>
 <p>然而已有研究表明，不论物体大小，被不同标注器标记的同一个对象的两个轮廓之间的像素距离很少超过图像对角线的1%。</p>
 <p>本文通过研究LVIS提供的<strong>双标注图像</strong>来证实这一点，如下：</p>
-<p><img src="https://gitee.com/Thedeadleaf/images/raw/master/20210509203230.png" alt="image-20210509201406961"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/03/27/20210509203230.png" alt="image-20210509201406961"></p>
 <p>其中冰箱的面积是机翼面积的100倍，但在相同分辨率的区域内，注释之间的差异在视觉上十分相似。</p>
 <p>两者的两个轮廓的Mask IoU分别为0.97,0.81，而它们的Boundary IoU则更为接近，分别为0.87，0.81。这说明Mask IoU<strong>对小尺寸图片的“惩罚”更大</strong>。</p>
 <p><strong>实验</strong>：通过严重程度相同的膨胀/腐蚀来模拟<strong>尺度误差</strong>，其显著降低了小物体的Mask IoU，而Mask IoU随物体大小的增加而增加，见下图：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510093856.png" alt="image-20210510093853486" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510093856.png" alt="image-20210510093853486" style="zoom:50%;" />
 <p><strong>总结：</strong></p>
 <ul>
 <li>Mask IoU的主要不足在于对大物体边界的不敏感性。</li>
@@ -206,19 +206,19 @@
 </ul>
 <h3 id="trimap-iou">Trimap IoU</h3>
 <p>Trimap IoU是不对称的，交换GT和Pred将会得到不同的值。下图显示了其更倾向于比GT更大的pred：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510095941.png" alt="image-20210510095821668" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510095941.png" alt="image-20210510095821668" style="zoom:50%;" />
 <p>可以看到：</p>
 <ul>
 <li>不论膨胀的严重程度是多少，其值总会大于某个正值，对小物体的“惩罚”依然过大。</li>
 <li>腐蚀则会下降到零。</li>
 </ul>
 <p>简单的证明：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511114830.png" alt="image-20210510165235885" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511114830.png" alt="image-20210510165235885" style="zoom:50%;" />
 <p>蓝色部分为pseudo-predictions （伪预测），红色方框为GT轮廓，可以看到，当pseudo-predictions 完全包含了GT时，其值不会再改变</p>
 <p>同理，当伪预测完全被GT所包含，分子为0，最终值为0。</p>
 <h3 id="f-measure">F-measure</h3>
 <p>F-measure完全忽略了小的轮廓误差，但是表现效果很差，会在很短的严重程度中快速下降到0：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511114828.png" alt="image-20210510170006064" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511114828.png" alt="image-20210510170006064" style="zoom:50%;" />
 <h3 id="总结">总结</h3>
 <p>综上可知，F-measure和Trimap IoU都不能代替Mask IoU，而Mask IoU也有着不能忽视的缺陷，因此，本文提出Boundary IoU。</p>
 <h2 id="boundary-iou">Boundary IoU</h2>
@@ -234,12 +234,12 @@
 <p>此外，对于较小的对象，Boundary IoU十分接近甚至等价于Mask IoU，这主要取决于参数d。</p>
 <h3 id="mask-iou-vs-boundary-iou：敏感性分析">Mask IoU vs Boundary IoU：敏感性分析</h3>
 <p>本文对比了Mask IoU和Boundary IoU在面积大于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><msup><mn>6</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">96^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">9</span><span class="mord"><span class="mord">6</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>的物体的不同误差类型下的表现：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510181123.png" alt="image-20210510173824215" style="zoom:50%;" />
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510181124.png" alt="image-20210510173839905" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510181123.png" alt="image-20210510173824215" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510181124.png" alt="image-20210510173839905" style="zoom:50%;" />
 <p>对于每种误差类型，Boundary IoU都能更好的利用0-1的范围</p>
 <p>使用的固定的误差严重程度，对大小不同的对象使用伪预测，以<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>6</mn><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">16^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">6</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>为增量划分区域，二者表现如下：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510181127.png" alt="image-20210510181102929" style="zoom:50%;" />
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510181129.png" alt="image-20210510181118302" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510181127.png" alt="image-20210510181102929" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510181129.png" alt="image-20210510181118302" style="zoom:50%;" />
 <p>可以看到：</p>
 <ul>
 <li>对于较大的对象，Boundary IoU在相同严重程度下保持平缓，而Mask IoU则明显的偏向于大物体；</li>
@@ -262,7 +262,7 @@
 </ol>
 <h3 id="boundary-iou的局限">Boundary IoU的局限</h3>
 <p>Boundary IoU不评估距离轮廓超过d的像素，例如一个圆形Mask和一个环形Mask：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511114822.png" alt="image-20210510190200706" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511114822.png" alt="image-20210510190200706" style="zoom:50%;" />
 <p>显然，其Boundary Iou值极高为1</p>
 <p>为了惩罚这种情况，作者建议组合Boundary IoU和Mask IoU，并取他们的最小值。</p>
 <p>此外，在实验中还发现，99.9%的情况Boundary IoU都是小于等于Mask IoU的，极少数情况如上图会出现Boundary IoU大于Mask IoU。</p>
@@ -279,18 +279,18 @@
 <li>
 <p><strong>具体方法</strong>：</p>
 <p>使用COCO数据集，将GT缩小为28X28的连续值掩码，使用双线性插值upscale it back，最后将其二值化。如下图所示</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210510230303.png" alt="image-20210510230301360" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210510230303.png" alt="image-20210510230301360" style="zoom:50%;" />
 <p>这种合成Mask十分接近GT，但这种差异随着物体大小的增大而增大，因此越大的物体经过处理后的IoU值应该越低。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511122838.png" alt="image-20210510223226154" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511122838.png" alt="image-20210510223226154" style="zoom:50%;" />
 <p>下标表示物体的大小，可以看到，对于越大的物体，Boundary IoU的值越低，而Mask IoU的值则维持在高水平，<strong>这进一步显示了Boundary IoU对于大物体边界的敏感性</strong>。</p>
 </li>
 <li>
 <p>实验结果：在Mask RCNN、PointRend、以及BMask RCNN模型上进行实验，结果如下：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511122836.png" alt="image-20210510224102719" style="zoom:50%;" />
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511122835.png" alt="image-20210510224120918" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511122836.png" alt="image-20210510224102719" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511122835.png" alt="image-20210510224120918" style="zoom:50%;" />
 <p>众所周知，Mask RCNN对大物体的分割表现不尽人意（我不知道），从上表可以看出Boundary Ap的优越性</p>
 <p>此外，上表还证明了相较于BMask RCNN，PointRend对较大对象的表现更好。</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511122833.png" alt="image-20210510224713604" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511122833.png" alt="image-20210510224713604" style="zoom:50%;" />
 <p>上表显示了更深的主干网络并不能带来分割质量的显著提升。</p>
 <p><strong>真实模型：</strong></p>
 </li>
@@ -306,28 +306,28 @@
 <li>
 <p><strong>实验结果</strong>：</p>
 <p>模型在COCO数据集上训练，在LVIS v0.5上验证</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511115505.png" alt="image-20210511115502161" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511115505.png" alt="image-20210511115502161" style="zoom:50%;" />
 <p>模型在Cityscapes上训练和验证</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511115657.png" alt="image-20210511115655795" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511115657.png" alt="image-20210511115655795" style="zoom:50%;" />
 </li>
 </ul>
 <h3 id="boundary-pq">Boundary  PQ</h3>
 <p>下图为标准PQ的公式</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511115040.png" alt="image-20210511115032369" style="zoom: 50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511115040.png" alt="image-20210511115032369" style="zoom: 50%;" />
 <p>将其中的Mask IoU替换为Mask IoU与Boundary IoU的组合，取其最小值。</p>
 <p><strong>合成预测：</strong></p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511122826.png" alt="image-20210511120047274" style="zoom: 50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511122826.png" alt="image-20210511120047274" style="zoom: 50%;" />
 <p><strong>真实预测：</strong></p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210511122824.png" alt="image-20210511120131765" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210511122824.png" alt="image-20210511120131765" style="zoom:50%;" />
 <h2 id="总结">总结</h2>
 <p>​		不同于Mask IoU，Boundary IoU提供了一个明确的，定量的梯度，奖励改善边界分割质量。作者希望Boundary IoU可以鼓励更多人开发高保真Mask预测新方法。此外，Boundary  IoU允许对复杂的任务(如实例和全景分割)的分割相关错误进行更细粒度的分析。在性能分析工具(如TIDE[2])中结合度量可以更好地洞察实例分段模型的特定错误类型。（<strong>直接翻译的</strong>）</p>
 <h2 id="代码复现">代码复现</h2>
 <p>对于二分类图像的Boundary Iou</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将二值Mask转化为Boundary mask</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mask_to_boundary</span>(<span class="params">mask, dilation_ratio=<span class="number">0.01</span></span>):</span></span><br><span class="line">    h, w = mask.shape</span><br><span class="line">    img_diag = np.sqrt(h ** <span class="number">2</span> + w ** <span class="number">2</span>)</span><br><span class="line">    dilation = <span class="built_in">int</span>(<span class="built_in">round</span>(dilation_ratio * img_diag))</span><br><span class="line">    <span class="keyword">if</span> dilation &lt; <span class="number">1</span>:</span><br><span class="line">        dilation = <span class="number">1</span></span><br><span class="line">    <span class="comment"># Pad image so mask truncated by the image border is also considered as boundary.</span></span><br><span class="line">    <span class="comment"># 将mask使用0填充一圈，防止dilation为1时</span></span><br><span class="line">    new_mask = cv2.copyMakeBorder(</span><br><span class="line">        mask, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, cv2.BORDER_CONSTANT, value=<span class="number">0</span>)</span><br><span class="line">    kernel = np.ones((<span class="number">3</span>, <span class="number">3</span>), dtype=np.uint8)</span><br><span class="line">    <span class="comment"># 对mask进行腐蚀操作</span></span><br><span class="line">    new_mask_erode = cv2.erode(new_mask, kernel, iterations=dilation)</span><br><span class="line">    mask_erode = new_mask_erode[<span class="number">1</span>: h + <span class="number">1</span>, <span class="number">1</span>: w + <span class="number">1</span>]</span><br><span class="line">    <span class="comment"># G_d intersects G</span></span><br><span class="line">    <span class="keyword">return</span> mask - mask_erode</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">boundary_iou</span>(<span class="params">mask, pred</span>):</span></span><br><span class="line">    intersect = mask*pred</span><br><span class="line">    ite = np.<span class="built_in">sum</span>(intersect == <span class="number">1</span>)</span><br><span class="line">    un = mask+pred</span><br><span class="line">    union = np.<span class="built_in">sum</span>(un &gt;= <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> ite/union</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210519091830.png" alt="image-20210519091807762" style="zoom:50%;" />
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210519091840.png" alt="image-20210519091815466" style="zoom:50%;" />
-<img src="https://gitee.com/Thedeadleaf/images/raw/master/20210519091833.png" alt="image-20210519091826066" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210519091830.png" alt="image-20210519091807762" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210519091840.png" alt="image-20210519091815466" style="zoom:50%;" />
+<img src="http://1.14.100.228:8003/images/2022/03/27/20210519091833.png" alt="image-20210519091826066" style="zoom:50%;" />
 
                             <!-- Meta -->
                             <div class="post-meta">
