@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Nice to meet U!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>2020年代的卷积神经网络 | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                2020年代的卷积神经网络
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>A ConvNet for the 2020s</p>
+<h2 id="摘要">摘要</h2>
+<p>视觉识别的革命始于ViTs的引入，它迅速取代了ConvNet，一举成为最先进的图像分类模型。另一方面，虽然最原始的ViTs在应用于下游任务时困难重重，但是许多分层的（hierarchical ）ViTs，如Swin Transformer，重新引入了几个ConvNet的先验，使得Transformer作为通用的视觉骨干成为可能，并且在各类下游任务上性能显著。但是这种混合方法的有效性主要归功于ViTs的内在优势，而不是卷积的内在归纳偏置。</p>
+<p>本文重新审视了设计空间，并测试了纯粹的ConvNet所能达到的极限，具体来说，将一个标准的ResNet逐步“现代化”，使之成为一个类似ViTs架构的实现，并在此过程中发现了几个有助于性能提升的关键组件。</p>
+<p>ConvNeXt完全由标准的ConvNet模块构成，在准确性和可扩展性方面与Transformer竞争，在ImageNet上达到了87.8% top-1准确性，在COCO目标检测和ADE20K语义分割方面超过了Swin Transformers，同时保持了标准ConvNets的简单性和效率。</p>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403213421785.png" alt="image-20220403213421785" style="zoom: 67%;" />
+<h2 id="回顾">回顾</h2>
+<h3 id="convnet的进化之路">ConvNet的进化之路</h3>
+<p>卷积神经网络的兴起需要从2012年的AlexNet说起，它一举夺得了当年ImageNet分类比赛的冠军，这让人们看到了卷积神经网络在计算机视觉中的无限可能。</p>
+<p>时间来到两年后，VGGNet认为使用小尺寸的卷积核串联可以达到与大尺寸卷积核同样的效果，并且参数量更低，同时可以在层间添加更多的非线性以达到更好的性能。自VGG以后，不断堆叠的3×3网络便成为了主流的卷积神经网络设计范式。</p>
+<p>同年的另一篇论文Inceptions夺得了ImageNet上的冠军，而VGG则屈居第二。Inceptions探索了多分支对模型的影响，其影响同样延续至今。</p>
+<p>2015年，一篇举世瞩目的论文横空出世，它就是何恺明的Deep Residual Learning for Image Recognition，文中提出了残差的结构，应用其设计的ResNet也是夺得了ImageNet的冠军，一时间名声大躁，影响深远。即使在今天，也有许多论文以ResNet为Baseline进行研究和探索，使其引用量突破了10万大关。</p>
+<p>2016年，ResNeXt将ResNet与Inceptions结合，并且使用了分组卷积以减少参数，该设计对后续的轻量级神经网络设计起到了深远的影响。</p>
+<p>同年，DenseNet将层之间的连接做到了极致，充分利用了不同层的特征，并且缓解了梯度消失的问题。</p>
+<p>2017与2018，MobileNet连出两篇，进一步探索了分组卷积的威力——深度可分离卷积，以及与ResNet相反逆残差结构，这些设计更是影响了许多轻量级网络的设计。</p>
+<p>2019年的EfficientNet提出了复合模型扩张方法，这是一种模型缩放方法，从深度、宽度、输入图像分辨率三个维度来缩放模型，该设计在后续的神经网络设计中十分常见。</p>
+<p>还有更多。。。</p>
+<p>上述的各种设计确立了当今的卷积神经网络设计范式，无数网络都收其影响。但是同样的，它也一定程度上束缚了2020年代卷积神经网络的设计，因此，而今的ConvNeXt亟需一场革新。</p>
+<h3 id="共性">共性</h3>
+<p>这些优秀的神经网络设计背后的共性是什么呢？</p>
+<p><a href="">局部计算、平移等变和特征分层。</a></p>
+<p>这些优秀的设计先验也被使用到了ViT中，便得到了Swin Transformer。</p>
+<h2 id="阶跃">阶跃</h2>
+<h3 id="transformer">Transformer</h3>
+<p>2017年，Transformer首次在NLP领域中得到应用，不久便立于统治之位。</p>
+<p>受限于NLP与CV的不同，直到2020年，ViT才被引入视觉领域，其统治之路也由此开始。</p>
+<h3 id="挑战">挑战</h3>
+<p>当时，ViT的成功只限于图像分类任务，但是计算机视觉远远不止分类这一个任务。</p>
+<p>同时，self-attention的巨大时间复杂度限制了输入尺寸，使用高分辨率的图像似乎是一种奢望。而分割、检测等下游任务却正好需要高分辨率来获取更多的信息。</p>
+<h3 id="发展">发展</h3>
+<p>ViT的脚步并没有就此停下，它的成功就像一种必然。各种魔改的VITs也证明了自身的能力。</p>
+<p>2021年Swin Transformer横空出世，一举收揽各项任务的数个sota，其论文也获得了当年的最佳论文——马尔奖。</p>
+<p>Swin Transformer借鉴了ConvNets的优秀先验，在局部窗口中计算自注意力，并且不同的窗口共享权重，同时分层的结构也成为其在下游任务上大展身手的资本。</p>
+<p>但是Swin太复杂了，为了实现局部窗口间的交互，cyclic shifting被诟病不够优雅，sliding window也并非原生实现。</p>
+<p><a href="">但是卷积已经具备了这些要素！</a></p>
+<h2 id="convnext">ConvNeXt</h2>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403213448473.png" alt="image-20220403213448473" style="zoom: 50%;" />
+<p>让我们从最基础的ResNet开始，逐步进行“现代化”吧！</p>
+<h3 id="训练策略">训练策略</h3>
+<img src="C:/Users/11864/AppData/Roaming/Typora/typora-user-images/image-20220403213245757.png" alt="image-20220403213245757" style="zoom: 50%;" />
+<p>为保证公平，ConvNets与ViTs应该在同样的配置下进行训练。其性能获得了2.6的提升。</p>
+<h3 id="宏观设计">宏观设计</h3>
+<p>ResNet中，各层的计算量占比为3:4:6:3，而在swin中为1:1:3:1。</p>
+<p>另外一点便是使用Patch Embedding，将ReaNet最开始7×7卷积核最大池化替换为4×4stride为4的卷积。</p>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403213842266.png" alt="image-20220403213842266" style="zoom:67%;" />
+<h3 id="resnext化">ResNeXt化</h3>
+<p>使用深度可分离卷积，在ViT中，注意力的加权和操作也是在pre-channe的，同时增加了通道数，以弥补性能损失。</p>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403214136953.png" alt="image-20220403214136953" style="zoom:67%;" />
+<h3 id="逆瓶颈结构">逆瓶颈结构</h3>
+<p>在self-attention的计算中，通道数从C扩张到3C以拆分为KQV，后续的MLP中的隐藏层也有四倍的扩张。</p>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403214334379.png" alt="image-20220403214334379" style="zoom:67%;" />
+<h3 id="更大卷积核">更大卷积核</h3>
+<p>将经典卷积的3×3尺寸扩张到与Swin相同的7×7，更大尺寸则不会再涨点，这点在RepLKNet上也有说明，可能因为7×7的尺寸在ImageNet的分类任务上已经足够了，而在需要更大尺寸的下游任务则可以继续涨点。</p>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403214605875.png" alt="image-20220403214605875" style="zoom:67%;" />
+<h3 id="微观设计">微观设计</h3>
+<p>借鉴了Transformer的微观设计，具体如下：</p>
+<ol>
+<li>将ReLU改为GeLU；</li>
+<li>使用更少的激活函数和归一化层；</li>
+<li>将BatchNorm改为LayerNorm；</li>
+<li>使用单独的下采样层和归一化层，每个Block内的分辨率不变。</li>
+</ol>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403215036052.png" alt="image-20220403215036052" style="zoom:67%;" />
+<h3 id="结果">结果</h3>
+<p>现代化后的ConvNeXt对比如下：</p>
+<img src="http://1.14.100.228:8003/images/2022/04/03/image-20220403215115676.png" alt="image-20220403215115676" style="zoom:67%;" />
+<p>显而易见，ConvNeXt结构简单且易于实现，其性能并不输于大火的ViTs。</p>
+<p>ConvNeXt为后ViT时代的卷积网络设计提供了指导，其对2020年代卷积神经网络设计范式和后续卷积神经网络的影响将不可估量，或许会就此开始一场全新的ConvNet设计范式革新。</p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/PaperRead/">#PaperRead</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2022-04-03
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E9%A1%BE"><span class="toc-text">回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#convnet%E7%9A%84%E8%BF%9B%E5%8C%96%E4%B9%8B%E8%B7%AF"><span class="toc-text">ConvNet的进化之路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E6%80%A7"><span class="toc-text">共性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B6%E8%B7%83"><span class="toc-text">阶跃</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#transformer"><span class="toc-text">Transformer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98"><span class="toc-text">挑战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E5%B1%95"><span class="toc-text">发展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#convnext"><span class="toc-text">ConvNeXt</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E7%AD%96%E7%95%A5"><span class="toc-text">训练策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8F%E8%A7%82%E8%AE%BE%E8%AE%A1"><span class="toc-text">宏观设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resnext%E5%8C%96"><span class="toc-text">ResNeXt化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%86%E7%93%B6%E9%A2%88%E7%BB%93%E6%9E%84"><span class="toc-text">逆瓶颈结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E5%A4%A7%E5%8D%B7%E7%A7%AF%E6%A0%B8"><span class="toc-text">更大卷积核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E8%A7%82%E8%AE%BE%E8%AE%A1"><span class="toc-text">微观设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li></ol></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

@@ -150,7 +150,7 @@
 <p>在分布式训练当中，输入数据、模型、反向传播计算梯度都是可以<strong>并行</strong>的，但是<strong>更新参数</strong>依赖于所有的训练样本的梯度，这是<strong>不能并行</strong>的，如下图所示：</p>
 <img src="D:\UserData\Downloads\images-master\images-master\1.drawio.svg" alt="1.drawio" style="zoom:50%;" />
 <p>Parameter Server包含一个参数（<strong>server</strong>）服务器（或者GPU等）来复制分发<strong>model</strong>到各个工作（<strong>worker</strong>）服务器上，计算示意图如下：</p>
-<img src="D:\UserData\Downloads\images-master\images-master\未命名绘图(1).drawio (1).svg" alt="未命名绘图(1).drawio" style="zoom:50%;" />
+<img src="D:/UserData/Downloads/images-master/images-master/%E6%9C%AA%E5%91%BD%E5%90%8D%E7%BB%98%E5%9B%BE(1).drawio%20(1).svg" alt="未命名绘图(1).drawio" style="zoom:50%;" />
 <ol>
 <li>将数据和初始化参数加载到server当中，若无法一次加载进来也可分多次加载；</li>
 <li>server将输入数据进行切片，分发给各个的worker；</li>

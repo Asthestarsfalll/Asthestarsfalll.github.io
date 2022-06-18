@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Nice to meet U!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>一文搞定VisualStudio配置OpenVINO与OpenCV | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                一文搞定VisualStudio配置OpenVINO与OpenCV
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>Windows下OpenVINO即OpenCV环境配置。</p>
+<h2 id="安装openvino">安装OpenVINO</h2>
+<p>在安装OpenVINO前，确保本地Python版本为3.6-3.8之间，Cmake版本为3.17及以上，相关的安装教程网络上有很多。</p>
+<p>在准备好前置条件之后，让我们先来到OpenVINO Dev Tools的<a target="_blank" rel="noopener" href="https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download.html">下载地址</a>，下载选择如下：</p>
+<img src="C:/Users/11864/AppData/Roaming/Typora/typora-user-images/image-20220406211207545.png" alt="image-20220406211207545" style="zoom:50%;" />
+<p>根据需要选择版本，最好选择离线下载，在线下载可能会卡住。</p>
+<p>下载到本地后双击打开按照提示直接安装即可。</p>
+<p>来到选定的安装目录，默认在<code>C:\Program Files (x86)\Intel</code>下，这里有两个文件夹，<code>openvino_2021</code>和<code>openvino_2021.4.752</code>（或者是你安装的版本号，下文都以openvino_2021.4.752来代替）。</p>
+<p>进入<code>openvino_2021.4.752\bin</code>，使用cmd或者terminal运行<code>setupvars.bat</code>，出现“[setupvars.bat] OpenVINO environment initialized”即表示配置环境变量完毕。</p>
+<p>进入<code>openvino_2021.4.752\deployment_tools\demo</code>，使用cmd或者terminal运行<code>demo_security_barrier_camera.bat</code>来进行验证安装是否成功。刚开始会下载相关的依赖，请耐心等待一会。运行成功会出现如下图片：</p>
+<img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406211946858.png" alt="image-20220406211946858" style="zoom:50%;" />
+<h2 id="visual-studio安装">Visual Studio安装</h2>
+<p>进入Visual Studio官网，安装2017或者2019版本。工作复核选择如下：</p>
+<img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406212142150.png" alt="image-20220406212142150" style="zoom:50%;" />
+<p>语言选择英文和中文即可。</p>
+<p>这里建议将能放在其他盘的东西都放在其他盘，不然所剩无多的C盘又要遭受剥削。</p>
+<h2 id="visual-studio配置openvino">Visual Studio配置Openvino</h2>
+<p>打开Visual Studio，点击左上角<code>视图-其他窗口-属性管理器</code>，会在右边得到这四个目录：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406212411426.png" alt="image-20220406212411426"></p>
+<p>我们选择Debug|x64和Release|x64，鼠标右键添加新项目属性表，在左边的通用属性中点击VC++目录：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406212537324.png" alt="image-20220406212537324"></p>
+<p>在右边常规下选中<code>包含目录</code>，点击右侧的符号，再点击编辑即可：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406212724376.png" alt="image-20220406212724376"></p>
+<p>包含的英文即为<code>include</code>，接下来我们要添加三个文件夹的绝对路径：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406212830825.png" alt="image-20220406212830825"></p>
+<p>完成后返回，点击库目录，库的英文是library，缩写为lib，这里我们同样添加三个目录：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406212912849.png" alt="image-20220406212912849"></p>
+<p><strong>注意：第二个目录最后的文件夹取决于你当前配置的属性表所属的方案配置器——及Release和Debug</strong></p>
+<p>最后点击链接器-输入：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406213058608.png" alt="image-20220406213058608"></p>
+<p>右边进入<code>附加依赖库</code>，接下来要添加很多文件，首先我们进入<code>openvino_2021.4.752\opencv\lib</code>这个文件，里面有许多<code>.lib</code>文件，这里只需添加文件的名字，而非绝对路径。</p>
+<p>方便起见可以使用脚本来得到文件名：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">filename = <span class="string">&#x27;xxx/xxx/xx/xx&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> os.listdir(filename):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i.endswith(<span class="string">&#x27;.lib&#x27;</span>) <span class="keyword">and</span> i[-<span class="number">5</span>] != <span class="string">&#x27;d&#x27;</span>: <span class="comment"># 当为Debug配置时，需要将不等于改为等于。</span></span><br><span class="line">        <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+<p>接下来再添加<code>openvino_2021.4.752\deployment_tools\inference_engine\lib\intel64\Release</code>下的.lib文件即可</p>
+<p>最后再同样配置Debug的属性表即可，需要注意的是，.lib文件的文件名的最后一个字母应该是d。</p>
+<h2 id="环境变量">环境变量</h2>
+<p>我的电脑右键，属性，高级系统设置，环境变量，PATH中配置如下变量：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406214144949.png" alt="image-20220406214144949"></p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406214154996.png" alt="image-20220406214154996"></p>
+<h2 id="验证">验证</h2>
+<p>重启Visual Studio，写一段程序来验证配置是否成功，代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	string filepath = <span class="string">&quot;xxx//xx//xx//xxx.png&quot;</span>;</span><br><span class="line">	Mat img;</span><br><span class="line">	img = <span class="built_in">imread</span>(filepath);</span><br><span class="line">	<span class="built_in">imshow</span>(<span class="string">&quot;test&quot;</span>, img);</span><br><span class="line">	<span class="built_in">waitKey</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行后，如果显示出图片及说明opencv的环境成功了。</p>
+<p>需要注意的是，运行时应该将左上角的<code>win32</code>改为<code>x64</code>：</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/06/image-20220406215417154.png" alt="image-20220406215417154"></p>
+<p>如果提示找不到<code>xxxx.dll</code>，可以在<code>openvino_2021.4.752\opencv\bin</code>目录下找到对应的<code>.dll</code>文件（若为Releas则需要文件名最后不需要d），将文件复制到项目所在目录的Release或者Debug下即可。</p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/BaseLearn/">#BaseLearn</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2022-04-06
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85openvino"><span class="toc-text">安装OpenVINO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#visual-studio%E5%AE%89%E8%A3%85"><span class="toc-text">Visual Studio安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#visual-studio%E9%85%8D%E7%BD%AEopenvino"><span class="toc-text">Visual Studio配置Openvino</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81"><span class="toc-text">验证</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>

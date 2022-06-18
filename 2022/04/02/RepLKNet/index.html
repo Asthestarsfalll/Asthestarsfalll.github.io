@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="Nice to meet U!">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="AsTheStarsFall">
+    
+
+    <!-- Title -->
+    
+    <title>RepLKNet | Hello</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/">
+    <!-- <i class="fa fa-puzzle-piece"></i> -->
+    <i class="fa fa-heart-o"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                RepLKNet
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <blockquote>
+<p>论文名称：Scaling Up Y our Kernels to 31x31: Revisiting Large Kernel Design in CNNs</p>
+<p>作者：Xiaohan Ding, Xiangyu Zhang, Jungong Han, Guiguang Ding</p>
+<p>Code：<a target="_blank" rel="noopener" href="https://github.com/megvii-research/RepLKNet">https://github.com/megvii-research/RepLKNet</a></p>
+</blockquote>
+<h2 id="摘要">摘要</h2>
+<p>本文重新审视了现代卷积神经网络中的大核设计，证明了使用一些大核比一堆小核可能更加强大，同时提出了五个设计准则，依据这些准则设计了RepLKNet——一个纯粹的CNN架构，其中卷积核的最大尺寸达到了<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>31</mn><mo>×</mo><mn>31</mn></mrow><annotation encoding="application/x-tex">31\times 31</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">31</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">31</span></span></span></span>。</p>
+<p>RepKLNet在ImageNet以及各种下游任务上取得了更好的结果，缩短了CNN与ViT之间的差距。基于大核的研究进一步表明，与小核相比，大核的CNN具有更大的有效感受野和更高的形状偏置（shape bias）</p>
+<h2 id="cnn与vit">CNN与ViT</h2>
+<h3 id="transformer性能强的原因">Transformer性能强的原因</h3>
+<p>众所周知，Transformer是由self-attention构成的，相较于Convolution，self-attention主要有两点区别：</p>
+<p>一是self-attention多是在全局尺度内进行计算，即使是最近的Local Transformer也是在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>×</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">7\times 7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span>的窗口内计算；</p>
+<p>二是self-attention的核心机制——QKV运算。</p>
+<p>那么其中的关键是哪一点呢？</p>
+<p>目前很多相关工作都表明，更大的窗口大小或许才是Transformer强大的关键。</p>
+<p>Demystifying local vision transformer: Sparse connectivity, weight sharing, and dynamic weight证明了即使将Swin中的self-attention换成同样大小的卷积性能不变甚至更好； Mlp-mixer证明将ViT中的attention替换为MLP性能也很好；Metaformer将attention替换为pooling性能还是很好。</p>
+<h3 id="cnn的感受野">CNN的感受野</h3>
+<p>自VGG以来，不断堆叠小kernel、加深网络层数成为了卷积神经网络设计的主流范式，因为我们相信，三层<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3\times 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>的卷积核的感受野与一层<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>×</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">7\times 7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span>的感受野相同，并且性能更好，因为其中可以加入更多的非线性，层数越多就代表着拟合能力越强。</p>
+<p><a style="color: red">这是真的吗？</a></p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402214110912.png" alt="image-20220402214110912"></p>
+<p>上图为各个网络的输入对于输出中心点的贡献度，可以看到，即使ResNet堆叠了100多层，其有效感受野也没有多少变化，而RepLKNet-31的有效感受野几乎覆盖全图。</p>
+<p>该观点在论文Understanding the effective receptive field in deep convolutional neural networks. NeurIPS 2016.中有所提及，其认为模型的有效感受野正比于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><msqrt><mi>L</mi></msqrt></mrow><annotation encoding="application/x-tex">K\sqrt L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.11333499999999996em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9266650000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="padding-left:0.833em;">L</span></span><span style="top:-2.886665em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.11333499999999996em;"><span></span></span></span></span></span></span></span></span>，即有效感受野的增长与堆叠层数成开方关系。</p>
+<h3 id="为什么我们不用大kernel">为什么我们不用大Kernel</h3>
+<p>这是一个很显而易见的问题，大kernel太大了，我们都清楚卷积核的参数量相对于kernel size是呈平方增长的，其速度也会慢很多。</p>
+<p>另一个问题就是某些相关工作表明大kernel反而会掉点。</p>
+<p><a style='color: red'>虽然历史淘汰了大Kernel，但是这不表明现在不能复兴它。</a></p>
+<p>虽然标准的dence卷积参数量很大并且速度很慢，但是Depth-with卷积的参数增长并没有那么大，加上适当的底层优化速度或许也可以很快。</p>
+<p>现代神经网络的架构设计或许可以使大kernel绽放出新的光彩，比如swin的结构。</p>
+<h2 id="如何复兴大kernel">如何复兴大Kernel</h2>
+<p>本文提出了使用使用大kernel的五大准则。</p>
+<h3 id="depth-wise-底层优化">Depth-wise+底层优化</h3>
+<p>由于dence卷积的参数量与输入输出通道数都有关系，而Depth-wise卷积只与输入通道数有关系，一般来说其参数大小是dence卷积的几百分之一，即使增大kernel size，其参数量也只和dence卷积相当，论文中也给出了参数表格：</p>
+<img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402215821752.png" alt="image-20220402215821752" style="zoom: 67%;" />
+<p>可以看到即使kernel size提升了很多，参数量和浮点计算量也没有增加很多。</p>
+<p>虽然解决了参数和计算量的问题，但是速度的问题怎么解决呢？</p>
+<img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402220122237.png" alt="image-20220402220122237" style="zoom: 50%;" />
+<p>dence卷积处于上图中的Compute Bound区域，其计算密度已经不会再增长了，除非计算能力上升。</p>
+<p>depthwise卷积处于上图中的Memory Bound区域，其计算密度会随着kernel size的增长而增长，所以更大的kernel速度并不会太慢。</p>
+<p>底层优化略过。。。</p>
+<p>效果如下：</p>
+<img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402220424469.png" alt="image-20220402220424469" style="zoom:67%;" />
+<p>相比于Pytorch最高可加速20倍。</p>
+<h3 id="使用shortcut">使用shortcut</h3>
+<img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402220545649.png" alt="image-20220402220545649" style="zoom:67%;" />
+<p>在MobileNet V2上的实验，可以看到没有shorcut掉点十分严重；这里的解释原因与RepVGG中的相同，使用shortcut相当于集成了很多隐式的模型，有很多不同大小<strong>组合式</strong>感受野；没有shortcut，感受野则单一且巨大，难以捕捉小的特征。</p>
+<h3 id="使用小kernl做重参数化">使用小kernl做重参数化</h3>
+<p>继续发扬重参数化，与RepVGG类似，同时使用一个并行的小kernel，推理时重参数化即可。</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402220854590.png" alt="image-20220402220854590"></p>
+<p>不论大kernel有多大，同时添加一个<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3\times 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span>的小kernel，使得<strong>组合式</strong>的感受野更加丰富，更易提取小的特征。</p>
+<p>但是在数据量很大（MegData-73M）时，小kernel重参数化效果不大。</p>
+<h3 id="看下游任务">看下游任务</h3>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn><mo>×</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">7\times 7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">7</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">7</span></span></span></span>的大kernel在ImageNet分类任务上已经达到极限，即使size再增大，性能也不会变化，这点可能是因为ImageNet上主要依靠纹理信息。</p>
+<p>而对于下游任务，如语义分割、目标检测等，更大的kernel还能获得更好的性能。</p>
+<h3 id="小feature-map上使用大kernel">小feature map上使用大kernel</h3>
+<p>即使feature map尺寸小于kernel size也没有关系，底层实现会使用feature来卷kernel，虽然这样会一定程度上失去平移不变性，但是相关工作表明平移不变性不一定就是好的。</p>
+<h2 id="replknet">RepLKNet</h2>
+<img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402221621267.png" alt="image-20220402221621267" style="zoom:67%;" />
+<p>基于上述准则设计了RepLKNet，并且借鉴了Swin的宏观架构，并且继续加大kernel size，从7到13到25，再到最大31，在各类任务上都取得了十分优秀的效果。</p>
+<h2 id="shape-bias">Shape bias</h2>
+<p>人类用来分辨视觉信息多是因为shape bias，很多情况下都是根据形状来进行判断的。</p>
+<p>而之前的小kernel模型由于有效感受野有限，其判断结果使用的为纹理信息，也有很经典的相关工作表明将不同类别的纹理进行替换，网络会错误的给出判断。</p>
+<p>经过一些实验发现或许大kernel的shape bias会更高，而和attention的关系不大，这些都是后来的研究目标了。</p>
+<h2 id="科研哲学-鸡汤">科研哲学（鸡汤）</h2>
+<p>最后来喝一碗鸡汤，来看看从小kernel到大kernel的辛酸发展历程吧。</p>
+<p><img src="http://1.14.100.228:8003/images/2022/04/02/image-20220402222844882.png" alt="image-20220402222844882"></p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/tags/PaperRead/">#PaperRead</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2022-04-02
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cnn%E4%B8%8Evit"><span class="toc-text">CNN与ViT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#transformer%E6%80%A7%E8%83%BD%E5%BC%BA%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-text">Transformer性能强的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cnn%E7%9A%84%E6%84%9F%E5%8F%97%E9%87%8E"><span class="toc-text">CNN的感受野</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E4%B8%8D%E7%94%A8%E5%A4%A7kernel"><span class="toc-text">为什么我们不用大Kernel</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%A4%8D%E5%85%B4%E5%A4%A7kernel"><span class="toc-text">如何复兴大Kernel</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#depth-wise-%E5%BA%95%E5%B1%82%E4%BC%98%E5%8C%96"><span class="toc-text">Depth-wise+底层优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8shortcut"><span class="toc-text">使用shortcut</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%B0%8Fkernl%E5%81%9A%E9%87%8D%E5%8F%82%E6%95%B0%E5%8C%96"><span class="toc-text">使用小kernl做重参数化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%8B%E4%B8%8B%E6%B8%B8%E4%BB%BB%E5%8A%A1"><span class="toc-text">看下游任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8Ffeature-map%E4%B8%8A%E4%BD%BF%E7%94%A8%E5%A4%A7kernel"><span class="toc-text">小feature map上使用大kernel</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replknet"><span class="toc-text">RepLKNet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shape-bias"><span class="toc-text">Shape bias</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%91%E7%A0%94%E5%93%B2%E5%AD%A6-%E9%B8%A1%E6%B1%A4"><span class="toc-text">科研哲学（鸡汤）</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    
+</body>
+
+</html>
