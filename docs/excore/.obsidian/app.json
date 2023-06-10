@@ -1,0 +1,9 @@
+{
+  "showInlineTitle": true,
+  "spellcheck": true,
+  "spellcheckLanguages": [
+    "zh-CN",
+    "en-US"
+  ],
+  "vimMode": false
+}

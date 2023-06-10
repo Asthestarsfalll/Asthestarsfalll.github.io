@@ -1,0 +1,65 @@
+---
+title: logger
+tags: [API]
+description: None.
+hide_table_of_contents: false
+---
+:::info
+logger 是训练过程中必不可少的组件，ExCore 中使用了 `[loguru](https://github.com/Delgan/loguru)`  来作为 logger
+:::
+
+## add_logger
+
+```python
+def add_logger(
+    name,
+    sink,
+    *,
+    level=None,
+    format=None,
+    filter=None,
+    colorize=None,
+    serialize=None,
+    backtrace=None,
+    diagnose=None,
+    enqueue=None,
+) -> None
+```
+
+本方法实际上是对`loguru.logger.add` 进行了封装，方便对已创建的 logger 进行管理，可以使用 [remove_logger](#remove_logger) 移除指定的 logger。
+
+样例：
+
+```python
+from excore.logger import logger, add_logger, remove_logger
+add_logger('file_logger', 'path/to/log/dir')
+remove_logger('file_logger')
+```
+
+## remove_logger
+
+```python
+def remove_logger(name:str) -> None
+```
+
+通过给定的名称去除已创建的 logger。
+
+样例见 [add_logger](#add_logger)
+
+## log_to_file_only
+
+```python
+def log_to_file_only(file_name: str, *args, **kwargs) -> None
+```
+
+使用后不再将内容显示在屏幕上，而是全部储存在文件中。
+
+## debug_only
+
+```python
+def debug_only(*args, **kwargs) -> None
+```
+
+只显示 `DEBUG` 级别的内容。
+
+实际上是设置了 `loguru.logger.add` 中的 filter 参数。传入参数中若包含 filter 则会被覆盖。
