@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkspace=self.webpackChunkspace||[]).push([[4121],{8070:e=>{e.exports=JSON.parse('[{"label":"API","permalink":"/docs/tags/api","count":4},{"label":"Plan","permalink":"/docs/tags/plan","count":1},{"label":"Poem","permalink":"/docs/tags/poem","count":11},{"label":"Life","permalink":"/docs/tags/life","count":3}]')}}]);
