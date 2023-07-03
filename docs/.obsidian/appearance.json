@@ -1,3 +1,8 @@
 {
-  "accentColor": "#ef6b6b"
+  "accentColor": "#c16bef",
+  "cssTheme": "Minimal",
+  "theme": "moonstone",
+  "textFontFamily": "Adobe 宋体 Std",
+  "interfaceFontFamily": "Anonymice Nerd Font",
+  "monospaceFontFamily": "CodeNewRoman Nerd Font"
 }

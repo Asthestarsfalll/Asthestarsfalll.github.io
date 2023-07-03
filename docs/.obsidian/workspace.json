@@ -4,16 +4,97 @@
     "type": "split",
     "children": [
       {
-        "id": "05a649bc98f52516",
+        "id": "27cfaa9055bedcfd",
         "type": "tabs",
         "children": [
           {
-            "id": "4e815560a7c8d752",
+            "id": "d8096ee098ede99a",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "infinitesimal_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "curvature",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "infinitesimal_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "improper_integral",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "differential_equations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/differential_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "curvature",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "improper_integral",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "curvature",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":2},\"to\":{\"line\":6,\"ch\":2}}}"
+                },
+                {
+                  "title": "differential_equations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/differential_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "curvature",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":1},\"to\":{\"line\":6,\"ch\":1}},\"scroll\":0}"
+                },
+                {
+                  "title": "improper_integral",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "differential_equations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/differential_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":51,\"ch\":0},\"to\":{\"line\":51,\"ch\":0}},\"scroll\":32.58092338216659}"
+                }
+              ]
+            },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blogs/编译原理/llvm_tutorial.mdx",
+                "file": "blogs/数学/高等数学/differential_equations.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -35,6 +116,15 @@
           {
             "id": "efb1e4a87529c3a5",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "file-explorer",
               "state": {
@@ -45,6 +135,15 @@
           {
             "id": "73bedc555d1dd18f",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "search",
               "state": {
@@ -58,8 +157,17 @@
             }
           },
           {
-            "id": "3d04f6ad18d355e9",
+            "id": "1a93dee25600b5d2",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "bookmarks",
               "state": {}
@@ -83,10 +191,19 @@
           {
             "id": "8aa11a19fb8d6f33",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blogs/编译原理/llvm_tutorial.mdx",
+                "file": "blogs/数学/高等数学/differential_equations.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,10 +217,19 @@
           {
             "id": "3fb6fac06a14f30c",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blogs/编译原理/llvm_tutorial.mdx",
+                "file": "blogs/数学/高等数学/differential_equations.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -112,6 +238,15 @@
           {
             "id": "023dbc10114ab08a",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "tag",
               "state": {
@@ -123,11 +258,37 @@
           {
             "id": "108985556a5fca36",
             "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
             "state": {
               "type": "outline",
               "state": {
-                "file": "blogs/编译原理/llvm_tutorial.mdx"
+                "file": "blogs/数学/高等数学/differential_equations.mdx"
               }
+            }
+          },
+          {
+            "id": "7b90dc907330640e",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "calendar",
+              "state": {}
             }
           }
         ]
@@ -139,17 +300,35 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
+      "switcher:打开快速切换": true,
+      "graph:查看关系图谱": true,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "daily-notes:打开/创建今天的日记": true,
+      "templates:插入模板": true,
+      "command-palette:打开命令面板": true,
+      "darlal-switcher-plus:Open in Headings Mode": true,
+      "darlal-switcher-plus:Open Symbols for the active editor": true,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "cmdr:解锁/锁定": false,
+      "cmdr:使用深色模式": false,
+      "cmdr:使用浅色模式": false,
+      "cmdr:导出为 PDF": false,
+      "privacy-glasses:Hide all": false,
+      "privacy-glasses:Reveal non-private": false,
+      "privacy-glasses:Reveal all": false
     }
   },
-  "active": "4e815560a7c8d752",
+  "active": "d8096ee098ede99a",
+  "ophidian:layout-settings": {
+    "pane-relief:focus-lock": true
+  },
   "lastOpenFiles": [
+    "blogs/数学/高等数学/infinitesimal_calculus.mdx",
     "blogs/数学/高等数学/curvature.mdx",
+    "blogs/数学/高等数学/improper_integral.mdx",
+    "blogs/数学/高等数学/differential_equations.mdx",
+    "未命名.canvas",
+    "excore/config.mdx",
     "blogs/编译原理/llvm_tutorial.mdx",
     "meaningless/Onism/travel_guide_of_chongqing.mdx",
     "未命名 2.md",
@@ -158,13 +337,8 @@
     "meaningless/Onism/summerfadesaway.mdx",
     "blogs/intro.mdx",
     "blogs/英语/synonym.mdx",
-    "blogs/a.mdx",
     "meaningless/intro.md",
-    "meaningless/语录/罗翔语录.mdx",
-    "meaningless/Onism",
     "meaningless/语录/intro.md",
-    "meaningless/语录",
-    "meaningless/现代诗词/what-can-i-holduwith.mdx",
     "similar-vocabularies/index.md",
     "blogs/数学/通用/不等式.mdx.md",
     "blogs/数学/未命名.md",
