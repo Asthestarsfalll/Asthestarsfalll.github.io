@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "27cfaa9055bedcfd",
+        "id": "3324baa1b6f961ea",
         "type": "tabs",
         "children": [
           {
-            "id": "d8096ee098ede99a",
+            "id": "889113ebf7fff968",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,83 +18,92 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "infinitesimal_calculus",
+                  "title": "eigenvalues_and_eigenvectors",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "curvature",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
                 },
                 {
-                  "title": "infinitesimal_calculus",
+                  "title": "quadratic_form",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":174,\"ch\":25},\"to\":{\"line\":174,\"ch\":25}},\"scroll\":153.05240150178258}"
+                },
+                {
+                  "title": "eigenvalues_and_eigenvectors",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":47},\"to\":{\"line\":13,\"ch\":47}},\"scroll\":12.262450111809315}"
+                },
+                {
+                  "title": "quadratic_form",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":172,\"ch\":0},\"to\":{\"line\":172,\"ch\":0}},\"scroll\":134.6318932071522}"
+                },
+                {
+                  "title": "inverse_matrix",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
-                  "title": "improper_integral",
+                  "title": "quadratic_form",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
-                  "title": "differential_equations",
+                  "title": "system_of_linear_equations",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/differential_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
                 },
                 {
-                  "title": "curvature",
+                  "title": "eigenvalues_and_eigenvectors",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":208,\"ch\":41},\"to\":{\"line\":208,\"ch\":41}},\"scroll\":189.16136960192978}"
                 },
                 {
-                  "title": "improper_integral",
+                  "title": "quadratic_form",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":109,\"ch\":0},\"to\":{\"line\":109,\"ch\":0}},\"scroll\":91.47047091209315}"
                 },
                 {
-                  "title": "curvature",
+                  "title": "eigenvalues_and_eigenvectors",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":2},\"to\":{\"line\":6,\"ch\":2}}}"
-                },
-                {
-                  "title": "differential_equations",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/differential_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "curvature",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":1},\"to\":{\"line\":6,\"ch\":1}},\"scroll\":0}"
-                },
-                {
-                  "title": "improper_integral",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "differential_equations",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"blogs/数学/高等数学/differential_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":51,\"ch\":0},\"to\":{\"line\":51,\"ch\":0}},\"scroll\":32.58092338216659}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":167,\"ch\":9},\"to\":{\"line\":167,\"ch\":9}},\"scroll\":120.45179420250244}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blogs/数学/高等数学/differential_equations.mdx",
+                "file": "notes/数学/线性代数/quadratic_form.mdx",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ea49a52a72d4687a",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -177,8 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2cb931200911f1fe",
@@ -203,7 +211,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blogs/数学/高等数学/differential_equations.mdx",
+                "file": "notes/数学/线性代数/quadratic_form.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -229,7 +237,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blogs/数学/高等数学/differential_equations.mdx",
+                "file": "notes/数学/线性代数/quadratic_form.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -270,7 +278,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blogs/数学/高等数学/differential_equations.mdx"
+                "file": "notes/数学/线性代数/quadratic_form.mdx"
               }
             }
           },
@@ -318,25 +326,27 @@
       "privacy-glasses:Reveal all": false
     }
   },
-  "active": "d8096ee098ede99a",
+  "active": "889113ebf7fff968",
   "ophidian:layout-settings": {
     "pane-relief:focus-lock": true
   },
   "lastOpenFiles": [
-    "blogs/数学/高等数学/infinitesimal_calculus.mdx",
-    "blogs/数学/高等数学/curvature.mdx",
-    "blogs/数学/高等数学/improper_integral.mdx",
-    "blogs/数学/高等数学/differential_equations.mdx",
+    "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
+    "notes/数学/线性代数/quadratic_form.mdx",
+    "notes/数学/线性代数/inverse_matrix.mdx",
+    "notes/数学/线性代数/system_of_linear_equations.mdx",
+    "notes/数学/高等数学/infinitesimal_calculus.mdx",
+    "notes/数学/高等数学/improper_integral.mdx",
+    "notes/数学/高等数学/differential_equations.mdx",
+    "notes/数学/高等数学/curvature.mdx",
+    "notes/数学/通用/inequality.mdx",
+    "notes/英语/synonym.mdx",
+    "notes/编译原理/llvm_tutorial.mdx",
+    "未命名 1.canvas",
     "未命名.canvas",
-    "excore/config.mdx",
-    "blogs/编译原理/llvm_tutorial.mdx",
-    "meaningless/Onism/travel_guide_of_chongqing.mdx",
     "未命名 2.md",
     "未命名 1.md",
     "未命名.md",
-    "meaningless/Onism/summerfadesaway.mdx",
-    "blogs/intro.mdx",
-    "blogs/英语/synonym.mdx",
     "meaningless/intro.md",
     "meaningless/语录/intro.md",
     "similar-vocabularies/index.md",

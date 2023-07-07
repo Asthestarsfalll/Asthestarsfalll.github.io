@@ -92,8 +92,8 @@ const config = {
         },
         items: [
           {
-            to: "/docs/blogs/intro",
-            label: "Blogs",
+            to: "/docs/notes/intro",
+            label: "Notes",
             position: "left"
           },
           {
