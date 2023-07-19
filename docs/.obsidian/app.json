@@ -4,5 +4,8 @@
     "zh-CN",
     "en-US"
   ],
-  "vimMode": true
+  "vimMode": true,
+  "focusNewTab": true,
+  "defaultViewMode": "source",
+  "livePreview": true
 }

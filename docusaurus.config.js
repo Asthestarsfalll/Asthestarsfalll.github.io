@@ -92,20 +92,25 @@ const config = {
         },
         items: [
           {
-            to: "/docs/notes/intro",
+            to: "/blog",
+            label: "Blogs",
+            position: "left"
+          },
+          {
+            to: "/docs/notes",
             label: "Notes",
             position: "left"
           },
           {
             // type: "doc",
-            docId: "intro",
-            to: "/docs/meaningless/intro",
+            // docId: "index",
+            to: "/docs/meaningless",
             position: "left",
             label: "Meaningless",
           },
           {
             // href: "https://ExCore.github.io",
-            to: "/docs/excore/intro",
+            to: "/docs/excore",
             label: "ExCore",
             position: "left",
           },

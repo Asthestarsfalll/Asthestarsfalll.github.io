@@ -21,3 +21,5 @@ yarn-error.log*
 
 .vercel
 yarn.lock
+
+.trash

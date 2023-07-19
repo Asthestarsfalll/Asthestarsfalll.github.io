@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3324baa1b6f961ea",
+        "id": "1475704c47b65926",
         "type": "tabs",
         "children": [
           {
-            "id": "889113ebf7fff968",
+            "id": "1dce0bfe03e87f11",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,28 +18,94 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "eigenvalues_and_eigenvectors",
+                  "title": "index",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"excore/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":18},\"to\":{\"line\":2,\"ch\":18}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"excore/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":18},\"to\":{\"line\":2,\"ch\":18}}}"
+                },
+                {
+                  "title": "logger",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"excore/logger.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":19},\"to\":{\"line\":3,\"ch\":19}},\"scroll\":0}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":362,\"ch\":0},\"to\":{\"line\":362,\"ch\":0}},\"scroll\":329.9355653920765}"
+                },
+                {
+                  "title": "curvature",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":0},\"to\":{\"line\":35,\"ch\":0}},\"scroll\":8.417752955460028}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":55,\"ch\":0},\"to\":{\"line\":55,\"ch\":0}},\"scroll\":87.0427138024674}"
+                },
+                {
+                  "title": "inverse_matrix",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
                 },
                 {
-                  "title": "quadratic_form",
+                  "title": "curvature",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":174,\"ch\":25},\"to\":{\"line\":174,\"ch\":25}},\"scroll\":153.05240150178258}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/curvature.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":15.205987043853286}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":232,\"ch\":9},\"to\":{\"line\":232,\"ch\":9}},\"scroll\":215.42193416125846}"
+                },
+                {
+                  "title": "system_of_linear_equations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "inverse_matrix",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
                   "title": "eigenvalues_and_eigenvectors",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":47},\"to\":{\"line\":13,\"ch\":47}},\"scroll\":12.262450111809315}"
-                },
-                {
-                  "title": "quadratic_form",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":172,\"ch\":0},\"to\":{\"line\":172,\"ch\":0}},\"scroll\":134.6318932071522}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
                   "title": "inverse_matrix",
@@ -57,53 +123,74 @@
                   "title": "system_of_linear_equations",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "eigenvalues_and_eigenvectors",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":208,\"ch\":41},\"to\":{\"line\":208,\"ch\":41}},\"scroll\":189.16136960192978}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
                   "title": "quadratic_form",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":109,\"ch\":0},\"to\":{\"line\":109,\"ch\":0}},\"scroll\":91.47047091209315}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
-                  "title": "eigenvalues_and_eigenvectors",
+                  "title": "system_of_linear_equations",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":167,\"ch\":9},\"to\":{\"line\":167,\"ch\":9}},\"scroll\":120.45179420250244}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/数学/线性代数/quadratic_form.mdx",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ea49a52a72d4687a",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
                 {
-                  "state": "{}",
-                  "eState": "{}"
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":173,\"ch\":0},\"to\":{\"line\":173,\"ch\":0}},\"scroll\":159.9073278972664}"
+                },
+                {
+                  "title": "data_representation_and_operations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/data_representation_and_operations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":170,\"ch\":13},\"to\":{\"line\":170,\"ch\":21}},\"scroll\":160.69918368972174}"
+                },
+                {
+                  "title": "overview_of_computer_systems",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":117.93845070805416}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":87,\"ch\":29},\"to\":{\"line\":87,\"ch\":29}},\"scroll\":60.604700585019906}"
+                },
+                {
+                  "title": "overview_of_computer_systems",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":19.337939542144422}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "overview_of_computer_systems",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":34,\"ch\":10},\"to\":{\"line\":34,\"ch\":10}},\"scroll\":19.337939542144422}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":16},\"to\":{\"line\":10,\"ch\":16}}}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
+                "file": "notes/计算机组成原理/storage_system.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -211,7 +298,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数学/线性代数/quadratic_form.mdx",
+                "file": "notes/计算机组成原理/storage_system.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -237,7 +324,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数学/线性代数/quadratic_form.mdx",
+                "file": "notes/计算机组成原理/storage_system.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -278,7 +365,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数学/线性代数/quadratic_form.mdx"
+                "file": "notes/计算机组成原理/storage_system.mdx"
               }
             }
           },
@@ -314,41 +401,40 @@
       "daily-notes:打开/创建今天的日记": true,
       "templates:插入模板": true,
       "command-palette:打开命令面板": true,
-      "darlal-switcher-plus:Open in Headings Mode": true,
-      "darlal-switcher-plus:Open Symbols for the active editor": true,
       "markdown-importer:打开 Markdown 格式转换器": false,
       "cmdr:解锁/锁定": false,
       "cmdr:使用深色模式": false,
       "cmdr:使用浅色模式": false,
       "cmdr:导出为 PDF": false,
-      "privacy-glasses:Hide all": false,
-      "privacy-glasses:Reveal non-private": false,
-      "privacy-glasses:Reveal all": false
+      "darlal-switcher-plus:Open in Headings Mode": false,
+      "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "889113ebf7fff968",
-  "ophidian:layout-settings": {
-    "pane-relief:focus-lock": true
-  },
+  "active": "1dce0bfe03e87f11",
   "lastOpenFiles": [
+    "excore/index.mdx",
+    "meaningless/index.mdx",
+    "excore/logger.mdx",
+    "notes/index.mdx",
+    "notes/计算机组成原理/storage_system.mdx",
+    "未命名.md",
+    "notes/数学/高等数学/curvature.mdx",
+    "notes/数学/线性代数/inverse_matrix.mdx",
+    "未命名.canvas",
+    "notes/数学/线性代数/system_of_linear_equations.mdx",
     "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
     "notes/数学/线性代数/quadratic_form.mdx",
-    "notes/数学/线性代数/inverse_matrix.mdx",
-    "notes/数学/线性代数/system_of_linear_equations.mdx",
-    "notes/数学/高等数学/infinitesimal_calculus.mdx",
-    "notes/数学/高等数学/improper_integral.mdx",
-    "notes/数学/高等数学/differential_equations.mdx",
-    "notes/数学/高等数学/curvature.mdx",
-    "notes/数学/通用/inequality.mdx",
-    "notes/英语/synonym.mdx",
-    "notes/编译原理/llvm_tutorial.mdx",
+    "notes/数学/index.mdx",
+    "meaningless/语录/index.md",
+    "meaningless/index.md",
+    "notes/index.md",
+    "'./overview_of_computer_systems'.md",
+    "'./over'.md",
     "未命名 1.canvas",
-    "未命名.canvas",
+    "meaningless/语录/intro.md",
     "未命名 2.md",
     "未命名 1.md",
-    "未命名.md",
     "meaningless/intro.md",
-    "meaningless/语录/intro.md",
     "similar-vocabularies/index.md",
     "blogs/数学/通用/不等式.mdx.md",
     "blogs/数学/未命名.md",

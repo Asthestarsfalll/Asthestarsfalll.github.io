@@ -25,7 +25,7 @@ export const FeatureList: FeatureItem[] = [
         Focusing on Semantic Segmentation now. Pursuing Perfection. 
       </>
     ),
-    buttonLink: "/docs/blogs/",
+    buttonLink: "/docs/深度学习/",
     buttonText: "See my notes",
   },
   {
@@ -36,7 +36,7 @@ export const FeatureList: FeatureItem[] = [
         Using Python & C++ & cuda. Pursuing Brevity and Elegance.
       </>
     ),
-    buttonLink: "/docs/blogs",
+    buttonLink: "/blog",
     buttonText: "random blogs",
   },
   {
@@ -47,7 +47,7 @@ export const FeatureList: FeatureItem[] = [
         An rubbish undergraduate. Being obsessional about Customized keyboards & Music especially Post Rock.
       </>
     ),
-    buttonLink: "/docs/meaningless/intro",
+    buttonLink: "/docs/meaningless/index",
     buttonText: "meaningless corner",
   },
 ];
