@@ -18,6 +18,12 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "index",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"excore/index.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -190,7 +196,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx",
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -298,7 +304,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx",
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -324,7 +330,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx",
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -365,7 +371,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx"
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx"
               }
             }
           },
@@ -412,11 +418,11 @@
   },
   "active": "1dce0bfe03e87f11",
   "lastOpenFiles": [
+    "notes/计算机组成原理/storage_system.mdx",
     "excore/index.mdx",
     "meaningless/index.mdx",
     "excore/logger.mdx",
     "notes/index.mdx",
-    "notes/计算机组成原理/storage_system.mdx",
     "未命名.md",
     "notes/数学/高等数学/curvature.mdx",
     "notes/数学/线性代数/inverse_matrix.mdx",

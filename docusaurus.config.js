@@ -135,40 +135,40 @@ const config = {
       footer: {
         style: "light",
         links: [{
-            title: "Others",
-            items: [{
-              label: "Meaningless Corner",
-              to: "/docs/meaningless/intro",
-            }, ],
+          title: "Others",
+          items: [{
+            label: "Meaningless Corner",
+            to: "/docs/meaningless/index",
+          },],
+        },
+        {
+          title: "Community",
+          items: [{
+            label: "NEET CV",
+            href: "https://github.com/neet-cv",
           },
           {
-            title: "Community",
-            items: [{
-                label: "NEET CV",
-                href: "https://github.com/neet-cv",
-              },
-              {
-                label: "sanyuankexie",
-                href: "https://github.com/sanyuankexie",
-              },
-            ],
+            label: "sanyuankexie",
+            href: "https://github.com/sanyuankexie",
+          },
+          ],
+        },
+        {
+          title: "More",
+          items: [{
+            label: "excore.github.io",
+            to: "https://excore.github.io",
           },
           {
-            title: "More",
-            items: [{
-                label: "excore.github.io",
-                to: "https://excore.github.io",
-              },
-              {
-                label: "See me on Github",
-                href: "https://github.com/Asthestarsfalll",
-              },
-              {
-                label: "Powered by docusaurus",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
+            label: "See me on Github",
+            href: "https://github.com/Asthestarsfalll",
           },
+          {
+            label: "Powered by docusaurus",
+            href: "https://github.com/facebook/docusaurus",
+          },
+          ],
+        },
         ],
         copyright: `<a href="https://github.com/Asthestarsfalll" target="_blank">@Asthestarsfalll</a> ${new Date().getFullYear()} all rights reserved `,
       },
