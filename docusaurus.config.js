@@ -138,7 +138,7 @@ const config = {
           title: "Others",
           items: [{
             label: "Meaningless Corner",
-            to: "/docs/meaningless/index",
+            to: "/docs/meaningless",
           },],
         },
         {

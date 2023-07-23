@@ -161,7 +161,7 @@ function HomepageBackground() {
                   });
                 }}
               >
-                Things Fun
+                Continue
               </a>
             </div>
           </div>
