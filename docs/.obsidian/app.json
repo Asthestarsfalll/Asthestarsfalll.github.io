@@ -1,11 +1,12 @@
 {
   "promptDelete": false,
   "spellcheckLanguages": [
-    "zh-CN",
     "en-US"
   ],
   "vimMode": true,
   "focusNewTab": true,
   "defaultViewMode": "source",
-  "livePreview": true
+  "livePreview": true,
+  "showLineNumber": true,
+  "readableLineLength": true
 }

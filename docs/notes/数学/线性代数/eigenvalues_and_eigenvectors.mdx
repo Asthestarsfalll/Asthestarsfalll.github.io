@@ -1,56 +1,73 @@
 ---
 title: 特征值和特征向量
 tags: [linear algebra]
-description: 特征值、特征向量、相似矩阵和实对称矩阵。
+description: 特征值、特征向量、相似矩阵和实对称矩阵.
 hide_table_of_contents: false
 ---
 
 # 特征值和特征向量
 
 ## 定义
+
 :::caution
-只有方阵有特征值和特征向量。
-非方阵表示的线性变换为投影，无法分解为线性无关的基向量。
-特征值分解找到了某变换下只有伸缩效果的基，而奇异值分解可以找到在某变换下旋转、缩放和投影的基。
+
+只有方阵有特征值和特征向量.
+
+非方阵表示的线性变换为投影，无法分解为线性无关的基向量.
+
+特征值分解找到了某变换下只有伸缩效果的基，而奇异值分解可以找到在某变换下旋转、缩放和投影的基.
+
 :::
 
 对于 $n$ 阶矩阵 $A$，存在一个数 $\lambda$ 和**非零**的 $n$ 维列向量 $\alpha$，使得
+
 $$
 A\alpha=\lambda\alpha  \tag1
 $$
-成立，其中 $\lambda$ 为一个常数，表示特征值，非零向量 $\alpha$ 为其对应的特征向量。
+
+成立，其中 $\lambda$ 为一个常数，表示特征值，非零向量 $\alpha$ 为其对应的特征向量.
 
 :::info
-从几何意义上来说，矩阵的特征向量指向在某个线性变换（旋转、缩放）中（上文中即 $A$）只缩放而不旋转的方向，特征值即是其缩放因子。
 
-因此从几何意义可以得知：旋转矩阵无特征值和特征矩阵。
+从几何意义上来说，矩阵的特征向量指向在某个线性变换（旋转、缩放）中（上文中即 $A$）只缩放而不旋转的方向，特征值即是其缩放因子.
+
+因此从几何意义可以得知：旋转矩阵无特征值和特征矩阵.
+
 :::
 
 由式 $(1)$ 移项 $(\lambda E-A)\alpha=0$，而 $\alpha$ 为非零向量，则其为齐次方程组 $(\lambda E-A)x=0$ 的非零解，而要使非零解存在，可推出
+
 $$
  |\lambda E-A|=0 \tag2
 $$
-式 $(2)$ 可以得出 $n$ 个特征值 $\lambda_{i}$，再有 $(\lambda_{i}E-A)x=0$ 解出**基础解系**，即为其对应的特征向量。
+
+式 $(2)$ 可以得出 $n$ 个特征值 $\lambda_{i}$，再有 $(\lambda_{i}E-A)x=0$ 解出**基础解系**，即为其对应的特征向量.
 
 :::note
-通过上述方程组可以得到，$\lambda_{i}E-A$ 的秩为 0，即都不可逆。
+
+通过上述方程组可以得到，$\lambda_{i}E-A$ 的秩为 0，即都不可逆.
+
 :::
 
 ## 相关定理或结论
 
-若 $\lambda_{i}$ 是 $A$ 的互不相同的特征值，$\alpha_{i}$ 是其对应的特征向量，则 $\alpha_{i}$ 线性无关。
+若 $\lambda_{i}$ 是 $A$ 的互不相同的特征值，$\alpha_{i}$ 是其对应的特征向量，则 $\alpha_{i}$ 线性无关.
 
 $A$ 为 $n$ 阶矩阵，$\lambda_{i}$ 为其特征值，则有
+
 $$
 \begin{align*}
 \sum \lambda_{i}&=\sum a_{ii} \\
 |A|&= \prod\lambda_{i}
 \end{align*}
 $$
+
 :::info
-若对于矩阵 $A$ 的某个特征值 $\lambda$ 的所有特征向量 $\alpha_{i}$，则 $\sum k_{i}\alpha_{i}\neq 0$ 仍为其特征向量（只有一个特征向量同样适用）。
+
+若对于矩阵 $A$ 的某个特征值 $\lambda$ 的所有特征向量 $\alpha_{i}$，则 $\sum k_{i}\alpha_{i}\neq 0$ 仍为其特征向量（只有一个特征向量同样适用）.
 
 证明：
+
 $$
 \begin{align*}
 A\left( \sum k_{i}\alpha_{i} \right) &= \sum Ak_{i}\alpha_{i} \\
@@ -59,9 +76,11 @@ A\left( \sum k_{i}\alpha_{i} \right) &= \sum Ak_{i}\alpha_{i} \\
 &=\lambda\sum k_{i}\alpha_{i}
 \end{align*}
 $$
+
 :::
 
-若 $\lambda$ 是 $A$ 的特征值，则 $\lambda+k$ 是 $A+kE$ 的特征值。使用定义证明
+若 $\lambda$ 是 $A$ 的特征值，则 $\lambda+k$ 是 $A+kE$ 的特征值.使用定义证明
+
 $$
 \begin{align*}
 (A+kE)\alpha &= A\alpha+kE\alpha \\
@@ -69,7 +88,9 @@ $$
 &=(\lambda+k)\alpha
 \end{align*}
 $$
-另有 $\lambda^m$ 是 $A^m$ 的特征值。同样使用定义证明
+
+另有 $\lambda^m$ 是 $A^m$ 的特征值.同样使用定义证明
+
 $$
 \begin{align*}
 A^m\alpha&=A^{m-1}A\alpha \\
@@ -77,70 +98,96 @@ A^m\alpha&=A^{m-1}A\alpha \\
 &=\lambda^m\alpha
 \end{align*}
 $$
+
 :::note
-由上述式子，同样可以证明 $AB$ 的一个特征值是二者特征值之积。
+
+由上述式子，同样可以证明 $AB$ 的一个特征值是二者特征值之积.
+
 :::
 
 ## 伴随矩阵的特征值和特征向量
+
 :::caution
-要求 $A$ 可逆。
+
+要求 $A$ 可逆.
+
 :::
+
 伴随矩阵和原矩阵的关系
+
 $$
 A^*A=A A^*=|A|E
 $$
+
 由特征向量定义
+
 $$
 A\alpha=\lambda\alpha
 $$
+
 左乘 $A^*$
+
 $$
 A^*A\alpha=\lambda A^*\alpha
 $$
+
 即
+
 $$
 \frac{|A|}{\lambda}E\alpha =\frac{|A|}{\lambda}\alpha=A^*\alpha
 $$
-则其特征值为 $\frac{|A|}{\lambda}$，且 $\alpha$ 仍是特征向量。
+
+则其特征值为 $\frac{|A|}{\lambda}$，且 $\alpha$ 仍是特征向量.
 
 ## 转置矩阵的特征值和特征向量
 
 由定义
+
 $$
 |\lambda E-A^T| = |(\lambda E-A)^T| = |\lambda E-A|
 $$
-因此具有相同的特征值。而 $A\alpha=\lambda\alpha$ 无法推出 $A^T\alpha=\lambda\alpha$。
+
+因此具有相同的特征值.而 $A\alpha=\lambda\alpha$ 无法推出 $A^T\alpha=\lambda\alpha$.
 
 # 相似矩阵
 
 :::caution
+
 要求方阵
+
 :::
+
 ## 定义
 
 设 $n$ 阶矩阵  $A,B$ ，若存在可逆矩阵 $P$ ，使得
+
 $$
 P^{-1}AP=B
 $$
-则称 $B$ 是 $A$ 的相似矩阵，记作 $A \sim B$。
+
+则称 $B$ 是 $A$ 的相似矩阵，记作 $A \sim B$.
+
 :::info
+
 其拥有如下性质
+
 1. 反身性，$A\sim A$；
 2. 对称性，$A\sim B \implies B\sim A$；
-3. 传递性，$A\sim B,B\sim C\implies A\sim C$。
+3. 传递性，$A\sim B,B\sim C\implies A\sim C$.
 :::
-::: caution
+:::caution
 两矩阵相似的必要条件
 1. 特征多项式相同即 $|\lambda E-A|=|\lambda E-B|$；
 2. 具有相同的特征值；
 3. 秩相同；
 4. $|A|=|B|=\prod\lambda_{i}$；
-5. $\sum a_{ii}=\sum b_{ii}=\sum \lambda_{i}$。
+5. $\sum a_{ii}=\sum b_{ii}=\sum \lambda_{i}$.
 :::
 
 ## 相关结论
 
 $A\sim B\implies A^n\sim B^n$，证明如下
+
 $$
 \begin{align*}
 B^n &= (P^{-1}AP)^n \\
@@ -148,7 +195,9 @@ B^n &= (P^{-1}AP)^n \\
 &=P ^{-1}A^nP
 \end{align*}
 $$
+
 $A\sim B\implies A+kE\sim B+kE$，证明如下
+
 $$
 \begin{align*}
 B+kE&=P^{-1}(A+kE)P \\
@@ -156,8 +205,11 @@ B+kE&=P^{-1}(A+kE)P \\
 &=P ^{-1} AP+kE
 \end{align*}
 $$
+
 $A \sim B\implies A ^{-1}\sim B ^{-1}$，证明如下
+
 由 $A\sim B\implies |A|=|B|$ ，$B$ 可逆
+
 $$
 \begin{align*}
 B ^{-1}&=(P ^{-1}A P)^{-1} \\
@@ -165,23 +217,31 @@ B ^{-1}&=(P ^{-1}A P)^{-1} \\
 &=P ^{-1} A ^{-1}P
 \end{align*}
 $$
+
 ## 相似对角化
 
 :::caution
-首先要证明可相似对角化。
+
+首先要证明可相似对角化.
+
 :::
 
-若 $A\sim \Lambda$，其中 $\Lambda$ 是对角矩阵，则称 $A$ 可相似对角化，$\Lambda$ 是 $A$ 的**相似标准形**。
+若 $A\sim \Lambda$，其中 $\Lambda$ 是对角矩阵，则称 $A$ 可相似对角化，$\Lambda$ 是 $A$ 的**相似标准形**.
 
 :::info
-相似对角化的充分必要条件是 $A$ 拥有 $n$ 个线性无关的特征向量，也即每个特征值线性无关的特征向量个数，等于该特征值的重数，也即 $r(\lambda_{i}E-A)=n-n_{i}$，$n_{i}$ 为重数。
+
+相似对角化的充分必要条件是 $A$ 拥有 $n$ 个线性无关的特征向量，也即每个特征值线性无关的特征向量个数，等于该特征值的重数，也即 $r(\lambda_{i}E-A)=n-n_{i}$，$n_{i}$ 为重数.
+
 :::
 
 通过相似的性质，可以推出，$A$ 可相似对角化为
+
 $$
 A\sim \begin{bmatrix} \lambda_{1} & & & \\ & \lambda_{2} & & \\ & & \ddots&\\ & & &\lambda_{n} \end{bmatrix}
 $$
+
 :::info
+
 相似对角化中的可逆矩阵 $P$ 可以由特征向量构成，$P=(\alpha_{1},\cdots,\alpha_{n})$
 
 $$
@@ -191,21 +251,27 @@ A(\alpha_{1},\cdots,\alpha_{n})&=(\lambda_{1}\alpha_{1},\cdots,\lambda_{2}\alpha
 &=P\Lambda
 \end{align*}
 $$
-即 $AP=P\Lambda\implies P ^{-1}AP=\Lambda$。
-由于 $P$ 要求可逆，这也能解释为什么充要条件是特征向量线性无关。
+
+即 $AP=P\Lambda\implies P ^{-1}AP=\Lambda$.
+
+由于 $P$ 要求可逆，这也能解释为什么充要条件是特征向量线性无关.
+
 :::
 
 ## 实对称矩阵
 
-实对称矩阵 $A$ 的元素都为实数，且满足 $A=A^T$ 。
+实对称矩阵 $A$ 的元素都为实数，且满足 $A=A^T$ .
 
 :::info
-实对称矩阵必定可以相似对角化，且属于不同特征值所对应的特征向量相互正交（属于相同特征值的特征向量则可以不正交）。
+
+实对称矩阵必定可以相似对角化，且属于不同特征值所对应的特征向量相互正交（属于相同特征值的特征向量则可以不正交）.
 
 存在正交矩阵 $Q^TQ=E$，使得 $Q ^{-1}AQ=Q^TAQ=\Lambda$
+
 :::
 
 由上，实对称矩阵可以使用正交矩阵来进行相似对角化，步骤如下
+
 1. 求出特征值及其相应特征矩阵；
 2. 若特征值无重根，则所有特征向量已正交；若有重根，由于属于相同特征值的特征向量不一定正交，则需要先进行正交化；
-3. 特征向量单位化，即可得到正交阵 $Q$，有 $Q^TAQ=\Lambda$。
+3. 特征向量单位化，即可得到正交阵 $Q$，有 $Q^TAQ=\Lambda$.

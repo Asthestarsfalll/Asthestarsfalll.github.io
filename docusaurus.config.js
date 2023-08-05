@@ -175,7 +175,26 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        defaultMode: 'dark'
+        defaultMode: 'dark',
+        magicComments: [
+          // Remember to extend the default highlight class name as well!
+          {
+            className: 'code-block-highlighted-line',
+            line: 'Highlight',
+            block: { start: 'Highlight-start', end: 'Highlight-end' },
+          },
+          {
+            className: 'code-block-error-line',
+            line: 'Error',
+            block: { start: 'Error-start', end: 'Error-end' },
+          },
+          {
+            className: 'code-block-important-line',
+            line: 'Important',
+            block: { start: 'Im-start', end: 'Im-end' },
+          },
+        ],
+
       },
     }),
 };

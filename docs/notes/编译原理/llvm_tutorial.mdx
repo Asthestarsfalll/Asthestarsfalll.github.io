@@ -8,9 +8,9 @@ https://llvm.org/docs/tutorial/index.html
 
 ## 目标
 
-实现一个简单的编程语言——Kaleidoscope，支持定义函数、条件语句、数学运算等。并且扩展支持if/then/else的结构、for循环、用户自定义操作符、JIT、调试等。
+实现一个简单的编程语言——Kaleidoscope，支持定义函数、条件语句、数学运算等.并且扩展支持if/then/else的结构、for循环、用户自定义操作符、JIT、调试等.
 
-为了经可能简单，Kaleidoscope中的数据类型只有float64——double。因此并不需要类型声明。
+为了经可能简单，Kaleidoscope中的数据类型只有float64——double.因此并不需要类型声明.
 
 同时允许Kaleidoscope调用标准库函数，LLVM JIT可以轻易做到这点：
 
@@ -25,17 +25,19 @@ atan2(sin(.4), cos(42))
 **学习目标**
 
 掌握使用llvm实现编程语言的大致流程
+
 了解llvm的使用方法
 
 ## 词法分析器
 
-词法分析器是实现一个编程语言应该完成的第一步，这里的实现没啥好说的，或许使用lex实现更好吧。
+词法分析器是实现一个编程语言应该完成的第一步，这里的实现没啥好说的，或许使用lex实现更好吧.
 
 ## Parser
 
-本节所实现的Parser会结合递归下降法和算符优先分析，利用上文中的lexer解析输入的token，并且返回AST——抽象语法树。
+本节所实现的Parser会结合递归下降法和算符优先分析，利用上文中的lexer解析输入的token，并且返回AST——抽象语法树.
 
-Kaleidoscope中的 抽象语法树如下：
+Kaleidoscope 中的抽象语法树如下：
+
 ```c++
 /// ExprAST - Base class for all expression nodes.
 class ExprAST {
@@ -81,8 +83,3 @@ public:
     : Callee(Callee), Args(std::move(Args)) {}
 };
 ```
-
-
-
-
-
