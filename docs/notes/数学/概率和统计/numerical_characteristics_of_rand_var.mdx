@@ -1,6 +1,6 @@
 ---
 title: 随机变量的数字特征
-tags: [probability theory]
+tags: [probability theory and mathematical statistics]
 hide_table_of_contents: false
 ---
 
@@ -54,15 +54,22 @@ $$
 :::
 
 **方差的计算公式**
+
 $$
-D(X)=
-alig
-E\{[X-E(X)]^2\}=E\{X^2-2XE(X)\}=E(X^2)-[E(X)]^2
+\begin{aligned}
+D(X)&=
+E\{[X-E(X)]^2\}\\
+&=E\{X^2-2XE(X)+[E(X)]^2\}\\
+&=E(X^2)-2E(X)E(X)+[E(X)]^2\\
+&=E(X^2)-[E(X)]^2
+\end{aligned}
 $$
 
 **连续型**
 
-$$E(X)=\int _{-\infty}^{+\infty}xf(x) \, dx$$
+$$
+E(X)=\int _{-\infty}^{+\infty}xf(x) \, dx
+$$
 
 $$
 E(Y)=E[g(X)]=\int _{-\infty}^{+\infty}g(x)f(x) \, dx 
@@ -71,3 +78,73 @@ $$
 $$
 E(Z)=E[g(X,Y)]=\int _{-\infty}^{+\infty}  \, \int  _{-\infty}^{+\infty} \, g(x,y)f(x,y)dxdy
 $$
+
+$$
+D(X)=\int [x-E(x)]^2 f(x) \, dx 
+$$
+
+## 矩、协方差、相关系数
+
+对于随机变量 $X$，若
+
+$$
+E(X^k),k=1,2,\cdots
+$$
+
+存在，则称其为 $X$ 的 **k 阶原点矩**；
+
+若
+
+$$
+E\{[X-E(X)]^k\},k=1,2,\cdots
+$$
+
+存在，则称其为 $X$ 的 **k 阶中心矩**.
+
+对于两个随机变量 $X,Y$，若
+
+$$
+E(X^kY^l),k,l=1,2,\cdots
+$$
+
+存在，则称其为 $X,Y$ 的 **k+l 阶混合矩**；
+
+若
+
+$$
+E\{[X-E(X)]^k[Y-E(Y)]^l\},k,l=1,2,\cdots
+$$
+
+存在，则称之为 $X, Y$ 的 **k+l 阶混合中心矩**.
+
+**协方差**：对于随机变量 $X,Y$，若 $E\{[X-E(X)][Y-E(Y)]\}$ 存在，则称之为 $X,Y$ 的协方差，记作 $Conv(X,Y)$，即
+
+$$
+\begin{aligned}
+Cov(X,Y)&=E\{[X-E(X)][Y-E(Y)]\}\\
+&=E(XY)-E(X)E(Y)
+\end{aligned}
+$$
+
+协方差的一些性质：
+
+1. $D(X\pm Y)=D(X)+D(Y)\pm 2Cov(X,Y)$
+2. $Cov(X,Y)=Cov(Y,X)$
+3. $Cov(aX,bY)=abCov(X,Y)$
+4. $Cov(X_{1}+X_{2},Y)=Cov(X_{1},Y)+Cov(X_{2},Y)$
+
+**相关系数**：对于随机变量 $X,Y$，若 $D(X)D(Y)\neq 0$，则其相关系数为
+
+$$
+\rho_{XY}= \frac{Cov(X,Y)}{\sqrt{D(X)D(Y)}}\in[-1,1]
+$$
+
+若相关系数为 $0$，则说明 **X 和 Y 不相关**，其正负表明了随机变量是正相关还是负相关.
+
+### 相关和独立
+
+若随机变量相互独立，则其必不相关；若其不相关，不能说明其是否独立.
+
+二维正态分布两随机变量相互独立的充分必要条件是 $\rho=0$.
+
+二维正态分布两随机变量相互独立与其不相关是等价的.

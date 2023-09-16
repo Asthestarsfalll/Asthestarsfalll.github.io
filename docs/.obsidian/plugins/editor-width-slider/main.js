@@ -29,7 +29,8 @@ __export(main_exports, {
 module.exports = __toCommonJS(main_exports);
 var import_obsidian = require("obsidian");
 var DEFAULT_SETTINGS = {
-  sliderPercentage: "20"
+  sliderPercentage: "20",
+  sliderWidth: "150"
 };
 var EditorWidthSlider = class extends import_obsidian.Plugin {
   // most important function, this gets executed everytime the plugin is first 
@@ -39,6 +40,7 @@ var EditorWidthSlider = class extends import_obsidian.Plugin {
     await this.loadSettings();
     this.addStyle();
     this.createSlider();
+    this.addSettingTab(new EditorWidthSliderSettingTab(this.app, this));
   }
   onunload() {
     this.cleanUpResources();
@@ -51,7 +53,7 @@ var EditorWidthSlider = class extends import_obsidian.Plugin {
     slider.min = "0";
     slider.max = "100";
     slider.value = this.settings.sliderPercentage;
-    slider.style.width = "150px";
+    slider.style.width = this.settings.sliderWidth + "px";
     slider.addEventListener("input", (event) => {
       const value = parseInt(slider.value);
       this.settings.sliderPercentage = value.toString();
@@ -94,8 +96,19 @@ var EditorWidthSlider = class extends import_obsidian.Plugin {
     else {
       styleElement.innerText = `
 			body {
-			--file-line-width: calc(700px + 10 * ${this.settings.sliderPercentage}px);
+			  	--file-line-width: calc(700px + 10 * ${this.settings.sliderPercentage}px);
+			}
 		`;
+    }
+  }
+  // update the styles (at the start, or as the result of a settings change)
+  updateSliderStyle() {
+    const styleElements = document.getElementsByClassName("editor-width-slider");
+    if (styleElements.length === 0) {
+      throw new Error("editor-width-slider-value element not found!");
+    } else {
+      const styleElement = styleElements[0];
+      styleElement.style.width = this.settings.sliderWidth + "px";
     }
   }
   // Method to load settings
@@ -109,5 +122,21 @@ var EditorWidthSlider = class extends import_obsidian.Plugin {
   // Method to store settings
   async saveSettings() {
     await this.saveData(this.settings);
+  }
+};
+var EditorWidthSliderSettingTab = class extends import_obsidian.PluginSettingTab {
+  constructor(app, plugin) {
+    super(app, plugin);
+    this.plugin = plugin;
+  }
+  // this.settings.sliderWidth
+  display() {
+    const { containerEl } = this;
+    containerEl.empty();
+    new import_obsidian.Setting(containerEl).setName("Slider Width").setDesc("How wide do you want your slider to be?").addText((text) => text.setPlaceholder("Enter your secret").setValue(this.plugin.settings.sliderWidth).onChange(async (value) => {
+      this.plugin.settings.sliderWidth = value;
+      this.plugin.updateSliderStyle();
+      await this.plugin.saveSettings();
+    }));
   }
 };

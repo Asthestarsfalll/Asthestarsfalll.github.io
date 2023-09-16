@@ -113,7 +113,7 @@
       "list-end-style": "."
     },
     "proper-ellipsis": {
-      "enabled": false
+      "enabled": true
     },
     "quote-style": {
       "enabled": false,
@@ -129,7 +129,7 @@
       "enabled": false
     },
     "remove-hyphenated-line-breaks": {
-      "enabled": false
+      "enabled": true
     },
     "remove-multiple-spaces": {
       "enabled": false
@@ -154,7 +154,7 @@
     },
     "convert-spaces-to-tabs": {
       "enabled": false,
-      "tabsize": 4
+      "tabsize": "4"
     },
     "empty-line-around-blockquotes": {
       "enabled": true
@@ -174,10 +174,10 @@
       "empty-line-after-yaml": true
     },
     "line-break-at-document-end": {
-      "enabled": false
+      "enabled": true
     },
     "move-math-block-indicators-to-their-own-line": {
-      "enabled": false
+      "enabled": true
     },
     "paragraph-blank-lines": {
       "enabled": true
@@ -204,14 +204,14 @@
       "enabled": false
     },
     "space-between-chinese-japanese-or-korean-and-english-or-numbers": {
-      "enabled": false
+      "enabled": true
     },
     "trailing-spaces": {
       "enabled": true,
       "twp-space-line-break": false
     },
     "add-blockquote-indentation-on-paste": {
-      "enabled": false
+      "enabled": true
     },
     "prevent-double-checklist-indicator-on-paste": {
       "enabled": false
@@ -220,13 +220,13 @@
       "enabled": false
     },
     "proper-ellipsis-on-paste": {
-      "enabled": false
+      "enabled": true
     },
     "remove-hyphens-on-paste": {
-      "enabled": false
+      "enabled": true
     },
     "remove-leading-or-trailing-whitespace-on-paste": {
-      "enabled": false
+      "enabled": true
     },
     "remove-leftover-footnotes-from-quote-on-paste": {
       "enabled": false
@@ -236,12 +236,14 @@
     }
   },
   "lintOnSave": true,
-  "recordLintOnSaveLogs": false,
+  "recordLintOnSaveLogs": true,
   "displayChanged": true,
+  "lintOnFileChange": true,
+  "displayLintOnFileChangeNotice": true,
   "settingsConvertedToConfigKeyValues": true,
   "foldersToIgnore": [],
   "linterLocale": "system-default",
-  "logLevel": 4,
+  "logLevel": "INFO",
   "lintCommands": [],
   "customRegexes": [],
   "commonStyles": {

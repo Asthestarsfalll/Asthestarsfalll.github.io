@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6724fba28b8430b8",
+        "id": "48d44cbf660c16d0",
         "type": "tabs",
         "children": [
           {
-            "id": "08f2afb849c9ba84",
+            "id": "4d26a1c087ae155a",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,47 +18,107 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "RNNandLSTM",
+                  "title": "graph",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/深度学习/自然语言处理/RNNandLSTM.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":261,\"ch\":45},\"to\":{\"line\":261,\"ch\":45}},\"scroll\":244.32888394835126}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":269,\"ch\":144},\"to\":{\"line\":269,\"ch\":0}},\"scroll\":263.5690412979163}"
                 },
                 {
-                  "title": "swintran",
+                  "title": "characteristic_equation",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/深度学习/计算机视觉/swintran.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":735,\"ch\":6},\"to\":{\"line\":735,\"ch\":6}},\"scroll\":722.0755456294644}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/characteristic_equation.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":58.38082595832695}"
                 },
                 {
-                  "title": "transformer-for-reco",
+                  "title": "inequality",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/深度学习/计算机视觉/transformer-for-reco.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":94,\"ch\":0},\"to\":{\"line\":94,\"ch\":0}},\"scroll\":60.45914043125591}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/inequality.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
-                  "title": "swintran",
+                  "title": "vector_space",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/深度学习/计算机视觉/swintran.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":17,\"ch\":0},\"to\":{\"line\":17,\"ch\":0}},\"scroll\":0}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/vector_space.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
-                  "title": "transformer",
+                  "title": "infinitesimal_calculus",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/深度学习/自然语言处理/transformer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":748,\"ch\":0},\"to\":{\"line\":748,\"ch\":0}},\"scroll\":707.7073921297422}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
-                  "title": "RNNandLSTM",
+                  "title": "multivariable_calculus",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/深度学习/自然语言处理/RNNandLSTM.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":101,\"ch\":0},\"to\":{\"line\":101,\"ch\":0}},\"scroll\":94.1798946035502}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "characteristic_equation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/characteristic_equation.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":70,\"ch\":0},\"to\":{\"line\":70,\"ch\":0}},\"scroll\":54.576961813161134}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "synonym",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/synonym.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "inverse_matrix",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":31,\"ch\":6},\"to\":{\"line\":31,\"ch\":6}},\"scroll\":13.916441718109972}"
+                },
+                {
+                  "title": "characteristic_equation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/characteristic_equation.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":61,\"ch\":9},\"to\":{\"line\":61,\"ch\":9}},\"scroll\":54.576961813161134}"
+                },
+                {
+                  "title": "inequality",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/inequality.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "graph",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":292,\"ch\":0},\"to\":{\"line\":292,\"ch\":0}},\"scroll\":263.93556078236634}"
+                },
+                {
+                  "title": "inverse_matrix",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":30,\"ch\":0},\"to\":{\"line\":30,\"ch\":0}},\"scroll\":11.945461009164104}"
+                },
+                {
+                  "title": "eigenvalues_and_eigenvectors",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "graph",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":268,\"ch\":0},\"to\":{\"line\":268,\"ch\":0}},\"scroll\":248.10394824853267}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/深度学习/自然语言处理/transformer.mdx",
+                "file": "Dictionary/advanced_math.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -166,7 +226,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/深度学习/自然语言处理/transformer.mdx",
+                "file": "Dictionary/advanced_math.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,7 +252,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/深度学习/自然语言处理/transformer.mdx",
+                "file": "Dictionary/advanced_math.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -233,25 +293,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/深度学习/自然语言处理/transformer.mdx"
+                "file": "Dictionary/advanced_math.mdx"
               }
-            }
-          },
-          {
-            "id": "7b90dc907330640e",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "calendar",
-              "state": {}
             }
           }
         ]
@@ -263,9 +306,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "canvas:新建白板": false,
       "switcher:打开快速切换": true,
       "graph:查看关系图谱": true,
-      "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": true,
       "templates:插入模板": true,
       "command-palette:打开命令面板": true,
@@ -278,21 +321,23 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "08f2afb849c9ba84",
+  "active": "4d26a1c087ae155a",
   "lastOpenFiles": [
-    "notes/深度学习/自然语言处理/RNNandLSTM.mdx",
-    "notes/深度学习/计算机视觉/swintran.mdx",
-    "notes/深度学习/计算机视觉/transformer-for-reco.mdx",
-    "notes/深度学习/自然语言处理/transformer.mdx",
-    "images/2022/03/27/image-20210601191434702.png.md",
-    "images/2022/03/27",
-    "images/2022/03",
-    "images/2022",
-    "images",
-    "notes/计算机组成原理/data_representation_and_operations.mdx",
-    "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
+    "notes/数据结构/graph.mdx",
+    "Dictionary/advanced_math.mdx",
+    "notes/数学/通用/characteristic_equation.mdx",
+    "notes/数学/通用/inequality.mdx",
+    "notes/数学/线性代数/vector_space.mdx",
+    "notes/数学/高等数学/infinitesimal_calculus.mdx",
+    "notes/数学/高等数学/multivariable_calculus.mdx",
+    "notes/index.mdx",
+    "notes/英语/synonym.mdx",
     "notes/数学/线性代数/inverse_matrix.mdx",
+    "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
+    "similar-vocabularies/asdasdasd.md",
+    "notes/数学/线性代数/eigenvalues_and_eigenvectors.md",
     "未命名.md",
+    "images/2022/03/27/image-20210601191434702.png.md",
     "notes/未命名.md",
     "未命名.canvas",
     "ch g.md",

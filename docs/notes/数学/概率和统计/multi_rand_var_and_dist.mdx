@@ -1,6 +1,6 @@
 ---
 title: 多维随机变量及其分布
-tags: [probability theory]
+tags: [probability theory and mathematical statistics]
 hide_table_of_contents: false
 ---
 
@@ -28,7 +28,9 @@ $$
 
 当多维变量其中一个或多个变量可以任意取值，即不再对分布函数产生影响，则称剩下的分布为 **边缘分布**，如：
 
-$$F_{X}(x)=P\{X\leq x\}=P\{X\leq x,y\leq+\infty\}=F(x, \infty)$$
+$$
+F_{X}(x)=P\{X\leq x\}=P\{X\leq x,y\leq+\infty\}=F(x, \infty)
+$$
 
 对于任意给定的 $\epsilon>0$，$P\{y-\epsilon<Y\leq y+\epsilon\}$
 
@@ -64,7 +66,9 @@ $$
 
 若
 
-$$P\{X\leq x,Y\leq y\}=P\{X\leq x\}P\{Y\leq y\}$$
+$$
+P\{X\leq x,Y\leq y\}=P\{X\leq x\}P\{Y\leq y\}
+$$
 
 即
 
@@ -96,8 +100,6 @@ $$
 
 $$
 f(x,y) = \frac{1}{2\pi \sigma_x \sigma_y \sqrt{1 - \rho^2}} \exp\left(-\frac{1}{2(1 - \rho^2)}\left[\frac{(x - \mu_x)^2}{\sigma_x^2} + \frac{(y - \mu_y)^2}{\sigma_y^2} - \frac{2\rho(x - \mu_x)(y - \mu_y)}{\sigma_x \sigma_y}\right]\right)
-
-
 $$
 
 其中，$\mu_x, \mu_y$ 表示均值，$\sigma_x, \sigma_y$ 表示标准差，$\rho$ 表示相关系数，$X\sim N(\mu_{x}, \sigma_{x}^2),Y\sim N(\mu_{y},\sigma_{y}^2)$.
@@ -126,7 +128,7 @@ $$
 \sum_{i=1}^nc_{i}\sim N\left( \sum_{i=1}^nc_{i}\mu_{i},\sum_{j=1}^nc_{j}^2\sigma_{j}^2\right)
 $$
 
-## 两个随机变量函数 Z=g (X, Y)的分布
+## 两个随机变量函数 Z=g (X, Y) 的分布
 
  已知随机变量 $(X,Y)$ 的概率密度函数为 $f(x,y)$，则 $Z=X+Y$ 的累积分布函数为：
 

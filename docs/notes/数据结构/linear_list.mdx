@@ -12,7 +12,7 @@ import styles from '/src/css/tab.css';
 
 ## 定义和基本操作
 
-:::tip定义
+:::tip 定义
 
 具有**相同数据类型**的 $n(n\geq 0)$ 个数据元素的有限序列.
 
@@ -25,7 +25,7 @@ import styles from '/src/css/tab.css';
 3. 所有元素占据的存储空间相同
 4. 抽象性，仅讨论元素间的逻辑关系，而不必考虑元素表示什么
 
-:::tip基本操作
+:::tip 基本操作
 
 初始化、表长、按值查找、按位查找、插入、删除、输出、判空、销毁.
 
@@ -33,7 +33,7 @@ import styles from '/src/css/tab.css';
 
 # 顺序表示
 
-:::tip顺序表
+:::tip 顺序表
 
 逻辑上相邻的元素在物理地址上也相邻.
 
@@ -51,11 +51,11 @@ import styles from '/src/css/tab.css';
 
 **动态分配**：不必为表一次申请所有空间，若占满才申请一块更大的空间
 
-:::caution随机存取和顺序存取
+:::caution 随机存取和顺序存取
 
 随机存取就是直接存取，可以通过下标直接访问到元素的位置，与存储位置无关；
 
-顺序存取，不能通过下标访问，在存取第N个数据时，必须先访问前（N-1）个数据 ，如链表.
+顺序存取，不能通过下标访问，在存取第 N 个数据时，必须先访问前（N-1）个数据 ，如链表.
 
 :::
 
@@ -63,7 +63,7 @@ import styles from '/src/css/tab.css';
 
 # 链式表示
 
-:::tip链表
+:::tip 链表
 
 逻辑上相邻的元素在物理地址上不相邻.
 
@@ -161,7 +161,7 @@ class SqList {
 </TabItem>
 </Tabs>
 
-按位删除，需要将后面的元素移动到前面的位置，索引从 0 开始，C++代码中则可以将其作为类方法.
+按位删除，需要将后面的元素移动到前面的位置，索引从 0 开始，C++ 代码中则可以将其作为类方法.
 
 <Tabs groupId="list">
 <TabItem value="C" >
@@ -204,16 +204,16 @@ int del(int idx) {
 
 ## std::vector
 
-`std::vector` 是 C++提供的动态容器库，其底层使用连续的内存块来存储元素，只在容量不够时进行扩充，其分配的内存可以使用 `capacity()` 进行查询，并且使用 `shrink_to_fit ()` 释放空闲的内存.
+`std::vector` 是 C++ 提供的动态容器库，其底层使用连续的内存块来存储元素，只在容量不够时进行扩充，其分配的内存可以使用 `capacity()` 进行查询，并且使用 `shrink_to_fit ()` 释放空闲的内存.
 
 常用成员方法有
 
 |  方法    |  作用    |
 |:-----|:-----|
 |   size   |  返回元素的数量    |
-|   empty   |   检查vector是否为空.如果为空，返回true；否则，返回false   |
+|   empty   |   检查 vector 是否为空.如果为空，返回 true；否则，返回 false   |
 |   clear   |   清空所有元素   |
-|   push_back(element)   |     将元素添加到vector的末尾 |
+|   push_back(element)   |     将元素添加到 vector 的末尾 |
 |   pop_back   |   删除最后一个元素   |
 |   insert(iterator, element)   |   在指定迭代器位置之前插入元素   |
 |   erase(iterator or start_iterator, end_iterator)   |   删除指定范围内的元素   |
@@ -225,7 +225,7 @@ int del(int idx) {
 |   rbegin  |    返回指向 vector 末尾的逆向迭代器  |
 |   rend  |    返回指向 vector 开头的逆向迭代器  |
 |  resize(new_size)    |   调整 vector 的大小为 new_size.如果 new_size 大于当前大小，则在末尾添加默认构造的元素；如果 new_size 小于当前大小，则删除超出的元素   |
-|  reserve(new_capacity)    |   分配足够的内存以容纳至少new_capacity个元素，但不改变vector的大小   |
-|  capacity    |  返回vector当前能够容纳的元素数量    |
+|  reserve(new_capacity)    |   分配足够的内存以容纳至少 new_capacity 个元素，但不改变 vector 的大小   |
+|  capacity    |  返回 vector 当前能够容纳的元素数量    |
 |   at(index)   |  访问指定索引处的元素，如果索引超出范围，会抛出异常    |
 |   operator[] (index)   |   通过索引访问元素，如果索引超出范围，行为未定义   |

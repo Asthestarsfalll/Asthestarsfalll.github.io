@@ -23,7 +23,9 @@
   "debug": false,
   "userSelRepRuleTrigger": [
     "-",
-    "#"
+    "#",
+    "\\",
+    "、"
   ],
   "userSelRepRuleValue": [
     {
@@ -33,6 +35,14 @@
     {
       "left": "#",
       "right": " "
+    },
+    {
+      "left": "$",
+      "right": "$"
+    },
+    {
+      "left": "$",
+      "right": "$"
     }
   ],
   "userDeleteRulesStrList": [
@@ -45,10 +55,22 @@
     [
       ":)|",
       "😀|"
+    ],
+    [
+      "。|",
+      ".  |"
+    ],
+    [
+      ":：|",
+      ":::|\n\n:::"
+    ],
+    [
+      "``|",
+      "`|`"
     ]
   ],
   "userSelRuleSettingsOpen": true,
-  "userDelRuleSettingsOpen": true,
+  "userDelRuleSettingsOpen": false,
   "userCvtRuleSettingsOpen": true,
   "EnterTwice": true,
   "TryFixChineseIM": true,
