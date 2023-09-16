@@ -18,6 +18,54 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "common_distribution",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/common_distribution.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":221.90884287537546}"
+                },
+                {
+                  "title": "rand_var_and_prob_dist",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/rand_var_and_prob_dist.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "parameter_estimation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/parameter_estimation.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "numerical_characteristics_of_rand_var",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/numerical_characteristics_of_rand_var.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "multi_rand_var_and_dist",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/multi_rand_var_and_dist.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":166.11140936941328}"
+                },
+                {
+                  "title": "law_of_large_numbers_and_central_limit_determination",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/law_of_large_numbers_and_central_limit_determination.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":158.61956205210308}"
+                },
+                {
+                  "title": "mathematical_statistics",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/mathematical_statistics.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":268,\"ch\":0},\"to\":{\"line\":268,\"ch\":0}},\"scroll\":250.21292275015944}"
+                },
+                {
+                  "title": "advanced_math",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dictionary/advanced_math.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "graph",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -118,7 +166,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dictionary/advanced_math.mdx",
+                "file": "notes/数学/概率和统计/mathematical_statistics.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -226,7 +274,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dictionary/advanced_math.mdx",
+                "file": "notes/数学/概率和统计/mathematical_statistics.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -252,7 +300,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dictionary/advanced_math.mdx",
+                "file": "notes/数学/概率和统计/mathematical_statistics.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -293,7 +341,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dictionary/advanced_math.mdx"
+                "file": "notes/数学/概率和统计/mathematical_statistics.mdx"
               }
             }
           }
@@ -323,17 +371,17 @@
   },
   "active": "4d26a1c087ae155a",
   "lastOpenFiles": [
-    "notes/数据结构/graph.mdx",
+    "notes/数学/概率和统计/common_distribution.mdx",
+    "notes/数学/概率和统计/rand_var_and_prob_dist.mdx",
+    "notes/数学/概率和统计/parameter_estimation.mdx",
+    "notes/数学/概率和统计/numerical_characteristics_of_rand_var.mdx",
+    "notes/数学/概率和统计/multi_rand_var_and_dist.mdx",
+    "notes/数学/概率和统计/law_of_large_numbers_and_central_limit_determination.mdx",
+    "notes/数学/概率和统计/mathematical_statistics.mdx",
     "Dictionary/advanced_math.mdx",
+    "notes/数据结构/graph.mdx",
     "notes/数学/通用/characteristic_equation.mdx",
     "notes/数学/通用/inequality.mdx",
-    "notes/数学/线性代数/vector_space.mdx",
-    "notes/数学/高等数学/infinitesimal_calculus.mdx",
-    "notes/数学/高等数学/multivariable_calculus.mdx",
-    "notes/index.mdx",
-    "notes/英语/synonym.mdx",
-    "notes/数学/线性代数/inverse_matrix.mdx",
-    "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
     "similar-vocabularies/asdasdasd.md",
     "notes/数学/线性代数/eigenvalues_and_eigenvectors.md",
     "未命名.md",
