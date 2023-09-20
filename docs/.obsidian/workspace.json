@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "48d44cbf660c16d0",
+        "id": "127370800699e7d5",
         "type": "tabs",
         "children": [
           {
-            "id": "4d26a1c087ae155a",
+            "id": "d2f3a7c8f40cf097",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,155 +18,35 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "common_distribution",
+                  "title": "arrays_and_special_matrices",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/common_distribution.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":221.90884287537546}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/arrays_and_special_matrices.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
                 },
                 {
-                  "title": "rand_var_and_prob_dist",
+                  "title": "about_me",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/rand_var_and_prob_dist.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/Reflection/about_me.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
                 },
                 {
-                  "title": "parameter_estimation",
+                  "title": "search_methods",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/parameter_estimation.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":150,\"ch\":29},\"to\":{\"line\":150,\"ch\":29}},\"scroll\":147.38992491057772}"
                 },
                 {
-                  "title": "numerical_characteristics_of_rand_var",
+                  "title": "infinite_serie",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/numerical_characteristics_of_rand_var.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "multi_rand_var_and_dist",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/multi_rand_var_and_dist.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":166.11140936941328}"
-                },
-                {
-                  "title": "law_of_large_numbers_and_central_limit_determination",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/law_of_large_numbers_and_central_limit_determination.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":158.61956205210308}"
-                },
-                {
-                  "title": "mathematical_statistics",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/mathematical_statistics.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":268,\"ch\":0},\"to\":{\"line\":268,\"ch\":0}},\"scroll\":250.21292275015944}"
-                },
-                {
-                  "title": "advanced_math",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dictionary/advanced_math.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":269,\"ch\":144},\"to\":{\"line\":269,\"ch\":0}},\"scroll\":263.5690412979163}"
-                },
-                {
-                  "title": "characteristic_equation",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/characteristic_equation.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":58.38082595832695}"
-                },
-                {
-                  "title": "inequality",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/inequality.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "vector_space",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/vector_space.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "infinitesimal_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "multivariable_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "characteristic_equation",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/characteristic_equation.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":70,\"ch\":0},\"to\":{\"line\":70,\"ch\":0}},\"scroll\":54.576961813161134}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/index.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "synonym",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/synonym.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "inverse_matrix",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":31,\"ch\":6},\"to\":{\"line\":31,\"ch\":6}},\"scroll\":13.916441718109972}"
-                },
-                {
-                  "title": "characteristic_equation",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/characteristic_equation.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":61,\"ch\":9},\"to\":{\"line\":61,\"ch\":9}},\"scroll\":54.576961813161134}"
-                },
-                {
-                  "title": "inequality",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/通用/inequality.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":292,\"ch\":0},\"to\":{\"line\":292,\"ch\":0}},\"scroll\":263.93556078236634}"
-                },
-                {
-                  "title": "inverse_matrix",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":30,\"ch\":0},\"to\":{\"line\":30,\"ch\":0}},\"scroll\":11.945461009164104}"
-                },
-                {
-                  "title": "eigenvalues_and_eigenvectors",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":268,\"ch\":0},\"to\":{\"line\":268,\"ch\":0}},\"scroll\":248.10394824853267}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":189,\"ch\":0},\"to\":{\"line\":189,\"ch\":0}},\"scroll\":179.7253682522586}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数学/概率和统计/mathematical_statistics.mdx",
+                "file": "notes/数据结构/search_methods.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -274,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数学/概率和统计/mathematical_statistics.mdx",
+                "file": "notes/数据结构/search_methods.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -300,7 +180,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数学/概率和统计/mathematical_statistics.mdx",
+                "file": "notes/数据结构/search_methods.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -341,7 +221,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数学/概率和统计/mathematical_statistics.mdx"
+                "file": "notes/数据结构/search_methods.mdx"
               }
             }
           }
@@ -369,22 +249,22 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "4d26a1c087ae155a",
+  "active": "d2f3a7c8f40cf097",
   "lastOpenFiles": [
-    "notes/数学/概率和统计/common_distribution.mdx",
-    "notes/数学/概率和统计/rand_var_and_prob_dist.mdx",
-    "notes/数学/概率和统计/parameter_estimation.mdx",
-    "notes/数学/概率和统计/numerical_characteristics_of_rand_var.mdx",
-    "notes/数学/概率和统计/multi_rand_var_and_dist.mdx",
-    "notes/数学/概率和统计/law_of_large_numbers_and_central_limit_determination.mdx",
-    "notes/数学/概率和统计/mathematical_statistics.mdx",
-    "Dictionary/advanced_math.mdx",
-    "notes/数据结构/graph.mdx",
-    "notes/数学/通用/characteristic_equation.mdx",
+    "notes/数据结构/arrays_and_special_matrices.mdx",
+    "meaningless/Reflection/about_me.mdx",
+    "notes/数据结构/search_methods.mdx",
+    "notes/数学/高等数学/infinite_serie.mdx",
+    "notes/数学/通用/combinatorics.mdx",
     "notes/数学/通用/inequality.mdx",
+    "notes/数学/通用/sufficient_necessary_conditions.mdx",
+    "notes/数学/高等数学/infinitesimal_calculus.mdx",
+    "notes/数学/线性代数/system_of_linear_equations.mdx",
+    "notes/数学/高等数学/improper_integral.mdx",
+    "notes/数学/概率和统计/multi_rand_var_and_dist.mdx",
+    "未命名.md",
     "similar-vocabularies/asdasdasd.md",
     "notes/数学/线性代数/eigenvalues_and_eigenvectors.md",
-    "未命名.md",
     "images/2022/03/27/image-20210601191434702.png.md",
     "notes/未命名.md",
     "未命名.canvas",
