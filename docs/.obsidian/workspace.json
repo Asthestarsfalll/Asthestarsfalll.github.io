@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "127370800699e7d5",
+        "id": "ee0305ef7a49b2ba",
         "type": "tabs",
         "children": [
           {
-            "id": "d2f3a7c8f40cf097",
+            "id": "a66c6b193d3cdc71",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -16,37 +16,13 @@
                 {
                   "state": "{}",
                   "eState": "{}"
-                },
-                {
-                  "title": "arrays_and_special_matrices",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/arrays_and_special_matrices.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "about_me",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/Reflection/about_me.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "search_methods",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":150,\"ch\":29},\"to\":{\"line\":150,\"ch\":29}},\"scroll\":147.38992491057772}"
-                },
-                {
-                  "title": "infinite_serie",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":189,\"ch\":0},\"to\":{\"line\":189,\"ch\":0}},\"scroll\":179.7253682522586}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数据结构/search_methods.mdx",
+                "file": "notes/数据结构/sort.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -154,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数据结构/search_methods.mdx",
+                "file": "notes/数据结构/sort.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -180,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数据结构/search_methods.mdx",
+                "file": "notes/数据结构/sort.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -221,7 +197,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数据结构/search_methods.mdx"
+                "file": "notes/数据结构/sort.mdx"
               }
             }
           }
@@ -249,41 +225,19 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "d2f3a7c8f40cf097",
+  "active": "a66c6b193d3cdc71",
   "lastOpenFiles": [
-    "notes/数据结构/arrays_and_special_matrices.mdx",
-    "meaningless/Reflection/about_me.mdx",
+    "notes/数据结构/sort.mdx",
     "notes/数据结构/search_methods.mdx",
-    "notes/数学/高等数学/infinite_serie.mdx",
-    "notes/数学/通用/combinatorics.mdx",
-    "notes/数学/通用/inequality.mdx",
-    "notes/数学/通用/sufficient_necessary_conditions.mdx",
+    "notes/数据结构/graph.mdx",
+    "notes/数据结构/arrays_and_special_matrices.mdx",
+    "notes/数据结构/queue.mdx",
+    "notes/数据结构/stack.mdx",
+    "notes/数据结构/string.mdx",
+    "notes/数据结构/tree.mdx",
+    "notes/数学/高等数学/Integral_of_multivariate_functions.mdx",
     "notes/数学/高等数学/infinitesimal_calculus.mdx",
-    "notes/数学/线性代数/system_of_linear_equations.mdx",
-    "notes/数学/高等数学/improper_integral.mdx",
-    "notes/数学/概率和统计/multi_rand_var_and_dist.mdx",
-    "未命名.md",
-    "similar-vocabularies/asdasdasd.md",
-    "notes/数学/线性代数/eigenvalues_and_eigenvectors.md",
-    "images/2022/03/27/image-20210601191434702.png.md",
-    "notes/未命名.md",
-    "未命名.canvas",
-    "ch g.md",
-    "meaningless/语录/index.md",
-    "meaningless/index.md",
-    "notes/index.md",
-    "'./overview_of_computer_systems'.md",
-    "'./over'.md",
-    "未命名 1.canvas",
-    "meaningless/语录/intro.md",
-    "未命名 2.md",
-    "未命名 1.md",
-    "meaningless/intro.md",
-    "similar-vocabularies/index.md",
-    "blogs/数学/通用/不等式.mdx.md",
-    "blogs/数学/未命名.md",
-    "blogs/数学/高等数学/未命名.md",
-    "blogs/深度学习/计算机视觉/未命名.md",
-    "blogs/数学/线性代数/逆矩阵.md"
+    "Dictionary/greek_alphabet.mdx",
+    "notes/数据结构/index.md"
   ]
 }

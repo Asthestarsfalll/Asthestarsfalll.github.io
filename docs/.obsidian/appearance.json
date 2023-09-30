@@ -1,10 +1,10 @@
 {
-  "accentColor": "#31748f",
+  "accentColor": "#336782",
   "cssTheme": "Minimal",
   "theme": "obsidian",
   "textFontFamily": "Adobe 宋体 Std",
   "interfaceFontFamily": "Anonymice Nerd Font",
   "monospaceFontFamily": "CodeNewRoman Nerd Font",
-  "baseFontSize": 16,
+  "baseFontSize": 18,
   "nativeMenus": false
 }
