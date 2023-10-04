@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ee0305ef7a49b2ba",
+        "id": "13762ad5ab35ac80",
         "type": "tabs",
         "children": [
           {
-            "id": "a66c6b193d3cdc71",
+            "id": "0b94b391d8983de0",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -22,7 +22,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数据结构/sort.mdx",
+                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数据结构/sort.mdx",
+                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数据结构/sort.mdx",
+                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -197,7 +197,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数据结构/sort.mdx"
+                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx"
               }
             }
           }
@@ -225,19 +225,19 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "a66c6b193d3cdc71",
+  "active": "0b94b391d8983de0",
   "lastOpenFiles": [
-    "notes/数据结构/sort.mdx",
-    "notes/数据结构/search_methods.mdx",
-    "notes/数据结构/graph.mdx",
-    "notes/数据结构/arrays_and_special_matrices.mdx",
-    "notes/数据结构/queue.mdx",
-    "notes/数据结构/stack.mdx",
-    "notes/数据结构/string.mdx",
-    "notes/数据结构/tree.mdx",
-    "notes/数学/高等数学/Integral_of_multivariate_functions.mdx",
-    "notes/数学/高等数学/infinitesimal_calculus.mdx",
+    "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
+    "notes/计算机组成原理/data_representation_and_operations.mdx",
+    "Dictionary/advanced_math.mdx",
+    "Dictionary/machine_learning.mdx",
     "Dictionary/greek_alphabet.mdx",
+    "notes/数据结构/string.mdx",
+    "notes/数学/通用/inequality.mdx",
+    "notes/数学/通用/sufficient_necessary_conditions.mdx",
+    "notes/数学/线性代数/vector_space.mdx",
+    "notes/数据结构/search_methods.mdx",
+    "notes/数据结构/linear_list.mdx",
     "notes/数据结构/index.md"
   ]
 }

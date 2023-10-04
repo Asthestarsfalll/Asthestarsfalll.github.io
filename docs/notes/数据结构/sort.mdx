@@ -271,3 +271,190 @@ void selectSort(int *arr, int len) {
 **时间效率**：元素移动的次数很少，不会超过 $3(n-1)$ 次，但是比较次数始终是 $n(n-1)/2$ 次，因此时间复杂度始终是 $O(n^2)$.
 
 **稳定性**：不稳定，举个例子 $[5,8,5,2]$，第一次交换就会破坏稳定性.
+
+### 堆排序
+
+堆是一颗 **完全二叉树**，即除了最后一层其他所有层都被填满，且最后一层的节点排序为从左至右；根据完全二叉树的性质，对于 $1\leq i\leq[n/2]$ ，有
+
+$$
+\begin{aligned}
+&L[i]\geq /\leq L[2i]\\
+&L[i]\geq /\leq L[2i+1]
+\end{aligned}
+$$
+
+若最大元素在根节点，则称为大根堆.
+
+**构建堆**
+
+对于 $n$ 个元素，可以构建一个完全二叉树（由于根据完全二叉树的性质，可以通过坐标来模拟，因此无需实际建树）；从最后一个节点的父节点开始，其索引为 $[n/2]$，比较其孩子的大小，并将其中较大（若是大根堆则是最大的）交换上去，如此遍历直到本层的所有叶节点，在从上一层最右侧的节点进行相同的操作，直到遍历到根节点.
+
+**调整堆**
+
+此时 **最大值被送到根节点**，将其与堆中的最后一个叶节点交换，并从堆中删去该节点，表示其已经排好；由于交换了最大的节点出去，而较小的节点在根的位置，因此需要重新调整堆，将该节点 **从上往下** 的送下去，即比较根节点的两个孩子，将较大值交换上来，在对交换过去的节点进行同样的操作，直到遍历至叶子节点.
+
+如此循环，直到堆中没有节点.
+
+**插入**
+
+将节点插入到最后，并从下至上的进行调整.
+
+代码如下
+
+```c
+// from top to bottom
+void heapify(int *arr, int len, int root_idx) {
+  int left = 2 * root_idx + 1, right = 2 * root_idx + 2, largest = root_idx;
+
+  if (left < len && arr[left] > arr[largest])
+    largest = left;
+
+  if (right < len && arr[right] > arr[largest])
+    largest = right;
+  if (largest != root_idx) {
+    swap(&arr[largest], &arr[root_idx]);
+    heapify(arr, len, largest);
+  }
+}
+
+void heapSort(int *arr, int len) {
+  // from bottom to top
+  for (int i = len / 2 - 1; i >= 0; i--)
+    heapify(arr, len, i);
+
+  for (int i = len - 1; i >= 0; i--) {
+    swap(&arr[i], &arr[0]);
+    heapify(arr, i, 0);
+  }
+}
+```
+
+:::tip
+
+堆排序适合关键字较多的情况，如从一亿个数中选出前一百个最大值？
+
+使用长度为 $100$ 的数组，构造小根堆（因为需要求最大值），循环插入剩余的数，若数小于堆顶，则舍弃，若大于则替换，并重新调整堆，直到遍历完所以数字.
+
+:::
+
+**时间效率**：构建堆的时间复杂度为 $O(n)$ ，之后有 $n-1$ 次向下调整的操作，每次的时间复杂度是 $O(h)$，故最好、最坏和平均情况下，堆排序的时间复杂度都是 $O(n\log_{2}n)$ .
+
+**稳定性**：不稳定，如序列 $[1,2,2]$，构造堆时可能将第一个二交换至堆顶，而最终排序结果其显然是在最后的位置.
+
+## 归并排序
+
+:::tip
+
+归并排序的思想和上述基于选择和交换的排序都不相同，**归并** 表示将两个或以上的有序序列合并为一个新的有序序列，初始情况下每个有序序列的长度为 $1$，不断的两两归并直到包含真整个序列，该方法称为二路归并排序.
+
+:::
+
+代码如下，高亮部分的代码仅会执行一个，表示将剩下的元素全部添加过去.
+
+```c
+void merge(int *arr, int left, int middle, int right, int *tmp_arr) {
+  // left arr: left - middle        right arr: middle + 1 - right
+  // both of them are sorted.
+  int i, j, k;
+  for (i = left; i <= right; i++)
+    tmp_arr[i] = arr[i];
+
+  for (i = left, j = middle + 1, k = left; i <= middle && j <= right; k++) {
+    if (tmp_arr[i] < tmp_arr[j])
+      arr[k] = tmp_arr[i++];
+    else
+      arr[k] = tmp_arr[j++];
+  }
+
+  // Im-start
+  // for remainder, only one while will be executed.
+  while (i <= middle)
+    arr[k++] = tmp_arr[i++];
+  while (j <= right)
+    arr[k++] = tmp_arr[j++];
+  // Im-end
+}
+
+void mergeSort(int *arr, int left, int right, int *tmp_arr) {
+  if (left < right) {
+    int middle = (left + right) / 2;
+    mergeSort(arr, left, middle, tmp_arr);
+    mergeSort(arr, middle + 1, right, tmp_arr);
+    merge(arr, left, middle, right, tmp_arr);
+  }
+}
+```
+
+调用代码时需要创建一个 `tmp_arr` 辅助数组，记得结束时释放.
+
+**空间效率**：不难发现，空间复杂度为 $O(n)$.
+
+**时间效率**：每趟归并的时间复杂度为 $O(n)$，进行 $\log_{2}n$ 次归并，因此总的时间复杂度为 $O(n\log_{2}n)$.
+
+**稳定性**：归并操作不改变相同元素的相对位置，因此是稳定的.
+
+:::info
+
+对于 $k$ 路归并排序而言，归并的次数是 $[\log_kn]$，时间复杂度还是 $n\log_{2}n$.
+
+:::
+
+## 基数排序
+
+:::tip
+
+同样是不基于比较和移动，而是基于关键字各位的大小进行排序，以关键字是数字为例，可以从低位到高位将关键字不断的分为几个集合，再按照基数顺序排回，直到排完最高位，此时排序完成.
+
+:::
+
+代码如下，第一处高亮表示将各个基数的计数转换为对应基数的值应该在辅助数组中的位置，第二处高亮要注意应该从数组的后面往前面排序，因为每次放入一个数后，对应基数的 `count index` 会减一，如果从头开始则会覆盖之前的数据.
+
+```c
+int getMax(int *arr, int n) {
+  int max = arr[0];
+  for (int i = 1; i < n; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+void countSort(int *arr, int n, int exp) {
+  int output[n], counts[10] = {0};
+
+  for (int i = 0; i < n; i++)
+    counts[(arr[i] / exp) % 10]++;
+
+  // convert count to index
+  for (int i = 1; i < 10; i++)
+    // Important
+    counts[i] += counts[i - 1];
+
+  // Important
+  for (int i = n - 1; i >= 0; i--) {
+    output[counts[(arr[i] / exp) % 10] - 1] = arr[i];
+    counts[(arr[i] / exp) % 10]--;
+  }
+
+  for (int i = 0; i < n; i++)
+    arr[i] = output[i];
+}
+
+void radixSort(int *arr, int n) {
+  int max = getMax(arr, n);
+  for (int exp = 1; max / exp > 0; exp *= 10)
+    countSort(arr, n, exp);
+}
+```
+
+通用的实现是使用队列，将属于同一基数的数放在同一个队列.
+
+**空间效率**：显然是 $O(n+r)$，其中 $r$ 为基数的个数.
+
+**时间效率**：基数排序的次数和数据的位数 $d$ 有关，一次分配需要 $O(n)$ ，则其时间复杂度为 $O(d(n+r))$，与序列的初始状态无关.
+
+**稳定性**：稳定.
+
+
+## 外部排序 
