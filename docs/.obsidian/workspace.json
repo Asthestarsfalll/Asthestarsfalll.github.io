@@ -4,11 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "13762ad5ab35ac80",
+        "id": "ccff5c3435d79507",
         "type": "tabs",
         "children": [
           {
-            "id": "0b94b391d8983de0",
+            "id": "7e2250b81d658547",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "data_link_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/计算机组成原理/storage_system.mdx",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fe17c262d1262507",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -22,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
+                "file": "notes/数据结构/graph.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +157,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
+                "file": "notes/计算机组成原理/storage_system.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -156,7 +183,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
+                "file": "notes/计算机组成原理/storage_system.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -197,7 +224,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数学/高等数学/bivariate_indefinite_integral.mdx"
+                "file": "notes/计算机组成原理/storage_system.mdx"
               }
             }
           }
@@ -225,19 +252,19 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "0b94b391d8983de0",
+  "active": "7e2250b81d658547",
   "lastOpenFiles": [
-    "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
+    "notes/计算机网络/data_link_layer.mdx",
+    "notes/计算机组成原理/storage_system.mdx",
     "notes/计算机组成原理/data_representation_and_operations.mdx",
+    "notes/数据结构/graph.mdx",
+    "notes/计算机组成原理/instruction_system.mdx",
+    "notes/计算机网络/physical_layer.mdx",
+    "notes/计算机组成原理/overview_of_computer_systems.mdx",
+    "notes/数据结构/queue.mdx",
+    "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
     "Dictionary/advanced_math.mdx",
     "Dictionary/machine_learning.mdx",
-    "Dictionary/greek_alphabet.mdx",
-    "notes/数据结构/string.mdx",
-    "notes/数学/通用/inequality.mdx",
-    "notes/数学/通用/sufficient_necessary_conditions.mdx",
-    "notes/数学/线性代数/vector_space.mdx",
-    "notes/数据结构/search_methods.mdx",
-    "notes/数据结构/linear_list.mdx",
     "notes/数据结构/index.md"
   ]
 }
