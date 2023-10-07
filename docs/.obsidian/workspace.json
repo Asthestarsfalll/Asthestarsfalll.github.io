@@ -18,6 +18,12 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":422,\"ch\":19},\"to\":{\"line\":422,\"ch\":19}},\"scroll\":423.81215194474277}"
+                },
+                {
                   "title": "data_link_layer",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -28,7 +34,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx",
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -157,7 +163,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx",
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -183,7 +189,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx",
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -224,7 +230,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/计算机组成原理/storage_system.mdx"
+                "file": "notes/计算机组成原理/data_representation_and_operations.mdx"
               }
             }
           }
@@ -254,8 +260,8 @@
   },
   "active": "7e2250b81d658547",
   "lastOpenFiles": [
-    "notes/计算机网络/data_link_layer.mdx",
     "notes/计算机组成原理/storage_system.mdx",
+    "notes/计算机网络/data_link_layer.mdx",
     "notes/计算机组成原理/data_representation_and_operations.mdx",
     "notes/数据结构/graph.mdx",
     "notes/计算机组成原理/instruction_system.mdx",
