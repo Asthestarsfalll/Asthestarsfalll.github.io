@@ -18,6 +18,126 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "CPU",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":337,\"ch\":0},\"to\":{\"line\":337,\"ch\":0}},\"scroll\":337.1307296500154}"
+                },
+                {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":43,\"ch\":20},\"to\":{\"line\":43,\"ch\":23}},\"scroll\":38.21468389415793}"
+                },
+                {
+                  "title": "CPU",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":312,\"ch\":24},\"to\":{\"line\":312,\"ch\":24}},\"scroll\":293.6415215445736}"
+                },
+                {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":290.01009894601447}"
+                },
+                {
+                  "title": "overview_of_computer_systems",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":214,\"ch\":54},\"to\":{\"line\":214,\"ch\":57}},\"scroll\":222.4292842018896}"
+                },
+                {
+                  "title": "data_representation_and_operations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/data_representation_and_operations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":463.97663158751567}"
+                },
+                {
+                  "title": "CPU",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":315.7872777982452}"
+                },
+                {
+                  "title": "overview_of_computer_systems",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":37,\"ch\":1},\"to\":{\"line\":37,\"ch\":4}},\"scroll\":36.17300742494329}"
+                },
+                {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":254,\"ch\":86},\"to\":{\"line\":254,\"ch\":89}},\"scroll\":222.14512994448117}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":679,\"ch\":0},\"to\":{\"line\":679,\"ch\":0}},\"scroll\":650.5323496106643}"
+                },
+                {
+                  "title": "overview_of_computer_systems",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":226.0083293022622}"
+                },
+                {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "CPU",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":152.46892651337157}"
+                },
+                {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":137.1794763923945}"
+                },
+                {
+                  "title": "storage_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":17.439409220914428}"
+                },
+                {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "CPU",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":162,\"ch\":9},\"to\":{\"line\":162,\"ch\":9}},\"scroll\":32.72313112497702}"
+                },
+                {
+                  "title": "instruction_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":289,\"ch\":0},\"to\":{\"line\":289,\"ch\":0}},\"scroll\":276.9477781722262}"
+                },
+                {
+                  "title": "data_representation_and_operations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/data_representation_and_operations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":251.99026035278692}"
+                },
+                {
                   "title": "storage_system",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -34,14 +154,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
+                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "fe17c262d1262507",
+            "id": "5814f340f8d0af76",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -55,7 +175,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数据结构/graph.mdx",
+                "file": "notes/计算机组成原理/overview_of_computer_systems.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -163,7 +283,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
+                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -189,7 +309,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/计算机组成原理/data_representation_and_operations.mdx",
+                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -230,7 +350,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/计算机组成原理/data_representation_and_operations.mdx"
+                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx"
               }
             }
           }
@@ -260,17 +380,18 @@
   },
   "active": "7e2250b81d658547",
   "lastOpenFiles": [
-    "notes/计算机组成原理/storage_system.mdx",
-    "notes/计算机网络/data_link_layer.mdx",
-    "notes/计算机组成原理/data_representation_and_operations.mdx",
-    "notes/数据结构/graph.mdx",
     "notes/计算机组成原理/instruction_system.mdx",
-    "notes/计算机网络/physical_layer.mdx",
+    "notes/计算机组成原理/CPU.mdx",
+    "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
     "notes/计算机组成原理/overview_of_computer_systems.mdx",
+    "notes/计算机组成原理/storage_system.mdx",
+    "notes/数据结构/graph.mdx",
+    "未命名.canvas",
+    "notes/计算机组成原理/data_representation_and_operations.mdx",
+    "notes/计算机网络/data_link_layer.mdx",
+    "notes/计算机网络/physical_layer.mdx",
     "notes/数据结构/queue.mdx",
     "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
-    "Dictionary/advanced_math.mdx",
-    "Dictionary/machine_learning.mdx",
     "notes/数据结构/index.md"
   ]
 }
