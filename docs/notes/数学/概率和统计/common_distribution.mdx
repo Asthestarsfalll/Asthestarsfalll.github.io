@@ -106,7 +106,7 @@ $$
 f(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{ -\frac{(x-\mu)^2}{2\sigma^2} }, -\infty<x<\infty
 $$
 
-其中 $\mu$ 表示均值，$\sigma$ 表示标准差，则称 $X\sim N(\mu,\sigma^2)$，若 $X\sim N(0,1)$，则称其服从标准正太分布 $\phi(x)=\frac{1}{\sqrt{2\pi}}e^{ -\frac{x^2}{2} }, -\infty<x<\infty$ .
+其中 $\mu$ 表示均值，$\sigma$ 表示标准差，则称 $X\sim N(\mu,\sigma^2)$，若 $X\sim N(0,1)$，则称其服从标准正态分布 $\phi(x)=\frac{1}{\sqrt{2\pi}}e^{ -\frac{x^2}{2} }, -\infty<x<\infty$ .
 
 $f(x)$ 关于 $x=\mu$ 对称，$\phi(x)$ 是偶函数.
 
@@ -136,7 +136,7 @@ $$
 $$
 F(x)=\Phi\left( \frac{x-\mu}{\sigma} \right)
 $$
-
+若 $f(x)=k_{1}\Phi\left( \frac{x-u_{1}}{\sigma_{1}} \right)+k_{2}\left( \frac{x-\mu_{2}}{\sigma_{2}} \right)$，且 $k_{1}+k_{2}=1$，则 $EX=k_{1}u_{1}+k_{2}u_{2}$.
 :::note
 
 以下的分布都是一些常用的统计抽样分布.
@@ -154,7 +154,7 @@ $$
 对于 $n$ 个随机变量序列，$X_{i}\sim N(0,1)$，则
 
  $$
-  X=\sum_{i=1}^nX^2
+  X=\sum_{i=1}^nX_{i}^2
  
  $$
 
@@ -173,9 +173,9 @@ $$
 
 ### t 分布
 
-:::
+:::tip
 
-**标准正态分布**和卡方分布 **根号** 的商.
+**标准正态分布** 和卡方分布 **根号** 的商.
 
 :::
 

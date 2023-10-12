@@ -78,7 +78,7 @@ $$
 xdx=ydy\iff \frac{d(\sqrt{ 1+x^2 })}{dx}=\frac{dy}{dx}=\frac{x}{y}=\frac{x}{\sqrt{ 1+x^2 }}
 $$
 
-::: info 实圆和虚圆
+:::info 实圆和虚圆
 
 式 $(1)$ 中符号为正时，则称其为 `实圆`，记作 $Re$；若为负，则为 `虚圆`，记作 $Im$.    $\{\cos x, \sin x\}$ 就是一对实圆双元.
 
@@ -103,6 +103,7 @@ $$
 $$
 \frac{dx}{y}=\frac{dx-dy}{y+x}= \frac{ydx-xdy}{y^2+x^2}
 $$
+
 ### 第一公式
 
 $$
@@ -130,6 +131,73 @@ $$
 $$
 \int  \frac{d(x^{2023})}{\sqrt{ 4+x^{4046} }}
 $$
+
+$$
+\int \frac{1}{2\sqrt{ 1+x }}\arctan \sqrt{ \frac{1+x}{1-x} } \, dx 
+$$
+
+这一题需要先凑微分、再分布积分，逆用第一公式即可.
+
 ### 第三公式
 
-讨论 $\int \frac{dx}{y^3}$ ，
+讨论 $\int \frac{dx}{y^3}$ ，对于虚元，有以下公式
+
+$$
+\begin{aligned}
+\int \frac{dx}{y^3}&=\int  \frac{1}{y^2} \frac{dx}{y}\\&=\frac{1}{y^2-x^2}\int  \frac{y\ dx-x\ dy}{y^2}\\&=\frac{1}{y^2-x^2}\int d \left( \frac{x}y{} \right)\\&=\frac{1}{y^2-x^2} \frac{x}{y}
+\end{aligned}
+$$
+
+对于实圆：
+
+$$
+\begin{aligned}
+\int \frac{dx}{y^3}&=\int  \frac{1}{y^2} \frac{dx}{y}\\&=\frac{1}{y^2+x^2}\int  \frac{y\ dx-x\ dy}{y^2}\\&=\frac{1}{y^2+x^2}\int d \left( \frac{x}y{} \right)\\&=\frac{1}{y^2+x^2} \frac{x}{y}
+\end{aligned}
+$$
+
+总结一下就是
+
+$$
+\int \frac{dx}{y^3}=\left\{\begin{aligned}
+\frac{1}{y^2-x^2} \frac{x}{y}\ \ [Im] \\ \\
+\frac{1}{y^2+x^2} \frac{x}{y}\  \ [Re]
+\end{aligned}\right. \tag2
+$$
+
+:::info
+
+注意这里的 $y^2-x^2,y^2+x^2$ 实际上是等于常数，也就是不需要区分符号了.
+
+:::
+
+**小练一下**
+
+$$
+\int  \frac{d(\sin x)}{\sqrt{ (a^2-\sin^2x)^3 }}=\frac{1}{a^2} \frac{\sin x}{\sqrt{ a^2-\sin^2x }}
+$$
+
+$$
+\int \frac{d(x^2023)}{\sqrt{ (4+x^{4046})^3 }}=\frac{1}{4} \frac{x^{2023}}{\sqrt{ 4+x^{4046} }}
+$$
+
+## 补充公式
+
+$$
+\begin{aligned}
+
+\int y \, dx &=\frac{1}{2}\int y \, dx +x\ dy+\frac{1}{2}\int y \, dx -x\ dy\\&=\frac{1}{2}yx+\frac{y^2\pm x^2}{2}\int \frac{y\ dx-x\ dy}{y^2\pm x^2}  \\
+&=\frac{1}{2}yx+ \frac{y^2\pm x^2}{2} \int \frac{dx}{y}
+\end{aligned}
+$$
+
+## 最平凡的双元
+
+$$
+x,y=\left\{\begin{aligned}
+\sqrt{ x^2+a^2 }\ [Im] \\
+\sqrt{ a^2-x^2 }\ [Re] \\
+\sqrt{ x^2-a^2 }\ [Im]
+\end{aligned} \right.
+$$
+## 起手式

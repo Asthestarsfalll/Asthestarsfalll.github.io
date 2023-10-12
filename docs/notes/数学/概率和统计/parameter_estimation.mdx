@@ -92,14 +92,27 @@ $$
 P\{ \theta_{1}<\theta<\theta_{2}\}=1-\alpha
 $$
 
-则称区间 $(\theta_{1},\theta_{2})$ 是参数 $\theta$ 的置信水平（置信度）为 $\alpha$ 的 **置信区间（区间估计）**.
+则称区间 $(\theta_{1},\theta_{2})$ 是参数 $\theta$ 的置信水平（置信度）为 $1-\alpha$ 的 **置信区间（区间估计）**.
 
 ### 一个正态总体参数的区间估计
 
-一维正态分布的参数只有期望和方差，因此可以分为以下情况
+一维正态分布的参数只有期望和方差，因此可以分为以下情况，$\overline X$ 是样本均值.
 
-|  参数    |   1- $\alpha$ 置信区间   |      |
-|:-----|:-----|:-----|
-|  期望，方差未知    |      |      |
-|  期望未知    |      |      |
-|  方差，期望未知    |      |      |
+|  待定参数    |   1- $\alpha$ 置信区间   |
+|:-----|:-----|
+|  期望，方差未知    |  $\left( \overline X-u_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{ n }},\overline X+u_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{ n }} \right)$    |
+|  期望未知    |  $\left(\overline X-t_{\frac{\alpha}{2}}(n-1) \frac{S}{\sqrt{ n }},\overline X+t_{\frac{\alpha}{2}}(n-1) \frac{S}{\sqrt{ n }}\right)$    |
+|  方差，期望未知    | $\left( \frac{(n-1)S^2}{\chi^2_{\frac{\alpha}{2}}(n-1)}, \frac{(n-1)S^2}{\chi^2_{1-\frac{\alpha}{2}}(n-1)}\right)$     |
+
+### 两个正态总体参数的区间估计
+
+有 $u_{1}-u_{2}$ 和 $\frac{\sigma_{1}}{\sigma_{2}}$ 的 $1-\alpha$ 置信区间
+
+|  待定参数    |   1- $\alpha$ 置信区间   |
+|:-----|:-----|
+|  求 $\mu_{1}-\mu_{2}$，方差已知    |  $\left( \overline X-\overline Y-u_{\frac{\alpha}{2}} \sqrt{ \frac{\sigma_{1}^2}{n_{1}}+ \frac{\sigma_{2}^2}{n_{2}} },\overline X-\overline Y+u_{\frac{\alpha}{2}} \sqrt{ \frac{\sigma_{1}^2}{n_{1}}+ \frac{\sigma_{2}^2}{n_{2}} } \right)$    |
+|  求 $\mu_{1}-\mu_{2}$，方差未知但相等   |  $\left(\overline X-\overline Y-t_{\frac{\alpha}{2}}(n_{1}+n_{2}-2) S\sqrt{ \frac{1}{n_{1}}+\frac{1}{n_{2}} },\overline X-\overline Y+t_{\frac{\alpha}{2}}(n_{1}+n_{2}-2) S\sqrt{ \frac{1}{n_{1}}+\frac{1}{n_{2}} }\right)$    |
+|  求 $\frac{\sigma_{1}}{\sigma_{2}}$ ，期望未知  | $\left(\frac{S_{1}^2}{S^2_{2}}\cdot \frac{1}{F_{\frac{\alpha}{2}(n_{1}-1,n_{2}-1)}},\frac{S_{1}^2}{S^2_{2}}\cdot \frac{1}{F_{1-\frac{\alpha}{2}(n_{1}-1,n_{2}-1)}}\right)$     |
+
+##  假设检验
+

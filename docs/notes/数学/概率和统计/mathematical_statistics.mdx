@@ -10,7 +10,7 @@ hide_table_of_contents: false
 
 对于随机变量 $X$，则其概率分布为 **总体概率**，总体中的每个元素成为 **个体**.
 
-对于随机变量序列 $X_{1},x_{2},\cdots X_{n}$ 喜爱独立，并且都与总体 $X$ 同分布，则称其为来自总体的 **简单随机样本**，简称为 **样本**，其中 $n$ 为 **样本容量** ，样本中的具体观测值 $x_{1},x_{2},\cdots,x_{n}$ 称为 **样本值**，或者称总体 $X$ 的 $n$ 个 **独立观测值**.
+对于随机变量序列 $X_{1},X_{2},\cdots X_{n}$ 相互独立，并且都与总体 $X$ 同分布，则称其为来自总体的 **简单随机样本**，简称为 **样本**，其中 $n$ 为 **样本容量** ，样本中的具体观测值 $x_{1},x_{2},\cdots,x_{n}$ 称为 **样本值**，或者称总体 $X$ 的 $n$ 个 **独立观测值**.
 
 :::tip
 
@@ -48,7 +48,7 @@ $$
 
 :::info
 
-由于这是一个无偏估计，因此 $E(\overline X)=\mu$.
+这是一个无偏估计，因此 $E(\overline X)=\mu$，证明见后面的样本方差的证明.
 
 :::
 
@@ -83,7 +83,46 @@ $$
 1. 为什么可以使用 $S^2$ 代替 $\sigma^2$？
 2. 为什么使用 $\overline X$ 代替 $\mu$ 之后分母需要减去 1.
 
-第一个问题暂且不会，先看第二个问题.
+[参考](样本方差公式是如何推导出来的？ - 王赟 Maigo 的回答 - 知乎 https://www.zhihu.com/question/52367271/answer/130217781)
+
+第一个问题是高斯分布（参考中心极限定理）总体方差的最大似然估计.  可以设似然函数为
+
+$$
+L(u,\sigma^2)=\Pi_{i=1}^n \frac{1}{\sqrt{ 2\pi  }\sigma} e^{- \frac{(x_{i}-\mu)^2}{2\sigma^2}}
+$$
+
+取对数
+
+$$
+\ln L(\mu,\sigma^2)=-\frac{n}{2}\ln 2\pi-n\ln\sigma-\frac{1}{2\sigma^2}\sum_{i=1}^n(X_{i}-\mu)^2
+$$
+
+令 $\frac{\partial \ln L}{\partial\mu}=\frac{1}{\sigma^2}\sum_{i=1}^n(X_{i}-\mu)=0$，得 $\mu$ 的最大似然估计是
+
+$$
+\hat{\mu}=\frac{1}{n}\sum_{i=1}^nX_{i}=X
+$$
+
+将其带回原式，令 $\frac{\partial \ln L}{\partial\sigma}=-\frac{n}{\sigma}+\frac{1}{\sigma^3}\sum_{i=1}^n(X_{i}-\overline X)^2=0$，解得其最大似然估计是
+
+$$
+\hat{\sigma^2}=\frac{1}{n}\sum_{i=1}^n(X_{i}-\overline X)^2
+$$
+计算其期望：
+$$
+\begin{aligned}
+E(\hat{\sigma^2})&=E\left[\frac{1}{n}\sum_{i=1}^n(X_{i}-\overline X)^2\right]\\
+&=E\left[\frac{1}{n}\sum_{i=1}^n[(X_{i}-\mu)-(\overline X-\mu)]^2\right]\\
+&=E\left[\frac{1}{n}\sum_{i=1}^n(X_{i}-\mu)^2 -\frac{2}{n}\sum_{i=1}^n(X_{i}-\mu)(\overline X-\mu)+\frac{1}{n}\sum_{i=1}^n(\overline X-\mu)^2\right]\\
+&=E\left[\frac{1}{n}\sum_{i=1}^n(X_{i}-\mu)^2 -2(\overline X-\mu)^2+(\overline X-\mu)^2\right]\\
+&=E\left[\frac{1}{n}\sum_{i=1}^n(X_{i}-\mu)^2 -(\overline X-\mu)^2\right]\\
+&=\sigma^2-\frac{1}{n}\sigma^2\\
+&=\frac{n-1}{n}\sigma^2
+
+\end{aligned}
+$$
+
+ 因此这是一个有偏的，需要进行修正；另外一个证明方法是求出其偏差的期望，计算是相似的，见下.
 
 首先要证明样本值与其均值之差的平方和最小，设 $X$ 的二阶矩存在，要证
 

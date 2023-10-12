@@ -85,9 +85,9 @@ void binaryInsertionSort(int *arr, int len) {
 
 :::
 
-代码如下，只是在直接插入代码的基础上额外嵌套了一层循环，并将其中的 $1$ 都修改为了 $d$ .
+代码如下，只是在直接插入代码的基础上额外嵌套了一层循环，并将其中的 $1$ 都修改为了 $d$ ，下面蓝色部分为直接插入排序的代码.
 
-```c
+```c {4-12}
 void shellSort(int *arr, int len) {
   int j, key;
   for (int d = len / 2; d >= 1; d /= 2) {
@@ -456,5 +456,4 @@ void radixSort(int *arr, int n) {
 
 **稳定性**：稳定.
 
-
-## 外部排序 
+## 外部排序

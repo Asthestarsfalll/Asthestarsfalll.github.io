@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ccff5c3435d79507",
+        "id": "df2ab1a7fd05d2a9",
         "type": "tabs",
         "children": [
           {
-            "id": "7e2250b81d658547",
+            "id": "3f0d0fe3585a45e0",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,135 +18,57 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "instruction_system",
+                  "title": "system_of_linear_equations",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":134,\"ch\":35},\"to\":{\"line\":134,\"ch\":38}},\"scroll\":56.70732530058507}"
                 },
                 {
-                  "title": "CPU",
+                  "title": "determinant",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":337,\"ch\":0},\"to\":{\"line\":337,\"ch\":0}},\"scroll\":337.1307296500154}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/determinant.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":237,\"ch\":0},\"to\":{\"line\":237,\"ch\":0}},\"scroll\":183.33568265995015}"
                 },
                 {
-                  "title": "instruction_system",
+                  "title": "block_matrix",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":43,\"ch\":20},\"to\":{\"line\":43,\"ch\":23}},\"scroll\":38.21468389415793}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/block_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
                 },
                 {
-                  "title": "CPU",
+                  "title": "determinant",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":312,\"ch\":24},\"to\":{\"line\":312,\"ch\":24}},\"scroll\":293.6415215445736}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/determinant.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
                 },
                 {
-                  "title": "instruction_system",
+                  "title": "system_of_linear_equations",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":290.01009894601447}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6}"
                 },
                 {
-                  "title": "overview_of_computer_systems",
+                  "title": "quadratic_form",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":214,\"ch\":54},\"to\":{\"line\":214,\"ch\":57}},\"scroll\":222.4292842018896}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
                 },
                 {
-                  "title": "data_representation_and_operations",
+                  "title": "inverse_matrix",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/data_representation_and_operations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":463.97663158751567}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6}"
                 },
                 {
-                  "title": "CPU",
+                  "title": "vector_space",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":315.7872777982452}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/vector_space.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":85,\"ch\":63},\"to\":{\"line\":85,\"ch\":63}},\"scroll\":85.13293214813483}"
                 },
                 {
-                  "title": "overview_of_computer_systems",
+                  "title": "mathematical_statistics",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":37,\"ch\":1},\"to\":{\"line\":37,\"ch\":4}},\"scroll\":36.17300742494329}"
-                },
-                {
-                  "title": "instruction_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":254,\"ch\":86},\"to\":{\"line\":254,\"ch\":89}},\"scroll\":222.14512994448117}"
-                },
-                {
-                  "title": "storage_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":679,\"ch\":0},\"to\":{\"line\":679,\"ch\":0}},\"scroll\":650.5323496106643}"
-                },
-                {
-                  "title": "overview_of_computer_systems",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/overview_of_computer_systems.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":226.0083293022622}"
-                },
-                {
-                  "title": "instruction_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "CPU",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":152.46892651337157}"
-                },
-                {
-                  "title": "instruction_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":137.1794763923945}"
-                },
-                {
-                  "title": "storage_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":17.439409220914428}"
-                },
-                {
-                  "title": "instruction_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "CPU",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/CPU.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":162,\"ch\":9},\"to\":{\"line\":162,\"ch\":9}},\"scroll\":32.72313112497702}"
-                },
-                {
-                  "title": "instruction_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/instruction_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":289,\"ch\":0},\"to\":{\"line\":289,\"ch\":0}},\"scroll\":276.9477781722262}"
-                },
-                {
-                  "title": "data_representation_and_operations",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/data_representation_and_operations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":251.99026035278692}"
-                },
-                {
-                  "title": "storage_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":422,\"ch\":19},\"to\":{\"line\":422,\"ch\":19}},\"scroll\":423.81215194474277}"
-                },
-                {
-                  "title": "data_link_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/mathematical_statistics.mdx\",\"mode\":\"source\",\"source\":false}}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
                 }
               ]
@@ -154,14 +76,53 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
+                "file": "notes/数学/线性代数/vector_space.mdx",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "5814f340f8d0af76",
+            "id": "bc48845a206f97da",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "system_of_linear_equations",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":119,\"ch\":0},\"to\":{\"line\":119,\"ch\":0}},\"scroll\":119.11771893520935}"
+                },
+                {
+                  "title": "search_methods",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "sort",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/sort.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":409.05124815760115}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/数学/线性代数/vector.mdx",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6903d9a01bc57b79",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -175,13 +136,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机组成原理/overview_of_computer_systems.mdx",
+                "file": "notes/数学/线性代数/order.mdx",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -283,7 +245,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
+                "file": "notes/数学/线性代数/order.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -309,7 +271,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
+                "file": "notes/数学/线性代数/order.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -350,7 +312,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx"
+                "file": "notes/数学/线性代数/order.mdx"
               }
             }
           }
@@ -378,20 +340,21 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "7e2250b81d658547",
+  "active": "6903d9a01bc57b79",
   "lastOpenFiles": [
-    "notes/计算机组成原理/instruction_system.mdx",
-    "notes/计算机组成原理/CPU.mdx",
-    "notes/计算机组成原理/pipeline_technology_and_instruction_level_parallelism.mdx",
-    "notes/计算机组成原理/overview_of_computer_systems.mdx",
-    "notes/计算机组成原理/storage_system.mdx",
-    "notes/数据结构/graph.mdx",
+    "notes/数学/线性代数/vector.mdx",
+    "notes/数学/线性代数/order.mdx",
+    "notes/数学/线性代数/system_of_linear_equations.mdx",
+    "notes/数学/线性代数/vector_space.mdx",
+    "notes/数学/线性代数/determinant.mdx",
+    "notes/数学/线性代数/block_matrix.mdx",
+    "notes/数学/线性代数/quadratic_form.mdx",
+    "notes/数学/线性代数/inverse_matrix.mdx",
+    "notes/数学/概率和统计/mathematical_statistics.mdx",
+    "notes/数据结构/search_methods.mdx",
+    "notes/数据结构/sort.mdx",
+    "未命名.md",
     "未命名.canvas",
-    "notes/计算机组成原理/data_representation_and_operations.mdx",
-    "notes/计算机网络/data_link_layer.mdx",
-    "notes/计算机网络/physical_layer.mdx",
-    "notes/数据结构/queue.mdx",
-    "notes/数学/高等数学/bivariate_indefinite_integral.mdx",
     "notes/数据结构/index.md"
   ]
 }
