@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "df2ab1a7fd05d2a9",
+        "id": "dd78dd0fcf742ea9",
         "type": "tabs",
         "children": [
           {
-            "id": "3f0d0fe3585a45e0",
+            "id": "525be9892ead01c9",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -16,113 +16,44 @@
                 {
                   "state": "{}",
                   "eState": "{}"
-                },
-                {
-                  "title": "system_of_linear_equations",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":134,\"ch\":35},\"to\":{\"line\":134,\"ch\":38}},\"scroll\":56.70732530058507}"
-                },
-                {
-                  "title": "determinant",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/determinant.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":237,\"ch\":0},\"to\":{\"line\":237,\"ch\":0}},\"scroll\":183.33568265995015}"
-                },
-                {
-                  "title": "block_matrix",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/block_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
-                },
-                {
-                  "title": "determinant",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/determinant.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
-                },
-                {
-                  "title": "system_of_linear_equations",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6}"
-                },
-                {
-                  "title": "quadratic_form",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/quadratic_form.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
-                },
-                {
-                  "title": "inverse_matrix",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/inverse_matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6}"
-                },
-                {
-                  "title": "vector_space",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/vector_space.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":85,\"ch\":63},\"to\":{\"line\":85,\"ch\":63}},\"scroll\":85.13293214813483}"
-                },
-                {
-                  "title": "mathematical_statistics",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/mathematical_statistics.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/数学/线性代数/vector_space.mdx",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "bc48845a206f97da",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "system_of_linear_equations",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/system_of_linear_equations.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":119,\"ch\":0},\"to\":{\"line\":119,\"ch\":0}},\"scroll\":119.11771893520935}"
                 },
                 {
                   "title": "search_methods",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":337,\"ch\":22},\"to\":{\"line\":337,\"ch\":22}},\"scroll\":337.15187917159335}"
                 },
                 {
-                  "title": "sort",
+                  "title": "tree",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/sort.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":409.05124815760115}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/tree.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":170,\"ch\":0},\"to\":{\"line\":170,\"ch\":0}},\"scroll\":174.29772014311015}"
+                },
+                {
+                  "title": "multivariable_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":109,\"ch\":2},\"to\":{\"line\":109,\"ch\":2}},\"scroll\":86.36147049234746}"
+                },
+                {
+                  "title": "infinite_serie",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":229,\"ch\":3},\"to\":{\"line\":229,\"ch\":3}},\"scroll\":245.96472667924672}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数学/线性代数/vector.mdx",
+                "file": "notes/数据结构/graph.mdx",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "6903d9a01bc57b79",
+            "id": "5aab184131e45558",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -136,14 +67,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数学/线性代数/order.mdx",
+                "file": "notes/数据结构/search_methods.mdx",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -245,7 +176,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数学/线性代数/order.mdx",
+                "file": "notes/数据结构/search_methods.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -271,7 +202,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数学/线性代数/order.mdx",
+                "file": "notes/数据结构/search_methods.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -312,7 +243,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数学/线性代数/order.mdx"
+                "file": "notes/数据结构/search_methods.mdx"
               }
             }
           }
@@ -340,20 +271,24 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "6903d9a01bc57b79",
+  "active": "5aab184131e45558",
   "lastOpenFiles": [
-    "notes/数学/线性代数/vector.mdx",
-    "notes/数学/线性代数/order.mdx",
-    "notes/数学/线性代数/system_of_linear_equations.mdx",
-    "notes/数学/线性代数/vector_space.mdx",
-    "notes/数学/线性代数/determinant.mdx",
-    "notes/数学/线性代数/block_matrix.mdx",
-    "notes/数学/线性代数/quadratic_form.mdx",
-    "notes/数学/线性代数/inverse_matrix.mdx",
-    "notes/数学/概率和统计/mathematical_statistics.mdx",
+    "notes/数据结构/graph.mdx",
     "notes/数据结构/search_methods.mdx",
-    "notes/数据结构/sort.mdx",
     "未命名.md",
+    "notes/数据结构/tree.mdx",
+    "notes/数学/高等数学/multivariable_calculus.mdx",
+    "notes/数据结构/linear_list.mdx",
+    "excore/json_schema.mdx",
+    "notes/数学/线性代数/eigenvalues_and_eigenvectors.mdx",
+    "excore/未命名.md",
+    "meaningless/博客收录/Things-that-we-lose-finally.md",
+    "meaningless/run/index.mdx",
+    "meaningless/run",
+    "deeplearning/计算机视觉/transformer-for-reco.mdx",
+    "deeplearning/计算机视觉/swintran.mdx",
+    "index.md",
+    "intro.md",
     "未命名.canvas",
     "notes/数据结构/index.md"
   ]

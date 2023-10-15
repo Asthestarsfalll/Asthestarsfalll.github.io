@@ -8,6 +8,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+.workspace.json
 
 # Misc
 .DS_Store

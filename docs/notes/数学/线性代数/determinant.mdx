@@ -59,6 +59,25 @@ $$
 
 代数余子式的另一个重要性质是其与其他行/列的元素对应乘积求和，所得结果一定为 $0$，这也是伴随矩阵和逆矩阵的由来.
 
+另外一个很重要的应用就是如果某个位置余子式不为零，那么可以推出除了余子式所在行列的行/列向量线性无关，如对于一个三阶矩阵，
+
+$$
+\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix}
+$$
+
+其 $A_{12}$ 不为零
+
+$$
+A_{12}=\begin{vmatrix}a_{21}&a_{23}\\a_{31}&a_{33}\end{vmatrix}\neq 0
+$$
+
+则向量 $\{a_{21},a_{31}\}^T$ 与 $\{a_{23},a_{33}\}^T$ 线性无关，而对于其伸长组 $\{a_{11},a_{21},a_{31}\}^T$ 和 $\{a_{13},a_{23},a_{33}\}^T$ 也线性无关；那么那两个行向量线性无关呢？
+
+<details>
+  <summary>🤔</summary>
+第二行和第三行所代表的行向量.
+</details>
+
 ## 特殊矩阵的行列式
 
 ### 分块矩阵
@@ -79,16 +98,8 @@ D & B
 $$
 
 $$
-\begin{vmatrix}
-O & A_{{m\times m}} \\
-B_{n\times n} & O
-\end{vmatrix}=\begin{vmatrix}
-O & A \\
-B & C
-\end{vmatrix}=\begin{vmatrix}
-D & A \\
-B & O
-\end{vmatrix}=(-1)^{mn}|A| |B|
+\begin{vmatrix}O & A_{{m\times m}} \\B_{n\times n} & O\end{vmatrix}=\begin{vmatrix}O & A \\B & C\end{vmatrix}=\begin{vmatrix}
+D & A \\B & O\end{vmatrix}=(-1)^{mn}|A| |B|
 $$
 
 :::tip

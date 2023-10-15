@@ -98,18 +98,21 @@ const config = {
           },
           {
             to: "/docs/notes",
+            activeBasePath: '/docs/notes',
             label: "Notes",
             position: "left"
           },
           {
             // type: "doc",
             // docId: "index",
+            activeBasePath: '/docs/meaningless',
             to: "/docs/meaningless",
             position: "left",
             label: "Meaningless",
           },
           {
             // href: "https://ExCore.github.io",
+            activeBasePath: '/docs/excore',
             to: "/docs/excore",
             label: "ExCore",
             position: "left",
@@ -143,14 +146,19 @@ const config = {
         },
         {
           title: "Community",
-          items: [{
-            label: "NEET CV",
-            href: "https://github.com/neet-cv",
-          },
-          {
-            label: "sanyuankexie",
-            href: "https://github.com/sanyuankexie",
-          },
+          items: [
+            {
+              label: "PaddlePaddle",
+              href: "https://github.com/PaddlePaddle",
+            },
+            {
+              label: "MegEngine",
+              href: "https://github.com/MegEngine",
+            },
+            {
+              label: "openvino",
+              href: "https://github.com/openvinotoolkit",
+            },
           ],
         },
         {
