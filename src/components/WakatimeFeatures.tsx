@@ -49,7 +49,7 @@ const WakaLangPieChart = ({ data /* see data tab */ }) => (
         cornerRadius={5}
         activeInnerRadiusOffset={10}
         activeOuterRadiusOffset={10}
-        colors={{ scheme: 'blues' }}
+        colors={{ scheme: 'reds' }}
         borderWidth={1}
         borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
         arcLinkLabelsSkipAngle={10}
@@ -152,7 +152,7 @@ const WakaEdtrBarChart = ({ data /* see data tab */ }) => (
         indexScale={{ type: 'band', round: true }}
         padding={0.3}
         innerPadding={10}
-        colors={{ scheme: 'blues' }}
+        colors={{ scheme: 'reds' }}
         colorBy="indexValue"
         borderRadius={3}
         borderWidth={1}
