@@ -340,7 +340,7 @@ function useHidingFooter() {
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  useHidingFooter();
+  // useHidingFooter();
   return (
     <Layout
       title={`${siteConfig.title}`}

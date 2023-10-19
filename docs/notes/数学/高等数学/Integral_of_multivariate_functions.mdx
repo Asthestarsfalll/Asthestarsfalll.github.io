@@ -43,7 +43,7 @@ $$
 \begin{cases}
 x=r\sin\phi \cos\theta,\ 0\leq r<+\infty, \\
 y=r\sin\phi \sin\theta,\ 0\leq \phi\leq\pi, \\
-z=r\cos\phi,\ 0\leq \phi\leq 2\pi, \\
+z=r\cos\phi,\ 0\leq \theta\leq 2\pi, \\
 \end{cases}
 $$
 
@@ -59,7 +59,7 @@ $$
 
 **对弧长的线积分**
 
-积分形式为 $\int f(x(t), y(t))\sqrt{ x'^2(t)+y'^2(t) } \, dx$ （适用于参数方程）或 $\int f(x,y(x)) \sqrt{ 1+y'^2(x) } \, dx$ 或 $f(r\cos\theta, r\sin\theta)\sqrt{ r^2 + r'^2 }d\theta$.
+积分形式为 $\int f(x(t), y(t))\sqrt{ x'^2(t)+y'^2(t) } \, dt$ （适用于参数方程）或 $\int f(x,y(x)) \sqrt{ 1+y'^2(x) } \, dx$ 或 $f(r\cos\theta, r\sin\theta)\sqrt{ r^2 + r'^2 }d\theta$.
 
 可以利用对称性进行求解，特别的，若积分曲线关于 $y=x$ 对称，则 $\int f(x,y) \, ds=\int f(y,x) \, ds$，或 $\int f(x) \, ds=\int f(y) \, ds$.
 
@@ -147,7 +147,7 @@ $$
 设空间闭区域 $\Omega$ 由分片光滑闭曲面 $\sum$ 所围成，函数 $P,Q,R$ 在 $\Omega$ 上具有一阶连续偏导数，则
 
 $$
-\oint_{\sum_{out}}Pdyddz+Qdzdx+Rdxdy=\iiint\left( \frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z} \right)dv=\iint_{\sum}(P\cos\alpha+Q\cos\beta+R\cos\gamma)dS
+\oint_{\sum_{out}}Pdydz+Qdzdx+Rdxdy=\iiint\left( \frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z} \right)dv=\iint_{\sum}(P\cos\alpha+Q\cos\beta+R\cos\gamma)dS
 $$
 
 ## 物理应用

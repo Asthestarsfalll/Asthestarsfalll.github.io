@@ -156,7 +156,7 @@ $$
 
 :::
 
-对于二元隐函数函数 $F(z,x,y)=0$，形式是类似的
+对于二元隐函数 $F(z,x,y)=0$，形式是类似的
 
 $$
 \begin{aligned}
@@ -204,7 +204,7 @@ $$
 
 1. . 当 $AC-B^2>0$ 时，$f(x,y)$ 在 $x_{0},y_{0}$ 取得极值，$A>0$ 时取得极小值；
 2. . 当 $AC-B^2<0$ 时，$f(x,y)$ 在 $x_{0},y_{0}$ 无极值；
-3. . 当 $AC-B^2>0$ 时，不能确定 $f(x,y)$ 是否有极值，需要进一步讨论（一般使用极值定义）.
+3. . 当 $AC-B^2=0$ 时，不能确定 $f(x,y)$ 是否有极值，需要进一步讨论（一般使用极值定义）.
 
 :::tip 条件极值
 
@@ -250,10 +250,22 @@ $$
 f'_{x} \cos\alpha+f'_{y}\cos\beta+f'_{z}\cos \gamma
 $$
 
-梯度为 $\mathbf{grad}f(x_{0},y_{0})=\left( \frac{\partial f(x_{0},y_{0})}{\partial x}, \frac{\partial f(x_{0},y_{0})}{\partial y}\right)$，实际上就是沿着两个坐标轴方向的方向导数所组成的向量.
+这里的 $\cos\alpha,\cos\beta,\cos\gamma$ 是方向余弦，计算公式如下：
 
-方向导数也可以表示为梯度的形式
+$$
+\cos\alpha= \frac{x}{\sqrt{ x^2+y^2+z^2 }},\cos\beta= \frac{y}{\sqrt{ x^2+y^2+z^2 }},\cos\gamma= \frac{z}{\sqrt{ x^2+y^2+z^2 }}
+$$
+
+对于多元函数 $z=f(x,y)$ 的任意一点的方向余弦公式为
+
+$$
+\cos\alpha=-\frac{f_{x}}{\sqrt{ 1+f'_{x}+f'_{y} }},\cos\beta=-\frac{f_{y}}{\sqrt{ 1+f'_{x}+f'_{y} }},\cos\gamma=\frac{1}{\sqrt{ 1+f'_{x}+f'_{y} }}
+$$
+
+梯度为 $\mathbf{grad}f(x_{0},y_{0})=\left( \frac{\partial f(x_{0},y_{0})}{\partial x}, \frac{\partial f(x_{0},y_{0})}{\partial y}\right)$，就是对应的位置求偏导得到的一个向量，其与方向向量做内积可以得到方向向量 $\mathbf{grad}\cdot(\cos\alpha,\cos\beta)$，也可以表示为梯度的形式
 
 $$
 \frac{\partial f(x_{0},y_{0})}{\partial \mathbf{l}}=\mathbf{grad}f(x_{0},y_{0})\cdot \mathbf{l}
 $$
+
+因此方向向量的最大变化率就是沿着梯度的方向.
