@@ -103,6 +103,12 @@ const config = {
             position: "left"
           },
           {
+            activeBasePath: '/docs/deeplearning',
+            to: "/docs/deeplearning",
+            label: "DeepLearning",
+            position: "left",
+          },
+          {
             // type: "doc",
             // docId: "index",
             activeBasePath: '/docs/meaningless',
