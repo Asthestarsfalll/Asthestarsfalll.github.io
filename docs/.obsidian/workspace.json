@@ -18,6 +18,12 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "ConvNeXt",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerVision/BaseModel/ConvNeXt.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":16,\"ch\":111},\"to\":{\"line\":16,\"ch\":111}},\"scroll\":10.203109349127187}"
+                },
+                {
                   "title": "SimAm",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerVision/Attention/SimAm.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -178,7 +184,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/ComputerVision/BaseModel/ConvNeXt.mdx",
+                "file": "excore/index.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -325,8 +331,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -428,7 +433,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "deeplearning/Cuda/optimize_paddle_logsumexp.md",
+                "file": "excore/index.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -454,7 +459,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "deeplearning/Cuda/optimize_paddle_logsumexp.md",
+                "file": "excore/index.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -495,7 +500,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "deeplearning/Cuda/optimize_paddle_logsumexp.md"
+                "file": "excore/index.mdx"
               }
             }
           }
@@ -523,10 +528,11 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "643dbd064b823b51",
+  "active": "3f99d0e5ab6ef1ec",
   "lastOpenFiles": [
-    "deeplearning/Others/2022开源之夏结项报告.mdx",
+    "deeplearning/ComputerVision/BaseModel/ConvNeXt.mdx",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
+    "deeplearning/Others/2022开源之夏结项报告.mdx",
     "deeplearning/ComputerVision/BaseModel/PP-LCNet.mdx",
     "deeplearning/Others/ospp.mdx",
     "deeplearning/Others/Dict-train.mdx",
