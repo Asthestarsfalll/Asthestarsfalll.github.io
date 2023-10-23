@@ -11,11 +11,23 @@
             "id": "3f99d0e5ab6ef1ec",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
+                {
+                  "title": "310624478",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"www.zhihu.com/question/310624478.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"excore/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
                 },
                 {
                   "title": "ConvNeXt",
@@ -184,7 +196,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "excore/index.mdx",
+                "file": "deeplearning/ComputerMusic/Computer-Music.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -433,7 +445,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "excore/index.mdx",
+                "file": "deeplearning/ComputerMusic/Computer-Music.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -459,7 +471,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "excore/index.mdx",
+                "file": "deeplearning/ComputerMusic/Computer-Music.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -500,7 +512,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "excore/index.mdx"
+                "file": "deeplearning/ComputerMusic/Computer-Music.mdx"
               }
             }
           }
@@ -530,6 +542,11 @@
   },
   "active": "3f99d0e5ab6ef1ec",
   "lastOpenFiles": [
+    "www.zhihu.com/question/310624478.md",
+    "deeplearning/ComputerMusic/Computer-Music.mdx",
+    "www.zhihu.com/question",
+    "www.zhihu.com",
+    "excore/index.mdx",
     "deeplearning/ComputerVision/BaseModel/ConvNeXt.mdx",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
     "deeplearning/Others/2022开源之夏结项报告.mdx",
@@ -537,12 +554,7 @@
     "deeplearning/Others/ospp.mdx",
     "deeplearning/Others/Dict-train.mdx",
     "deeplearning/ComputerVision/BaseOp/VOLO.mdx",
-    "deeplearning/Others/ospp.pdf",
     "images/2022/03/27/20210730004422.gif.md",
-    "deeplearning/ComputerVision/LowLight/简单有效的低照度增强.mdx",
-    "deeplearning/ComputerMusic/音乐理论基础.mdx",
-    "deeplearning/ComputerVision/LowLight",
-    "deeplearning/LossFunction/Boundary-IoU.mdx",
     "images/2022/03/27/20210507180214.jpg.md",
     "images/2022/03/27/20210730004036.png.md",
     "未命名.canvas",
