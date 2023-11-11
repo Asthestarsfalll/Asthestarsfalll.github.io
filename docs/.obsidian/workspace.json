@@ -18,6 +18,12 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "common_distribution",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/common_distribution.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
                   "title": "storage_system",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -250,7 +256,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数学/概率和统计/common_distribution.mdx",
+                "file": "notes/数据结构/queue.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -358,7 +364,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数学/概率和统计/common_distribution.mdx",
+                "file": "notes/数据结构/queue.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -384,7 +390,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数学/概率和统计/common_distribution.mdx",
+                "file": "notes/数据结构/queue.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -425,7 +431,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数学/概率和统计/common_distribution.mdx"
+                "file": "notes/数据结构/queue.mdx"
               }
             }
           }
@@ -455,11 +461,11 @@
   },
   "active": "3f99d0e5ab6ef1ec",
   "lastOpenFiles": [
+    "notes/数学/概率和统计/common_distribution.mdx",
     "notes/计算机组成原理/storage_system.mdx",
     "notes/计算机组成原理/data_representation_and_operations.mdx",
     "deeplearning/ComputerMusic/音乐理论基础.mdx",
     "notes/计算机组成原理/overview_of_computer_systems.mdx",
-    "notes/数学/概率和统计/common_distribution.mdx",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
     "notes/数据结构/sort.mdx",
     "notes/数据结构/tree.mdx",
