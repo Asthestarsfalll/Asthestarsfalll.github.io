@@ -201,6 +201,13 @@ int kmp(char *str, char *substr, int *next) {
 
 待续…
 
-```c
+反正 $nextval$ 数组需要根据 next 数组确定，如
 
+```
+         1 2 3 4 5 6 7 8
+         a b a b a c a b
+         0 0 1 2 3 0 1 2   右移加一
+next:    0 1 1 2 3 4 1 2   next值对应下标的字符和当前下标不同直接抄下来，相同则抄对应下标字符的nextval值，先找不同：
+nextval: 0 1       4       再找相同：
+         0 1 0 1 0 4 0 1
 ```

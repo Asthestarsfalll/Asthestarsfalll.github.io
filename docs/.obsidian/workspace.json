@@ -18,6 +18,60 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":7.997312572151227}"
+                },
+                {
+                  "title": "matrix",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":25,\"ch\":0},\"to\":{\"line\":25,\"ch\":0}},\"scroll\":24.615738304982997}"
+                },
+                {
+                  "title": "translation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/translation.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":49,\"ch\":0},\"to\":{\"line\":49,\"ch\":0}},\"scroll\":44.22472242842747}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/index.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "Computer-Music",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerMusic/Computer-Music.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":15,\"ch\":0},\"to\":{\"line\":15,\"ch\":0}},\"scroll\":15.101182004733277}"
+                },
+                {
+                  "title": "translation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/translation.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":52,\"ch\":10},\"to\":{\"line\":52,\"ch\":10}},\"scroll\":52.12784882967513}"
+                },
+                {
+                  "title": "graph",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":359,\"ch\":30},\"to\":{\"line\":359,\"ch\":30}},\"scroll\":359.1311728911916}"
+                },
+                {
+                  "title": "string",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/string.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":213,\"ch\":0},\"to\":{\"line\":213,\"ch\":0}},\"scroll\":212.15231640679153}"
+                },
+                {
+                  "title": "queue",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/queue.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
                   "title": "common_distribution",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/common_distribution.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -256,7 +310,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数据结构/queue.mdx",
+                "file": "notes/英语/translation.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -339,7 +393,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2cb931200911f1fe",
@@ -364,7 +419,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数据结构/queue.mdx",
+                "file": "notes/英语/translation.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -390,7 +445,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数据结构/queue.mdx",
+                "file": "notes/英语/translation.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -431,7 +486,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数据结构/queue.mdx"
+                "file": "notes/英语/translation.mdx"
               }
             }
           }
@@ -461,19 +516,19 @@
   },
   "active": "3f99d0e5ab6ef1ec",
   "lastOpenFiles": [
+    "notes/index.mdx",
+    "notes/数学/线性代数/matrix.mdx",
+    "notes/英语/translation.mdx",
+    "deeplearning/ComputerMusic/Computer-Music.mdx",
+    "notes/数据结构/graph.mdx",
+    "notes/数据结构/string.mdx",
+    "notes/数据结构/queue.mdx",
     "notes/数学/概率和统计/common_distribution.mdx",
     "notes/计算机组成原理/storage_system.mdx",
     "notes/计算机组成原理/data_representation_and_operations.mdx",
     "deeplearning/ComputerMusic/音乐理论基础.mdx",
-    "notes/计算机组成原理/overview_of_computer_systems.mdx",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
-    "notes/数据结构/sort.mdx",
-    "notes/数据结构/tree.mdx",
-    "deeplearning/ComputerMusic/Computer-Music.mdx",
     "www.zhihu.com/question/310624478.md",
-    "www.zhihu.com/question",
-    "www.zhihu.com",
-    "excore/index.mdx",
     "images/2022/03/27/20210730004422.gif.md",
     "images/2022/03/27/20210507180214.jpg.md",
     "images/2022/03/27/20210730004036.png.md",
