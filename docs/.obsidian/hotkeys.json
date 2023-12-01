@@ -1,12 +1,4 @@
 {
-  "darlal-switcher-plus:switcher-plus:open-commands": [
-    {
-      "modifiers": [
-        "Mod"
-      ],
-      "key": "P"
-    }
-  ],
   "obsidian-table-generator:create-table-genertator": [
     {
       "modifiers": [
@@ -36,5 +28,6 @@
     }
   ],
   "easy-typing-obsidian:easy-typing-format-switch": [],
-  "easy-typing-obsidian:easy-typing-insert-codeblock": []
+  "easy-typing-obsidian:easy-typing-insert-codeblock": [],
+  "editor:delete-paragraph": []
 }

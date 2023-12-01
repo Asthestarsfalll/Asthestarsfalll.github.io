@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "acd7a755359b7098",
+        "id": "8d214381bdb51683",
         "type": "tabs",
         "children": [
           {
-            "id": "0a808d8b03e579af",
+            "id": "bebc7617f3918e9b",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -16,6 +16,18 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "matrix",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":25,\"ch\":0},\"to\":{\"line\":25,\"ch\":0}},\"scroll\":33.208428280779614}"
+                },
+                {
+                  "title": "writing",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/writing.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":390,\"ch\":0},\"to\":{\"line\":390,\"ch\":0}},\"scroll\":390.1312559150051}"
                 }
               ]
             },
@@ -225,20 +237,20 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "0a808d8b03e579af",
+  "active": "bebc7617f3918e9b",
   "lastOpenFiles": [
+    "notes/数学/线性代数/matrix.mdx",
     "notes/英语/writing.mdx",
     "notes/英语/translation.mdx",
+    "notes/数学/概率和统计/law_of_large_numbers_and_central_limit_determination.mdx",
+    "notes/数学/概率和统计/common_distribution.mdx",
+    "notes/数学/概率和统计/mathematical_statistics.mdx",
+    "notes/数学/概率和统计/rand_var_and_prob_dist.mdx",
+    "notes/数学/概率和统计/parameter_estimation.mdx",
+    "notes/数学/概率和统计/numerical_characteristics_of_rand_var.mdx",
     "notes/英语/未命名.md",
     "notes/index.mdx",
-    "notes/数学/线性代数/matrix.mdx",
     "deeplearning/ComputerMusic/Computer-Music.mdx",
-    "notes/数据结构/graph.mdx",
-    "notes/数据结构/string.mdx",
-    "notes/数据结构/queue.mdx",
-    "notes/数学/概率和统计/common_distribution.mdx",
-    "notes/计算机组成原理/storage_system.mdx",
-    "notes/计算机组成原理/data_representation_and_operations.mdx",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
     "www.zhihu.com/question/310624478.md",
     "images/2022/03/27/20210730004422.gif.md",

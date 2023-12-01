@@ -114,7 +114,7 @@ $$
 
 :::
 
-对于两两不相关的随机变量序列 （不要求同分布），存在常数 $C$，使得 $D(X_{i}<C)$，则对于任意的 $\epsilon>0$，有
+对于两两不相关的随机变量序列 （不要求同分布），存在常数 $C$，使得 $D(X_{i})<C$，则对于任意的 $\epsilon>0$，有
 
 $$
 \lim_{ n \to \infty } \left\{  \left|\frac{1}{n}\sum_{i=1}^nX_{i}- \frac{1}{n}\sum_{i=1}^nE(X_{i})\right|<\epsilon  \right\}=1
@@ -149,14 +149,14 @@ $$
 对于随机变量 $X_{n}\sim B(n,p)(n=1,2,\cdots)$，则对于任意的实数 $x$，有
 
 $$
-\lim_{ n \to \infty } P\left\{ \left| \frac{X_{n}-np}{\sqrt{ np(1-p) }} \right| \leq x\right\}=\Phi(x)
+\lim_{ n \to \infty } P\left\{ \left| \frac{\sum_{i=1}^nX_{i}-np}{\sqrt{ np(1-p) }} \right| \leq x\right\}=\Phi(x)
 $$
 
 其中 $\Phi(x)$ 是标准正态的分布函数.
 
 :::info
 
-上式中实际上是一个标准化的步骤，因此服从标准正态分布，也可以说 $X_{n}\sim N(np,np(1-p))$.
+上式中实际上是一个标准化的步骤，因此服从标准正态分布，也可以说 $\sum_{i=1}^nX_{n}\sim N(np,np(1-p))$，则 $\overline{X}\sim N\left( p, \frac{p(1-p)}{n} \right)$
 
 注意：这里的 $n$ 足够大，因此方差是趋向于 $0$ 的，正好呼应上文中所说的中心极限定理与大数定律是否矛盾.
 
@@ -167,7 +167,7 @@ $$
 随机变量序列 $X_{n}$ 独立同分布，且有方差和期望，则对于任意的实数 $x$，有
 
 $$
-\lim_{ n \to \infty } P\left\{  \frac{\sum_{i=1}^nX_{i}-n\mu}{\sqrt{ n }\sigma} \leq x \right\}=\Phi(x)
+\lim_{ n \to \infty } P\left\{  \frac{\sum_{i=1}^nX_{i}-n\mu}{\sqrt{ n }\sigma} \leq x \right\}=\lim_{ n \to \infty }P\left\{\frac{\sqrt{ n }}{\sigma}(\overline X-\mu)\leq x\right\} \Phi(x)
 $$
 
 :::info
