@@ -18,6 +18,78 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "infinite_serie",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":7}"
+                },
+                {
+                  "title": "infinitesimal_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":65.38261592760611}"
+                },
+                {
+                  "title": "Integral_of_multivariate_functions",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/Integral_of_multivariate_functions.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "multivariable_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":68,\"ch\":95},\"to\":{\"line\":68,\"ch\":95}},\"scroll\":70.18445340583467}"
+                },
+                {
+                  "title": "improper_integral",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":49,\"ch\":0},\"to\":{\"line\":49,\"ch\":0}},\"scroll\":49.14394343753634}"
+                },
+                {
+                  "title": "Integral_of_multivariate_functions",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/Integral_of_multivariate_functions.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "multivariable_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "infinitesimal_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "infinite_serie",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":7}"
+                },
+                {
+                  "title": "multivariable_calculus",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":264,\"ch\":225},\"to\":{\"line\":264,\"ch\":225}},\"scroll\":266.1607220274913}"
+                },
+                {
+                  "title": "space_analytic_geometry",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/space_analytic_geometry.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":162.99379285706917}"
+                },
+                {
+                  "title": "writing",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/writing.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":285.6819179039452}"
+                },
+                {
                   "title": "matrix",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
@@ -34,7 +106,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/英语/writing.mdx",
+                "file": "notes/数学/高等数学/improper_integral.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -142,7 +214,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/英语/writing.mdx",
+                "file": "notes/数学/高等数学/improper_integral.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -168,7 +240,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/英语/writing.mdx",
+                "file": "notes/数学/高等数学/improper_integral.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -209,7 +281,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/英语/writing.mdx"
+                "file": "notes/数学/高等数学/improper_integral.mdx"
               }
             }
           }
@@ -239,18 +311,18 @@
   },
   "active": "bebc7617f3918e9b",
   "lastOpenFiles": [
-    "notes/数学/线性代数/matrix.mdx",
+    "notes/数学/高等数学/infinite_serie.mdx",
+    "notes/数学/高等数学/infinitesimal_calculus.mdx",
+    "notes/数学/高等数学/Integral_of_multivariate_functions.mdx",
+    "notes/数学/高等数学/multivariable_calculus.mdx",
+    "notes/数学/高等数学/improper_integral.mdx",
+    "notes/数学/高等数学/space_analytic_geometry.mdx",
     "notes/英语/writing.mdx",
+    "notes/数学/线性代数/matrix.mdx",
     "notes/英语/translation.mdx",
     "notes/数学/概率和统计/law_of_large_numbers_and_central_limit_determination.mdx",
     "notes/数学/概率和统计/common_distribution.mdx",
-    "notes/数学/概率和统计/mathematical_statistics.mdx",
-    "notes/数学/概率和统计/rand_var_and_prob_dist.mdx",
-    "notes/数学/概率和统计/parameter_estimation.mdx",
-    "notes/数学/概率和统计/numerical_characteristics_of_rand_var.mdx",
     "notes/英语/未命名.md",
-    "notes/index.mdx",
-    "deeplearning/ComputerMusic/Computer-Music.mdx",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
     "www.zhihu.com/question/310624478.md",
     "images/2022/03/27/20210730004422.gif.md",
