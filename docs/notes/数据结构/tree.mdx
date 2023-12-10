@@ -77,7 +77,9 @@ hide_table_of_contents: false
 9. 节点 $i$ 所在层次为 $[\log_{2}(i)] + 1$，则拥有 $n$ 个节点的完全二叉树高为 $[\log_{2}(n)]+1$ 或者 $[\log_{2}(n+1)]$.
 
 :::info 有 n 个叶子节点的完全二叉树有最多有多少个节点？
+
 这个问题需要额外考虑一种情况，即当完全二叉树的叶子节点相同时，其结构不唯一，如
+
 :::
 
 **二叉排序树**：左子树上的所有节点的关键字都小于右子树，右子树上的所有节点的关键字都大于左子树，且左右子树都是二叉排序树；
@@ -314,3 +316,60 @@ data | firstchild | nextsibling
 **判断两元素是否属于同一子集**
 
 只需要判断两元素的根是否相同即可.
+
+## 相关代码
+
+### 判断二叉树是否是二叉排序树
+
+```c
+#include<limit.h>
+#include<stdbool.h>
+bool _isBST(PNode node, int min, int max) {
+  if (!node)
+    return true;
+
+  if (node->val < min || node->val > max)
+    return false;
+
+  return _isBST(node->left, min, node->val) &&
+         _isBST(node->right, node->val, max);
+}
+
+bool isBST(PNode root) { return _isBST(root, INT_MIN, INT_MAX); }
+```
+
+### 判断二叉树是否是平衡二叉树
+
+```c
+int _isAVL(PNode node, int min, int max) {
+  if (!node)
+    return 0;
+
+  if (node->val < min || node->val > max) // check whether input tree is BST.
+    return -1;
+  // -1 represents not a AVL or BST.
+
+  int left_height = _isAVL(node->left, min, node->val);
+  int right_height = _isAVL(node->right, node->val, max);
+
+  if (left_height == -1 ||
+      right_height == -1) // used for short-circuit, this is unnecessary.
+    return -1;
+
+  if (abs(left_height - right_height) >
+      1) // check whether input tree is an AVL.
+    return -1;
+
+  // return the height of this tree.
+  return (left_height > right_height) ? (left_height + 1) : (right_height + 1);
+}
+
+bool isAVL(PNode node) {
+  int res = _isAVL(node, INT_MIN, INT_MAX);
+  if (res != -1) // convert to bool manully, cause only 0 represents false
+    return true;
+  return false;
+}
+```
+
+可以同时判断是否是平衡二叉树和二叉排序树，若只需要判断是否是平衡二叉树则将 `max`, `min` 相关的去掉即可. 思路以后再写.
