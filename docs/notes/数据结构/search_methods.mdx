@@ -26,7 +26,7 @@ hide_table_of_contents: false
 
 假设表的关键字是 **从小到大** 排序的，则可以直接直接对比中间的关键字，若目标关键字更小，则在左侧以同样的方式查找，代码实现上可以使用左右两个指针表示查找的区间范围
 
-```c++
+```cpp
 int binary_search(Table L, ElemType key) {
 	int low = 0, high = L.len - 1, mid;
 	while(low <= high) {
@@ -84,7 +84,7 @@ $$
 
 注意高亮部分是一个引用
 
-```c++
+```cpp
 // Important
 int insert(BiTree &T, KeyType k) {
 	if (T == NULL) {
@@ -101,7 +101,7 @@ int insert(BiTree &T, KeyType k) {
 
 **构造代码**
 
-```c++
+```cpp
 // Important
 void init(BiTree &T, str[], int n) {
 	T = NULL;

@@ -353,7 +353,7 @@ int _isAVL(PNode node, int min, int max) {
   int right_height = _isAVL(node->right, node->val, max);
 
   if (left_height == -1 ||
-      right_height == -1) // used for short-circuit, this is unnecessary.
+      right_height == -1) // used for short-circuit, this is necessary.
     return -1;
 
   if (abs(left_height - right_height) >
