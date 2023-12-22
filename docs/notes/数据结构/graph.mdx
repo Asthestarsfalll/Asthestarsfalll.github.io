@@ -344,7 +344,7 @@ def Floyd(d, s):
 
 ## 关键路径
 
-::: tip AOE 网络
+:::tip AOE 网络
 
 下面所说的网络都是 AOE 网络，即顶点表示事件边表示活动.
 
@@ -357,4 +357,100 @@ def Floyd(d, s):
 3. 事件的最迟发生时间，从最后发生的事件向前推，如果某个事件到前驱事件有多个路径，那么选择最小的，这样才能满足最迟发生的要求；
 4. 活动的最迟发生时间，由活动的结束时间最迟的发生时间减去活动的持续时间所确定.
 
-其中活动的最早发生时间和最迟发生时间若相同，则为关键活动.  
+其中活动的最早发生时间和最迟发生时间若相同，则为关键活动.
+
+## 代码
+
+###  邻接表的深度优先遍历和广度优先遍历
+
+邻接表需要定义顶点和边
+
+```c
+typedef char *VertexType;
+
+typedef struct ArcNode { // 边
+  int adjvex; // 所连接的顶点在边表中的索引
+  struct ArcNode *next;
+} ArcNode;
+
+typedef struct VNode { // 顶点
+  VertexType data; // 顶点所存储的信息
+  ArcNode *first;
+} VNode, *AdjList;
+
+typedef struct Graph {
+  int vexnum, arcnum;
+  AdjList array;
+} Graph;
+```
+
+若想要查找某点到其他点的路径，可以使用深搜
+
+```c
+bool DFS(Graph *graph, int start, int end, int *path, int *depth) {
+  visited[start] = true; // 可以使用全局变量也可以传入参数.
+  path[*depth] = start;
+
+  if (start == end) {
+    return true;
+  }
+
+  // Im-start
+  ArcNode *arcNode = graph->array[start].first;
+  while (arcNode) { // 挨个访问边节点
+    int next = arcNode->adjvex; // 得到下一个顶点的索引
+    if (!visited[next]) { // 若没有访问过
+      (*depth)++;
+      if (DFS(graph, next, end, path, depth))
+        return true;
+    }
+    arcNode = arcNode->next;
+  }
+  visited[start] = false; // 没有找到需要将当前的visitied置为false，表示回溯
+  return false; // 没有找到符合的路径
+  // Im-end
+}
+
+void findPath(Graph *graph, int start, int end) {
+  initVisited();
+
+  int path[MAX_SIZE], depth = 0;
+  if (DFS(graph, start, end, path, &depth)) {
+    for (int i = 0; i <= depth; i++) {
+      printf("%s ", graph->array[path[i]].data);
+      putchar('\n');
+    }
+  } else {
+    printf("no path");
+    putchar('\n');
+  }
+}
+```
+
+对于邻接矩阵，如下：
+
+```c
+void DFS(int start, int end) {
+  visited[start] = 1; // 全局变量
+  path[pathIndex++] = start; // 全局变量
+
+  if (start == end) {
+    int i;
+    printf("Path: ");
+    for (i = 0; i < pathIndex; i++) {
+      printf("%d ", path[i]);
+    }
+    printf("\n");
+  } else {
+    int i;
+    for (i = 0; i < MAX_VERTICES; i++) {
+      if (graph[start][i] == 1 && visited[i] == 0) {
+        DFS(i, end);
+      }
+    }
+  }
+
+  pathIndex--; // 回溯
+  visited[start] = 0;
+}
+```

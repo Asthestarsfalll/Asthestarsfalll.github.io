@@ -175,6 +175,62 @@ $$
 
 :::
 
+插入相关代码如下：
+
+```cpp
+// 右旋操作
+TreeNode* rightRotate(TreeNode* node) {
+    TreeNode* newRoot = node->left; // 新建变量保存左子树
+    node->left = newRoot->right; // 使用左子树的右子树替换左子树.  
+    newRoot->right = node; // 左子树的右指针连接 node 
+
+    updateHeight(node);
+    updateHeight(newRoot);
+    return newRoot;
+}
+
+// 左旋操作
+TreeNode* leftRotate(TreeNode* node) {
+    TreeNode* newRoot = node->right;
+    node->right = newRoot->left;
+    newRoot->left = node;
+
+    updateHeight(node);
+    updateHeight(newRoot);
+    return newRoot;
+}
+
+void insert() {
+	...
+    int balanceFactor = getBalanceFactor(root);
+
+    // LL 左子树太高，且插入值小于左子树，也就是插入了左子树的左子树，进行右旋
+    if (balanceFactor > 1 && value < root->left->value) { 
+        return rightRotate(root);
+    }
+
+    // RR 右子树太高，且插入值大于右子树，也就是插入了右子树的右子树，进行左旋
+    if (balanceFactor < -1 && value > root->right->value) {
+        // 右右情况，进行左旋操作
+        return leftRotate(root);
+    }
+	// LR 左子树太高，但插入值大于左子树，也就是插入了左子树的右子树
+    if (balanceFactor > 1 && value > root->left->value) {
+        // 左右情况，先对左子节点进行左旋，然后对根节点进行右旋
+        root->left = leftRotate(root->left);
+        return rightRotate(root);
+    }
+
+	// RL 右子树太高，但插入值小于右子树，也就是插入了右子树的左子树
+    if (balanceFactor < -1 && value < root->right->value) {
+        // 右左情况，先对右子节点进行右旋，然后对根节点进行左旋
+        root->right = rightRotate(root->right);
+        return leftRotate(root);
+    }
+	...
+}
+```
+
 ### 红黑树
 
 :::tip
