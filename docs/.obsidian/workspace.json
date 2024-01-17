@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8d214381bdb51683",
+        "id": "2cfeb58f37f94f90",
         "type": "tabs",
         "children": [
           {
-            "id": "bebc7617f3918e9b",
+            "id": "944c07c33d36d522",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -16,265 +16,13 @@
                 {
                   "state": "{}",
                   "eState": "{}"
-                },
-                {
-                  "title": "sort",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/sort.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "search_methods",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":184,\"ch\":44},\"to\":{\"line\":184,\"ch\":44}},\"scroll\":291.99863678431177}"
-                },
-                {
-                  "title": "sort",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/sort.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "tree",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/tree.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":346,\"ch\":2},\"to\":{\"line\":346,\"ch\":2}},\"scroll\":346.1355686311585}"
-                },
-                {
-                  "title": "arrays_and_special_matrices",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/arrays_and_special_matrices.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":154,\"ch\":96},\"to\":{\"line\":154,\"ch\":96}},\"scroll\":154.5763779868612}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "tree",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/tree.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":37.86521278190824}"
-                },
-                {
-                  "title": "string",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/string.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":164,\"ch\":1},\"to\":{\"line\":164,\"ch\":1}},\"scroll\":158.0985936364849}"
-                },
-                {
-                  "title": "stack",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/stack.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":66,\"ch\":27},\"to\":{\"line\":66,\"ch\":27}},\"scroll\":99.99247055268988}"
-                },
-                {
-                  "title": "sort",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/sort.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":265,\"ch\":25},\"to\":{\"line\":265,\"ch\":25}},\"scroll\":269.14394901956297}"
-                },
-                {
-                  "title": "search_methods",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "queue",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/queue.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":66.98498258195723}"
-                },
-                {
-                  "title": "linear_list",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/linear_list.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":153,\"ch\":4},\"to\":{\"line\":153,\"ch\":4}},\"scroll\":244.9845422377822}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/index.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}},\"scroll\":15.987812528130942}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":252,\"ch\":9},\"to\":{\"line\":252,\"ch\":9}},\"scroll\":256.3109698227756}"
-                },
-                {
-                  "title": "arrays_and_special_matrices",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/arrays_and_special_matrices.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":165.98895415856038}"
-                },
-                {
-                  "title": "search_methods",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":28,\"ch\":5},\"to\":{\"line\":28,\"ch\":5}},\"scroll\":347.0114043629968}"
-                },
-                {
-                  "title": "sort",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/sort.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "queue",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/queue.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "arrays_and_special_matrices",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/arrays_and_special_matrices.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "tree",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/tree.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "writing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/writing.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
-                },
-                {
-                  "title": "Integral_of_multivariate_functions",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/Integral_of_multivariate_functions.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "multivariable_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "infinite_serie",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":7}"
-                },
-                {
-                  "title": "improper_integral",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":7.820737737594723}"
-                },
-                {
-                  "title": "infinite_serie",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":7}"
-                },
-                {
-                  "title": "infinitesimal_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":65.38261592760611}"
-                },
-                {
-                  "title": "Integral_of_multivariate_functions",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/Integral_of_multivariate_functions.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "multivariable_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":68,\"ch\":95},\"to\":{\"line\":68,\"ch\":95}},\"scroll\":70.18445340583467}"
-                },
-                {
-                  "title": "improper_integral",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/improper_integral.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":49,\"ch\":0},\"to\":{\"line\":49,\"ch\":0}},\"scroll\":49.14394343753634}"
-                },
-                {
-                  "title": "Integral_of_multivariate_functions",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/Integral_of_multivariate_functions.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "multivariable_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "infinitesimal_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinitesimal_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "infinite_serie",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/infinite_serie.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":7}"
-                },
-                {
-                  "title": "multivariable_calculus",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/multivariable_calculus.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":264,\"ch\":225},\"to\":{\"line\":264,\"ch\":225}},\"scroll\":266.1607220274913}"
-                },
-                {
-                  "title": "space_analytic_geometry",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/高等数学/space_analytic_geometry.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":162.99379285706917}"
-                },
-                {
-                  "title": "writing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/writing.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}},\"scroll\":285.6819179039452}"
-                },
-                {
-                  "title": "matrix",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/线性代数/matrix.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":25,\"ch\":0},\"to\":{\"line\":25,\"ch\":0}},\"scroll\":33.208428280779614}"
-                },
-                {
-                  "title": "writing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/英语/writing.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":390,\"ch\":0},\"to\":{\"line\":390,\"ch\":0}},\"scroll\":390.1312559150051}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/数据结构/graph.mdx",
+                "file": "deeplearning/ComputerVision/BaseModel/UniRepLKNet.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -382,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/数据结构/graph.mdx",
+                "file": "deeplearning/ComputerVision/BaseModel/UniRepLKNet.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -408,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/数据结构/graph.mdx",
+                "file": "deeplearning/ComputerVision/BaseModel/UniRepLKNet.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -449,7 +197,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/数据结构/graph.mdx"
+                "file": "deeplearning/ComputerVision/BaseModel/UniRepLKNet.mdx"
               }
             }
           }
@@ -477,20 +225,21 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "bebc7617f3918e9b",
+  "active": "944c07c33d36d522",
   "lastOpenFiles": [
+    "deeplearning/ComputerVision/BaseModel/UniRepLKNet.mdx",
+    "2024-01-17_17-08.png",
+    "deeplearning/ComputerVision/BaseModel/swintran.mdx",
+    "deeplearning/ComputerVision/BaseModel/RepLKNet.mdx",
+    "deeplearning/ComputerVision/BaseModel/transformer-for-reco.mdx",
+    "notes/数据结构/graph.mdx",
+    "deeplearning/ComputerVision/BaseModel/未命名.md",
     "notes/数据结构/sort.mdx",
     "notes/数据结构/search_methods.mdx",
-    "notes/数据结构/graph.mdx",
     "notes/数据结构/tree.mdx",
     "notes/数据结构/arrays_and_special_matrices.mdx",
     "notes/数据结构/string.mdx",
-    "notes/数据结构/stack.mdx",
-    "notes/数据结构/queue.mdx",
-    "notes/数据结构/linear_list.mdx",
     "notes/数据结构/index.md",
-    "notes/英语/writing.mdx",
-    "notes/数学/高等数学/Integral_of_multivariate_functions.mdx",
     "notes/英语/未命名.md",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
     "www.zhihu.com/question/310624478.md",
