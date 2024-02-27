@@ -117,11 +117,9 @@ const config = {
             label: "Meaningless",
           },
           {
-            // href: "https://ExCore.github.io",
-            activeBasePath: '/docs/excore',
-            to: "/docs/excore",
+            href: "https://excore.onism.space",
             label: "ExCore",
-            position: "left",
+            position: "right",
           },
           // {
           //   // href: "https://MegBox.github.io",
@@ -129,11 +127,11 @@ const config = {
           //   label: "MegBox",
           //   position: "left",
           // },
-          {
-            href: "/about",
-            label: "About & Links",
-            position: "right",
-          },
+          // {
+          //   href: "/about",
+          //   label: "About & Links",
+          //   position: "right",
+          // },
           {
             href: "https://github.com/Asthestarsfalll",
             label: "Me on GitHub",
