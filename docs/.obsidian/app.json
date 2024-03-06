@@ -1,7 +1,7 @@
 {
   "promptDelete": false,
   "spellcheckLanguages": null,
-  "vimMode": true,
+  "vimMode": false,
   "focusNewTab": true,
   "defaultViewMode": "source",
   "livePreview": true,

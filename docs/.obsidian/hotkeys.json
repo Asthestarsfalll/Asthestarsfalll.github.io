@@ -29,5 +29,13 @@
   ],
   "easy-typing-obsidian:easy-typing-format-switch": [],
   "easy-typing-obsidian:easy-typing-insert-codeblock": [],
-  "editor:delete-paragraph": []
+  "editor:delete-paragraph": [],
+  "obsidian-linter:lint-file": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "W"
+    }
+  ]
 }
