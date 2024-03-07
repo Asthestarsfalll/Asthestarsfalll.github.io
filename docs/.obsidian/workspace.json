@@ -24,6 +24,18 @@
                   "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
                 },
                 {
+                  "title": "data_link_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":448.66319444444446}"
+                },
+                {
+                  "title": "physical_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
                   "title": "stl",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/stl.md\",\"mode\":\"source\",\"source\":false}}",
@@ -390,10 +402,10 @@
   "active": "944c07c33d36d522",
   "lastOpenFiles": [
     "notes/计算机网络/physical_layer.mdx",
+    "notes/计算机网络/data_link_layer.mdx",
     "notes/c++/stl.md",
     "notes/index.mdx",
     "notes/算法/template.md",
-    "notes/计算机网络/data_link_layer.mdx",
     "notes/c++",
     "meaningless/语录/others.mdx",
     "meaningless/现代诗词/what-can-i-holduwith.mdx",
