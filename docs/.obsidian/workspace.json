@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "553f0bac4f791ad3",
+        "id": "7012f20cf42fd16d",
         "type": "tabs",
         "children": [
           {
-            "id": "a75543afe943db90",
+            "id": "3deb6f624270d5bd",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -16,19 +16,13 @@
                 {
                   "state": "{}",
                   "eState": "{}"
-                },
-                {
-                  "title": "stl",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/stl.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":15,\"ch\":32},\"to\":{\"line\":15,\"ch\":32}},\"scroll\":11.55485807860262}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机网络/data_link_layer.mdx",
+                "file": "deeplearning/Generation/autoencoder.md",
                 "mode": "source",
                 "source": false
               }
@@ -136,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/计算机网络/data_link_layer.mdx",
+                "file": "deeplearning/Generation/autoencoder.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/计算机网络/data_link_layer.mdx",
+                "file": "deeplearning/Generation/autoencoder.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -203,7 +197,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/计算机网络/data_link_layer.mdx"
+                "file": "deeplearning/Generation/autoencoder.md"
               }
             }
           }
@@ -231,24 +225,25 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "a75543afe943db90",
+  "active": "efb1e4a87529c3a5",
   "lastOpenFiles": [
+    "deeplearning/Generation/autoencoder.md",
+    "deeplearning/Generation/GAN.mdx",
+    "notes/计算机网络/index.md",
+    "notes/计算机组成原理/bus_and_IO_system.mdx",
+    "deeplearning/Generation/gumbel-softmax.mdx",
+    "notes/计算机网络/data_link_layer.mdx",
     "notes/c++/stl.md",
     "notes/算法/template.md",
-    "notes/计算机网络/data_link_layer.mdx",
     "notes/计算机网络/computer_network_architecture.mdx",
     "notes/计算机网络/physical_layer.mdx",
     "meaningless/语录/罗翔语录.mdx",
     "excore/logger.mdx",
     "excore/json_schema.mdx",
     "excore/index.mdx",
-    "excore/hub.mdx",
-    "excore/config.mdx",
-    "excore/Roadmap.mdx",
     "meaningless/语录/index.md",
     "meaningless/博客收录/Things-that-we-lose-finally.md",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
-    "notes/计算机网络/index.md",
     "notes/计算机网络/test.md",
     "2024-01-17_17-08.png",
     "deeplearning/ComputerVision/BaseModel/未命名.md",
