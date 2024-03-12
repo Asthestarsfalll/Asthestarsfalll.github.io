@@ -21,7 +21,7 @@ hide_table_of_contents: false
 基于 RNN 或 CNN 的 Encoder-Decoder 模型在 NLP 领域占据大壁江山，然而她们也并非是完美无缺的：
 
 - LSTM，GRU 等 RNN 模型受限于固有的循环顺序结构，无法实现**并行计算**，在序列较长时，计算效率尤其低下，虽然最近的工作如[因子分解技巧](http://arxiv.org/abs/1703.10722) [^1]，[条件计算](https://arxiv.org/abs/1701.06538) [^2]在一定程度上提高了计算效率和性能，但是顺序计算的限制依然存在；
-- Extended Neural GPU[^3], [ByteNet](https://arxiv.org/abs/1610.10099) [^4],和 [ConvS2S](https://arxiv.org/abs/1705.03122) [^5] 等 CNN 模型虽然可以进行并行计算，但是学习任意两个位置的信号的长距离关系依旧比较困难，其计算复杂度随距离线性或对数增长.
+- Extended Neural GPU[^3], [ByteNet](https://arxiv.org/abs/1610.10099) [^4],和 [ConvS2S](https://arxiv.org/abs/1705.03122) [^5] 等 CNN 模型虽然可以进行并行计算，但是学习任意两个位置的信号的长距离关系依旧比较困难，其计算复杂度随距离线性或对数增长。
 
 而谷歌选择抛弃了主流模型固有的结构，提出了**完全**基于注意力机制的 Transformer，拥有其他模型无法比拟的优势：
 
@@ -75,7 +75,7 @@ Encoder-Decoder 的内部结构如下图：
 
   此外，还修改了子注意力子层（如上图，由原来的 Self-Attention 变 Encoder-Decoder Attention）
 
-**Layer Normalization**：NLP 任务中主要使用 $Layer\ Norm$ ​​而不是 $Batch\ Norm$ ​​，因为在批次上进行归一化会混乱不同语句之间的信息，我们需要在每个语句之中进行归一化.
+**Layer Normalization**：NLP 任务中主要使用 $Layer\ Norm$ ​​而不是 $Batch\ Norm$ ​​，因为在批次上进行归一化会混乱不同语句之间的信息，我们需要在每个语句之中进行归一化。
 
 ### 输出
 
@@ -105,7 +105,7 @@ $$
 \frac{QK^T}{\sqrt d}
 $$
 
-常见的注意力模型有加性模型和点积模型，点积模型相较于加性模型效率更高，但是当输入向量维度过高，点积模型通常有较大的方差，从而导致softmax函数**梯度很小**，而缩放点积模型可以很好地解决这个问题.
+常见的注意力模型有加性模型和点积模型，点积模型相较于加性模型效率更高，但是当输入向量维度过高，点积模型通常有较大的方差，从而导致softmax函数**梯度很小**，而缩放点积模型可以很好地解决这个问题。
 
 另为，Transformer 在实现过程中使用了残差连接
 
@@ -229,7 +229,7 @@ $$
 
 ### 为什么需要位置编码？
 
-上文已经提到，Transformer 是一种并行计算，为了让模型能够捕捉到序列的顺序关系，引入了位置编码，来获得单词之间的**相对距离**.
+上文已经提到，Transformer 是一种并行计算，为了让模型能够捕捉到序列的顺序关系，引入了位置编码，来获得单词之间的**相对距离**。
 
 ### 正余弦位置编码
 
@@ -367,7 +367,7 @@ class PositionalEncoding(nn.Module):
         super(PositionalEncoding, self).__init__()
 
         # Not a parameter
-        # 在内存中定义一个名为pos_table的常量，可以通过self.pos_table使用，模型保存和加载的时候可以写入和读出.
+        # 在内存中定义一个名为pos_table的常量，可以通过self.pos_table使用，模型保存和加载的时候可以写入和读出。
         self.register_buffer(
             'pos_table', self._get_sinusoid_encoding_table(n_position, d_hid))
 

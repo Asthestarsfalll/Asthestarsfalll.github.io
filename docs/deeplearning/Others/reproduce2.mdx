@@ -252,7 +252,7 @@ self.reparam.weight.data = kernel
 self.reparam.bias.data = bias
 ```
 
-MegEngine 中不支持.data，因此改为深拷贝：
+MegEngine 中不支持。data，因此改为深拷贝：
 
 ```python
 self.reparam.weight[:] = kernel

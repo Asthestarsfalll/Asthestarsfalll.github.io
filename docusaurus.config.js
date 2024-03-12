@@ -168,8 +168,8 @@ const config = {
         {
           title: "More",
           items: [{
-            label: "excore.github.io",
-            to: "https://excore.github.io",
+            label: "ExCore",
+            to: "https://excore.onism.space",
           },
           {
             label: "See me on Github",

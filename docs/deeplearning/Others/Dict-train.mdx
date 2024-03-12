@@ -186,7 +186,7 @@ net = torch.nn.DataParallel(net, device_ids=device_ids)
 在保存和加载模型时
 
 ```python
-# 保存模型需要使用.module
+# 保存模型需要使用。module
 torch.save(net.module.state_dict(), path)
 # 或者
 torch.save(net.module, path)
@@ -249,7 +249,7 @@ train_loader = torch.utils.data.DataLoader(train_data, batch_size=batch_size, sh
 
 ```
 
-这里需要设置 `shuffle=False`,然后在每个 epoch 前,通过调用 `train_sampler.set_epoch(epoch)` 来达到 shuffle 的效果.
+这里需要设置 `shuffle=False`,然后在每个 epoch 前,通过调用 `train_sampler.set_epoch(epoch)` 来达到 shuffle 的效果。
 
 模型的初始化：
 

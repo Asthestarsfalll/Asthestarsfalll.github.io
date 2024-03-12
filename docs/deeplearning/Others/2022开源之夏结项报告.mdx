@@ -249,7 +249,7 @@ generator()
       raise ValueError('`float16` only support for gpu device.')
   ```
 
-  但是使用这样的方式会导致全局的 `compute_mode` 发生改变，当 CLIP 与其他模型一起使用时十分不友好.
+  但是使用这样的方式会导致全局的 `compute_mode` 发生改变，当 CLIP 与其他模型一起使用时十分不友好。
 
   因此考虑在 CLIP 的 forward 前和后注册两个钩子用于转换，由于 `register_forward_pre_hook` 和 `register_forward_hook` 只能为模型的 `forward` 方法添加钩子，因此考虑使用装饰器来包装 CLIP 中的各个前向传播方法，如下
 

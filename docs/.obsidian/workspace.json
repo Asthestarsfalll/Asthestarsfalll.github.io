@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2cfeb58f37f94f90",
+        "id": "553f0bac4f791ad3",
         "type": "tabs",
         "children": [
           {
-            "id": "944c07c33d36d522",
+            "id": "a75543afe943db90",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,178 +18,10 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "physical_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "data_link_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":448.66319444444446}"
-                },
-                {
-                  "title": "physical_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
                   "title": "stl",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/stl.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/index.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "template",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/算法/template.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
-                },
-                {
-                  "title": "stl",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/stl.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "linker",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/算法/template.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "stl",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/stl.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":17,\"ch\":41},\"to\":{\"line\":17,\"ch\":41}},\"scroll\":13.42650462962963}"
-                },
-                {
-                  "title": "data_link_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "physical_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":318,\"ch\":0},\"to\":{\"line\":318,\"ch\":0}},\"scroll\":318.9947916666667}"
-                },
-                {
-                  "title": "others",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/others.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":0},\"to\":{\"line\":7,\"ch\":0}}}"
-                },
-                {
-                  "title": "what-can-i-holduwith",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/现代诗词/what-can-i-holduwith.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6}"
-                },
-                {
-                  "title": "physical_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":68,\"ch\":0},\"to\":{\"line\":68,\"ch\":19}},\"scroll\":55.23206018518518}"
-                },
-                {
-                  "title": "data_link_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":41.05381944444444}"
-                },
-                {
-                  "title": "physical_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":26,\"ch\":11},\"to\":{\"line\":26,\"ch\":11}},\"scroll\":34.011574074074076}"
-                },
-                {
-                  "title": "data_link_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "physical_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "computer_network_architecture",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/computer_network_architecture.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":212.23784722222223}"
-                },
-                {
-                  "title": "stack",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/stack.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "search_methods",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/search_methods.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/index.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/index.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
-                },
-                {
-                  "title": "linear_list",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/linear_list.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/index.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
-                },
-                {
-                  "title": "graph",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/graph.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "arrays_and_special_matrices",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数据结构/arrays_and_special_matrices.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
-                },
-                {
-                  "title": "UniRepLKNet",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerVision/BaseModel/UniRepLKNet.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":21.421875}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":15,\"ch\":32},\"to\":{\"line\":15,\"ch\":32}},\"scroll\":11.55485807860262}"
                 }
               ]
             },
@@ -399,26 +231,29 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "944c07c33d36d522",
+  "active": "a75543afe943db90",
   "lastOpenFiles": [
-    "notes/计算机网络/physical_layer.mdx",
-    "notes/计算机网络/data_link_layer.mdx",
     "notes/c++/stl.md",
-    "notes/index.mdx",
     "notes/算法/template.md",
-    "notes/c++",
-    "meaningless/语录/others.mdx",
-    "meaningless/现代诗词/what-can-i-holduwith.mdx",
-    "notes/计算机网络/test.md",
+    "notes/计算机网络/data_link_layer.mdx",
     "notes/计算机网络/computer_network_architecture.mdx",
-    "notes/数据结构/stack.mdx",
-    "notes/离散数学",
-    "notes/数据结构/search_methods.mdx",
+    "notes/计算机网络/physical_layer.mdx",
+    "meaningless/语录/罗翔语录.mdx",
+    "excore/logger.mdx",
+    "excore/json_schema.mdx",
+    "excore/index.mdx",
+    "excore/hub.mdx",
+    "excore/config.mdx",
+    "excore/Roadmap.mdx",
+    "meaningless/语录/index.md",
+    "meaningless/博客收录/Things-that-we-lose-finally.md",
+    "deeplearning/Cuda/optimize_paddle_logsumexp.md",
+    "notes/计算机网络/index.md",
+    "notes/计算机网络/test.md",
     "2024-01-17_17-08.png",
     "deeplearning/ComputerVision/BaseModel/未命名.md",
     "notes/数据结构/index.md",
     "notes/英语/未命名.md",
-    "deeplearning/Cuda/optimize_paddle_logsumexp.md",
     "www.zhihu.com/question/310624478.md",
     "images/2022/03/27/20210730004422.gif.md",
     "images/2022/03/27/20210507180214.jpg.md",
@@ -428,7 +263,6 @@
     "G.canvas",
     "未命名.md",
     "excore/未命名.md",
-    "meaningless/博客收录/Things-that-we-lose-finally.md",
     "index.md",
     "intro.md"
   ]
