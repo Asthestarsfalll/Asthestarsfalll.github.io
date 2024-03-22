@@ -27,3 +27,14 @@ $$
 3. $mC_{n}^m=nC_{n-1}^{m-1}$，例如从 $n$ 个
 4. $\sum_{i=0}^nC_{n}^i=2^n$
 5. $\sum_{i=0}^n(C_{n}^i)^2=C_{2n}^n$
+
+## 多项式展开定理
+
+$$
+(x_{1}+x_{2}+\cdots+x_{t})^n=\sum \frac{n!}{n_{1}!n_{2}!\cdots n_{t!}}x_{1}^{n_{1}}\cdots x_{t}^{n_{t}}
+$$
+其中 $n_{1}\cdots n_{t}$ 是满足 $n_{1}+n_{2}+\cdots +n_t=n$ 的所有非负解，解的个数有 $C(n+t-1,n)$， 实际上是
+$$
+C(n,n_{1})\times C(n-n_{1},n_{2})\times C(n-n_{1}-n_{2}, n_{3})\times\cdots\times C(n-n_{1}-\cdots,n_{t})
+$$
+化简的结果

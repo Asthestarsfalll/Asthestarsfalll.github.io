@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "52ffeee49b3b1926",
+        "id": "43573183b3a054ab",
         "type": "tabs",
         "children": [
           {
-            "id": "7639db5c3bc298ca",
+            "id": "5843f31a2eb5ad32",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,131 +18,38 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "memory_management",
+                  "title": "algebra_system",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/memory_management.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":74.19982773471146}"
-                },
-                {
-                  "title": "computer_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/computer_system.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":105.5021533161068}"
-                },
-                {
-                  "title": "file_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/file_management.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
-                },
-                {
-                  "title": "memory_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/memory_management.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
-                },
-                {
-                  "title": "process_and_thread",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/process_and_thread.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":3}"
-                },
-                {
-                  "title": "memory_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/memory_management.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":1,\"ch\":11},\"to\":{\"line\":1,\"ch\":11}},\"scroll\":1.2616487455197132}"
-                },
-                {
-                  "title": "process_and_thread",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/process_and_thread.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "memory_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/memory_management.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "file_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/file_management.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":11.104166666666666}"
-                },
-                {
-                  "title": "computer_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/computer_system.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":1,\"ch\":14},\"to\":{\"line\":1,\"ch\":14}},\"scroll\":1.2616487455197132}"
-                },
-                {
-                  "title": "file_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/file_management.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "computer_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/computer_system.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.7184466019417476}"
-                },
-                {
-                  "title": "memory_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/memory_management.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "computer_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/computer_system.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "file_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/file_management.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "computer_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/computer_system.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "file_management",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/file_management.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "computer_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/computer_system.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":3},\"to\":{\"line\":4,\"ch\":3}},\"scroll\":0.883495145631068}"
-                },
-                {
-                  "title": "network_layer",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/network_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":36.826467803030305}"
-                },
-                {
-                  "title": "autoencoder",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Generation/autoencoder.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/离散数学/algebra_system.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":157,\"ch\":0},\"to\":{\"line\":157,\"ch\":0}},\"scroll\":154.6098484848485}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/操作系统/computer_system.md",
+                "file": "notes/计算机网络/network_layer.mdx",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a5e038977ea54a3f",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "notes/离散数学/set.md",
                 "mode": "source",
                 "source": false
               }
@@ -250,7 +157,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/操作系统/computer_system.md",
+                "file": "notes/计算机网络/network_layer.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -276,7 +183,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/操作系统/computer_system.md",
+                "file": "notes/计算机网络/network_layer.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -317,7 +224,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/操作系统/computer_system.md"
+                "file": "notes/计算机网络/network_layer.mdx"
               }
             }
           }
@@ -345,27 +252,37 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "7639db5c3bc298ca",
+  "active": "5843f31a2eb5ad32",
   "lastOpenFiles": [
+    "notes/离散数学/set.md",
+    "notes/计算机网络/network_layer.mdx",
+    "notes/离散数学/algebra_system.md",
+    "240322_09h59m50s_screenshot.png",
+    "notes/离散数学/function.md",
+    "notes/离散数学/symbol_table.md",
+    "未命名.canvas",
+    "notes/离散数学/mathematical_logic.md",
+    "notes/c++/stl.md",
+    "notes/离散数学/combinatorics.md",
+    "notes/index.mdx",
+    "notes/数学/通用/algebra_system.md",
+    "notes/数学/通用/combinatorics.mdx",
+    "notes/数学/线性代数/matrix.mdx",
+    "notes/计算机组成原理/storage_system.mdx",
+    "notes/数据结构/sort.mdx",
+    "notes/数据结构/graph.mdx",
+    "notes/数据结构/index.mdx",
+    "notes/数据结构/arrays_and_special_matrices.mdx",
+    "notes/操作系统/IO.md",
+    "notes/操作系统/file_management.md",
+    "notes/计算机组成原理/instruction_system.mdx",
     "notes/操作系统/memory_management.md",
     "notes/操作系统/computer_system.md",
-    "notes/操作系统/file_management.md",
     "notes/操作系统/process_and_thread.md",
-    "notes/计算机网络/network_layer.mdx",
     "deeplearning/Generation/autoencoder.md",
     "notes/计算机网络/network_layer.md",
-    "deeplearning/Generation/GAN.mdx",
     "notes/计算机网络/index.md",
-    "notes/计算机组成原理/bus_and_IO_system.mdx",
-    "deeplearning/Generation/gumbel-softmax.mdx",
-    "notes/计算机网络/data_link_layer.mdx",
-    "notes/c++/stl.md",
     "notes/算法/template.md",
-    "notes/计算机网络/computer_network_architecture.mdx",
-    "notes/计算机网络/physical_layer.mdx",
-    "meaningless/语录/罗翔语录.mdx",
-    "excore/logger.mdx",
-    "excore/json_schema.mdx",
     "meaningless/语录/index.md",
     "meaningless/博客收录/Things-that-we-lose-finally.md",
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
@@ -375,15 +292,6 @@
     "notes/数据结构/index.md",
     "notes/英语/未命名.md",
     "www.zhihu.com/question/310624478.md",
-    "images/2022/03/27/20210730004422.gif.md",
-    "images/2022/03/27/20210507180214.jpg.md",
-    "images/2022/03/27/20210730004036.png.md",
-    "未命名.canvas",
-    "images/2022/03/27/image-20210722184726269.png.md",
-    "G.canvas",
-    "未命名.md",
-    "excore/未命名.md",
-    "index.md",
-    "intro.md"
+    "G.canvas"
   ]
 }
