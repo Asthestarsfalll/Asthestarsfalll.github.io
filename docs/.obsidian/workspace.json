@@ -21,6 +21,18 @@
                   "title": "algebra_system",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/离散数学/algebra_system.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":59,\"ch\":0},\"to\":{\"line\":59,\"ch\":0}},\"scroll\":59.13257575757576}"
+                },
+                {
+                  "title": "network_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/network_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "algebra_system",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/离散数学/algebra_system.md\",\"mode\":\"source\",\"source\":false}}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":157,\"ch\":0},\"to\":{\"line\":157,\"ch\":0}},\"scroll\":154.6098484848485}"
                 }
               ]
@@ -28,7 +40,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机网络/network_layer.mdx",
+                "file": "notes/离散数学/set.md",
                 "mode": "source",
                 "source": false
               }
@@ -157,7 +169,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/计算机网络/network_layer.mdx",
+                "file": "notes/离散数学/set.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -183,7 +195,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/计算机网络/network_layer.mdx",
+                "file": "notes/离散数学/set.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -224,7 +236,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/计算机网络/network_layer.mdx"
+                "file": "notes/离散数学/set.md"
               }
             }
           }
@@ -254,9 +266,9 @@
   },
   "active": "5843f31a2eb5ad32",
   "lastOpenFiles": [
-    "notes/离散数学/set.md",
-    "notes/计算机网络/network_layer.mdx",
     "notes/离散数学/algebra_system.md",
+    "notes/计算机网络/network_layer.mdx",
+    "notes/离散数学/set.md",
     "240322_09h59m50s_screenshot.png",
     "notes/离散数学/function.md",
     "notes/离散数学/symbol_table.md",
