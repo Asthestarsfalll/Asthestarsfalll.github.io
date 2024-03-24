@@ -18,6 +18,24 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "intro",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/CUDA/intro.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/CUDA/index.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
+                },
+                {
+                  "title": "intro",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/CUDA/intro.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
+                },
+                {
                   "title": "index",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/CUDA/index.md\",\"mode\":\"source\",\"source\":false}}",
@@ -160,7 +178,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/CUDA/intro.md",
+                "file": "notes/计算机组成原理/bus_and_IO_system.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -268,7 +286,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/CUDA/intro.md",
+                "file": "notes/计算机组成原理/bus_and_IO_system.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -294,7 +312,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/CUDA/intro.md",
+                "file": "notes/计算机组成原理/bus_and_IO_system.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -335,7 +353,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/CUDA/intro.md"
+                "file": "notes/计算机组成原理/bus_and_IO_system.mdx"
               }
             }
           }
@@ -365,8 +383,8 @@
   },
   "active": "6935af210e35cf66",
   "lastOpenFiles": [
-    "notes/CUDA/index.md",
     "notes/CUDA/intro.md",
+    "notes/CUDA/index.md",
     "notes/计算机网络/application_layer.md",
     "notes/CUDA",
     "notes/离散数学/set.md",
