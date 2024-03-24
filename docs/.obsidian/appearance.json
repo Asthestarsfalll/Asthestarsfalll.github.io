@@ -3,7 +3,7 @@
   "cssTheme": "Minimal",
   "theme": "obsidian",
   "textFontFamily": "Adobe 宋体 Std",
-  "interfaceFontFamily": "Anonymice Nerd Font",
+  "interfaceFontFamily": "CaskaydiaCove Nerd Font,Anonymice Nerd Font",
   "monospaceFontFamily": "CodeNewRoman Nerd Font",
   "baseFontSize": 22,
   "nativeMenus": false

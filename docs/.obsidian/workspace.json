@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5843f31a2eb5ad32",
+            "id": "6935af210e35cf66",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,50 +18,149 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "algebra_system",
+                  "title": "index",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/离散数学/algebra_system.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":59,\"ch\":0},\"to\":{\"line\":59,\"ch\":0}},\"scroll\":59.13257575757576}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/CUDA/index.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":47},\"to\":{\"line\":7,\"ch\":47}}}"
+                },
+                {
+                  "title": "intro",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/CUDA/intro.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":3}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/CUDA/index.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":47},\"to\":{\"line\":7,\"ch\":47}},\"scroll\":5.1576227390180875}"
+                },
+                {
+                  "title": "application_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/application_layer.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":3}"
+                },
+                {
+                  "title": "transport_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/transport_layer.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":136,\"ch\":32},\"to\":{\"line\":136,\"ch\":32}},\"scroll\":173.90980113636363}"
+                },
+                {
+                  "title": "data_link_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":212,\"ch\":13},\"to\":{\"line\":212,\"ch\":0}},\"scroll\":220.40814393939394}"
+                },
+                {
+                  "title": "transport_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/transport_layer.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":147,\"ch\":42},\"to\":{\"line\":147,\"ch\":42}},\"scroll\":143.77888257575756}"
+                },
+                {
+                  "title": "data_link_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":214.35037878787878}"
+                },
+                {
+                  "title": "computer_network_architecture",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/computer_network_architecture.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "transport_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/transport_layer.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":141.7544981060606}"
+                },
+                {
+                  "title": "physical_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
                 },
                 {
                   "title": "network_layer",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/network_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":8.151515151515152}"
                 },
                 {
-                  "title": "algebra_system",
+                  "title": "data_link_layer",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/离散数学/algebra_system.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":157,\"ch\":0},\"to\":{\"line\":157,\"ch\":0}},\"scroll\":154.6098484848485}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/离散数学/set.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a5e038977ea54a3f",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":8.024643819792068}"
+                },
                 {
-                  "state": "{}",
-                  "eState": "{}"
+                  "title": "computer_network_architecture",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/computer_network_architecture.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":122.21748492678725}"
+                },
+                {
+                  "title": "transport_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/transport_layer.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":147,\"ch\":7},\"to\":{\"line\":147,\"ch\":7}},\"scroll\":147.1306818181818}"
+                },
+                {
+                  "title": "physical_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "network_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/network_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}},\"scroll\":111.904149751917}"
+                },
+                {
+                  "title": "transport_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/transport_layer.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":67,\"ch\":74},\"to\":{\"line\":67,\"ch\":74}},\"scroll\":67.1188446969697}"
+                },
+                {
+                  "title": "network_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/network_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":453,\"ch\":0},\"to\":{\"line\":453,\"ch\":0}},\"scroll\":451.13257575757575}"
+                },
+                {
+                  "title": "data_link_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/data_link_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "computer_network_architecture",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/computer_network_architecture.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":5}"
+                },
+                {
+                  "title": "physical_layer",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机网络/physical_layer.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":318.97727272727275}"
+                },
+                {
+                  "title": "IO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/操作系统/IO.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/离散数学/set.md",
+                "file": "notes/CUDA/intro.md",
                 "mode": "source",
                 "source": false
               }
@@ -169,7 +268,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/离散数学/set.md",
+                "file": "notes/CUDA/intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -195,7 +294,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/离散数学/set.md",
+                "file": "notes/CUDA/intro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -236,7 +335,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/离散数学/set.md"
+                "file": "notes/CUDA/intro.md"
               }
             }
           }
@@ -264,11 +363,25 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "5843f31a2eb5ad32",
+  "active": "6935af210e35cf66",
   "lastOpenFiles": [
-    "notes/离散数学/algebra_system.md",
-    "notes/计算机网络/network_layer.mdx",
+    "notes/CUDA/index.md",
+    "notes/CUDA/intro.md",
+    "notes/计算机网络/application_layer.md",
+    "notes/CUDA",
     "notes/离散数学/set.md",
+    "notes/计算机组成原理/bus_and_IO_system.mdx",
+    "notes/计算机网络/transport_layer.md",
+    "notes/计算机网络/data_link_layer.mdx",
+    "notes/计算机网络/computer_network_architecture.mdx",
+    "notes/计算机网络/physical_layer.mdx",
+    "notes/计算机网络/network_layer.mdx",
+    "notes/操作系统/IO.md",
+    "1 1.webp",
+    "1 2.webp",
+    "1 3.webp",
+    "1.webp",
+    "notes/离散数学/algebra_system.md",
     "240322_09h59m50s_screenshot.png",
     "notes/离散数学/function.md",
     "notes/离散数学/symbol_table.md",
@@ -281,13 +394,7 @@
     "notes/数学/通用/combinatorics.mdx",
     "notes/数学/线性代数/matrix.mdx",
     "notes/计算机组成原理/storage_system.mdx",
-    "notes/数据结构/sort.mdx",
-    "notes/数据结构/graph.mdx",
-    "notes/数据结构/index.mdx",
-    "notes/数据结构/arrays_and_special_matrices.mdx",
-    "notes/操作系统/IO.md",
     "notes/操作系统/file_management.md",
-    "notes/计算机组成原理/instruction_system.mdx",
     "notes/操作系统/memory_management.md",
     "notes/操作系统/computer_system.md",
     "notes/操作系统/process_and_thread.md",
@@ -300,10 +407,6 @@
     "deeplearning/Cuda/optimize_paddle_logsumexp.md",
     "notes/计算机网络/test.md",
     "2024-01-17_17-08.png",
-    "deeplearning/ComputerVision/BaseModel/未命名.md",
-    "notes/数据结构/index.md",
-    "notes/英语/未命名.md",
-    "www.zhihu.com/question/310624478.md",
     "G.canvas"
   ]
 }
