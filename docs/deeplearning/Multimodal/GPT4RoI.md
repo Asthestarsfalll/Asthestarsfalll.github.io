@@ -1,5 +1,5 @@
 ---
-title: GPT4RoI: Instruction Tuning Large Language Model on Region-of-Interest
+title: GPT4RoI-Instruction Tuning Large Language Model on Region-of-Interest
 tags:
   - PaperRead
   - LLM
@@ -22,3 +22,8 @@ hide_table_of_contents: false
 
 
 ![]('./images/240622_18h08m15s_screenshot.png')
+
+
+## GPT4RoI
+
+
