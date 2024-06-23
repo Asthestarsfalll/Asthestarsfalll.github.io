@@ -8,6 +8,7 @@ hide_table_of_contents: false
 ---
 
 >论文名称：[Visual Instruction Tuning](https://arxiv.org/pdf/2304.08485)
+
 >Code: https://github.com/haotian-liu/LLaVA
 
 ## 摘要
