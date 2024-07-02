@@ -18,29 +18,119 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "GPT4RoI",
+                  "title": "4-一维Thread Tile并行优化",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/GPT4RoI.md\",\"mode\":\"source\",\"source\":false}}",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/4-一维Thread Tile并行优化.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "3-共享内存缓存块",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/3-共享内存缓存块.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "2-global-memory-coalescing",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "1-naive-gemm",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/1-naive-gemm.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":2.7820391414141414}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/index.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
+                },
+                {
+                  "title": "11-CudaAlloctor",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/11-CudaAlloctor.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "10-CUDA线程编程",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/10-CUDA线程编程.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "8-避免分支分化",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/8-避免分支分化.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "9-CUDA内存管理",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/9-CUDA内存管理.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "7-理解线程束执行的本质1",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/7-理解线程束执行的本质1.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "6-CUDA执行模型概述",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/6-CUDA执行模型概述.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "5-组织并行线程",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/5-组织并行线程.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "4-给核函数记时",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/4-给核函数记时.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "3-动手实现一个基于GPU的向量加法",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/3-动手实现一个基于GPU的向量加法.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "2-cuda编程模型概述2",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/2-cuda编程模型概述2.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "2-cuda编程模型概述1",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/2-cuda编程模型概述1.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "1-异构计算与CUDA",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/1-异构计算与CUDA.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":12},\"to\":{\"line\":0,\"ch\":12}}}"
+                },
+                {
+                  "title": "VisionLLM",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/VisionLLM.md\",\"mode\":\"source\",\"source\":false}}",
                   "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
-                },
-                {
-                  "title": "llava",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/llava.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":120,\"ch\":175},\"to\":{\"line\":120,\"ch\":175}},\"scroll\":85.28787878787878}"
-                },
-                {
-                  "title": "Shikra-Unleashing-Multimodal-LLMs-Referential-Dialogue Magic",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/Shikra-Unleashing-Multimodal-LLMs-Referential-Dialogue Magic.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":32,\"ch\":103},\"to\":{\"line\":32,\"ch\":103}},\"scroll\":32.22831439393939}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/Multimodal/VisionLLM.md",
+                "file": "notes/high_performance/GEMM/5-二维Thread Tile并行优化.md",
                 "mode": "source",
                 "source": false
               }
@@ -148,7 +238,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "deeplearning/Multimodal/VisionLLM.md",
+                "file": "notes/high_performance/GEMM/5-二维Thread Tile并行优化.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +264,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "deeplearning/Multimodal/VisionLLM.md",
+                "file": "notes/high_performance/GEMM/5-二维Thread Tile并行优化.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -215,7 +305,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "deeplearning/Multimodal/VisionLLM.md"
+                "file": "notes/high_performance/GEMM/5-二维Thread Tile并行优化.md"
               }
             }
           }
@@ -245,6 +335,24 @@
   },
   "active": "22883e89274266d0",
   "lastOpenFiles": [
+    "notes/high_performance/GEMM/4-一维Thread Tile并行优化.md",
+    "notes/high_performance/GEMM/3-共享内存缓存块.md",
+    "notes/high_performance/GEMM/2-global-memory-coalescing.md",
+    "notes/high_performance/GEMM/1-naive-gemm.md",
+    "notes/high_performance/CUDA/index.md",
+    "notes/high_performance/CUDA/11-CudaAlloctor.md",
+    "notes/high_performance/CUDA/10-CUDA线程编程.md",
+    "notes/high_performance/CUDA/8-避免分支分化.md",
+    "notes/high_performance/CUDA/9-CUDA内存管理.md",
+    "notes/high_performance/CUDA/7-理解线程束执行的本质1.md",
+    "notes/high_performance/CUDA/6-CUDA执行模型概述.md",
+    "notes/high_performance/CUDA/5-组织并行线程.md",
+    "notes/high_performance/CUDA/4-给核函数记时.md",
+    "notes/high_performance/CUDA/3-动手实现一个基于GPU的向量加法.md",
+    "notes/high_performance/CUDA/2-cuda编程模型概述2.md",
+    "notes/high_performance/CUDA/2-cuda编程模型概述1.md",
+    "notes/high_performance/CUDA/1-异构计算与CUDA.md",
+    "deeplearning/Multimodal/VisionLLM.md",
     "deeplearning/Multimodal/images/240623_21h02m24s_screenshot.png",
     "deeplearning/Multimodal/GPT4RoI.md",
     "deeplearning/Multimodal/images/240623_15h45m09s_screenshot.png",
@@ -260,7 +368,6 @@
     "deeplearning/Multimodal/clip.md",
     "deeplearning/Multimodal/images/v2-589a037de2d7b47d2f6042505f2b46b9_720w.png",
     "deeplearning/Multimodal/images/v2-589a037de2d7b47d2f6042505f2b46b9_720w.png.crdownload",
-    "deeplearning/Multimodal/images/v2-84e840678dcfdf82793e204f20e4fffa_720w.webp",
     "deeplearning/Others/bishe.md",
     "deeplearning/Others/overview.drawio.crswap",
     "deeplearning/Others/images",
@@ -275,23 +382,6 @@
     "meaningless/语录/index.md",
     "deeplearning/Multimodal/DALL-E.mdx",
     "notes/离散数学/graph.md",
-    "notes/离散数学/algebra_system.md",
-    "notes/计算机网络/application_layer.md",
-    "notes/操作系统/IO.md",
-    "notes/CUDA/intro.md",
-    "notes/CUDA/index.md",
-    "notes/离散数学/set.md",
-    "notes/计算机网络/transport_layer.md",
-    "notes/离散数学/function.md",
-    "notes/离散数学/symbol_table.md",
-    "notes/离散数学/mathematical_logic.md",
-    "notes/c++/stl.md",
-    "notes/离散数学/combinatorics.md",
-    "notes/数学/通用/algebra_system.md",
-    "notes/操作系统/file_management.md",
-    "notes/操作系统/memory_management.md",
-    "notes/操作系统/computer_system.md",
-    "notes/操作系统/process_and_thread.md",
     "G.canvas"
   ]
 }

@@ -51,6 +51,12 @@
   height: 300px;
 }
 
+img {
+  clear: both !important;
+  display: block !important;
+  margin: auto !important;
+}
+
 .friend-item {
   user-select: none;
   cursor: pointer;
@@ -189,4 +195,31 @@
   .blog-list-page main {
     --ifm-col-width: 100%!important;
   }
+}
+
+h1 {
+  font-weight: bold;
+  color: #b12a5b;
+}
+
+h2 {
+  font-weight: bold;
+  color: #cf556c;
+}
+
+h3 {
+  color: #ff8c7f;
+  font-family: Optima-Regular, Optima, PingFangSC-light, PingFangSC-Light !important;
+}
+
+h4 {
+  font-size: 21px !important;
+  font-family: Optima-Regular, Optima, PingFangSC-light, PingFangSC-Light !important;
+  color: #f99185;
+}
+
+h5{
+  font-size: 18.5px !important;
+  font-family: Optima-Regular, Optima, PingFangSC-light, PingFangSC-Light !important;
+  color: #eb6f92;
 }
