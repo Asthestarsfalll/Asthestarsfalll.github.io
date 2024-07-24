@@ -1,6 +1,6 @@
 ---
 title: CMake 教程
-hide_table_of_contents: true
+hide_table_of_contents: false
 tags:
   - c++
 ---
