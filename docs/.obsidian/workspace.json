@@ -4,27 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "33aa6f9c2ce41cd7",
+        "id": "41bfda646724fade",
         "type": "tabs",
         "children": [
           {
-            "id": "22883e89274266d0",
+            "id": "7e203e9ed045a255",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 2,
+              "pos": 0,
               "stack": [
-                {
-                  "title": "未命名",
-                  "icon": "lucide-layout-dashboard",
-                  "state": "{\"type\":\"canvas\",\"state\":{\"file\":\"未命名.canvas\",\"viewState\":{\"x\":0,\"y\":0,\"zoom\":0}}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "未命名 1",
-                  "icon": "lucide-layout-dashboard",
-                  "state": "{\"type\":\"canvas\",\"state\":{\"file\":\"未命名 1.canvas\",\"viewState\":{\"x\":0,\"y\":0,\"zoom\":0}}}",
-                  "eState": "{}"
-                },
                 {
                   "state": "{}",
                   "eState": "{}"
@@ -33,188 +21,20 @@
                   "title": "CheXagent",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/CheXagent.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":12,\"ch\":0},\"to\":{\"line\":12,\"ch\":0}},\"scroll\":9.590909090909092}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":61,\"ch\":9},\"to\":{\"line\":61,\"ch\":19}},\"scroll\":73.90861742424242}"
                 },
                 {
-                  "title": "clip",
+                  "title": "EyesWideShut",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/clip.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":7,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "CheXagent",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/CheXagent.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "common_commands",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/linux/common_commands.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6}"
-                },
-                {
-                  "title": "skynet",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/项目阅读/skynet.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}},\"scroll\":6.03030303030303}"
-                },
-                {
-                  "title": "common_commands",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/linux/common_commands.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":0},\"to\":{\"line\":22,\"ch\":0}},\"scroll\":42.921401515151516}"
-                },
-                {
-                  "title": "cmake",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/cmake.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "common_commands",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/linux/common_commands.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "skynet",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/项目阅读/skynet.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":64,\"ch\":0},\"to\":{\"line\":64,\"ch\":0}},\"scroll\":57.60497835497836}"
-                },
-                {
-                  "title": "cmake",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/cmake.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "skynet",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/c++/项目阅读/skynet.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "5-二维Thread Tile并行优化",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/5-二维Thread Tile并行优化.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "4-一维Thread Tile并行优化",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/4-一维Thread Tile并行优化.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "3-共享内存缓存块",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/3-共享内存缓存块.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "2-global-memory-coalescing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "1-naive-gemm",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/1-naive-gemm.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":2.7820391414141414}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/index.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
-                },
-                {
-                  "title": "11-CudaAlloctor",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/11-CudaAlloctor.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "10-CUDA线程编程",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/10-CUDA线程编程.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "8-避免分支分化",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/8-避免分支分化.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "9-CUDA内存管理",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/9-CUDA内存管理.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "7-理解线程束执行的本质1",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/7-理解线程束执行的本质1.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "6-CUDA执行模型概述",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/6-CUDA执行模型概述.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "5-组织并行线程",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/5-组织并行线程.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "4-给核函数记时",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/4-给核函数记时.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "3-动手实现一个基于GPU的向量加法",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/3-动手实现一个基于GPU的向量加法.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "2-cuda编程模型概述2",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/2-cuda编程模型概述2.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "2-cuda编程模型概述1",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/2-cuda编程模型概述1.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "1-异构计算与CUDA",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/CUDA/1-异构计算与CUDA.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":12},\"to\":{\"line\":0,\"ch\":12}}}"
-                },
-                {
-                  "title": "VisionLLM",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/VisionLLM.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/EyesWideShut.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":50},\"to\":{\"line\":21,\"ch\":50}},\"scroll\":19.866714015151516}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/Multimodal/CheXagent.md",
+                "file": "deeplearning/Multimodal/EyesWideShut.md",
                 "mode": "source",
                 "source": false
               }
@@ -323,7 +143,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "deeplearning/Multimodal/CheXagent.md",
+                "file": "deeplearning/Multimodal/EyesWideShut.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -349,7 +169,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "deeplearning/Multimodal/CheXagent.md",
+                "file": "deeplearning/Multimodal/EyesWideShut.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -390,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "deeplearning/Multimodal/CheXagent.md"
+                "file": "deeplearning/Multimodal/EyesWideShut.md"
               }
             }
           }
@@ -418,13 +238,20 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "22883e89274266d0",
+  "active": "7e203e9ed045a255",
   "lastOpenFiles": [
-    "deeplearning/Multimodal/images/240724_11h14m47s_screenshot.png",
+    "deeplearning/Multimodal/images/240731_16h16m45s_screenshot.png",
+    "deeplearning/Multimodal/images/240731_15h33m14s_screenshot.png",
+    "deeplearning/Multimodal/EyesWideShut.md",
     "deeplearning/Multimodal/CheXagent.md",
+    "deeplearning/Multimodal/images/240412_17h10m56s_screenshot.png",
+    "deeplearning/Multimodal/clip.md",
+    "deeplearning/Multimodal/DALL-E.mdx",
+    "deeplearning/Multimodal/images/240731_15h15m31s_screenshot.png",
+    "deeplearning/Multimodal/GPT4RoI.md",
+    "deeplearning/Multimodal/images/240724_11h14m47s_screenshot.png",
     "未命名 1.canvas",
     "未命名.canvas",
-    "deeplearning/Multimodal/clip.md",
     "notes/linux/common_commands.md",
     "notes/c++/项目阅读/skynet.md",
     "notes/c++/cmake.md",
@@ -448,17 +275,12 @@
     "notes/high_performance/CUDA/2-cuda编程模型概述2.md",
     "notes/high_performance/CUDA/2-cuda编程模型概述1.md",
     "notes/high_performance/CUDA/1-异构计算与CUDA.md",
-    "deeplearning/Multimodal/VisionLLM.md",
     "deeplearning/Multimodal/images/240623_21h02m24s_screenshot.png",
-    "deeplearning/Multimodal/GPT4RoI.md",
     "deeplearning/Multimodal/images/240623_15h45m09s_screenshot.png",
     "deeplearning/Multimodal/images/240623_14h53m25s_screenshot.png",
     "deeplearning/Multimodal/images/240622_18h08m15s_screenshot.png",
     "deeplearning/Multimodal/images/240622_14h42m12s_screenshot.png",
     "deeplearning/Multimodal/images/240619_17h35m58s_screenshot.png",
-    "deeplearning/Multimodal/images/240619_16h42m06s_screenshot.png",
-    "deeplearning/Multimodal/images/240619_16h27m55s_screenshot.png",
-    "deeplearning/Multimodal/images/240412_20h00m52s_screenshot.png",
     "deeplearning/Multimodal/images/v2-589a037de2d7b47d2f6042505f2b46b9_720w.png.crdownload",
     "deeplearning/Others/overview.drawio.crswap",
     "deeplearning/Others/images",
@@ -466,7 +288,6 @@
     "deeplearning/Others/overview.drawio",
     "meaningless/index.mdx",
     "meaningless/后摇",
-    "meaningless/语录/others.mdx",
     "G.canvas"
   ]
 }
