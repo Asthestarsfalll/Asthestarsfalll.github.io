@@ -1,0 +1,187 @@
+---
+title: 多维随机变量及其分布
+tags: [probability theory and mathematical statistics]
+hide_table_of_contents: false
+---
+
+## 二维随机变量及其分布
+
+:::info 多维随机变量
+
+多维随机变量是一个 **向量**，如二维随机变量是由两个随机变量 $X=X(\omega),Y=Y(\omega)$ 组成的向量 $(X,Y)$，也称作 **随机向量**。
+
+:::
+
+其累积分布函数表示为
+
+$$
+F(x,y)=P\{X\leq x,Y\leq y\},-\infty<x,y<+\infty
+$$
+
+由于是二维的，因此计算时要注意一些重叠的部分
+
+$$
+P(a<X<b,c<Y<d)=F(b,d)+F(a,c)-F(b,c)-F(a,d)
+$$
+
+相当于在平面坐标系中取一个矩形，$F(b,d)$ 是矩形向 $x,y$ 轴负向的延伸，因此减去了两个 $x,y$ 负向的部分，由于二者之间有重叠，便加重叠部分 $F(a,c)$.
+
+当多维变量其中一个或多个变量可以任意取值，即不再对分布函数产生影响，则称剩下的分布为 **边缘分布**，如：
+
+$$
+F_{X}(x)=P\{X\leq x\}=P\{X\leq x,y\leq+\infty\}=F(x, \infty)
+$$
+
+对于任意给定的 $\epsilon>0$，$P\{y-\epsilon<Y\leq y+\epsilon\}$
+
+$$
+\lim_{ \epsilon \to 0^+} P\{X\leq x|y-\epsilon< Y\leq y+\epsilon\}=\lim_{ \epsilon \to 0^+} \frac{P\{X\leq x,y-\epsilon< Y\leq y+\epsilon\}}{P\{y-\epsilon<Y\leq y+\epsilon\}}
+$$
+
+存在，则称该极限为 **在条件 Y=y 下 X 的条件分布**，记作 $F_{X|Y}(x|y)$ 或 $P\{X\leq x|Y=y\}$.
+
+## 二维连续随机变量
+
+二维连续随机变量的累积分布函数需要对概率密度函数进行二重积分
+
+$$
+F(x,y)=\int _{-\infty}^x \, \int _{-\infty}^y \, f(u,v)dudv,-\infty<x,y<+\infty
+$$
+
+可以对不需要的变量进行积分，从而得到 **边缘密度函数**。
+
+设 $f(x,y)$ 在点 $(x,y)$ 处连续，$F_{Y}(y)>0$ 且连续，则条件分布
+
+$$
+F_{X|Y}(x, y)= \int _{-\infty}^x \frac{f(s,y)}{f_{Y}(y)} ds 
+$$
+
+其中 $\frac{f(x,y)}{f_{Y}(y)}$ 被称为 **在条件 Y=y** 下的条件概率密度，记作 $f_{X|Y}(x|y)$，即
+
+$$
+f_{X|Y}(x|y)= \frac{f(x,y)}{f_{Y}(y)},f_{Y}(y)>0
+$$
+
+## 独立性
+
+若
+
+$$
+P\{X\leq x,Y\leq y\}=P\{X\leq x\}P\{Y\leq y\}
+$$
+
+即
+
+$$
+F(x,y)=F(x)F(y)
+$$
+
+则称 **随机变量相互独立**。
+
+## 均匀分布
+
+二维均匀分布的概率密度函数为
+
+$$
+f(x,y)=
+\left.
+\begin{cases}
+\frac{1}{A},(x,y)\in D, \\
+0
+\end{cases}
+\right.
+$$
+
+其中 $A$ 是平面有界区域 $D$ 的面积，则称 $(X,Y)$ 服从 $D$ 上的均匀分布。
+
+## 正态分布
+
+**概率密度函数**
+
+$$
+f(x,y) = \frac{1}{2\pi \sigma_x \sigma_y \sqrt{1 - \rho^2}} \exp\left(-\frac{1}{2(1 - \rho^2)}\left[\frac{(x - \mu_x)^2}{\sigma_x^2} + \frac{(y - \mu_y)^2}{\sigma_y^2} - \frac{2\rho(x - \mu_x)(y - \mu_y)}{\sigma_x \sigma_y}\right]\right)
+$$
+
+其中，$\mu_x, \mu_y$ 表示均值，$\sigma_x, \sigma_y$ 表示标准差，$\rho$ 表示相关系数，$X\sim N(\mu_{x}, \sigma_{x}^2),Y\sim N(\mu_{y},\sigma_{y}^2)$.
+
+$\rho=0$ 则表示 $X,Y$ 相互独立
+
+:::caution
+
+$(X,Y)$ 二维正态可保证 $X$ 与 $Y$ 服从正态分布，反之不能成立。
+
+:::
+
+$aX+bY\sim N(a\mu_{x}+b\mu_{y},a^2\sigma_{x}^2+2ab\sigma_{x}\sigma_{y}\rho +b^2\sigma_{y}^2)$
+
+若 $\begin{vmatrix}a &b\\c&d\end{vmatrix}\neq 0$，即其线性无关则 $(aX+bY,cX+dY)$ 也一定为正态分布。
+
+若随机变量 $X_{1},X_{2}\cdots X_{n}$ 相互独立，并且服从同一参数的正态分布，则
+
+$$
+\sum_{i=1}^nc_{i}\sim N\left( \sum_{i=1}^nc_{i}\mu,\sum_{j=1}^nc_{j}^2\sigma^2\right)
+$$
+
+可以进一步扩展，其服从不同参数的正态分布，则
+
+$$
+\sum_{i=1}^nc_{i}\sim N\left( \sum_{i=1}^nc_{i}\mu_{i},\sum_{j=1}^nc_{j}^2\sigma_{j}^2\right)
+$$
+
+## 两个随机变量函数 Z=g (X, Y) 的分布
+
+ 已知随机变量 $(X,Y)$ 的概率密度函数为 $f(x,y)$，则 $Z=X+Y$ 的累积分布函数为：
+
+ $$
+F_{Z}(z)=P(X+Y\leq z)=\iint_{x+y\leq z}f(x,y)  \, dx dy
+$$
+
+即
+
+$$
+F_{Z}(z)=\int _{-\infty}^{+\infty}dx \int _{-\infty}^{z-x}f(x,y)\, dy
+$$
+
+可以得到其概率密度函数为
+
+$$
+f_{Z}(z)=\int_{-\infty}^{+\infty}f(x, z-x)\, dx 
+$$
+
+或
+
+$$
+f_{Z}(z)=\int_{-\infty}^{+\infty}f(z-y, x)\, dy
+$$
+
+当 $X,Y$ 相互独立时，$f(x,y)=f_{X}(x)f_{Y}(y)$，则
+
+$$
+f_{Z}(z)=\int _{-\infty}^{+\infty}f_{X}(x)f_{Y}(z-x) \, dx 
+$$
+
+和
+
+$$
+f_{Z}(z)=\int _{-\infty}^{+\infty}f_{X}(z-y)f_{Y}(y) \, dy 
+$$
+
+这就是卷积公式，记作 $f_{Z}=f_{X}\ast f_{Y}$.
+
+**Z=max{X, Y}的分布**
+
+设 $X,Y$ 是两个相互独立的随机变量，有
+
+$$
+p\{Z\leq z\}=P\{X\leq z\}P\{Y\leq z\}=F_{X}(z)F_{Y}(z)
+$$
+
+**Z=min{X, Y}的分布**
+
+设 $X,Y$ 是两个相互独立的随机变量，有
+
+$$
+p\{Z\leq z\}=1-P\{Z>z\}=1-P\{X> z\}P\{Y> z\}=1-[1-F_{X}(z)][1-F_{Y}(z)]
+$$
+
+以上结果可推广至 $n$ 个相互独立的随机变量。

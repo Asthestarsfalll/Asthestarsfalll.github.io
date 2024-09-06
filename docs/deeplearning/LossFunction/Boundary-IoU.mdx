@@ -1,0 +1,410 @@
+---
+title: Boundary IoU：图像分割新型指标
+authors: [Asthestarsfalll]
+tags: [PaperRead, deep learning, computer vision, change detection]
+description: 新型图像分割指标，Boundary IoU比标准Mask Iou对大物体的边界误差敏感得多，并且不会对较小对象的误差进行过度惩罚。
+hide_table_of_contents: false
+---
+
+> 论文名称：[Boundary IoU: Improving Object-Centric Image Segmentation Evaluation](https://arxiv.org/abs/2103.16562)
+>
+> 作者：Bowen Cheng，Ross Girshick，Piotr Dollár，Alexander C. Berg，Alexander Kirillov
+>
+> Code：https://github.com/bowenc0221/boundary-iou-api
+
+​	**正如它的名字，Boundary IoU 就是边界轮廓之间的 IoU。**
+
+## 摘要和介绍
+
+1. 提出了一种新的基于边界质量的分割评价方法——Boundary IoU；Boundary IoU 对大对象的边界误差比标准掩码 IoU 测量明显更敏感，并且不会过分惩罚较小对象的误差，比其他方法更适合作为评价分割的指标，另外，对于实例分割，本文提出**Boundary Average Precision** (Boundary AP)，对于全景分割，提出**Boundary Panop-tic Quality** (Boundary PQ)
+
+2. 对于分割任务，不同的评估指标对不同类型错误的敏感性不同，网络可以轻易解决指标对应敏感的类型，而其他错误类型的效果则不尽人意；
+
+3. mask 的边界质量是图像分割的一个重要指标，各种下游任务直接受益于更精确的分割；
+
+4. 目前的分割网络的预测不够保真，边缘也很粗糙，**这种情况说明目前的评估指标可能对目标边界的预测误差具有敏感性**；
+
+   <img src="/images/2022/03/27/20210508214210.png" alt="image-20210508214206239" style={{zoom:"80%"}} />
+
+5. 在大量的论文中，AP 最高可达到八九十，而很少有论文会提及他们 mask 的边界质量。
+
+## 相关指标
+
+各种相关指标如下：
+
+![image-20210508222750295](/images/2022/03/27/20210508223158.png)
+
+首先解释几个名词：
+
+1. 对称（Symmetric）：GT（GroundTruth）和 Pred（prediction）的交换是否改变测量值；
+
+2. 倾向（Preference）：衡量方法是否偏向某一类型的预测，即交换后哪个值更大；
+
+3. 不灵敏度（Insensitivity）：测量不太敏感的误差类型，比如 F-measure 对小物体不太敏感；
+
+4. 三分图（Trimap）：对给定图像的一种粗略划分将给定图像划分为前景、背景和待求未知区域；
+
+   <img src="/images/2022/03/27/20210509151808.png" alt="img" style={{zoom:"150%"}} />
+
+5. Mask-based Measure：考虑物体的所有像素；
+
+6. Boundary-based Measure：衡量预测边界的分割质量，不同于 Mask-based Measure，该方法只评估边界及其邻近的像素；
+
+7. d：Boundary-based Measure 中边界窄带的像素宽度
+
+通过分析各种相关指标的缺点，我们得出 Boundary IoU 应该拥有的特性：**同时考虑分类、定位和分割质量。**
+
+另外，我们尤其需要注意 $G_d$ 和 $G_d\cap G$ 的区别，$G_d$ 是边界的两侧，而 $G_d\cap G$ 则是边界的内侧部分：
+
+<img src="/images/2022/03/27/20210511121300.png" alt="image-20210511121230297" style={{zoom:"80%"}} />
+
+### Mask IoU 和 Pixel Accuracy
+
+所有像素对指标的贡献都是相同的，而物体内部的像素呈二次型增长，其边界仅会线性增长，因此**对较大物体的边界不够敏感**。
+
+Mask IoU 计算方式示意图：
+
+<img src="/images/2022/03/27/20210510161356.png" alt="image-20210510161350211" style={{zoom:"80%"}} />
+
+### Trimap IoU
+
+基于边界的分割指标，其计算距离 GT 和 pred 边界 d 像素窄带内的 IoU，计算方式示意图如下（方便起见，简化为矩形且只显示边界部分）：
+
+<img src="/images/2022/03/27/20210509163907.png" alt="image-20210509163853163" style={{zoom:"80%"}} />
+
+**需要注意分母的**$G_d\cap G$。
+
+### Feature Measure
+
+F-Measure 最初被提出用于边缘检测，但它也被用于评价分割质量。在最初的公式中，使用二分图匹配来进行计算，对于高分辨率的图像来说计算成本很大；因此提出了一种允许重复匹配的近似算法，**precision 为 pred 轮廓中 \ 距离 GT 轮廓中像素 \ 在 d 个像素以内的 \ 像素 \ 所占 pred 的比例**，recall 同理。不是很理解，原文如下：
+
+<img src="/images/2022/03/27/20210510151207.png" alt="image-20210510151147870" style={{zoom:"80%"}} />
+
+Precision 和 Recall 计算方式示意图如下：
+
+<img src="/images/2022/03/27/20210510153516.png" alt="image-20210510152547915" style={{zoom:"80%"}} />
+
+### Boundary  IoU
+
+Boundary IoU 对大物体边界误差更加敏感，并且不会过分惩罚小物体。
+
+直观上就是 GT 和 Pred 轮廓的交集除以并集，但是**这里的轮廓是在对象内部的**$G_d、P_d$，不包括在对象外面的部分，详细在补充中有说明。
+
+虽然看起来和 Trimap IoU 很相似，但个人认为它是 Mask IoU 的边界升级版本，去除了对象内部巨量像素对整体的影响，使其拥有更优秀的性质。
+
+论文中给出的示意图如下：
+
+<img src="/images/2022/03/27/20210510154511.png" alt="image-20210510153535293" style={{zoom:"67%"}} />
+
+我画的：
+
+<img src="/images/2022/03/27/20210510154514.png" alt="image-20210510154509338" style={{zoom:"67%"}} />
+
+其实就是边界的 IoU，
+
+## 敏感性分析
+
+为了进行系统的比较，本文对 GT 进行处理形成伪预测，通过**模拟**不同的误差类型来尽可能的模拟真实误差类型，后面的部分主要通过实验来证明 Boundary IoU 的优越性。
+
+**尺度误差**
+
+通过对 GT 进行膨胀和腐蚀操作，误差严重程度由运算核半径控制。
+
+<img src="/images/2022/03/27/20210509185613.png" alt="image-20210509185608432" style={{zoom:"67%"}} />
+
+**边界定位误差**
+
+将随机高斯噪声添加到 GT 上每一个多边形顶点的**坐标**上，误差严重程度由高斯噪声的标准差确定。
+
+<img src="/images/2022/03/27/20210509185617.png" alt="image-20210509185545908" style={{zoom:"67%"}} />
+
+**物体定位误差**
+
+将 GT 中的对象随机偏移一些像素，误差严重程度由位移像素长度控制。
+
+<img src="/images/2022/03/27/20210509185622.png" alt="image-20210509185530435" style={{zoom:"67%"}} />
+
+**边界近似误差**
+
+利用 Sharply 的简化公式来删除多边形顶点，同时保持简化多边形尽可能接近原始图像，误差严重程度由函数的容错参数控制。
+
+<img src="/images/2022/03/27/20210509185624.png" alt="image-20210509185108649" style={{zoom:"80%"}} />
+
+**内部掩码误差**
+
+向 GT 中添加随机性形状的孔，虽然这种误差类型并不常见，但是本文将其包含进来，用以评估内部掩膜误差的影响。
+
+<img src="/images/2022/03/27/20210509185630.png" alt="image-20210509185508685" style={{zoom:"67%"}} />
+
+## 实验细节
+
+**数据集**：作者从 LVIS V0.5 验证集中随机抽取实例掩码，因为该数据集拥有高质量的注释。
+
+![](/images/2022/03/27/20210509190212.png)
+
+**实现过程**：通过改变误差类型和误差的严重程度，记录每种类型的平均值和标准差，此外，还通过划分不同的区域，来比较对不同大小物体的指标评价。
+
+其中 d 设置为图像对角线的 2%。
+
+## 现有方法分析
+
+### Mask IoU
+
+**理论分析：**
+
+Mask IoU 具有以下两个性质
+
+**尺度不变性**（自己取的）：即对于一个**固定**的 Mask IoU 值，分割对象面积越大，则其错误像素越多，二者之间的变化关系成正比，其比例即为 Mask IoU 的值。
+
+**惩罚差异性**（自己取的）：当缩放一个对象时，内部像素数量呈二次增长，边界像素仅为线性增长，二者不同的增长率导致 Mask IoU 容忍更大的对象边界上的更多错误分类。
+
+这两个性质其实指向了同一个问题——Mask IoU 对大目标的边界错误更加包容，而惩罚小目标。
+
+**实证分析：**
+
+**尺度不变性**基于一个假设，即 GT 标注中的边界误差也随着对象的大小而增长。
+
+然而已有研究表明，不论物体大小，被不同标注器标记的同一个对象的两个轮廓之间的像素距离很少超过图像对角线的 1%。
+
+本文通过研究 LVIS 提供的**双标注图像**来证实这一点，如下：
+
+![image-20210509201406961](/images/2022/03/27/20210509203230.png)
+
+其中冰箱的面积是机翼面积的 100 倍，但在相同分辨率的区域内，注释之间的差异在视觉上十分相似。
+
+两者的两个轮廓的 Mask IoU 分别为 0.97,0.81，而它们的 Boundary IoU 则更为接近，分别为 0.87，0.81。这说明 Mask IoU**对小尺寸图片的“惩罚”更大**。
+
+**实验**：通过严重程度相同的膨胀/腐蚀来模拟**尺度误差**，其显著降低了小物体的 Mask IoU，而 Mask IoU 随物体大小的增加而增加，见下图：
+
+<img src="/images/2022/03/27/20210510093856.png" alt="image-20210510093853486" style={{zoom:"50%"}} />
+
+**总结：**
+
+- Mask IoU 的主要不足在于对大物体边界的不敏感性。
+- 相比之下，Boundary IoU 更注重物体的边界。
+
+### Trimap IoU
+
+Trimap IoU 是不对称的，交换 GT 和 Pred 将会得到不同的值。下图显示了其更倾向于比 GT 更大的 pred：
+
+<img src="/images/2022/03/27/20210510095941.png" alt="image-20210510095821668" style={{zoom:"50%"}} />
+
+可以看到：
+
+- 不论膨胀的严重程度是多少，其值总会大于某个正值，对小物体的“惩罚”依然过大。
+- 腐蚀则会下降到零。
+
+简单的证明：
+
+<img src="/images/2022/03/27/20210511114830.png" alt="image-20210510165235885" style={{zoom:"50%"}} />
+
+蓝色部分为 pseudo-predictions （伪预测），红色方框为 GT 轮廓，可以看到，当 pseudo-predictions 完全包含了 GT 时，其值不会再改变
+
+同理，当伪预测完全被 GT 所包含，分子为 0，最终值为 0。
+
+### F-measure
+
+F-measure 完全忽略了小的轮廓误差，但是表现效果很差，会在很短的严重程度中快速下降到 0：
+
+<img src="/images/2022/03/27/20210511114828.png" alt="image-20210510170006064" style={{zoom:"50%"}} />
+
+### 总结
+
+综上可知，F-measure 和 Trimap IoU 都不能代替 Mask IoU，而 Mask IoU 也有着不能忽视的缺陷，因此，本文提出 Boundary IoU。
+
+## Boundary IoU
+
+### 公式
+
+一个简化的 IoU 公式
+
+$$
+IoU = \frac{G_d\cap P_d}{G_d\cup P_d}
+$$
+
+该公式直接使用 $G_d、P_d$,丢失了**边缘的尖锐部分**的信息
+
+Boundary IoU 公式如下：
+
+$$
+Boudary\_IoU(G,P)=\frac{|(G_d\cap G)\cap(P_d\cap P)|}{|(G_d\cap G)\cup(P_d\cap P)|}
+$$
+
+其中参数 d 控制了测量的灵敏性，当 d 足够大时，Boundary IoU 就等价于 Mask IoU; 若使用较小的 d，Boundary IoU 则会忽略内部像素，使其对边界像素更加敏感。
+
+此外，对于较小的对象，Boundary IoU 十分接近甚至等价于 Mask IoU，这主要取决于参数 d。
+
+### Mask IoU vs Boundary IoU：敏感性分析
+
+本文对比了 Mask IoU 和 Boundary IoU 在面积大于 $96^2$ 的物体的不同误差类型下的表现：
+
+<img src="/images/2022/03/27/20210510181123.png" alt="image-20210510173824215" style={{zoom:"50%"}} />
+
+<img src="/images/2022/03/27/20210510181124.png" alt="image-20210510173839905" style={{zoom:"50%"}} />
+
+对于每种误差类型，Boundary IoU 都能更好的利用 0-1 的范围
+
+使用的固定的误差严重程度，对大小不同的对象使用伪预测，以 $16^2$ 为增量划分区域，二者表现如下：
+
+<img src="/images/2022/03/27/20210510181127.png" alt="image-20210510181102929" style={{zoom:"50%"}} />
+
+<img src="/images/2022/03/27/20210510181129.png" alt="image-20210510181118302" style={{zoom:"50%"}} />
+
+可以看到：
+
+- 对于较大的对象，Boundary IoU 在相同严重程度下保持平缓，而 Mask IoU 则明显的偏向于大物体；
+- 对于较小的对象，二者拥有相似的指标，说明他们都没有对其进行过度惩罚。
+
+### Boundary IoU vs  Trimap IoU
+
+二者具有一定的相似性，Boundary IoU 将 Pred 和 GT 边缘上的像素都考虑了进来，这个简单的改进改变了 Trimap IoU 两点不足，一是不对称，二见 5.2，即不能充分地使用 0-1 的范围。
+
+### Boundary IoU vs F-measure
+
+F-measure 对轮廓之间使用了硬预测——如果轮廓之间的像素在距离 d 内那么 Precision 和 Recall 都是完美的，然而当它们都位于 d 之外，则不会发生任何匹配（见 4.3 ，其值会很快的降为 0）。
+
+而 Boundary IoU 使用一种软分割，变化平缓。
+
+在论文附录中有详细分析。
+
+### 像素距离参数 d
+
+上文提过，当 d 足够大时，Boundary IoU 等价于 Mask IoU，当 d 过小，Boundary IoU 则会出现严重惩罚的情况。
+
+为了选择合适的参数 d，本文在 COCO 和 ASE20K 两个数据集（它们拥有相似的分辨率）上进行实验，发现当 d 为图像**对角线的 2%（大约为 15 个像素）**时，两数据集的 Boundary IoU 的中位数超过 0.9。
+
+对于 Cityscapes 中更大分辨率的图像，作者也建议使用相同的像素距离（15 个左右），设置 d 为对角线的 0.5%
+
+对于其他数据集，作者建议考虑两个因素（**没看懂**：
+
+1. 将注释一致性将下界设为 d
+2. d 应根据当前方法的性能选择，并随着性能的提高而降低。
+
+### Boundary IoU 的局限
+
+Boundary IoU 不评估距离轮廓超过 d 的像素，例如一个圆形 Mask 和一个环形 Mask：
+
+<img src="/images/2022/03/27/20210511114822.png" alt="image-20210510190200706" style={{zoom:"50%"}} />
+
+显然，其 Boundary Iou 值极高为 1
+
+为了惩罚这种情况，作者建议组合 Boundary IoU 和 Mask IoU，并取他们的最小值。
+
+此外，在实验中还发现，99.9% 的情况 Boundary IoU 都是小于等于 Mask IoU 的，极少数情况如上图会出现 Boundary IoU 大于 Mask IoU。
+
+## 应用
+
+如上文所说，作者将两种 IoU 组合，取其最小。
+
+### Boundary AP for instance segmentation
+
+实例分割任务的目标是用像素级掩码描绘每个对象，其评估指标是同时评估多个方面，如分类、定位和分割质量。
+
+本文通过（Synthetic predictions） 合成预测与真实模型来进行实验。
+
+**合成预测：**
+
+> 综合预测允许我们单独的评估分割质量。
+
+- **具体方法**：
+
+  使用 COCO 数据集，将 GT 缩小为 28X28 的连续值掩码，使用双线性插值 upscale it back，最后将其二值化。如下图所示
+
+  <img src="/images/2022/03/27/20210510230303.png" alt="image-20210510230301360" style={{zoom:"50%"}} />
+
+  这种合成 Mask 十分接近 GT，但这种差异随着物体大小的增大而增大，因此越大的物体经过处理后的 IoU 值应该越低。
+
+  <img src="/images/2022/03/27/20210511122838.png" alt="image-20210510223226154" style={{zoom:"50%"}} />
+
+  下标表示物体的大小，可以看到，对于越大的物体，Boundary IoU 的值越低，而 Mask IoU 的值则维持在高水平，**这进一步显示了 Boundary IoU 对于大物体边界的敏感性**。
+
+- 实验结果：在 Mask RCNN、PointRend、以及 BMask RCNN 模型上进行实验，结果如下：
+
+  <img src="/images/2022/03/27/20210511122836.png" alt="image-20210510224102719" style={{zoom:"50%"}} />
+
+  <img src="/images/2022/03/27/20210511122835.png" alt="image-20210510224120918" style={{zoom:"50%"}} />
+
+  众所周知，Mask RCNN 对大物体的分割表现不尽人意（我不知道），从上表可以看出 Boundary Ap 的优越性
+
+  此外，上表还证明了相较于 BMask RCNN，PointRend 对较大对象的表现更好。
+
+  <img src="/images/2022/03/27/20210511122833.png" alt="image-20210510224713604" style={{zoom:"50%"}} />
+
+  上表显示了更深的主干网络并不能带来分割质量的显著提升。  
+
+  **真实模型：**
+
+> 利用现有的分割模型得到的真实预测进一步实验，可以进一步了解 Boundary IoU 在实例分割任务各个方面的表现。
+
+- **具体方法**：
+
+  为了将分割质量与分类和定位错误分离开，作者为这些方法提供了 Ground Truth Box，并为其分配随机置信度。
+
+- **实验结果**：
+
+  模型在 COCO 数据集上训练，在 LVIS v0.5 上验证
+
+  <img src="/images/2022/03/27/20210511115505.png" alt="image-20210511115502161" style={{zoom:"50%"}} />
+
+  模型在 Cityscapes 上训练和验证
+
+  <img src="/images/2022/03/27/20210511115657.png" alt="image-20210511115655795" style={{zoom:"50%"}} />
+
+### Boundary  PQ
+
+下图为标准 PQ 的公式
+
+<img src="/images/2022/03/27/20210511115040.png" alt="image-20210511115032369" style={{zoom:"50%"}} />
+
+将其中的 Mask IoU 替换为 Mask IoU 与 Boundary IoU 的组合，取其最小值。
+
+**合成预测：**
+
+<img src="/images/2022/03/27/20210511122826.png" alt="image-20210511120047274" style={{zoom:"50%"}} />
+
+**真实预测：**
+
+<img src="/images/2022/03/27/20210511122824.png" alt="image-20210511120131765" style={{zoom:"50%"}} />
+
+## 总结
+
+​		不同于 Mask IoU，Boundary IoU 提供了一个明确的，定量的梯度，奖励改善边界分割质量。作者希望 Boundary IoU 可以鼓励更多人开发高保真 Mask 预测新方法。此外，Boundary  IoU 允许对复杂的任务 (如实例和全景分割) 的分割相关错误进行更细粒度的分析。在性能分析工具 (如 TIDE[2]) 中结合度量可以更好地洞察实例分段模型的特定错误类型。（**直接翻译的**）
+
+## 代码复现
+
+对于二分类图像的 Boundary Iou
+
+```python
+# 将二值Mask转化为Boundary mask
+def mask_to_boundary(mask, dilation_ratio=0.01):
+    h, w = mask.shape
+    img_diag = np.sqrt(h ** 2 + w ** 2)
+    dilation = int(round(dilation_ratio * img_diag))
+    if dilation < 1:
+        dilation = 1
+    # Pad image so mask truncated by the image border is also considered as boundary.
+    # 将mask使用0填充一圈，防止dilation为1时
+    new_mask = cv2.copyMakeBorder(
+        mask, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=0)
+    kernel = np.ones((3, 3), dtype=np.uint8)
+    # 对mask进行腐蚀操作
+    new_mask_erode = cv2.erode(new_mask, kernel, iterations=dilation)
+    mask_erode = new_mask_erode[1: h + 1, 1: w + 1]
+    # G_d intersects G
+    return mask - mask_erode
+
+def boundary_iou(mask, pred):
+    intersect = mask*pred
+    ite = np.sum(intersect == 1)
+    un = mask+pred
+    union = np.sum(un >= 1)
+    return ite/union
+```
+
+效果如下：
+
+<img src="/images/2022/03/27/20210519091830.png" alt="image-20210519091807762" style={{zoom:"50%"}} />
+
+<img src="/images/2022/03/27/20210519091840.png" alt="image-20210519091815466" style={{zoom:"50%"}} />
+
+<img src="/images/2022/03/27/20210519091833.png" alt="image-20210519091826066" style={{zoom:"50%"}} />

@@ -1,0 +1,9 @@
+{
+  "blurOnStartup": "hide-all",
+  "blurLevel": 0.4,
+  "blurOnIdleTimeoutSeconds": -1,
+  "hoverToReveal": true,
+  "revealUnderCaret": false,
+  "privateDirs": "",
+  "privateNoteMarker": "#private"
+}

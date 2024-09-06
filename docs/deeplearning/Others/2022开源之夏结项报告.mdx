@@ -1,0 +1,285 @@
+---
+title: 2022开源之夏结项报告
+description: 虽然做的很烂但还是做完了。
+tags:
+  - other
+hide_table_of_contents: false
+---
+
+# 结项报告
+
+## 项目信息
+
+- 项目名称：**MegEngine 补充跨模态模型的实现**
+
+- 方案描述：
+
+  - 本项目需要完成 CLIP、DALLE、VQGAN 和 BigSleep 这四个多模态模型的模型代码及推理函数编写，并且保证结果误差在可以接受的范围内，因此实现后需要与对应的仓库进行对比。
+
+  - 在实现顺序上，CLIP 作为后续模型的基础，应当优先实现。其他模型根据难易程度同时进行开发。
+
+  - 在文件结构上，由于各个模型的推理并不相同，因此为每个模型单独创建文件夹，同时为了提高代码复用率，可将一些通用的模块单独分离出来。
+
+    ```
+    OFFICIAL
+    ├───assets
+    ├───multimodal
+    	├───common
+    	├───BigSleep
+    	├───CLIP
+    	├───DALLE
+    	└───VQGAN
+    ```
+
+  - 在代码规范上，应当符合目标仓库的标准，包括但不限于代码格式规范、标识符命名规范、注释规范、文档规范和设计规范等。
+
+  - 在易用性上，应当让用户能够根据文档轻松便捷的进行体验。
+
+- 时间规划：
+
+  | 起始时间 | 结束时间 | 内容                                                         |
+  | -------- | -------- | ------------------------------------------------------------ |
+  | 06/16    | 06/30    | 与导师进一步讨论实现方案等未尽事宜                           |
+  | 07/01    | 07/15    | 进一步了解模型细节。                                         |
+  | 07/15    | 09/15    | 完成模型搭建、验证推理精度、完善代码规范。                   |
+  | 08/15    | 09/30    | 不同的模型分开提交 PR，开发的同时进行 Review，迭代优化，以求更好地完成任务。 |
+
+## 项目进度
+
+### 已完成工作
+
+#### CLIP
+
+CLIP 思考了目前计算机视觉系统的局限性—— 其利用固定的预测类别进行训练，这种监督限制了模型的泛化性和迁移能力。而 CLIP 在 4 亿个图像 - 文本对上使用对比学习的方式进行训练，能够充分利用了文本信息来监督视觉任务的训练。同时 CLIP 可与生成类模型相结合，实现文生图的功能。
+
+目前已完成模型代码、推理代码以及推理文档编写，用户可以根据文档很轻松地体验 CLIP 模型的零样本（zero-shot）能力。与官方模型前向传播的相对误差在 1e-3 以内，绝对误差在 1e-7 以内，在**ImageNetV2 matched-frequency**数据集上，使用 OpenCV 进行数据预处理，相对官方模型的精度略有提升，具体如下表所示。
+
+- float32 精度下分类准确率：
+
+    | 模型     | top-1 acc      | top-1 acc（官方） | top-5 acc      | top-5 acc（官方） |
+    | -------- | -------------- | ----------------- | -------------- | ----------------- |
+    | RN50     | 53.50%  ↑1.13% | 52.9%             | 81.65%  ↑0.29% | 81.41%            |
+    | ViT-B/32 | 56.62%  ↑1.18% | 55.96%            | 83.62%  ↑0.25% | 83.41%            |
+
+- float16 精度下分类准确率：
+
+  | 模型     | top-1 acc      | top-1 acc（官方） | top-5 acc      | top-5 acc（官方） |
+  | -------- | -------------- | ----------------- | -------------- | ----------------- |
+  | RN50     | 53.54%  ↑1.19% | 52.91%            | 81.65%  ↑0.28% | 81.42%            |
+  | ViT-B/32 | 56.61%  ↑1.13% | 55.89%            | 83.63%  ↑0.20% | 83.46%            |
+
+#### BigSleep
+
+BigSleep 将 `CLIP` 与 `BigGAN` 的生成器相结合，可以通过文本来生成对应的图像，也可以同时传入图像来进行引导。推理过程中固定 `CLIP` 与 `BigGAN`，只训练 BigGAN 的输入 Latens，并以 CLIP 衡量文本与生成图像的相似性，同时使用多个 loss 进行辅助，在较短时间内便可迭代生成图像。
+
+用户在安装 MegEngine 后，可以轻松根据以下几行代码进行调用生成：
+
+```python
+from megengine import hub
+modelhub = hub.import_module(repo_info='megengine/models', git_host='github.com')
+
+dream = modelhub.Imagine(text = "Demon fire")
+```
+
+生成结果如下所示 ：
+
+:::info
+
+图片丢了
+
+:::
+
+此外，用户也可以通过 `Imagine` 类调整迭代参数、传入引导图像、保存迭代过程等。
+
+#### VQGAN
+
+VQGAN 用 codebook 来离散编码模型中间特征，并且使用 Transformer（GPT-2 模型）作为编码生成工具。`VQGAN` 的结构参考与 `Diffusion Model`，并且使用 GAN 和 VQVAE 的方式进行训练。同样 VQGAN 也可以与 CLIP 结合用于生成图像。
+
+首先测试 VQGAN 的图像重建能力，用户可以使用以下代码进行测试：
+
+```python
+import cv2
+from official.multimodal.taming_transformer import convert_tensor_to_image, Reconstruction, vqgan_imagenet_f16_16384
+# 加载模型及权重
+model = vqgan_imagenet_f16_16384(pretrained=True)
+# 传入模型及图片大小，这里的图像大小对于某一个模型是确定的
+rec = Reconstruction(model, image_size=256)
+# 图片地址
+image_path: str = ...
+
+reconstructed_image = rec(image_path)
+
+cv2.imwrite(f"out.png", cv2.cvtColor(convert_tensor_to_image(reconstructed_image)[0], cv2.COLOR_RGB2BGR))
+```
+
+以 BigSleep 生成的图像为例，结果如下：
+
+可以看出重建恢复了大部分信息。
+
+此外，在本任务的基础要求上，额外完成了对 `taming-transformers` 的迁移，`taming-transformers` 通过 `VQGAN` 将卷积的高效性和 `Transformer` 极强的表达能力相结合，拥有强大的图像重建和高分辨率图像合成能力。
+
+用户可以通过以下代码体验如何从一个分割图中采样出风景图：
+
+```python
+import cv2
+from official.multimodal.taming_transformer import ConditionalSampler, s_flckr_segmentation, segmetation_preprocess
+
+# 加载模型及权重
+model = s_flckr_segmentation(pretrained=True)
+
+sampler = ConditionalSampler(
+    model,
+    temperature=1.0,
+    top_k=100,
+    update_every=50, # 多少次采样保存一次图片
+    scale_factor=1.0, # 对输入图片进行缩放
+    animate=True, # 保存采样过程为mp4
+    root='test', # 根目录，用于保存采样过程中的文件和视频
+    seed=2022, # 固定随机种子
+    kernal_size=16, # 每次采样的窗口大小
+    fps=15, # 保存视频的帧率
+    segmentation_save=True # 为分割图使用专门的保存方式，保证每次推理保存的分割图色彩一致
+)
+
+# 图片灰度值不能超过s_flckr数据集的类别 182
+segmentation_path: str = r"official/multimodal/taming_transformer/data/sflckr_segmentations/norway/25735082181_999927fe5a_b.png"
+segmentation = cv2.imread(segmentation_path, 0) # 以灰度图方式读取
+num_classes = 182 # s_flckr中的类别数
+# 或者
+num_classes = model.cond_stage_model.colorize.shape[1]
+
+segmentation = segmetation_preprocess(segmentation, num_classes)
+
+sampler.sample_segmentation(segmentation, name='test')
+```
+
+分割图：
+
+采样结果：
+
+:::info
+
+不小心删了
+
+:::
+
+#### DALLE
+
+DALL·E 是 CLIP 的同期工作，主要由三个部分组成——dVAE，Transformer 和 CLIP，其核心思想是把**文本 token 和图像 token 当成一个数据序列，通过 Transformer 进行自回归。**
+
+目前完成了全部相关代码的编写，正在前向对齐中，其中 dVAE 推理结果如下所示（分别表示原图与重建图像）：
+
+以最终期望的方式，用户可以通过以下命令调用体验文生图的功能：
+
+```python
+from megengine import hub
+modelhub = hub.import_module(repo_info='megengine/models', git_host='github.com')
+
+dalle = hub.load("megengine/models", "coco512_16_16D_80TSL", pretrained=True)
+generator = modelhub.Generator(
+	dalle,
+	texts="a tower has a clock on it on a day with a blue sky."
+)
+
+# 生成
+generator()
+
+```
+
+预期生成图像，[参考](https://github.com/lucidrains/DALLE-pytorch/discussions/335)：
+
+### 遇到的问题及解决方案
+
+#### CLIP 在 float16 精度下有较大误差
+
+由于官方 CLIP 在 float16 下训练和推理，且 float16 速度快于 float32，因此本实现有相当的必要支持 float16 精度下的推理。经过测试发现 MegEngine 在 float16 下与 torch 有较大的 diff，不能保证前向输出误差在 1e-3 以内。经过在官方仓库提 issue 及与导师的沟通，了解了误差主要由 float16 下的舍入造成，通过调整 `Convlution2d`、`Linear` 与 `matmul` 的 `compute_mode`，将计算的中间变量类型设置为 `float32` 即解决了这个问题。方案如下所述。
+
+- 方案一
+
+  新增一个 `helper.py` 文件，用于控制上述所有 API 的 `compute_mode` 参数，代码如下：
+
+  ```python
+  from functools import partial
+  
+  import megengine as mge
+  import megengine.module as M
+  import megengine.functional as F
+  
+  def is_using_gpu():
+      return mge.is_cuda_available() and mge.get_default_device()[:3] in ['gpu', 'xpu']
+  
+  mode = 'float32' if is_using_gpu() else 'default'
+  
+  Conv2d = partial(M.Conv2d, compute_mode=mode)
+  Linear = partial(M.Linear, compute_mode=mode)
+  matmul = partial(F.matmul, compute_mode=mode)
+  linear = partial(F.linear, compute_mode=mode)
+  ```
+
+  该方案虽然可以自适应地控制 CLIP 中相关 API 的参数，但是不能随时调整，在 GPU 下仅支持 float16 推理，要想在 GPU 下进行 float32 推理，可以使用以下方式，但是过于丑陋：
+
+  ```python
+  import megengine as mge
+  from megengine import hub
+  set_default_device('cpu0')
+  clip = hub.load("megengine/models", "rn50", pretrained=True)
+  set_default_device('xpu0')
+  ```
+
+  另一种方式是使用 `amp` 中的 `autocast`，但是仍然不方便自由转换。因此考虑使用方案二解决该问题。
+
+- 方案二
+
+  注意到 megengine/core/_config.py 文件中有全局变量 `__compute_mode = "default"`，只需要在 CLIP 中对外开放接口进行修改即可，理想中使用 GPU 进行 float32 推理的方式如下：
+
+  ```python
+  clip.convert_weights("float32")
+  # or
+  clip = CLIP.from_pretrained('RN50', dtype='float32')
+  ```
+
+  只需要使用一个映射即可：
+
+  ```python
+  if dtype == 'float32':
+      _config.__compute_mode = 'default'
+  elif is_using_gpu() and dtype == 'float16':
+      _config.__compute_mode == 'float32'
+  else:
+      raise ValueError('`float16` only support for gpu device.')
+  ```
+
+  但是使用这样的方式会导致全局的 `compute_mode` 发生改变，当 CLIP 与其他模型一起使用时十分不友好。
+
+  因此考虑在 CLIP 的 forward 前和后注册两个钩子用于转换，由于 `register_forward_pre_hook` 和 `register_forward_hook` 只能为模型的 `forward` 方法添加钩子，因此考虑使用装饰器来包装 CLIP 中的各个前向传播方法，如下
+
+  ```python
+  def handle_compute_mode(func):
+      def forward(self, *args, **kwargs):
+          if self.dtype == 'float16':
+              _config.__compute_mode = 'float32'
+          out = func(self, *args, **kwargs)
+          if self.dtype == 'float16':
+              _config.__compute_mode = 'default'
+          return out
+      return forward
+  ```
+
+#### Module 中 buffer 的判定
+
+在 MegEngine 中，所有非 Parameter 的 Tensor 全部都被认为是 buffer，而在 PyTorch 中则只有通过 `register_buffer` 才能将 Tensor 设置为 buffer，否则只能设置为类中的一个属性，这就会导致在加载和保存模型权重时，MegEngine 会将**self.name = value**和**module.\_\_setattr\_\_(name, value)**式的 Tensor 全部保存下来，一是对保存模型权重大小有所影响，二是加载由 Torch 版本转换而来的权重时需要手动去除。
+
+解决方案为去除此类 tensor 的设置，或是在 forward 中生成。
+
+## 后续工作安排
+
+虽然没能按照原定排期规划完成所有任务，但是进度仍在掌握之中。后续工作安排希望能集中在模型拓展和代码优化上。
+
+- **代码优化**
+  1. 提升代码复用性，规范代码格式等，按照合入标准进行完善。
+
+- **模型拓展**
+
+  1. VQGAN 可以与 CLIP 相结合，以类似于 BigSleep 的方式实现文生图的功能。
+  2. 对 DALLE 中的 vae 进行拓展，替换为更多可用的模型，如 VQGAN、VQVAE 等。
+  3. 考虑是否能在现有的基础上按照最新的发展进行升级，如 DALLE->DALLE2。

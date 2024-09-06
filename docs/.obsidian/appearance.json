@@ -1,0 +1,10 @@
+{
+  "accentColor": "#336782",
+  "cssTheme": "Minimal",
+  "theme": "obsidian",
+  "textFontFamily": "Adobe 宋体 Std",
+  "interfaceFontFamily": "CaskaydiaCove Nerd Font,Anonymice Nerd Font",
+  "monospaceFontFamily": "CaskaydiaCove Nerd Font",
+  "baseFontSize": 22,
+  "nativeMenus": false
+}

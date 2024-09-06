@@ -1,0 +1,91 @@
+---
+title: 分块矩阵
+tags: [linear algebra]
+description: 分块矩阵。
+hide_table_of_contents: false
+---
+
+## 矩阵乘法
+
+相当于将分块矩阵的每一个块当作一个元素做矩阵乘法，但是前提是他们能够相乘，即相乘的各块满足矩阵乘积的形状。
+
+## 广义初等变换
+
+同样是左乘表示行变换，右乘表示列变换，$1$ 使用分块矩阵 $E$ 来代替，倍乘的数值除了对角阵也可以使用任意的可逆矩阵代替；形式与矩阵的初等变换一致，见 [此](./matrix.mdx#初等矩阵).
+
+## 转置
+
+整体转置，局部也要转置
+
+$$
+\begin{pmatrix}A&B\\C&D\end{pmatrix}=\begin{pmatrix}A^T&C^T\\B^T&D^T\end{pmatrix}
+$$
+
+## 高次幂
+
+:::caution
+
+副对角线上没有高次幂公式。
+
+:::
+
+$$
+\begin{pmatrix}A&\\&B\\&&C\end{pmatrix}^n=\begin{pmatrix}A^n&\\&B^n\\&&C^n\end{pmatrix}
+$$
+
+## 行列式
+
+$$
+\begin{vmatrix}A&O\\O&B\end{vmatrix}=\begin{vmatrix}A&C\\O&B\end{vmatrix}=\begin{vmatrix}A&O\\D&B\end{vmatrix}=|A||B|
+$$
+
+$$
+\begin{vmatrix}A&\\&B\\&&C\end{vmatrix}=|A||B||C|
+$$
+
+$$
+\begin{vmatrix}O & A_{{m\times m}} \\B_{n\times n} & O\end{vmatrix}=\begin{vmatrix}O & A \\B & C\end{vmatrix}=\begin{vmatrix}
+D & A \\B & O\end{vmatrix}=(-1)^{mn}|A| |B|
+$$
+
+$$
+\begin{vmatrix}&&A\\&B\\C\end{vmatrix}=(-1)^{n_{1}n_{2}n_{3}}|A||B||C|
+$$
+
+## 逆
+
+$$
+\begin{pmatrix}A&O\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}A^{-1}&O\\O&B^{-1}\end{pmatrix}
+$$
+
+当有一块不为零矩阵时，有口诀 **左乘同行右乘同列，再添负号**
+
+$$
+\begin{aligned}
+\begin{pmatrix}A&O\\C&B\end{pmatrix}^{-1}=\begin{pmatrix}A^{-1}&O\\-B^{-1}CA^{-1}&B^{-1}\end{pmatrix}\\
+\begin{pmatrix}A&C\\O&B\end{pmatrix}^{-1}=\begin{pmatrix}A^{-1}&-A^{-1}CB^{-1}\\O&B^{-1}\end{pmatrix}
+\end{aligned}
+$$
+
+当分块阵在副对角线时，对角线元素都要对调，则有口诀 **主不变，副对调**，记得左乘同行右乘同列之后再对调
+
+$$
+\begin{pmatrix}O&A\\B&O\end{pmatrix}^{-1}=\begin{pmatrix}O&B^{-1}\\A^{-1}&O\end{pmatrix}
+$$
+
+$$
+\begin{aligned}
+\begin{pmatrix}C&A\\B&O\end{pmatrix}^{-1}=\begin{pmatrix}O&B^{-1}\\A^{-1}&-A^{-1}CB^{-1}\end{pmatrix}\\
+\begin{pmatrix}O&A\\B&C\end{pmatrix}^{-1}=\begin{pmatrix}-B^{-1}CA^{-1}&B^{-1}\\A^{-1}&O\end{pmatrix}
+\end{aligned}
+$$
+
+## 伴随
+
+$$
+\begin{pmatrix}A&B\\C&D\end{pmatrix}^{*}=\begin{vmatrix}A&B\\C&D\end{vmatrix}\begin{pmatrix}A&B\\C&D\end{pmatrix}^{-1}
+$$
+
+## 秩
+
+见 [此](./order.mdx#分块矩阵的秩)

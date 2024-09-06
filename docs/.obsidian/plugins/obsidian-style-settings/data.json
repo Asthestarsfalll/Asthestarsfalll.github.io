@@ -1,0 +1,23 @@
+{
+  "floating-toc-styles@@floating-toc-remove-heading-indicator": false,
+  "floating-toc-styles@@toggle-floating-toc-header-color": true,
+  "floating-toc-styles@@enable-bar-icon": false,
+  "floating-toc-styles@@enable-bar-heading-text": false,
+  "floating-toc-styles@@focus-heading": 0.8,
+  "floating-toc-styles@@floating-toc-position": 0,
+  "minimal-style@@h1-style": "italic",
+  "minimal-style@@h1-l": true,
+  "minimal-style@@h2-variant": "normal",
+  "minimal-style@@h2-style": "italic",
+  "minimal-style@@h2-l": true,
+  "minimal-style@@h3-l": true,
+  "minimal-style@@h3-style": "italic",
+  "minimal-style@@sidebar-lines-off": false,
+  "minimal-style@@sidebar-tabs-style": "sidebar-tabs-underline",
+  "minimal-style@@ribbon-style": "ribbon-hidden",
+  "minimal-mobile@@mobile-toolbar-off": false,
+  "minimal-advanced@@styled-scrollbars": true,
+  "minimal-advanced@@cursor": "crosshair",
+  "pane-relief@@pane-relief-pane-numbering": false,
+  "pane-relief@@pane-relief-disable-counts": false
+}

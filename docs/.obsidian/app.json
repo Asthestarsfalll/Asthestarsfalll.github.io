@@ -1,0 +1,11 @@
+{
+  "promptDelete": false,
+  "spellcheckLanguages": null,
+  "vimMode": false,
+  "focusNewTab": true,
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "showLineNumber": true,
+  "readableLineLength": true,
+  "alwaysUpdateLinks": true
+}
