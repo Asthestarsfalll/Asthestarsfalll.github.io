@@ -11,24 +11,24 @@
             "id": "c90c0719885bb8ad",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 1,
+              "pos": 0,
               "stack": [
-                {
-                  "title": "未命名",
-                  "icon": "lucide-layout-dashboard",
-                  "state": "{\"type\":\"canvas\",\"state\":{\"file\":\"未命名.canvas\",\"viewState\":{\"x\":0,\"y\":0,\"zoom\":0}}}",
-                  "eState": "{}"
-                },
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "SAM",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerVision/Segmentation/SAM.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":10,\"ch\":0},\"to\":{\"line\":10,\"ch\":0}}}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/ComputerVision/Segmentation/SAM.md",
+                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
                 "mode": "source",
                 "source": false
               }
@@ -111,8 +111,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2cb931200911f1fe",
@@ -137,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "deeplearning/ComputerVision/Segmentation/SAM.md",
+                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +162,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "deeplearning/ComputerVision/Segmentation/SAM.md",
+                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -204,7 +203,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "deeplearning/ComputerVision/Segmentation/SAM.md"
+                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md"
               }
             }
           }
@@ -234,9 +233,9 @@
   },
   "active": "c90c0719885bb8ad",
   "lastOpenFiles": [
+    "deeplearning/ComputerVision/Segmentation/SAM.md",
     "deeplearning/ComputerVision/Segmentation/images/240915_13h22m37s_screenshot.png",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h42m11s_screenshot.png",
-    "deeplearning/ComputerVision/Segmentation/SAM.md",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h07m19s_screenshot.png",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h03m30s_screenshot.png",
     "未命名.canvas",
@@ -272,7 +271,6 @@
     "deeplearning/Multimodal/EyesWideShut.md",
     "deeplearning/Multimodal/images/240731_16h16m45s_screenshot.png",
     "deeplearning/Multimodal/images/240731_15h33m14s_screenshot.png",
-    "deeplearning/Multimodal/images/240412_17h10m56s_screenshot.png",
     "deeplearning/Multimodal/clip.md",
     "未命名 1.canvas",
     "notes/linux/common_commands.md",
