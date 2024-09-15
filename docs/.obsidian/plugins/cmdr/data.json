@@ -3,40 +3,8 @@
   "showAddCommand": true,
   "debug": false,
   "editorMenu": [],
-  "fileMenu": [
-    {
-      "id": "app:delete-file",
-      "icon": "lucide-trash-2",
-      "name": "删除当前文件",
-      "mode": "any"
-    }
-  ],
-  "leftRibbon": [
-    {
-      "id": "workspace:toggle-pin",
-      "icon": "lucide-pin",
-      "name": "解锁/锁定",
-      "mode": "any"
-    },
-    {
-      "id": "theme:use-dark",
-      "icon": "cloud-sun",
-      "name": "使用深色模式",
-      "mode": "any"
-    },
-    {
-      "id": "theme:use-light",
-      "icon": "sun",
-      "name": "使用浅色模式",
-      "mode": "any"
-    },
-    {
-      "id": "workspace:export-pdf",
-      "icon": "anchor",
-      "name": "导出为 PDF",
-      "mode": "any"
-    }
-  ],
+  "fileMenu": [],
+  "leftRibbon": [],
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
@@ -47,7 +15,7 @@
     "statusbar": [],
     "leftRibbon": []
   },
-  "spacing": "12",
+  "spacing": 8,
   "advancedToolbar": {
     "rowHeight": 48,
     "rowCount": 1,

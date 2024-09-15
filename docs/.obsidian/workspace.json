@@ -4,262 +4,72 @@
     "type": "split",
     "children": [
       {
-        "id": "41bfda646724fade",
+        "id": "07c24e0329c57935",
         "type": "tabs",
         "children": [
           {
-            "id": "7e203e9ed045a255",
+            "id": "ebd37b4a750a5952",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 1,
+              "pos": 0,
               "stack": [
-                {
-                  "title": "multi_rand_var_and_dist",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/概率和统计/multi_rand_var_and_dist.mdx\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":135,\"ch\":55},\"to\":{\"line\":135,\"ch\":55}},\"scroll\":130.52738654147106}"
-                },
                 {
                   "state": "{}",
                   "eState": "{}"
                 },
                 {
-                  "title": "GPT4RoI",
+                  "title": "拉黑",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/GPT4RoI.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":134,\"ch\":151},\"to\":{\"line\":134,\"ch\":151}},\"scroll\":134.3432765151515}"
-                },
-                {
-                  "title": "llava",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/llava.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "storage_system",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/计算机组成原理/storage_system.mdx\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":195,\"ch\":22},\"to\":{\"line\":195,\"ch\":22}},\"scroll\":189.73200757575756}"
-                },
-                {
-                  "title": "VOLO",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerVision/BaseOp/VOLO.mdx\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":38,\"ch\":97},\"to\":{\"line\":38,\"ch\":97}},\"scroll\":25.586254612546124}"
-                },
-                {
-                  "title": "llava",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/llava.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "Shikra-Unleashing-Multimodal-LLMs-Referential-Dialogue Magic",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/Shikra-Unleashing-Multimodal-LLMs-Referential-Dialogue Magic.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":14.304014433919711}"
-                },
-                {
-                  "title": "GPT4RoI",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/GPT4RoI.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":143,\"ch\":259},\"to\":{\"line\":143,\"ch\":259}},\"scroll\":16.587594696969695}"
-                },
-                {
-                  "title": "3-共享内存缓存块",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/3-共享内存缓存块.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":22,\"ch\":65},\"to\":{\"line\":22,\"ch\":65}},\"scroll\":22.521543560606062}"
-                },
-                {
-                  "title": "2-global-memory-coalescing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":93,\"ch\":43},\"to\":{\"line\":93,\"ch\":43}},\"scroll\":93.04166666666667}"
-                },
-                {
-                  "title": "3-共享内存缓存块",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/3-共享内存缓存块.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":6.624408143939394}"
-                },
-                {
-                  "title": "2-global-memory-coalescing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":92,\"ch\":0},\"to\":{\"line\":92,\"ch\":0}},\"scroll\":92.04166666666667}"
-                },
-                {
-                  "title": "3-共享内存缓存块",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/3-共享内存缓存块.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":41,\"ch\":29},\"to\":{\"line\":41,\"ch\":38}},\"scroll\":40.493506493506494}"
-                },
-                {
-                  "title": "2-global-memory-coalescing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":71,\"ch\":0},\"to\":{\"line\":71,\"ch\":0}},\"scroll\":67.70833333333333}"
-                },
-                {
-                  "title": "1-naive-gemm",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/1-naive-gemm.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":51,\"ch\":3},\"to\":{\"line\":51,\"ch\":3}},\"scroll\":51.04876893939394}"
-                },
-                {
-                  "title": "2-global-memory-coalescing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":72,\"ch\":0},\"to\":{\"line\":72,\"ch\":0}},\"scroll\":72.02414772727273}"
-                },
-                {
-                  "title": "1-naive-gemm",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/1-naive-gemm.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":51,\"ch\":7},\"to\":{\"line\":51,\"ch\":7}},\"scroll\":67.69913419913419}"
-                },
-                {
-                  "title": "2-global-memory-coalescing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":47,\"ch\":60},\"to\":{\"line\":47,\"ch\":60}},\"scroll\":62.175662878787875}"
-                },
-                {
-                  "title": "1-naive-gemm",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/1-naive-gemm.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":35,\"ch\":34},\"to\":{\"line\":35,\"ch\":34}},\"scroll\":56.12770562770563}"
-                },
-                {
-                  "title": "2-global-memory-coalescing",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":5.151515151515151}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/index.mdx\",\"mode\":\"source\",\"source\":true}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/index.mdx\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":11},\"to\":{\"line\":5,\"ch\":11}},\"scroll\":5.0606060606060606}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/拉黑.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"拉黑\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":39,\"ch\":3},\"to\":{\"line\":39,\"ch\":3}},\"scroll\":36.77272727272727}"
                 },
                 {
                   "title": "对喜欢的人有什么表现",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
                 },
                 {
-                  "title": "子弹是故意打偏的",
+                  "title": "黑暗面",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "对喜欢的人有什么表现",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/黑暗面.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"黑暗面\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.725}"
                 },
                 {
                   "title": "index",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":7},\"to\":{\"line\":5,\"ch\":7}},\"scroll\":0}"
                 },
                 {
-                  "title": "对喜欢的人有什么表现",
+                  "title": "about",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/Onism/about.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"about\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":178,\"ch\":3},\"to\":{\"line\":178,\"ch\":3}},\"scroll\":178.0994318181818}"
                 },
                 {
-                  "title": "子弹是故意打偏的",
+                  "title": "GRPO",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":8.136363636363637}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":0},\"to\":{\"line\":21,\"ch\":0}},\"scroll\":15.58001893939394}"
                 },
                 {
-                  "title": "index",
+                  "title": "Proximal_Policy_Optimization",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":5},\"to\":{\"line\":0,\"ch\":5}},\"scroll\":0.7166666666666667}"
-                },
-                {
-                  "title": "对喜欢的人有什么表现",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "子弹是故意打偏的",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":10.909090909090908}"
-                },
-                {
-                  "title": "对喜欢的人有什么表现",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":14.93939393939394}"
-                },
-                {
-                  "title": "子弹是故意打偏的",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":7},\"to\":{\"line\":0,\"ch\":7}},\"scroll\":34.39393939393939}"
-                },
-                {
-                  "title": "Things-that-we-lose-finally",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/博客收录/Things-that-we-lose-finally.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "EyesWideShut",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/EyesWideShut.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
-                },
-                {
-                  "title": "CheXagent",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/CheXagent.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":61,\"ch\":9},\"to\":{\"line\":61,\"ch\":19}},\"scroll\":73.90861742424242}"
-                },
-                {
-                  "title": "EyesWideShut",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/EyesWideShut.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":50},\"to\":{\"line\":21,\"ch\":50}},\"scroll\":19.866714015151516}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":160,\"ch\":0},\"to\":{\"line\":160,\"ch\":0}},\"scroll\":144.15648674242425}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/计算机组成原理/instruction_system.mdx",
+                "file": "meaningless/其他的我/对喜欢的人有什么表现.md",
                 "mode": "source",
-                "source": true
-              }
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "对喜欢的人有什么表现"
             }
           }
         ]
@@ -290,8 +100,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -309,13 +122,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Compute",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -332,7 +147,9 @@
             },
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -364,7 +181,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/计算机组成原理/instruction_system.mdx",
+                "file": "meaningless/BPD/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -372,7 +189,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "index 的反向链接列表"
             }
           },
           {
@@ -390,10 +209,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/计算机组成原理/instruction_system.mdx",
+                "file": "meaningless/BPD/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "index 的出链列表"
             }
           },
           {
@@ -413,7 +234,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -431,8 +254,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "notes/计算机组成原理/instruction_system.mdx"
-              }
+                "file": "meaningless/BPD/index.md"
+              },
+              "icon": "lucide-list",
+              "title": "index 的大纲"
             }
           }
         ]
@@ -451,64 +276,60 @@
       "templates:插入模板": true,
       "command-palette:打开命令面板": true,
       "markdown-importer:打开 Markdown 格式转换器": false,
-      "cmdr:解锁/锁定": false,
-      "cmdr:使用深色模式": false,
-      "cmdr:使用浅色模式": false,
-      "cmdr:导出为 PDF": false,
       "darlal-switcher-plus:Open in Headings Mode": false,
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "7e203e9ed045a255",
+  "active": "ebd37b4a750a5952",
   "lastOpenFiles": [
-    "notes/数学/概率和统计/multi_rand_var_and_dist.a",
-    "notes/数学/概率和统计/multi_rand_var_and_dist.md",
-    "notes/数学/概率和统计/multi_rand_var_and_dist.mdx",
-    "notes/计算机组成原理/instruction_system.mdx",
-    "deeplearning/Multimodal/GPT4RoI.md",
-    "deeplearning/Multimodal/llava.md",
-    "notes/计算机组成原理/storage_system.mdx",
-    "deeplearning/ComputerVision/BaseOp/VOLO.mdx",
-    "deeplearning/Multimodal/Shikra-Unleashing-Multimodal-LLMs-Referential-Dialogue Magic.md",
-    "notes/high_performance/GEMM/3-共享内存缓存块.md",
-    "notes/high_performance/GEMM/2-global-memory-coalescing.md",
-    "notes/high_performance/GEMM/1-naive-gemm.md",
-    "notes/high_performance/GEMM/images/naive_kernel_mem_access.png",
-    "notes/high_performance/GEMM/images/naive_kernel_mem_access.png.crdownload",
-    "未命名.canvas",
-    "meaningless/INTP/index.md",
-    "meaningless/index.mdx",
-    "meaningless/INTP/对喜欢的人有什么表现.md",
-    "meaningless/INTP/子弹是故意打偏的.md",
-    "meaningless/ENFJ",
+    "meaningless/其他的我/拉黑.md",
+    "meaningless/其他的我/脆弱.md",
+    "meaningless/其他的我/对喜欢的人有什么表现.md",
+    "meaningless/其他的我/黑暗面.md",
+    "Pasted image 20250415145207.png",
+    "Pasted image 20250415145201.png",
+    "meaningless/其他的我/index.md",
+    "meaningless/Onism/about.md",
+    "meaningless/古诗词/满江红.mdx",
+    "deeplearning/ReinforcementLearning/GRPO.md",
+    "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md",
+    "deeplearning/ReinforcementLearning/未命名",
+    "Dictionary/greek_alphabet.mdx",
+    "deeplearning/ReinforcementLearning/index.md",
+    "deeplearning/index.mdx",
+    "deeplearning/Quantization/quantization.mdx",
+    "deeplearning/ReinforcementLearning",
+    "meaningless/其他的我/最真实的悲伤.md",
     "meaningless/博客收录/Things-that-we-lose-finally.md",
-    "meaningless/INTP",
-    "deeplearning/Multimodal/EyesWideShut.md",
-    "deeplearning/Multimodal/images/240731_16h16m45s_screenshot.png",
-    "deeplearning/Multimodal/images/240731_15h33m14s_screenshot.png",
-    "deeplearning/Multimodal/CheXagent.md",
-    "deeplearning/Multimodal/images/240412_17h10m56s_screenshot.png",
-    "deeplearning/Multimodal/clip.md",
-    "deeplearning/Multimodal/DALL-E.mdx",
-    "deeplearning/Multimodal/images/240731_15h15m31s_screenshot.png",
-    "deeplearning/Multimodal/images/240724_11h14m47s_screenshot.png",
+    "meaningless/博客收录/奇怪的人类.md",
+    "未命名.canvas",
+    "meaningless/Onism/summerfadesaway.mdx",
+    "meaningless/Onism/travel_guide_of_chongqing.mdx",
+    "meaningless/index.mdx",
+    "meaningless/博客收录/关于自残与自杀.md",
+    "meaningless/古诗词/雨霖铃·寒蝉凄切.md",
+    "meaningless/古诗词/忆秦娥·箫声咽.mdx",
+    "meaningless/其他的我/子弹是故意打偏的.md",
+    "meaningless/其他的我/虚无.md",
+    "meaningless/其他的我/心理创伤.md",
+    "meaningless/BPD/亲密关系.md",
+    "meaningless/语录/love.md",
+    "meaningless/BPD/index.md",
+    "meaningless/BPD/特征.md",
+    "meaningless/BPD/高功能BPD.md",
+    "meaningless/语录/index.md",
+    "meaningless/其他的我/自我厌恶.md",
+    "notes/心理学/index.md",
+    "notes/心理学/The_Courage_to_be_Disliked.md",
+    "deeplearning/ComputerVision/Segmentation/images/240915_13h22m37s_screenshot.png",
+    "deeplearning/ComputerVision/Segmentation/images/240915_12h42m11s_screenshot.png",
+    "deeplearning/ComputerVision/Segmentation/images/240915_12h07m19s_screenshot.png",
+    "deeplearning/ComputerVision/Segmentation/images/240915_12h03m30s_screenshot.png",
+    "deeplearning/ComputerVision/Segmentation/images/240914_18h29m27s_screenshot.png",
+    "deeplearning/ComputerVision/Segmentation/images/240914_18h41m29s_screenshot.png",
+    "deeplearning/ComputerVision/Segmentation/images/240914_18h35m24s_screenshot.png",
+    "notes/high_performance/GEMM/images/naive_kernel_mem_access.png",
     "未命名 1.canvas",
-    "notes/linux/common_commands.md",
-    "notes/c++/项目阅读/skynet.md",
-    "notes/c++/cmake.md",
-    "notes/linux",
-    "notes/high_performance/GEMM/5-二维Thread Tile并行优化.md",
-    "notes/high_performance/GEMM/4-一维Thread Tile并行优化.md",
-    "notes/high_performance/CUDA/index.md",
-    "notes/high_performance/CUDA/11-CudaAlloctor.md",
-    "notes/high_performance/CUDA/10-CUDA线程编程.md",
-    "notes/high_performance/CUDA/8-避免分支分化.md",
-    "notes/high_performance/CUDA/9-CUDA内存管理.md",
-    "notes/high_performance/CUDA/7-理解线程束执行的本质1.md",
-    "deeplearning/Multimodal/images/240623_21h02m24s_screenshot.png",
-    "deeplearning/Multimodal/images/240623_15h45m09s_screenshot.png",
-    "deeplearning/Multimodal/images/240623_14h53m25s_screenshot.png",
-    "deeplearning/Multimodal/images/240622_18h08m15s_screenshot.png",
     "G.canvas"
   ]
 }
