@@ -18,6 +18,18 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "高功能BPD",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/高功能BPD.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"高功能BPD\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":4.015151515151516}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
+                },
+                {
                   "title": "特征",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/特征.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"特征\"}",
@@ -442,12 +454,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "meaningless/BPD/index.md",
+                "file": "meaningless/BPD/特征.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "特征"
             }
           }
         ]
@@ -663,8 +675,9 @@
   },
   "active": "c90c0719885bb8ad",
   "lastOpenFiles": [
-    "meaningless/BPD/特征.md",
+    "meaningless/BPD/高功能BPD.md",
     "meaningless/BPD/index.md",
+    "meaningless/BPD/特征.md",
     "meaningless/BPD/亲密关系.md",
     "meaningless/INTP/index.md",
     "meaningless/INTP/脆弱.md",
@@ -706,7 +719,6 @@
     "notes/high_performance/GEMM/3-共享内存缓存块.md",
     "notes/数学/概率和统计/multi_rand_var_and_dist.md",
     "deeplearning/Multimodal/llava.md",
-    "notes/high_performance/GEMM/1-naive-gemm.md",
     "notes/high_performance/GEMM/images/naive_kernel_mem_access.png",
     "deeplearning/Multimodal/images/240731_16h16m45s_screenshot.png",
     "deeplearning/Multimodal/images/240731_15h33m14s_screenshot.png",
