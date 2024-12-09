@@ -18,6 +18,420 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "特征",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/特征.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"特征\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":19},\"to\":{\"line\":6,\"ch\":19}},\"scroll\":0}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":19,\"ch\":0},\"to\":{\"line\":19,\"ch\":0}},\"scroll\":21.00378787878788}"
+                },
+                {
+                  "title": "特征",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/特征.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"特征\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":94,\"ch\":0},\"to\":{\"line\":94,\"ch\":0}},\"scroll\":65.75279931093884}"
+                },
+                {
+                  "title": "亲密关系",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/亲密关系.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"亲密关系\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":1,\"ch\":7},\"to\":{\"line\":1,\"ch\":7}},\"scroll\":1.1808118081180812}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "特征",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/特征.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"特征\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "亲密关系",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/亲密关系.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"亲密关系\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "特征",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/特征.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"特征\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":17.117424242424242}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "特征",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/特征.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"特征\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":12},\"to\":{\"line\":0,\"ch\":12}},\"scroll\":0}"
+                },
+                {
+                  "title": "亲密关系",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/亲密关系.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"亲密关系\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":60,\"ch\":15},\"to\":{\"line\":60,\"ch\":15}},\"scroll\":9.545454545454545}"
+                },
+                {
+                  "title": "脆弱",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/脆弱.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"脆弱\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":66},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "love",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/love.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"love\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "others",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/others.mdx\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"others\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "亲密关系",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/亲密关系.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"亲密关系\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":34},\"to\":{\"line\":3,\"ch\":34}},\"scroll\":0}"
+                },
+                {
+                  "title": "心理创伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/心理创伤.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"心理创伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "自我厌恶",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/自我厌恶.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"自我厌恶\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":64},\"to\":{\"line\":2,\"ch\":64}},\"scroll\":2.0303030303030303}"
+                },
+                {
+                  "title": "心理创伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/心理创伤.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"心理创伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":64},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "脆弱",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/脆弱.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"脆弱\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "自我厌恶",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/自我厌恶.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"自我厌恶\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "心理创伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/心理创伤.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"心理创伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":5},\"to\":{\"line\":0,\"ch\":5}},\"scroll\":0.7064220183486238}"
+                },
+                {
+                  "title": "子弹是故意打偏的",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"子弹是故意打偏的\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "心理创伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/心理创伤.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"心理创伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "脆弱",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/脆弱.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"脆弱\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "对喜欢的人有什么表现",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":64},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "心理创伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/心理创伤.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"心理创伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.7064220183486238}"
+                },
+                {
+                  "title": "others",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/others.mdx\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"others\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":42,\"ch\":6},\"to\":{\"line\":42,\"ch\":6}},\"scroll\":18.797348484848484}"
+                },
+                {
+                  "title": "love",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/love.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"love\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "罗翔语录",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/罗翔语录.mdx\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"罗翔语录\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "脆弱",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/脆弱.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"脆弱\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":66},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "others",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/others.mdx\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"others\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":39,\"ch\":34},\"to\":{\"line\":39,\"ch\":34}},\"scroll\":24.041666666666668}"
+                },
+                {
+                  "title": "脆弱",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/脆弱.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"脆弱\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":45},\"to\":{\"line\":8,\"ch\":45}}}"
+                },
+                {
+                  "title": "对喜欢的人有什么表现",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "子弹是故意打偏的",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"子弹是故意打偏的\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "脆弱",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/脆弱.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"wuti\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "子弹是故意打偏的",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"子弹是故意打偏的\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":64},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "脆弱",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/脆弱.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"wuti\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":0.7064220183486238}"
+                },
+                {
+                  "title": "子弹是故意打偏的",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"子弹是故意打偏的\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "对喜欢的人有什么表现",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":104.25875946969697}"
+                },
+                {
+                  "title": "子弹是故意打偏的",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"子弹是故意打偏的\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "子弹是故意打偏的",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"子弹是故意打偏的\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "对喜欢的人有什么表现",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":4},\"to\":{\"line\":2,\"ch\":4}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/心理学/index.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":3},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "love",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/love.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"love\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":81,\"ch\":24},\"to\":{\"line\":81,\"ch\":24}},\"scroll\":65.05492424242425}"
+                },
+                {
+                  "title": "罗翔语录",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/罗翔语录.mdx\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"罗翔语录\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.3003412969283277}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
+                },
+                {
+                  "title": "love",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/love.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"love\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "罗翔语录",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/罗翔语录.mdx\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"罗翔语录\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
+                },
+                {
+                  "title": "love",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/love.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"love\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "罗翔语录",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/罗翔语录.mdx\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"罗翔语录\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}}}"
+                },
+                {
+                  "title": "The_Courage_to_be_Disliked",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/心理学/The_Courage_to_be_Disliked.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"The_Courage_to_be_Disliked\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/心理学/index.md\",\"mode\":\"source\",\"source\":true}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "The_Courage_to_be_Disliked",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/心理学/The_Courage_to_be_Disliked.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/心理学/index.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":16,\"ch\":0},\"to\":{\"line\":16,\"ch\":0}},\"scroll\":17.004734848484848}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/数学/index.mdx\",\"mode\":\"source\",\"source\":true}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/心理学/index.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "2-global-memory-coalescing",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"notes/high_performance/GEMM/2-global-memory-coalescing.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "clip",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/clip.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "DALL-E",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Multimodal/DALL-E.mdx\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":125,\"ch\":111},\"to\":{\"line\":125,\"ch\":111}},\"scroll\":125.51633522727273}"
+                },
+                {
+                  "title": "RSPrompter",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerVision/RemoteSense/RSPrompter.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":27.005208333333332}"
+                },
+                {
                   "title": "SAM",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ComputerVision/Segmentation/SAM.md\",\"mode\":\"source\",\"source\":false}}",
@@ -28,10 +442,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
+                "file": "meaningless/BPD/index.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
           }
         ]
@@ -63,7 +479,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -87,7 +505,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -104,7 +524,9 @@
             },
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -136,7 +558,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
+                "file": "meaningless/BPD/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +566,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "index 的反向链接列表"
             }
           },
           {
@@ -162,10 +586,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
+                "file": "meaningless/BPD/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "index 的出链列表"
             }
           },
           {
@@ -185,7 +611,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -203,8 +631,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md"
-              }
+                "file": "meaningless/BPD/index.md"
+              },
+              "icon": "lucide-list",
+              "title": "index 的大纲"
             }
           }
         ]
@@ -233,6 +663,29 @@
   },
   "active": "c90c0719885bb8ad",
   "lastOpenFiles": [
+    "meaningless/BPD/特征.md",
+    "meaningless/BPD/index.md",
+    "meaningless/BPD/亲密关系.md",
+    "meaningless/INTP/index.md",
+    "meaningless/INTP/脆弱.md",
+    "meaningless/语录/love.md",
+    "meaningless/语录/index.md",
+    "meaningless/语录/others.mdx",
+    "meaningless/INTP/心理创伤.md",
+    "meaningless/INTP/自我厌恶.md",
+    "meaningless/INTP/子弹是故意打偏的.md",
+    "meaningless/INTP/对喜欢的人有什么表现.md",
+    "meaningless/语录/罗翔语录.mdx",
+    "notes/心理学/index.md",
+    "meaningless/BPD",
+    "notes/心理学/The_Courage_to_be_Disliked.md",
+    "notes/数学/index.mdx",
+    "notes/high_performance/GEMM/2-global-memory-coalescing.md",
+    "notes/心理学",
+    "deeplearning/Multimodal/clip.md",
+    "deeplearning/Multimodal/DALL-E.mdx",
+    "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
+    "deeplearning/Multimodal/GPT4RoI.md",
     "deeplearning/ComputerVision/Segmentation/SAM.md",
     "deeplearning/ComputerVision/Segmentation/images/240915_13h22m37s_screenshot.png",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h42m11s_screenshot.png",
@@ -245,41 +698,19 @@
     "deeplearning/ComputerVision/Segmentation/images",
     "deeplearning/Multimodal/VisionLLM.md",
     "deeplearning/Multimodal/Shikra-Unleashing-Multimodal-LLMs-Referential-Dialogue Magic.md",
-    "deeplearning/Multimodal/DALL-E.mdx",
     "deeplearning/ComputerVision/Segmentation/RegSeg.mdx",
-    "deeplearning/ComputerVision/RemoteSense/RSPrompter.md",
     "deeplearning/Quantization/quantization.mdx",
     "deeplearning/Multimodal/CheXagent.md",
     "notes/high_performance/GEMM/4-一维Thread Tile并行优化.md",
     "deeplearning/ComputerVision/RemoteSense",
     "notes/high_performance/GEMM/3-共享内存缓存块.md",
-    "notes/计算机组成原理/instruction_system.mdx",
-    "notes/数学/概率和统计/multi_rand_var_and_dist.a",
     "notes/数学/概率和统计/multi_rand_var_and_dist.md",
-    "notes/数学/概率和统计/multi_rand_var_and_dist.mdx",
-    "deeplearning/Multimodal/GPT4RoI.md",
     "deeplearning/Multimodal/llava.md",
-    "notes/计算机组成原理/storage_system.mdx",
-    "deeplearning/ComputerVision/BaseOp/VOLO.mdx",
-    "notes/high_performance/GEMM/2-global-memory-coalescing.md",
     "notes/high_performance/GEMM/1-naive-gemm.md",
     "notes/high_performance/GEMM/images/naive_kernel_mem_access.png",
-    "meaningless/INTP/index.md",
-    "meaningless/INTP/对喜欢的人有什么表现.md",
-    "meaningless/INTP/子弹是故意打偏的.md",
-    "meaningless/博客收录/Things-that-we-lose-finally.md",
-    "deeplearning/Multimodal/EyesWideShut.md",
     "deeplearning/Multimodal/images/240731_16h16m45s_screenshot.png",
     "deeplearning/Multimodal/images/240731_15h33m14s_screenshot.png",
-    "deeplearning/Multimodal/clip.md",
     "未命名 1.canvas",
-    "notes/linux/common_commands.md",
-    "notes/c++/项目阅读/skynet.md",
-    "notes/c++/cmake.md",
-    "notes/high_performance/GEMM/5-二维Thread Tile并行优化.md",
-    "notes/high_performance/CUDA/index.md",
-    "notes/high_performance/CUDA/11-CudaAlloctor.md",
-    "notes/high_performance/CUDA/10-CUDA线程编程.md",
     "G.canvas"
   ]
 }
