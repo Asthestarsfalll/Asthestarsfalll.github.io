@@ -18,6 +18,18 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":72,\"ch\":30},\"to\":{\"line\":72,\"ch\":30}},\"scroll\":71.17140151515152}"
+                },
+                {
+                  "title": "特征",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/特征.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"特征\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "高功能BPD",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/高功能BPD.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"高功能BPD\"}",
@@ -454,12 +466,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "meaningless/BPD/特征.md",
+                "file": "meaningless/语录/love.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "特征"
+              "title": "love"
             }
           }
         ]
@@ -675,9 +687,9 @@
   },
   "active": "c90c0719885bb8ad",
   "lastOpenFiles": [
-    "meaningless/BPD/高功能BPD.md",
     "meaningless/BPD/index.md",
     "meaningless/BPD/特征.md",
+    "meaningless/BPD/高功能BPD.md",
     "meaningless/BPD/亲密关系.md",
     "meaningless/INTP/index.md",
     "meaningless/INTP/脆弱.md",
