@@ -18,6 +18,30 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "心理创伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/心理创伤.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"心理创伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":2,\"ch\":64},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "虚无",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/虚无.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"虚无\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "亲密关系",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/亲密关系.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"亲密关系\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "love",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/语录/love.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"love\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
                   "title": "index",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/BPD/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
@@ -466,12 +490,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "meaningless/语录/love.md",
+                "file": "meaningless/INTP/虚无.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "love"
+              "title": "虚无"
             }
           }
         ]
@@ -687,16 +711,17 @@
   },
   "active": "c90c0719885bb8ad",
   "lastOpenFiles": [
+    "meaningless/INTP/心理创伤.md",
+    "meaningless/INTP/虚无.md",
+    "meaningless/BPD/亲密关系.md",
+    "meaningless/语录/love.md",
     "meaningless/BPD/index.md",
     "meaningless/BPD/特征.md",
     "meaningless/BPD/高功能BPD.md",
-    "meaningless/BPD/亲密关系.md",
     "meaningless/INTP/index.md",
     "meaningless/INTP/脆弱.md",
-    "meaningless/语录/love.md",
     "meaningless/语录/index.md",
     "meaningless/语录/others.mdx",
-    "meaningless/INTP/心理创伤.md",
     "meaningless/INTP/自我厌恶.md",
     "meaningless/INTP/子弹是故意打偏的.md",
     "meaningless/INTP/对喜欢的人有什么表现.md",
@@ -730,7 +755,6 @@
     "deeplearning/ComputerVision/RemoteSense",
     "notes/high_performance/GEMM/3-共享内存缓存块.md",
     "notes/数学/概率和统计/multi_rand_var_and_dist.md",
-    "deeplearning/Multimodal/llava.md",
     "notes/high_performance/GEMM/images/naive_kernel_mem_access.png",
     "deeplearning/Multimodal/images/240731_16h16m45s_screenshot.png",
     "deeplearning/Multimodal/images/240731_15h33m14s_screenshot.png",
