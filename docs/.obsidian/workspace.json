@@ -18,6 +18,24 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "子弹是故意打偏的",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/子弹是故意打偏的.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"子弹是故意打偏的\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "最真实的悲伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/最真实的悲伤.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"最真实的悲伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":4,\"ch\":0},\"to\":{\"line\":4,\"ch\":0}}}"
+                },
+                {
                   "title": "最真实的悲伤",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/最真实的悲伤.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"最真实的悲伤\"}",
@@ -502,12 +520,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "meaningless/INTP/index.md",
+                "file": "meaningless/INTP/最真实的悲伤.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "最真实的悲伤"
             }
           }
         ]
@@ -723,7 +741,9 @@
   },
   "active": "c90c0719885bb8ad",
   "lastOpenFiles": [
+    "meaningless/INTP/子弹是故意打偏的.md",
     "meaningless/INTP/最真实的悲伤.md",
+    "meaningless/INTP/index.md",
     "meaningless/INTP/虚无.md",
     "meaningless/INTP/心理创伤.md",
     "meaningless/BPD/亲密关系.md",
@@ -731,12 +751,10 @@
     "meaningless/BPD/index.md",
     "meaningless/BPD/特征.md",
     "meaningless/BPD/高功能BPD.md",
-    "meaningless/INTP/index.md",
     "meaningless/INTP/脆弱.md",
     "meaningless/语录/index.md",
     "meaningless/语录/others.mdx",
     "meaningless/INTP/自我厌恶.md",
-    "meaningless/INTP/子弹是故意打偏的.md",
     "meaningless/INTP/对喜欢的人有什么表现.md",
     "meaningless/语录/罗翔语录.mdx",
     "notes/心理学/index.md",
