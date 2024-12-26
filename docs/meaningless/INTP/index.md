@@ -3,4 +3,4 @@ title: INTP
 sidebar_position: 2
 ---
 
-仅作收录。
+我该说什么呢。

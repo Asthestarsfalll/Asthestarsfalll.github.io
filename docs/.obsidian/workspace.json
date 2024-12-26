@@ -18,6 +18,18 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "最真实的悲伤",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/最真实的悲伤.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"最真实的悲伤\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":435,\"ch\":0},\"to\":{\"line\":435,\"ch\":0}},\"scroll\":431.3844696969697}"
+                },
+                {
+                  "title": "虚无",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/虚无.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"虚无\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "心理创伤",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/INTP/心理创伤.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"心理创伤\"}",
@@ -490,12 +502,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "meaningless/INTP/虚无.md",
+                "file": "meaningless/INTP/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "虚无"
+              "title": "index"
             }
           }
         ]
@@ -711,8 +723,9 @@
   },
   "active": "c90c0719885bb8ad",
   "lastOpenFiles": [
-    "meaningless/INTP/心理创伤.md",
+    "meaningless/INTP/最真实的悲伤.md",
     "meaningless/INTP/虚无.md",
+    "meaningless/INTP/心理创伤.md",
     "meaningless/BPD/亲密关系.md",
     "meaningless/语录/love.md",
     "meaningless/BPD/index.md",
@@ -754,7 +767,6 @@
     "notes/high_performance/GEMM/4-一维Thread Tile并行优化.md",
     "deeplearning/ComputerVision/RemoteSense",
     "notes/high_performance/GEMM/3-共享内存缓存块.md",
-    "notes/数学/概率和统计/multi_rand_var_and_dist.md",
     "notes/high_performance/GEMM/images/naive_kernel_mem_access.png",
     "deeplearning/Multimodal/images/240731_16h16m45s_screenshot.png",
     "deeplearning/Multimodal/images/240731_15h33m14s_screenshot.png",
