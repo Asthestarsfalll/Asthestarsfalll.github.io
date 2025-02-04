@@ -611,17 +611,29 @@
             "id": "d6ff56f0aa6d3883",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 1,
+              "pos": 0,
               "stack": [
-                {
-                  "title": "未命名",
-                  "icon": "lucide-layout-dashboard",
-                  "state": "{\"type\":\"canvas\",\"state\":{\"file\":\"未命名.canvas\",\"viewState\":{\"x\":0,\"y\":0,\"zoom\":0}},\"icon\":\"lucide-layout-dashboard\",\"title\":\"未命名\"}",
-                  "eState": "{}"
-                },
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "Things-that-we-lose-finally",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/博客收录/Things-that-we-lose-finally.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Things-that-we-lose-finally\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "奇怪的人类",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/博客收录/奇怪的人类.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"奇怪的人类\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":8},\"to\":{\"line\":20,\"ch\":8}},\"scroll\":17.181818181818183}"
+                },
+                {
+                  "title": "about",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/Onism/about.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"about\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
                 },
                 {
                   "title": "summerfadesaway",
@@ -774,8 +786,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2cb931200911f1fe",
@@ -905,12 +916,13 @@
   },
   "active": "d6ff56f0aa6d3883",
   "lastOpenFiles": [
-    "未命名.canvas",
+    "meaningless/博客收录/Things-that-we-lose-finally.md",
+    "meaningless/博客收录/奇怪的人类.md",
     "meaningless/Onism/about.md",
+    "未命名.canvas",
     "meaningless/Onism/summerfadesaway.mdx",
     "meaningless/Onism/travel_guide_of_chongqing.mdx",
     "meaningless/index.mdx",
-    "meaningless/博客收录/Things-that-we-lose-finally.md",
     "meaningless/博客收录/关于自残与自杀.md",
     "meaningless/INTP/最真实的悲伤.md",
     "meaningless/古诗词/雨霖铃·寒蝉凄切.md",
