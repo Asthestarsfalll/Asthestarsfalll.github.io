@@ -1,3 +1,13 @@
+---
+title: GRPO
+description: GRPO
+authors:
+  - Asthestarsfalll
+tags:
+  - RL
+hide_table_of_contents: false
+---
+
 ## Workflow
 
 1. 对于每个 prompt，采样一组回答 $\mathcal{G}$；

@@ -18,6 +18,42 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":2.1515151515151514}"
+                },
+                {
+                  "title": "GRPO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/index.mdx\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "对喜欢的人有什么表现",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "拉黑",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/拉黑.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"拉黑\"}",
@@ -64,12 +100,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "meaningless/其他的我/对喜欢的人有什么表现.md",
+                "file": "deeplearning/ReinforcementLearning/GRPO.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "对喜欢的人有什么表现"
+              "title": "GRPO"
             }
           }
         ]
@@ -282,21 +318,21 @@
   },
   "active": "ebd37b4a750a5952",
   "lastOpenFiles": [
+    "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md",
+    "deeplearning/ReinforcementLearning/GRPO.md",
+    "deeplearning/ReinforcementLearning/index.md",
+    "deeplearning/index.mdx",
+    "meaningless/其他的我/对喜欢的人有什么表现.md",
     "meaningless/其他的我/拉黑.md",
     "meaningless/其他的我/脆弱.md",
-    "meaningless/其他的我/对喜欢的人有什么表现.md",
     "meaningless/其他的我/黑暗面.md",
     "Pasted image 20250415145207.png",
     "Pasted image 20250415145201.png",
     "meaningless/其他的我/index.md",
     "meaningless/Onism/about.md",
     "meaningless/古诗词/满江红.mdx",
-    "deeplearning/ReinforcementLearning/GRPO.md",
-    "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md",
     "deeplearning/ReinforcementLearning/未命名",
     "Dictionary/greek_alphabet.mdx",
-    "deeplearning/ReinforcementLearning/index.md",
-    "deeplearning/index.mdx",
     "deeplearning/Quantization/quantization.mdx",
     "deeplearning/ReinforcementLearning",
     "meaningless/其他的我/最真实的悲伤.md",
@@ -320,7 +356,6 @@
     "meaningless/语录/index.md",
     "meaningless/其他的我/自我厌恶.md",
     "notes/心理学/index.md",
-    "notes/心理学/The_Courage_to_be_Disliked.md",
     "deeplearning/ComputerVision/Segmentation/images/240915_13h22m37s_screenshot.png",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h42m11s_screenshot.png",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h07m19s_screenshot.png",

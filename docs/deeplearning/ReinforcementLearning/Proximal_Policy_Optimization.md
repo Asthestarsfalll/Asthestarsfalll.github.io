@@ -1,6 +1,6 @@
 ---
 title: Proximal Policy Optimization(PPO)
-description: 
+description: PPO
 authors:
   - Asthestarsfalll
 tags:
