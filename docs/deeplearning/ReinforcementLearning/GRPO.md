@@ -1,5 +1,5 @@
 ---
-title: GRPO
+title: Group Relative Policy Optimization
 description: GRPO
 authors:
   - Asthestarsfalll
@@ -8,13 +8,17 @@ tags:
 hide_table_of_contents: false
 ---
 
+**群体相对策略优化**
+
 ## Workflow
+
+![](./images/grpo.png)
 
 1. 对于每个 prompt，采样一组回答 $\mathcal{G}$；
 2. 计算每个回答的奖励；
 3. 对每个回答计算组内标准化的 advatange，$A_i = \frac{R_\phi(r_i) - \text{mean}(\mathcal{G})}{\text{std}(\mathcal{G})}$。
 
-如此一来便去除了之前需要在每一步生成上计算价值函数。
+如此一来便去除了之前需要在每一步生成上计算价值函数，并且直接去除了价值函数。
 
 ## Objective
 

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "07c24e0329c57935",
+        "id": "edbcfc4f2208b705",
         "type": "tabs",
         "children": [
           {
-            "id": "ebd37b4a750a5952",
+            "id": "268b6d09ebf702fa",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,16 +18,118 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "GRPO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "pi0",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/pi0.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"pi0\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "flow_matching",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Flow/flow_matching.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"flow_matching\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":3},\"to\":{\"line\":8,\"ch\":3}},\"scroll\":0}"
+                },
+                {
                   "title": "Proximal_Policy_Optimization",
                   "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":3},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":2.1515151515151514}"
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "flow_matching",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Flow/flow_matching.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"flow_matching\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":48,\"ch\":146},\"to\":{\"line\":48,\"ch\":146}},\"scroll\":0}"
                 },
                 {
                   "title": "GRPO",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "flow_matching",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Flow/flow_matching.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"flow_matching\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":50,\"ch\":2},\"to\":{\"line\":50,\"ch\":2}},\"scroll\":49.552083333333336}"
+                },
+                {
+                  "title": "pi0",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/pi0.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"pi0\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":0},\"to\":{\"line\":3,\"ch\":0}},\"scroll\":0.725}"
+                },
+                {
+                  "title": "GRPO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":38},\"to\":{\"line\":20,\"ch\":38}},\"scroll\":14.514198331429899}"
+                },
+                {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":195,\"ch\":59},\"to\":{\"line\":195,\"ch\":59}},\"scroll\":220.10119047619048}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":101,\"ch\":0},\"to\":{\"line\":101,\"ch\":0}},\"scroll\":98.1535597952536}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/index.mdx\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "GRPO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":97,\"ch\":0},\"to\":{\"line\":97,\"ch\":0}},\"scroll\":88.25568181818181}"
+                },
+                {
+                  "title": "flow_matching",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/Flow/flow_matching.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"flow_matching\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":13,\"ch\":38},\"to\":{\"line\":13,\"ch\":38}},\"scroll\":13.121212121212121}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "GRPO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":20,\"ch\":132},\"to\":{\"line\":20,\"ch\":132}},\"scroll\":25.61032196969697}"
                 },
                 {
                   "title": "index",
@@ -39,73 +141,73 @@
                   "title": "Proximal_Policy_Optimization",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/index.mdx\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
-                },
-                {
-                  "title": "对喜欢的人有什么表现",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "拉黑",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/拉黑.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"拉黑\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":39,\"ch\":3},\"to\":{\"line\":39,\"ch\":3}},\"scroll\":36.77272727272727}"
-                },
-                {
-                  "title": "对喜欢的人有什么表现",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/对喜欢的人有什么表现.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"对喜欢的人有什么表现\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "黑暗面",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/黑暗面.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"黑暗面\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0.725}"
-                },
-                {
-                  "title": "index",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/其他的我/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":7},\"to\":{\"line\":5,\"ch\":7}},\"scroll\":0}"
-                },
-                {
-                  "title": "about",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"meaningless/Onism/about.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"about\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":178,\"ch\":3},\"to\":{\"line\":178,\"ch\":3}},\"scroll\":178.0994318181818}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":0}"
                 },
                 {
                   "title": "GRPO",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":21,\"ch\":0},\"to\":{\"line\":21,\"ch\":0}},\"scroll\":15.58001893939394}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}},\"scroll\":15.561079545454545}"
                 },
                 {
                   "title": "Proximal_Policy_Optimization",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":160,\"ch\":0},\"to\":{\"line\":160,\"ch\":0}},\"scroll\":144.15648674242425}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":147,\"ch\":87},\"to\":{\"line\":147,\"ch\":0}},\"scroll\":138.0189393939394}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}},\"scroll\":34.95669553630913}"
+                },
+                {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":63,\"ch\":106},\"to\":{\"line\":63,\"ch\":106}},\"scroll\":63.09138257575758}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":26,\"ch\":25},\"to\":{\"line\":26,\"ch\":25}},\"scroll\":22.863636363636363}"
+                },
+                {
+                  "title": "Proximal_Policy_Optimization",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Proximal_Policy_Optimization\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "index",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/index.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"index\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":5,\"ch\":0},\"to\":{\"line\":5,\"ch\":0}}}"
+                },
+                {
+                  "title": "GRPO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/ReinforcementLearning/GRPO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"GRPO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":9,\"ch\":0},\"to\":{\"line\":9,\"ch\":0}}}"
+                },
+                {
+                  "title": "Release Notes 1.8.10",
+                  "icon": "lucide-book-up",
+                  "state": "{\"type\":\"release-notes\",\"state\":{\"currentVersion\":\"1.8.10\"},\"icon\":\"lucide-book-up\",\"title\":\"Release Notes 1.8.10\"}",
+                  "eState": "{}"
                 }
               ]
             },
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/ReinforcementLearning/GRPO.md",
+                "file": "deeplearning/Flow/flow_matching.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "GRPO"
+              "title": "flow_matching"
             }
           }
         ]
@@ -158,7 +260,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Compute",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -192,7 +294,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 318.5
   },
   "right": {
     "id": "2cb931200911f1fe",
@@ -316,55 +418,55 @@
       "darlal-switcher-plus:Open Symbols for the active editor": false
     }
   },
-  "active": "ebd37b4a750a5952",
+  "active": "268b6d09ebf702fa",
   "lastOpenFiles": [
-    "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md",
     "deeplearning/ReinforcementLearning/GRPO.md",
+    "deeplearning/EmbodiedIntelligence/pi0.md",
+    "deeplearning/Flow/flow_matching.md",
+    "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md",
+    "deeplearning/EmbodiedIntelligence",
+    "deeplearning/ReinforcementLearning/images/grpo.png",
+    "deeplearning/ReinforcementLearning/images/250521_16h38m31s_screenshot.png",
+    "deeplearning/ReinforcementLearning/images/actor.png",
     "deeplearning/ReinforcementLearning/index.md",
     "deeplearning/index.mdx",
+    "deeplearning/ReinforcementLearning/images/250521_16h13m59s_screenshot.png",
+    "deeplearning/ReinforcementLearning/images",
+    "未命名.canvas",
+    "未命名 1.canvas",
+    "deeplearning/Evaluation/GREEN.md",
+    "deeplearning/Flow",
+    "Dictionary/advanced_math.mdx",
+    "'./images/20250416165128.png.md",
+    "'./images",
+    "'.",
+    "deeplearning/Evaluation/images/20250416165128.png",
+    "deeplearning/Multimodal/DALL-E.mdx",
+    "deeplearning/Multimodal/clip.md",
+    "deeplearning/Evaluation/images",
+    "deeplearning/Evaluation/Boundary-IoU.mdx",
+    "deeplearning/Evaluation/index.md",
+    "Pasted image 20250415145201.png",
     "meaningless/其他的我/对喜欢的人有什么表现.md",
     "meaningless/其他的我/拉黑.md",
     "meaningless/其他的我/脆弱.md",
     "meaningless/其他的我/黑暗面.md",
     "Pasted image 20250415145207.png",
-    "Pasted image 20250415145201.png",
     "meaningless/其他的我/index.md",
     "meaningless/Onism/about.md",
-    "meaningless/古诗词/满江红.mdx",
-    "deeplearning/ReinforcementLearning/未命名",
-    "Dictionary/greek_alphabet.mdx",
-    "deeplearning/Quantization/quantization.mdx",
-    "deeplearning/ReinforcementLearning",
     "meaningless/其他的我/最真实的悲伤.md",
     "meaningless/博客收录/Things-that-we-lose-finally.md",
     "meaningless/博客收录/奇怪的人类.md",
-    "未命名.canvas",
-    "meaningless/Onism/summerfadesaway.mdx",
-    "meaningless/Onism/travel_guide_of_chongqing.mdx",
-    "meaningless/index.mdx",
     "meaningless/博客收录/关于自残与自杀.md",
     "meaningless/古诗词/雨霖铃·寒蝉凄切.md",
-    "meaningless/古诗词/忆秦娥·箫声咽.mdx",
     "meaningless/其他的我/子弹是故意打偏的.md",
     "meaningless/其他的我/虚无.md",
     "meaningless/其他的我/心理创伤.md",
     "meaningless/BPD/亲密关系.md",
     "meaningless/语录/love.md",
-    "meaningless/BPD/index.md",
-    "meaningless/BPD/特征.md",
-    "meaningless/BPD/高功能BPD.md",
-    "meaningless/语录/index.md",
-    "meaningless/其他的我/自我厌恶.md",
-    "notes/心理学/index.md",
     "deeplearning/ComputerVision/Segmentation/images/240915_13h22m37s_screenshot.png",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h42m11s_screenshot.png",
     "deeplearning/ComputerVision/Segmentation/images/240915_12h07m19s_screenshot.png",
-    "deeplearning/ComputerVision/Segmentation/images/240915_12h03m30s_screenshot.png",
-    "deeplearning/ComputerVision/Segmentation/images/240914_18h29m27s_screenshot.png",
-    "deeplearning/ComputerVision/Segmentation/images/240914_18h41m29s_screenshot.png",
-    "deeplearning/ComputerVision/Segmentation/images/240914_18h35m24s_screenshot.png",
-    "notes/high_performance/GEMM/images/naive_kernel_mem_access.png",
-    "未命名 1.canvas",
     "G.canvas"
   ]
 }
