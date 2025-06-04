@@ -1,0 +1,11 @@
+{
+  "enabledAdmonitions": {
+    "note": true,
+    "tip": true,
+    "info": true,
+    "warning": true,
+    "danger": true
+  },
+  "customCSS": true,
+  "enableCodeBlockSyntax": true
+}

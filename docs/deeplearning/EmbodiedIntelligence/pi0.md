@@ -8,7 +8,9 @@ hide_table_of_contents: false
 ---
 
 > Paper: https://link.zhihu.com/?target=https%3A//www.physicalintelligence.company/download/pi0.pdf
+>
 > Code: https://github.com/Physical-Intelligence/openpi
+>
 > Refer: https://zhuanlan.zhihu.com/p/7040420479 , https://blog.csdn.net/v_july_v/article/details/143472442 , https://blog.csdn.net/v_JULY_v/article/details/146068251
 
 ## Abstract
@@ -228,6 +230,7 @@ class Pi0(_model.BaseModel):
         input_mask = jnp.concatenate(input_mask, axis=1)
         ar_mask = jnp.array(ar_mask)
         return tokens, input_mask, ar_mask
+
     @override
     def compute_loss(
         self, rng: at.KeyArrayLike, observation: _model.Observation, actions: _model.Actions, *, train: bool = False

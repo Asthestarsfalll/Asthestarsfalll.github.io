@@ -3,6 +3,7 @@ title: An Open Foundation Model for Generalist Humanoid Robots
 ---
 
 > Paper: https://arxiv.org/abs/2503.14734
+>
 > Code: https://github.com/NVIDIA/Isaac-GR00T/
 
 ## 摘要

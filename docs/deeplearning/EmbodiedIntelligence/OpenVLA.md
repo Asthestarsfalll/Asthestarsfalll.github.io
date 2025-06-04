@@ -1,5 +1,6 @@
 
 > Paper: https://arxiv.org/abs/2406.09246
+>
 > Code: https://github.com/openvla/openvla
 
 ## Overview
