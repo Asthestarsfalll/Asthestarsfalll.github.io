@@ -18,6 +18,54 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "Robodual",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/Robodual.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Robodual\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "SmolVLA",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/SmolVLA.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"SmolVLA\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":54,\"ch\":22},\"to\":{\"line\":54,\"ch\":22}},\"scroll\":50.795725108225106}"
+                },
+                {
+                  "title": "Robodual",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/Robodual.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Robodual\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "SmolVLA",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/SmolVLA.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"SmolVLA\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "pi0",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/pi0.md\",\"mode\":\"source\",\"source\":true},\"icon\":\"lucide-file\",\"title\":\"pi0\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":14,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Robodual",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/Robodual.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"Robodual\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":46,\"ch\":0},\"to\":{\"line\":46,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "SmolVLA",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/SmolVLA.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"SmolVLA\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "AMO",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/AMO.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"AMO\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":0},\"to\":{\"line\":6,\"ch\":0}}}"
+                },
+                {
                   "title": "groot-n1",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/groot-n1.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"groot-n1\"}",
@@ -64,12 +112,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/EmbodiedIntelligence/AMO.md",
+                "file": "deeplearning/EmbodiedIntelligence/SmolVLA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AMO"
+              "title": "SmolVLA"
             }
           }
         ]
@@ -282,27 +330,28 @@
   },
   "active": "ce777d322a5b050e",
   "lastOpenFiles": [
-    "deeplearning/EmbodiedIntelligence/images/AMO_tele.png",
-    "deeplearning/EmbodiedIntelligence/images/250604_14h56m29s_screenshot.png",
-    "deeplearning/EmbodiedIntelligence/groot-n1.md",
+    "deeplearning/EmbodiedIntelligence/images/smol_g.png",
+    "deeplearning/EmbodiedIntelligence/images/250605_16h02m13s_screenshot.png",
+    "deeplearning/EmbodiedIntelligence/images/smol_argo.png",
+    "deeplearning/EmbodiedIntelligence/SmolVLA.md",
+    "deeplearning/EmbodiedIntelligence/images/smlo_argo.png",
+    "deeplearning/EmbodiedIntelligence/images/smlo_arg.png",
+    "deeplearning/EmbodiedIntelligence/images/250605_15h46m22s_screenshot.png",
+    "deeplearning/EmbodiedIntelligence/images/smol_asyn.png",
+    "deeplearning/EmbodiedIntelligence/images/250605_15h42m43s_screenshot.png",
+    "deeplearning/EmbodiedIntelligence/images/smol_overview.png",
+    "deeplearning/EmbodiedIntelligence/Robodual.md",
+    "deeplearning/EmbodiedIntelligence/pi0.md",
+    "deeplearning/EmbodiedIntelligence/images/robodual_arc.png",
     "deeplearning/EmbodiedIntelligence/AMO.md",
-    "deeplearning/EmbodiedIntelligence/images/AMO_teacher.png",
-    "deeplearning/EmbodiedIntelligence/images/250604_14h45m46s_screenshot.png",
-    "deeplearning/EmbodiedIntelligence/images/AMO_system.png",
-    "deeplearning/EmbodiedIntelligence/images/250528_15h54m20s_screenshot.png",
+    "deeplearning/EmbodiedIntelligence/images/AMO_tele.png",
+    "deeplearning/EmbodiedIntelligence/groot-n1.md",
     "deeplearning/EmbodiedIntelligence/OpenVLA.md",
-    "deeplearning/EmbodiedIntelligence/images/AMO_overview.png",
-    "deeplearning/EmbodiedIntelligence/images/AMO_compare.png",
-    "deeplearning/EmbodiedIntelligence/images/250528_15h40m57s_screenshot.png",
-    "deeplearning/EmbodiedIntelligence/images/250528_15h19m12s_screenshot.png",
     "deeplearning/Speech/RLAIF-V.md",
-    "deeplearning/Speech/images/result3.png",
     "deeplearning/Speech/images",
     "deeplearning/Multimodal/SelfAttention.md",
     "deeplearning/ReinforcementLearning/DPO.md",
     "deeplearning/index.mdx",
-    "deeplearning/EmbodiedIntelligence/pi0.md",
-    "deeplearning/EmbodiedIntelligence/Robodual.md",
     "deeplearning/Multimodal/DALL-E.mdx",
     "deeplearning/Speech",
     "deeplearning/Multimodal/EyesWideShut.md",
@@ -329,7 +378,6 @@
     "meaningless/其他的我/index.md",
     "meaningless/Onism/about.md",
     "meaningless/其他的我/最真实的悲伤.md",
-    "meaningless/博客收录/Things-that-we-lose-finally.md",
     "G.canvas"
   ]
 }
