@@ -11,11 +11,47 @@
             "id": "ce777d322a5b050e",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
+                {
+                  "title": "未命名",
+                  "icon": "lucide-layout-dashboard",
+                  "state": "{\"type\":\"canvas\",\"state\":{\"file\":\"未命名.canvas\",\"viewState\":{\"x\":0,\"y\":0,\"zoom\":0}},\"icon\":\"lucide-layout-dashboard\",\"title\":\"未命名\"}",
+                  "eState": "{}"
+                },
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "vlfm",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/vlfm.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"vlfm\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":8,\"ch\":0},\"to\":{\"line\":8,\"ch\":0}}}"
+                },
+                {
+                  "title": "twist",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/twist.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"twist\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "vlfm",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/vlfm.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"vlfm\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":112,\"ch\":206},\"to\":{\"line\":112,\"ch\":206}},\"scroll\":104.0329071969697}"
+                },
+                {
+                  "title": "twist",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/twist.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"twist\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "vlfm",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"deeplearning/EmbodiedIntelligence/vlfm.md\",\"mode\":\"source\",\"source\":false},\"icon\":\"lucide-file\",\"title\":\"vlfm\"}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":103,\"ch\":0},\"to\":{\"line\":103,\"ch\":0}},\"scroll\":104.01704545454545}"
                 },
                 {
                   "title": "twist",
@@ -196,12 +232,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/EmbodiedIntelligence/vlfm.md",
+                "file": "deeplearning/EmbodiedIntelligence/groot-n1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "vlfm"
+              "title": "groot-n1"
             }
           }
         ]
@@ -414,8 +450,14 @@
   },
   "active": "ce777d322a5b050e",
   "lastOpenFiles": [
-    "deeplearning/EmbodiedIntelligence/twist.md",
+    "未命名.canvas",
+    "deeplearning/EmbodiedIntelligence/groot-n1.md",
     "deeplearning/EmbodiedIntelligence/vlfm.md",
+    "deeplearning/EmbodiedIntelligence/twist.md",
+    "deeplearning/EmbodiedIntelligence/images/vlfm_confidence.png",
+    "deeplearning/EmbodiedIntelligence/images/vlfm_overview.png",
+    "deeplearning/EmbodiedIntelligence/images/250612_10h05m39s_screenshot.png",
+    "deeplearning/EmbodiedIntelligence/images/250528_14h45m29s_screenshot.png",
     "deeplearning/Medical",
     "deeplearning/EmbodiedIntelligence/images/twist_norm.png",
     "deeplearning/EmbodiedIntelligence/images/250606_14h39m00s_screenshot.png",
@@ -425,13 +467,8 @@
     "deeplearning/EmbodiedIntelligence/AMO.md",
     "deeplearning/EmbodiedIntelligence/SmolVLA.md",
     "deeplearning/EmbodiedIntelligence/images/smol_g.png",
-    "deeplearning/EmbodiedIntelligence/images/250605_16h02m13s_screenshot.png",
-    "deeplearning/EmbodiedIntelligence/images/smol_argo.png",
-    "deeplearning/EmbodiedIntelligence/images/smlo_argo.png",
-    "deeplearning/EmbodiedIntelligence/images/smlo_arg.png",
     "deeplearning/EmbodiedIntelligence/Robodual.md",
     "deeplearning/EmbodiedIntelligence/pi0.md",
-    "deeplearning/EmbodiedIntelligence/groot-n1.md",
     "deeplearning/EmbodiedIntelligence/OpenVLA.md",
     "deeplearning/Speech/RLAIF-V.md",
     "deeplearning/Speech/images",
@@ -450,7 +487,6 @@
     "deeplearning/EmbodiedIntelligence",
     "deeplearning/ReinforcementLearning/index.md",
     "deeplearning/ReinforcementLearning/images",
-    "未命名.canvas",
     "未命名 1.canvas",
     "deeplearning/Evaluation/GREEN.md",
     "'./images/20250416165128.png.md",
@@ -461,7 +497,6 @@
     "meaningless/其他的我/脆弱.md",
     "meaningless/其他的我/黑暗面.md",
     "meaningless/其他的我/index.md",
-    "meaningless/Onism/about.md",
     "G.canvas"
   ]
 }

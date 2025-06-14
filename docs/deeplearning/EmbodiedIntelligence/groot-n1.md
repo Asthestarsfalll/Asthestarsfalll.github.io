@@ -75,3 +75,350 @@ DiT 中包含交替使用的交叉注意力和自注意力，类似 flamingo。
 为了克服后训练阶段数据稀缺的挑战，我们通过生成神经轨迹来为每个下游任务增强数据。对于基于多视图条件的下游任务，我们微调视频模型以在网格中生成多个子图像（见图 13）。对于仿真任务，我们从随机初始化的环境中收集多样化的初始帧。对于真实机器人的任务，我们手动随机初始化物体的姿态，并记录机器人的初始观测。也可以通过 img2img 扩散自动创建新的初始帧（图 13 中展示了示例），但我们将其进一步探索留待未来研究。我们还展示了（1）多轮视频生成，用于生成由原子任务组成的长时域轨迹，以及（2）液体和关节物体的神经轨迹，这些物体已知极难模拟，尽管我们将其下游任务的定量评估留待未来研究。
 
 在我们的后训练流程中，我们仅使用人类收集的轨迹对仿真任务的视频生成模型进行微调，并且仅使用为后训练收集的真实世界基准数据中的 10%，以符合我们只有有限数量的遥操作数据的实际场景。由于生成的视频没有动作标签，我们使用潜在动作或逆动力学模型（IDM）标记的动作（Baker 等人，2022 年），并训练策略模型将这些伪动作视为不同体现形式的动作标签。在低数据场景中，我们也仅在低数据上训练 IDM 模型，以促进实际场景。关于如何训练 IDM 模型的详细信息在附录 F 中提供。在第 4.4 节中对潜在动作和 IDM 标记的动作进行了一些经验比较。在后训练期间，我们以 1:1 的采样比例共同训练策略模型，使其同时使用真实世界轨迹和神经轨迹。
+
+## 数据格式
+
+采用了 LeRobot 格式，见文档：
+
+-  https://github.com/NVIDIA/Isaac-GR00T/blob/main/getting_started/LeRobot_compatible_data_schema.md
+- https://github.com/huggingface/lerobot?tab=readme-ov-file#the-lerobotdataset-format
+
+LeRobotDataset  Hugging Face 加载： `dataset = LeRobotDataset("lerobot/aloha_static_coffee")`，并且可以进行索引：`dataset[0]` 包含单个时间帧的观测值和动作。
+
+LeRobotDataset 可以通过设置 `delta_timestamps` 为相对于索引帧的时间列表，根据它们与索引帧的时间关系检索多个帧。例如，通过 `delta_timestamps = {"observation.image": [-1, -0.5, -0.2, 0]}`，可以为给定索引检索 4 个帧：3 个“之前”的帧，分别在索引帧之前的 1 秒、0.5 秒和 0.2 秒，以及索引帧本身（对应于 0 ）。
+
+以下是使用 `dataset = LeRobotDataset("lerobot/aloha_static_coffee")` 实例化的典型 LeRobotDataset 的重要细节和内部结构组织。确切的特征会因数据集而异，但主要方面不会改变：
+
+数据集属性：
+
+```
+  ├ hf_dataset：一个Hugging Face数据集（由Arrow/parquet支持）。典型特征示例：
+  │  ├ observation.images.cam_high (VideoFrame)：
+  │  │   VideoFrame = {'path': mp4视频的路径，'timestamp' (float32)：视频中的时间戳}
+  │  ├ observation.state (float32列表)：例如，手臂关节的位置
+  │  …（更多观测值）
+  │  ├ action (float32列表)：例如，手臂关节的目标位置
+  │  ├ episode_index (int64)：此样本的剧集索引
+  │  ├ frame_index (int64)：此样本在剧集中的帧索引；每个剧集从0开始
+  │  ├ timestamp (float32)：剧集中的时间戳
+  │  ├ next.done (bool)：表示剧集结束；每个剧集的最后一帧为True
+  │  └ index (int64)：整个数据集中的通用索引
+  ├ episode_data_index：包含每个剧集的开始和结束索引的两个张量
+  │  ├ from (1D int64张量)：每个剧集的第一帧索引——形状（剧集数量，）从0开始
+  │  └ to：(1D int64张量)：每个剧集的最后一帧索引——形状（剧集数量，）
+  ├ stats：数据集中每个特征的统计信息（最大值、平均值、最小值、标准差）的字典，例如
+  │  ├ observation.images.cam_high：{'max': 与维度相同的张量（例如，对于图像为`(c, 1, 1)`，对于状态为`(c,)`等）}
+  │  …
+  ├ info：数据集的元数据字典
+  │  ├ codebase_version (str)：用于跟踪创建数据集时使用的代码库版本
+  │  ├ fps (float)：数据集记录/同步的帧率
+  │  ├ video (bool)：指示帧是否编码为mp4视频文件以节省空间，或者存储为png文件
+  │  └ encoding (dict)：如果是视频，此文档记录了使用ffmpeg编码视频时使用的主要选项
+  ├ videos_dir (Path)：存储/访问mp4视频或png图像的位置
+  └ camera_keys (字符串列表)：在数据集返回的项中访问摄像头特征的键（例如`["observation.images.cam_high", …]`）
+```
+
+hf_dataset 使用 Hugging Face 数据集库的序列化功能存储为 **parquet** 格式
+
+视频以 mp4 格式存储以节省空间
+
+元数据以纯 json/jsonl 文件形式存储
+
+数据集可以无缝地从 HuggingFace 中心上传/下载。如果要处理本地数据集，可以通过 `root` 参数指定其位置，如果它不在默认的 `~/.cache/huggingface/lerobot` 位置。
+
+:::tip
+
+Gr00t 增加了额外的结构，但与 LeRobot 2.0 保持了完全兼容。
+
+额外的元数据和结构允许对您的机器人数据进行更详细的规范和语言注释。
+
+:::
+
+Gr00t 的数据格式要求如下：
+
+```shell
+.
+├─meta 
+│ ├─episodes.jsonl
+│ ├─modality.json # -> GR00T LeRobot 特有
+│ ├─info.json
+│ └─tasks.jsonl
+├─videos
+│ └─chunk-000
+│   └─observation.images.ego_view
+│     └─episode_000001.mp4
+│     └─episode_000000.mp4
+└─data
+  └─chunk-000
+    ├─episode_000001.parquet
+    └─episode_000000.parquet
+```
+
+### Video Observations (video/chunk-\*)
+
+`videos` 文件夹将包含与每个剧集相关的 mp4 文件，文件命名格式为 `episode_00000X.mp4`，其中 `X` 表示剧集编号。要求如下：
+
+- 必须以 MP4 文件格式存储。
+
+- 应使用 `observation.images.<video_name>` 的格式命名。
+
+### Data (data/chunk-\*)
+
+数据文件夹将包含与每个剧集相关的所有 parquet 文件，文件命名格式为 episode_00000X.parquet，其中 X 表示剧集编号，与上文的视视频所对应。每个 parquet 文件将包含以下内容：
+
+- 状态信息：以 observation.state 存储，是一个包含所有状态模态的 1D 拼接数组。
+- 动作：以 action 存储，是一个包含所有动作模态的 1D 拼接数组。
+- 时间戳：以 timestamp 存储，是起始时间的浮点数。
+- 注释：以 annotation.<annotation_source>.<annotation_type>(.<annotation_name>) 存储（例如，参见示例配置中的注释字段以获取示例命名）。其他列不应带有 annotation 前缀。如果需要添加多个注释，请参见（multiple-annotation-support）。
+
+### Example Parquet File
+
+ demo_data 目录 robot_sim.PickNPlace 数据集的一个样本。
+
+```json
+{
+    "observation.state":[-0.01147082911843003,…,0], // 根据 modality.json 文件拼接的状态数组
+    "action":[-0.010770668025204974,…0], // 根据 modality.json 文件拼接的动作数组
+    "timestamp":0.04999995231628418, // 观测的时间戳
+    "annotation.human.action.task_description":0, // meta/tasks.jsonl 文件中任务描述的索引
+    "task_index":0, // meta/tasks.jsonl 文件中任务的索引
+    "annotation.human.validity":1, // meta/tasks.jsonl 文件中任务的索引
+    "episode_index":0, // 剧集的索引
+    "index":0, // 观测的索引。这是跨越整个数据集中所有观测的全局索引。
+    "next.reward":0, // 下一个观测的奖励
+    "next.done":false // 剧集是否结束
+}
+```
+
+使用 **PyArrow** 读取：
+
+```python
+import pyarrow.parquet as pq
+
+table = pq.read_table('example.parquet')
+
+# 将数据转换为 Pandas DataFrame（可选）
+import pandas as pd
+df = table.to_pandas()
+
+# 直接使用pandas也行
+df = pd.read_parquet('example.parquet', engine='pyarrow')
+
+print(df)
+```
+
+### Meta
+
+`episodes.jsonl` 包含整个数据集中所有剧集的列表。每个剧集包含一个 **任务列表** 和剧集的长度。
+
+```json
+{"episode_index": 0, "tasks": […], "length": 416}
+{"episode_index": 1, "tasks": […], "length": 470}
+```
+
+`tasks.jsonl` 包含整个数据集中所有任务的列表。
+
+```json
+{"task_index": 0, "task": "pick the squash from the counter and place it in the plate"}
+{"task_index": 1, "task": "valid"}
+```
+
+可以通过 parquet 文件中的 `task_index` 来获取任务描述。因此，在这种情况下，第一个观测的 ` annotation.human.action.task_description ` 是 "pick the squash from the counter and place it in the plate"，而 ` annotation.human.validity ` 是 “valid”。
+
+`modality.json` 包含模态配置，提供了关于状态和动作模态的详细元数据，能够实现以下功能：
+
+- **分离数据存储和解释**：
+
+    - **状态和动作**：以拼接的 float32 数组形式存储。`modality.json` 文件提供了将这些数组解释为具有额外训练信息的独立、细粒度字段所需的元数据。
+    - **视频**：作为单独的文件存储，配置文件允许将它们重命名为标准化格式。
+    - **注释**：跟踪所有注释字段。如果没有注释，则不在配置文件中包含注释字段。
+
+- **细粒度拆分**：将状态和动作数组拆分为更具语义意义的字段。
+- **清晰映射**：明确映射数据维度。
+- **复杂数据转换**：支持在训练期间对特定字段进行归一化和旋转变换。
+:::info schema
+
+```shell
+{
+    "state": {
+        "<state_key>": {
+            "start": <int>,         // 状态数组中的起始索引
+            "end": <int>,           // 状态数组中的结束索引
+            "rotation_type": <str>,  // 可选：指定旋转格式
+            "dtype": <str>,         // 可选：指定数据类型
+            "range": <tuple[float, float]> // 可选：指定模态的范围
+        }
+    },
+    "action": {
+        "<action_key>": {
+            "start": <int>,         // 动作数组中的起始索引
+            "end": <int>,           // 动作数组中的结束索引
+            "absolute": <bool>,      // 可选：true 表示绝对值，false 表示相对/增量值
+            "rotation_type": <str>,  // 可选：指定旋转格式
+            "dtype": <str>,         // 可选：指定数据类型
+            "range": <tuple[float, float]> // 可选：指定模态的范围
+        }
+    },
+    "video": {
+        "<new_key>": {
+            "original_key": "<original_video_key>" // 原始视频键
+        }
+    },
+    "annotation": {
+        "<annotation_key>": {}  // 空字典，以与其他模态保持一致
+    }
+}
+```
+
+支持的旋转类型：
+
+- axis_angle
+- quaternion
+- rotation_6d
+- matrix
+- euler_angles_rpy
+- euler_angles_ryp
+- euler_angles_pry
+- euler_angles_pyr
+- euler_angles_yrp
+- euler_angles_ypr
+样例为：
+
+```json
+{
+    "state": {
+        "left_arm": { // 观测状态数组中的前 7 个元素是 parquet 文件中的左臂
+            "start": 0,
+            "end": 7
+        },
+        "left_hand": { // 观测状态数组中的接下来 6 个元素是 parquet 文件中的左手
+            "start": 7,
+            "end": 13
+        },
+		...
+    },
+    "action": {
+        "left_arm": {
+            "start": 0,
+            "end": 7
+        },
+        "left_hand": {
+            "start": 7,
+            "end": 13
+        },
+        ...
+    },
+    "video": {
+        "ego_view": { // 视频存储在 videos/chunk-*/observation.images.ego_view/episode_00000X.mp4 中
+            "original_key": "observation.images.ego_view"
+        }
+    },
+    "annotation": {
+        "human.action.task_description": {}, // 任务描述存储在 meta/tasks.jsonl 文件中
+        "human.validity": {}
+    }
+}
+```
+
+:::
+
+`info.json` 包含数据集信息。
+
+### 多注释支持
+
+为了在单个 parquet 文件中支持多个注释，用户可以向 parquet 文件中添加额外的列，应将这些列视为原始 LeRobot V2 数据集中的 `task_index` 列：
+
+在 LeRobot V2 中，实际的语言描述存储在 `meta/tasks.jsonl` 文件的一行中，而 parquet 文件仅在 `task_index` 列中存储对应的索引。我们遵循相同的约定，并在 `annotation.<annotation_source>.<annotation_type>` 列中存储每个注释的对应索引。尽管 `task_index` 列仍可用于默认注释，但为了确保我们的自定义数据加载器能够加载，需要一个专门的列 `annotation.<annotation_source>.<annotation_type>`。
+
+### GR00T LeRobot 对标准 LeRobot 的扩展
+
+GR00T LeRobot 是标准 LeRobot 格式的一个变体，具有更明确的要求：
+
+- `meta/stats.json` 文件由 LeRobot 格式使用，但我们的数据加载器并不需要它。如果计算该文件过于耗时，您可以安全地忽略它。
+- 本体感受器状态必须始终包含在 `observation.state` 键中。
+- 我们支持多通道注释格式（例如，粗粒度、微调），允许用户通过 `annotation.<annotation_source>.<annotation_type>` 键添加所需的注释通道。
+- 我们要求一个额外的元数据文件 `meta/modality.json`，该文件在标准 LeRobot 格式中不存在。
+
+### 注意事项
+
+- 只有在与默认值不同时，才需要指定可选字段。
+- 视频键映射用于在数据集中标准化摄像头名称。
+- 所有索引均从零开始，并遵循 Python 的数组切片约定（`[start:end]`）。
+
+## 代码
+
+```sh
+./
+├── gr00t
+│   ├── data
+│   │   ├── dataset.py  # 包含三个dataset
+│   │   ├── embodiment_tags.py  # 包含一些机器人的信息，要添加机器人应该改这里
+│   │   ├── schema.py  # 数据集的字段定义
+│   │   └── transform # 数据处理
+│   │       ├── base.py
+│   │       ├── concat.py
+│   │       ├── __init__.py
+│   │       ├── state_action.py
+│   │       └── video.py
+│   ├── eval
+│   │   ├── robot.py
+│   │   ├── service.py
+│   │   ├── simulation.py
+│   │   └── wrappers
+│   │       ├── multistep_wrapper.py
+│   │       ├── obs_index_selection_wrapper.py
+│   │       └── video_recording_wrapper.py
+│   ├── experiment
+│   │   ├── data_config.py
+│   │   ├── __init__.py
+│   │   ├── runner.py
+│   │   └── trainer.py
+│   ├── __init__.py
+│   ├── model
+│   │   ├── action_head
+│   │   │   ├── action_encoder.py
+│   │   │   ├── cross_attention_dit.py
+│   │   │   ├── flow_matching_action_head.py
+│   │   │   └── __init__.py
+│   │   ├── backbone
+│   │   │   ├── eagle2_hg_model
+│   │   │   │   ├── added_tokens.json
+│   │   │   │   ├── chat_template.json
+│   │   │   │   ├── config.json
+│   │   │   │   ├── configuration_eagle2_5_vl.py
+│   │   │   │   ├── generation_config.json
+│   │   │   │   ├── image_processing_eagle2_5_vl_fast.py
+│   │   │   │   ├── image_processing_eagle2.py
+│   │   │   │   ├── merges.txt
+│   │   │   │   ├── modeling_eagle2_5_vl.py
+│   │   │   │   ├── preprocessor_config.json
+│   │   │   │   ├── processing_eagle2_5_vl.py
+│   │   │   │   ├── processor_config.json
+│   │   │   │   ├── radio_model.py
+│   │   │   │   ├── special_tokens_map.json
+│   │   │   │   ├── tokenizer_config.json
+│   │   │   │   └── vocab.json
+│   │   │   ├── eagle_backbone.py
+│   │   │   └── __init__.py
+│   │   ├── gr00t_n1.py
+│   │   ├── __init__.py
+│   │   ├── policy.py
+│   │   └── transforms.py
+│   ├── py.typed
+│   └── utils
+│       ├── eval.py
+│       ├── experiment.py
+│       ├── __init__.py
+│       ├── misc.py
+│       ├── peft.py
+│       └── video.py
+├── scripts
+│   ├── eval_policy.py
+│   ├── gr00t_finetune.py
+│   ├── inference_service.py
+│   ├── load_dataset.py
+│   └── simulation_service.py
+└── tests
+    └── test_dataset.py
+
+```
