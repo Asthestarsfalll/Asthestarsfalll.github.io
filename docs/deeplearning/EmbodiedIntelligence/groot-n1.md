@@ -169,7 +169,7 @@ Gr00t 的数据格式要求如下：
 - 状态信息：以 observation.state 存储，是一个包含所有状态模态的 1D 拼接数组。
 - 动作：以 action 存储，是一个包含所有动作模态的 1D 拼接数组。
 - 时间戳：以 timestamp 存储，是起始时间的浮点数。
-- 注释：以 annotation.<annotation_source>.<annotation_type>(.<annotation_name>) 存储（例如，参见示例配置中的注释字段以获取示例命名）。其他列不应带有 annotation 前缀。如果需要添加多个注释，请参见（multiple-annotation-support）。
+- 注释：以 annotation.\<annotation_source\>.\<annotation_type\>(.\<annotation_name\>) 存储（例如，参见示例配置中的注释字段以获取示例命名）。其他列不应带有 annotation 前缀。如果需要添加多个注释，请参见（multiple-annotation-support）。
 
 ### Example Parquet File
 
