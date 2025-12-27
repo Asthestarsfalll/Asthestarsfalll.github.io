@@ -1,0 +1,124 @@
+{
+  "recentFiles": [
+    {
+      "basename": "transport_layer",
+      "path": "notes/计算机网络/transport_layer.md"
+    },
+    {
+      "basename": "data_link_layer",
+      "path": "notes/计算机网络/data_link_layer.md"
+    },
+    {
+      "basename": "instruction_system",
+      "path": "notes/计算机组成原理/instruction_system.md"
+    },
+    {
+      "basename": "storage_system",
+      "path": "notes/计算机组成原理/storage_system.md"
+    },
+    {
+      "basename": "quadratic_form",
+      "path": "notes/数学/线性代数/quadratic_form.md"
+    },
+    {
+      "basename": "system_of_linear_equations",
+      "path": "notes/数学/线性代数/system_of_linear_equations.md"
+    },
+    {
+      "basename": "order",
+      "path": "notes/数学/线性代数/order.md"
+    },
+    {
+      "basename": "block_matrix",
+      "path": "notes/数学/线性代数/block_matrix.md"
+    },
+    {
+      "basename": "characteristic_equation",
+      "path": "notes/数学/通用/characteristic_equation.md"
+    },
+    {
+      "basename": "OpenVLA",
+      "path": "deeplearning/EmbodiedIntelligence/VLA/OpenVLA.md"
+    },
+    {
+      "basename": "about",
+      "path": "meaningless/Onism/about.md"
+    },
+    {
+      "basename": "DeepMimic",
+      "path": "deeplearning/EmbodiedIntelligence/ImitationLearning/DeepMimic.md"
+    },
+    {
+      "basename": "BeyondMimic",
+      "path": "deeplearning/EmbodiedIntelligence/ImitationLearning/BeyondMimic.md"
+    },
+    {
+      "basename": "BeingM05",
+      "path": "deeplearning/EmbodiedIntelligence/VLMM/BeingM05.md"
+    },
+    {
+      "basename": "twist",
+      "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/twist.md"
+    },
+    {
+      "basename": "AMO",
+      "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/AMO.md"
+    },
+    {
+      "basename": "BFM",
+      "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/BFM.md"
+    },
+    {
+      "basename": "locoformer",
+      "path": "deeplearning/EmbodiedIntelligence/LocoMotion/locoformer.md"
+    },
+    {
+      "basename": "groot-n1",
+      "path": "deeplearning/EmbodiedIntelligence/VLA/groot-n1.md"
+    },
+    {
+      "basename": "nwm",
+      "path": "deeplearning/EmbodiedIntelligence/Navigation/nwm.md"
+    },
+    {
+      "basename": "SmolVLA",
+      "path": "deeplearning/EmbodiedIntelligence/VLA/SmolVLA.md"
+    },
+    {
+      "basename": "Robodual",
+      "path": "deeplearning/EmbodiedIntelligence/VLA/Robodual.md"
+    },
+    {
+      "basename": "pi0",
+      "path": "deeplearning/EmbodiedIntelligence/VLA/pi0.md"
+    },
+    {
+      "basename": "vlfm",
+      "path": "deeplearning/EmbodiedIntelligence/Navigation/vlfm.md"
+    },
+    {
+      "basename": "GPT4Scene",
+      "path": "deeplearning/EmbodiedIntelligence/Navigation/GPT4Scene.md"
+    },
+    {
+      "basename": "From Virtual Games to Real-World Play",
+      "path": "deeplearning/EmbodiedIntelligence/Navigation/From Virtual Games to Real-World Play.md"
+    },
+    {
+      "basename": "BFM_pic",
+      "path": "deeplearning/EmbodiedIntelligence/images/BFM_pic.png"
+    },
+    {
+      "basename": "RSPrompter",
+      "path": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md"
+    },
+    {
+      "basename": "关于自残与自杀",
+      "path": "meaningless/博客收录/关于自残与自杀.md"
+    }
+  ],
+  "omittedPaths": [],
+  "omittedTags": [],
+  "updateOn": "file-open",
+  "omitBookmarks": false
+}

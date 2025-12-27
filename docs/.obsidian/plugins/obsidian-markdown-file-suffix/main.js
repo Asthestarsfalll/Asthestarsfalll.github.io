@@ -59,3 +59,5 @@ var MarkdownSuffixPlugin = class extends import_obsidian.Plugin {
     });
   }
 };
+
+/* nosourcemap */

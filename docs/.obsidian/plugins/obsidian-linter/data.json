@@ -1,5 +1,15 @@
 {
   "ruleConfigs": {
+    "add-blank-line-after-yaml": {
+      "enabled": true
+    },
+    "dedupe-yaml-array-values": {
+      "enabled": false,
+      "dedupe-alias-key": true,
+      "dedupe-tag-key": true,
+      "dedupe-array-keys": true,
+      "ignore-keys": ""
+    },
     "escape-yaml-special-characters": {
       "enabled": false,
       "try-to-escape-single-line-arrays": false
@@ -33,6 +43,14 @@
       "enabled": false,
       "yaml-keys-to-remove": ""
     },
+    "sort-yaml-array-values": {
+      "enabled": false,
+      "sort-alias-key": true,
+      "sort-tag-key": true,
+      "sort-array-keys": true,
+      "ignore-keys": "",
+      "sort-order": "Ascending Alphabetical"
+    },
     "yaml-key-sort": {
       "enabled": false,
       "yaml-key-priority-sort-order": "",
@@ -43,10 +61,13 @@
       "enabled": false,
       "date-created": true,
       "date-created-key": "date created",
-      "force-retention-of-create-value": false,
+      "date-created-source-of-truth": "file system",
       "date-modified": true,
       "date-modified-key": "date modified",
-      "format": "dddd, MMMM Do YYYY, h:mm:ss a"
+      "date-modified-source-of-truth": "file system",
+      "format": "dddd, MMMM Do YYYY, h:mm:ss a",
+      "convert-to-utc": false,
+      "update-on-file-contents-updated": "never"
     },
     "yaml-title": {
       "enabled": false,
@@ -57,7 +78,8 @@
       "enabled": false,
       "preserve-existing-alias-section-style": true,
       "keep-alias-that-matches-the-filename": false,
-      "use-yaml-key-to-keep-track-of-old-filename-or-heading": true
+      "use-yaml-key-to-keep-track-of-old-filename-or-heading": true,
+      "alias-helper-key": "linter-yaml-title-alias"
     },
     "capitalize-headings": {
       "enabled": false,
@@ -74,7 +96,7 @@
       "start-at-h2": false
     },
     "headings-start-line": {
-      "enabled": false
+      "enabled": true
     },
     "remove-trailing-punctuation-in-heading": {
       "enabled": false,
@@ -90,25 +112,32 @@
       "enabled": false
     },
     "auto-correct-common-misspellings": {
-      "enabled": true,
-      "ignore-words": ""
+      "enabled": false,
+      "ignore-words": "",
+      "skip-words-with-multiple-capitals": false,
+      "extra-auto-correct-files": []
     },
     "blockquote-style": {
-      "enabled": false,
+      "enabled": true,
       "style": "space"
     },
     "convert-bullet-list-markers": {
-      "enabled": false
+      "enabled": true
+    },
+    "default-language-for-code-fences": {
+      "enabled": true,
+      "default-language": "python"
     },
     "emphasis-style": {
       "enabled": false,
       "style": "consistent"
     },
     "no-bare-urls": {
-      "enabled": false
+      "enabled": false,
+      "no-bare-uris": false
     },
     "ordered-list-style": {
-      "enabled": false,
+      "enabled": true,
       "number-style": "ascending",
       "list-end-style": "."
     },
@@ -123,27 +152,28 @@
       "double-quote-style": "\"\""
     },
     "remove-consecutive-list-markers": {
-      "enabled": false
+      "enabled": true
     },
     "remove-empty-list-markers": {
-      "enabled": false
+      "enabled": true
     },
     "remove-hyphenated-line-breaks": {
       "enabled": true
     },
     "remove-multiple-spaces": {
-      "enabled": false
+      "enabled": true
     },
     "strong-style": {
-      "enabled": false,
+      "enabled": true,
       "style": "consistent"
     },
     "two-spaces-between-lines-with-content": {
-      "enabled": false
+      "enabled": true,
+      "line-break-indicator": "  "
     },
     "unordered-list-style": {
-      "enabled": false,
-      "list-style": "consistent"
+      "enabled": true,
+      "list-style": "-"
     },
     "compact-yaml": {
       "enabled": false,
@@ -154,12 +184,15 @@
     },
     "convert-spaces-to-tabs": {
       "enabled": false,
-      "tabsize": "4"
+      "tabsize": 4
     },
     "empty-line-around-blockquotes": {
       "enabled": true
     },
     "empty-line-around-code-fences": {
+      "enabled": true
+    },
+    "empty-line-around-horizontal-rules": {
       "enabled": true
     },
     "empty-line-around-math-blocks": {
@@ -177,13 +210,13 @@
       "enabled": true
     },
     "move-math-block-indicators-to-their-own-line": {
-      "enabled": true
+      "enabled": false
     },
     "paragraph-blank-lines": {
-      "enabled": true
+      "enabled": false
     },
     "remove-empty-lines-between-list-markers-and-checklists": {
-      "enabled": false
+      "enabled": true
     },
     "remove-link-spacing": {
       "enabled": false
@@ -204,14 +237,16 @@
       "enabled": false
     },
     "space-between-chinese-japanese-or-korean-and-english-or-numbers": {
-      "enabled": true
+      "enabled": false,
+      "english-symbols-punctuation-before": "-+;:'\"°%$)]",
+      "english-symbols-punctuation-after": "-+'\"([¥$"
     },
     "trailing-spaces": {
       "enabled": true,
-      "twp-space-line-break": false
+      "two-space-line-break": false
     },
     "add-blockquote-indentation-on-paste": {
-      "enabled": true
+      "enabled": false
     },
     "prevent-double-checklist-indicator-on-paste": {
       "enabled": false
@@ -220,13 +255,13 @@
       "enabled": false
     },
     "proper-ellipsis-on-paste": {
-      "enabled": true
+      "enabled": false
     },
     "remove-hyphens-on-paste": {
-      "enabled": true
+      "enabled": false
     },
     "remove-leading-or-trailing-whitespace-on-paste": {
-      "enabled": true
+      "enabled": false
     },
     "remove-leftover-footnotes-from-quote-on-paste": {
       "enabled": false
@@ -236,14 +271,15 @@
     }
   },
   "lintOnSave": true,
-  "recordLintOnSaveLogs": true,
+  "recordLintOnSaveLogs": false,
   "displayChanged": true,
-  "lintOnFileChange": true,
-  "displayLintOnFileChangeNotice": true,
+  "lintOnFileChange": false,
+  "displayLintOnFileChangeNotice": false,
   "settingsConvertedToConfigKeyValues": true,
   "foldersToIgnore": [],
+  "filesToIgnore": [],
   "linterLocale": "system-default",
-  "logLevel": "INFO",
+  "logLevel": "ERROR",
   "lintCommands": [],
   "customRegexes": [],
   "commonStyles": {

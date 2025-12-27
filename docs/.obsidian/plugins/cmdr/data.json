@@ -1,19 +1,64 @@
 {
-  "confirmDeletion": true,
+  "confirmDeletion": false,
   "showAddCommand": true,
   "debug": false,
-  "editorMenu": [],
+  "editorMenu": [
+    {
+      "id": "workspace:split-vertical",
+      "icon": "lucide-separator-vertical",
+      "name": "左右分屏",
+      "mode": "any",
+      "color": "#00fbff"
+    }
+  ],
   "fileMenu": [],
-  "leftRibbon": [],
+  "leftRibbon": [
+    {
+      "id": "app:open-settings",
+      "icon": "lucide-settings",
+      "name": "打开设置",
+      "mode": "any",
+      "color": "#00f5d8"
+    }
+  ],
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
-  "pageHeader": [],
+  "pageHeader": [
+    {
+      "id": "workspace:split-vertical",
+      "icon": "lucide-separator-vertical",
+      "name": "左右分屏",
+      "mode": "any",
+      "color": "#00ffee"
+    },
+    {
+      "id": "editor:toggle-readable-line-length",
+      "icon": "lucide-ruler",
+      "name": "Toggle readable line length",
+      "mode": "any",
+      "color": "#00ffee"
+    },
+    {
+      "id": "editor:toggle-source",
+      "icon": "lucide-code-2",
+      "name": "切换源码模式",
+      "mode": "any"
+    }
+  ],
   "macros": [],
   "explorer": [],
   "hide": {
     "statusbar": [],
-    "leftRibbon": []
+    "leftRibbon": [
+      "打开快速切换",
+      "查看关系图谱",
+      "新建白板",
+      "打开/创建今天的日记",
+      "打开命令面板",
+      "创建新数据库",
+      "插入模板"
+    ]
   },
   "spacing": 8,
   "advancedToolbar": {

@@ -3,4 +3,123 @@ title: NeoVIM使用指南
 hide_table_of_contents: true
 ---
 
-最近刚从 `LunarVim` 换到 `AstroNvim`，故在此记录一下 NeoVIM 的相关使用和插件配件等。
+:::info
+
+最近重新配置了一下neovim，记录一下各种插件的用法以便查询
+
+:::
+
+## Overview
+主要基于 `AstroNvim`，参考文档配置即可。
+
+## Plugins
+### better-escape.nvim
+
+主要设置了在 i/c/r 模式连续按下 `kj` 或者 `jk` 可以直接返回 norm 模型。 
+
+:::warning
+有点卡
+:::
+
+### colorful-winsep.nvim
+
+用于给 split win 添加有颜色的边框。
+
+### diffview.nvim
+使用命令 `:DiffviewOpen`。
+
+### dropbar.nvim
+给 `winbar` 添加下拉栏的功能，支持文件系统以及 lsp scope
+
+### edgy. nvim
+
+用于窗口控制，类似于 vscode 的左右侧边栏，使用 `<lead>uE` 触发， `<lead>ue` 快速选择窗口。
+目前使用 `astrocommunity` 的默认设置，左侧使用：
+- Neo-tree
+- Git status
+- top buffers
+右侧使用 Symbol outline
+
+后续可以添加 debug 相关的。
+
+
+### fcitx.nvim
+insert 模式按返回键可以在中文输入法下自动切换。
+
+:::warning
+有点卡
+:::
+
+### flash.nvim
+
+跳转用的，重写了 `tTfF` 以及使用 `sS` 向前/后搜索。
+
+### git-blame.nvim
+
+显示 git blame
+
+### global-note.nvim  
+
+全局和项目级别的浮动 note，类似于 scratchpad：
+- `<lead>mm` 触发全局笔记
+- `<lead>ml` 出发项目笔记
+
+### indent-tools.nvim
+用于在 ident 之间跳转 `[i` `]i`，但是 `]i` 好像不太对劲，另一个关于 text obj 的特性也不能使用。
+
+### lsp_lines.nvim
+使用折线指出诊断的问题，使用 `<lead>uD` 开关
+
+
+### marks.nvim
+操作和管理 vim marks
+
+```
+mx              设置，x是字母
+m,              按照字母表顺序自动设置
+m;              按照字母表顺序开关marks
+dmx             删除mark x
+dm              删除当前行所有marks
+dm<space>       删除当前buffer所有marks
+m]              跳转到下一个marks
+m[              跳转到上一个marks
+m:              后面加marks的标记，预览mark所在区域的代码
+				
+m[0-9]          书签，没懂干嘛的
+dm[0-9]         删除用的.
+m}              Move to the next bookmark having the same type as the bookmark under
+				the cursor. Works across buffers.
+m{              Move to the previous bookmark having the same type as the bookmark under
+				the cursor. Works across buffers.
+dm=             Delete the bookmark under the cursor.
+```
+
+### mini.diff
+
+选中使用 `gh` 接受，相当于 git add，`gH` 重置，相当于 git checkout
+
+使用 `[g` `]g` 跳转到不同的 diff，使用 `[G` `]G` 跳转到首尾。
+
+
+### mini.splitjoin
+
+`gS` 转换多行/单行参数。
+
+### neoconf.nvim
+管理配置文件，`:Neoconf`
+
+### neo-tree.nvim
+
+`<lead>e` 触发，在其中：
+- `?` 帮助
+- `a` 添加文件/夹
+- `c` 复制
+- `x` 剪切
+- `p` 粘贴
+- `e` 增加宽度到最长文件名，但是和 `edgy.nvim` 有冲突
+- `.` 设置为根目录
+剩下的看帮助
+
+### noice.nvim
+
+`<lead>un`
