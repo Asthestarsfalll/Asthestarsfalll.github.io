@@ -15,7 +15,7 @@
               "state": {
                 "file": "deeplearning/ComputerVision/Segmentation/SSL.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "SSL"
