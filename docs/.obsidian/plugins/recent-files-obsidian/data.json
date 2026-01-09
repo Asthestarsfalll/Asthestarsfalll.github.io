@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "transport_layer",
-      "path": "notes/计算机网络/transport_layer.md"
+      "basename": "SSL",
+      "path": "deeplearning/ComputerVision/Segmentation/SSL.md"
+    },
+    {
+      "basename": "Survey",
+      "path": "deeplearning/ComputerVision/Segmentation/Survey.md"
     },
     {
       "basename": "data_link_layer",
       "path": "notes/计算机网络/data_link_layer.md"
+    },
+    {
+      "basename": "transport_layer",
+      "path": "notes/计算机网络/transport_layer.md"
     },
     {
       "basename": "instruction_system",
