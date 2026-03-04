@@ -1,12 +1,68 @@
 {
   "recentFiles": [
     {
-      "basename": "SSL",
-      "path": "deeplearning/ComputerVision/Segmentation/SSL.md"
+      "basename": "DAPO",
+      "path": "deeplearning/ReinforcementLearning/DAPO.md"
+    },
+    {
+      "basename": "GSPO",
+      "path": "deeplearning/ReinforcementLearning/GSPO.md"
+    },
+    {
+      "basename": "DPO",
+      "path": "deeplearning/ReinforcementLearning/DPO.md"
+    },
+    {
+      "basename": "ddpm",
+      "path": "deeplearning/Generation/ddpm.md"
+    },
+    {
+      "basename": "AWAC",
+      "path": "deeplearning/ReinforcementLearning/AWAC.md"
+    },
+    {
+      "basename": "GRPO",
+      "path": "deeplearning/ReinforcementLearning/GRPO.md"
+    },
+    {
+      "basename": "Proximal_Policy_Optimization",
+      "path": "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md"
+    },
+    {
+      "basename": "index",
+      "path": "deeplearning/ReinforcementLearning/index.md"
+    },
+    {
+      "basename": "GAE",
+      "path": "deeplearning/ReinforcementLearning/GAE.md"
+    },
+    {
+      "basename": "flow_matching",
+      "path": "deeplearning/Generation/flow_matching.md"
+    },
+    {
+      "basename": "Normalizing_Flows",
+      "path": "deeplearning/Generation/Normalizing_Flows.md"
+    },
+    {
+      "basename": "ddim",
+      "path": "deeplearning/Generation/ddim.md"
+    },
+    {
+      "basename": "gumbel-softmax",
+      "path": "deeplearning/Generation/gumbel-softmax.md"
     },
     {
       "basename": "Survey",
       "path": "deeplearning/ComputerVision/Segmentation/Survey.md"
+    },
+    {
+      "basename": "LargeModel",
+      "path": "deeplearning/ComputerVision/Segmentation/LargeModel.md"
+    },
+    {
+      "basename": "SSL",
+      "path": "deeplearning/ComputerVision/Segmentation/SSL.md"
     },
     {
       "basename": "data_link_layer",

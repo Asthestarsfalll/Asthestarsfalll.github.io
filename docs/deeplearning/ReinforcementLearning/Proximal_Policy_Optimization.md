@@ -32,7 +32,7 @@ PPO 表示近端策略优化，由以下几个部分构成：
 
 states 和 actions 都是 token level 的，在 LLM 中，前者表示当前条件（如输入 prompt 和已经生成的 actions），后者表示生成的每个 token。
 
-##  General Advantage Estimation（GAE）
+## General Advantage Estimation（GAE）
 
 Advantage 直观上可以定义为特定的 action（即 token 或 word）对比相同状态下（prompt+ 已经生成的 actions）的平均 action 有多好。
 
@@ -47,7 +47,7 @@ Advantage 直观上可以定义为特定的 action（即 token 或 word）对比
 
 目标函数为在给定的 **部分状态** 下与 **奖励模型在最终状态** 下奖励的 l2loss，这里的奖励模型已经被训练好并且被冻结，而 critic 与 LLM 一同训练，这就是强化学习中所说的 **演员 - 评价器** 方法。
 
-###  Back to GAE
+### Back to GAE
 
 给定价值函数 $V_{\gamma}$， 对于第 K 步的 Advantage，计算公式为：
 
@@ -99,7 +99,7 @@ $$
 R(s_{t})+\eta V_{\gamma}(s_{t+1})
 $$
 
-实际上就是当前状态的及时奖励和从当前状态出发能够获得的未来奖励，用于表示当前状态的一个总收益，而 $V_{\gamma}(s_{t})$ 则是在当前状态下的未来奖励，二者相减则称为 **Advantage**。
+实际上就是当前状态的即时奖励和从当前状态出发能够获得的未来奖励，用于表示当前状态的一个总收益，而 $V_{\gamma}(s_{t})$ 则是在当前状态下的未来奖励，二者相减则称为 **Advantage**。
 
 公式 1 仅仅考虑了当前状态下的优势，实际上我们可以引入对未来优势的考量，则变为了 GAE。
 
@@ -165,9 +165,7 @@ $$
 PPO 目标函数由几个组成部分构成，具体包括：
 
 1. **剪切的代理目标（Clipped Surrogate Objective）**：这是 PPO 算法的核心，它通过限制策略更新的幅度来避免策略梯度更新导致的过大的变化。具体来说，它计算新策略与旧策略之间的概率比值，并将这个比值限制在一个剪切范围内，以确保更新的稳定性。
-
 2. **熵奖励（Entropy Bonus）**：为了鼓励策略的探索性，PPO 在目标函数中加入了一个熵奖励项。熵是衡量策略不确定性的指标，较高的熵意味着策略更加随机，有助于探索未知的状态空间。通过 **最大化熵**，可以避免策略过早地收敛到局部最优解。
-
 3. **KL 散度惩罚（KL Penalty）**：KL 散度是衡量两个概率分布之间差异的指标。在 PPO 中，通过限制新策略与旧策略之间的 KL 散度，可以进一步确保策略更新的稳定性。如果新策略与旧策略之间的 KL 散度超过了预设的阈值，将对目标函数施加惩罚，以抑制过大的策略变化。
 
 综上所述，PPO 目标函数可以表示为：
@@ -176,7 +174,7 @@ $$
 \mathcal{L}_{\text{PPO}}(\theta, \gamma) = \underbrace{\mathcal{L}_{\text{clip}}(\theta)}_{\text{Maximise reward}} + \underbrace{w_1 H(\theta)}_{\text{Maximise entropy}} - \underbrace{w_2 \text{KL}(\theta )}_{\text{Penalise KL divergence}} - \underbrace{w_3 \mathcal{L(}\gamma)}_{\text{Critic L2}}
 $$
 
-###  The clipped surrogate objective
+### The clipped surrogate objective
 
 $$
 \begin{align} L^{\text{clip}}(\theta) = \mathbb{E}_t \left[ \min(c_t(\pi_\theta)A^{GAE}_t, \text{clip}(c_t(\pi_\theta),1-\epsilon, 1+\epsilon)A^{GAE}_t)\right], \end{align}
@@ -239,3 +237,9 @@ log_probs_current = F.log_softmax(logits_current, dim=-1)
 entropy = -(probs_current * log_probs_current).sum(dim=-1)
 entropy_bonus = entropy.mean()  # Average over sequence and batch
 ```
+
+## 梯度策略
+
+基于梯度优化的策略，对于llm ppo/GRPO来说，奖励是轨迹级别的，直接均分到每个token，来计算优势。
+
+优势是每个token梯度的加权。

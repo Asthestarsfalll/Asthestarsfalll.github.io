@@ -4,24 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "66ce42596d831cff",
+        "id": "deb51f1ba2289aed",
         "type": "tabs",
         "children": [
           {
-            "id": "6bfc8f0986aea01f",
+            "id": "b3cf2146f6f0b4ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/ComputerVision/Segmentation/SSL.md",
+                "file": "deeplearning/Generation/Normalizing_Flows.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SSL"
+              "title": "Normalizing_Flows"
+            }
+          },
+          {
+            "id": "379e41d23a7c18bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "deeplearning/Generation/ddpm.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ddpm"
+            }
+          },
+          {
+            "id": "330addc8dca693bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "deeplearning/ReinforcementLearning/DAPO.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DAPO"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -88,8 +117,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "cc3a7c11febad8be",
@@ -171,21 +199,35 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:新建数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:创建新数据库": false,
       "cmdr:打开设置": false,
       "tags-overview:Tags overview": false,
       "media-extended:Open external media": false
     }
   },
-  "active": "6bfc8f0986aea01f",
+  "active": "330addc8dca693bd",
   "lastOpenFiles": [
+    "deeplearning/ReinforcementLearning/GSPO.md",
+    "deeplearning/ReinforcementLearning/DPO.md",
+    "deeplearning/ReinforcementLearning/DAPO.md",
+    "deeplearning/ReinforcementLearning/AWAC.md",
+    "deeplearning/ReinforcementLearning/GRPO.md",
+    "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md",
+    "deeplearning/ReinforcementLearning/index.md",
+    "deeplearning/ReinforcementLearning/GAE.md",
+    "deeplearning/Generation/flow_matching.md",
+    "deeplearning/Generation/ddpm.md",
+    "deeplearning/Generation/Normalizing_Flows.md",
+    "deeplearning/Generation/ddim.md",
+    "deeplearning/Generation/gumbel-softmax.md",
     "deeplearning/ComputerVision/Segmentation/Survey.md",
+    "deeplearning/ComputerVision/Segmentation/LargeModel.md",
     "deeplearning/ComputerVision/Segmentation/SSL.md",
     "deeplearning/ComputerVision/Segmentation/1.md",
     "notes/计算机网络/data_link_layer.md",
@@ -197,36 +239,22 @@
     "notes/数学/线性代数/order.md",
     "notes/数学/线性代数/block_matrix.md",
     "notes/数学/通用/characteristic_equation.md",
-    "deeplearning/EmbodiedIntelligence/VLA/OpenVLA.md",
-    "meaningless/Onism/about.md",
-    "deeplearning/EmbodiedIntelligence/ImitationLearning/DeepMimic.md",
     "Pasted image 20251030180107.png",
     "Pasted image 20251030180053.png",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_exp2.png",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_exp.png",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_net.png",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_net",
-    "deeplearning/EmbodiedIntelligence/ImitationLearning/BeyondMimic.md",
-    "deeplearning/EmbodiedIntelligence/VLMM/BeingM05.md",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_pic.png",
     "deeplearning/EmbodiedIntelligence/images/m05_pic.png",
     "deeplearning/EmbodiedIntelligence/images/m05_method.png",
     "deeplearning/EmbodiedIntelligence/images/m05_data.png",
-    "deeplearning/EmbodiedIntelligence/WholeBodyControl/twist.md",
-    "deeplearning/EmbodiedIntelligence/WholeBodyControl/AMO.md",
-    "deeplearning/EmbodiedIntelligence/WholeBodyControl/BFM.md",
     "deeplearning/EmbodiedIntelligence/images/BFM_overview.png",
-    "deeplearning/EmbodiedIntelligence/LocoMotion/locoformer.md",
     "deeplearning/EmbodiedIntelligence/VLMM",
     "deeplearning/WorldModel",
     "deeplearning/EmbodiedIntelligence/LocoMotion",
     "deeplearning/EmbodiedIntelligence/images/未确认 855394.crdownload",
     "deeplearning/EmbodiedIntelligence/images/未确认 541684.crdownload",
-    "deeplearning/EmbodiedIntelligence/VLA/groot-n1.md",
-    "deeplearning/EmbodiedIntelligence/Navigation/nwm.md",
-    "deeplearning/EmbodiedIntelligence/VLA/SmolVLA.md",
-    "deeplearning/EmbodiedIntelligence/VLA/Robodual.md",
-    "deeplearning/EmbodiedIntelligence/VLA/pi0.md",
     "deeplearning/EmbodiedIntelligence/images/未确认 329352.crdownload",
     "deeplearning/EmbodiedIntelligence/ImitationLearning",
     "deeplearning/EmbodiedIntelligence/VLA",
