@@ -63,12 +63,14 @@ $$
 
 $$x_{t-\tau}=\sqrt{\bar{\alpha}_{t-\tau}}x_0+\sqrt{1-\bar{\alpha}_{t-\tau}}\epsilon_\theta(x_t,t)$$
 
- 代入$x_0=\frac{x_t-\sqrt{1-\bar{\alpha}_t}\epsilon_\theta(x_t,t)}{\sqrt{\bar{\alpha}_t}}$，可得最终迭代公式： $$
-      \begin{align}
-      x_{t-\tau}&=\sqrt{\frac{\bar{\alpha}_{t-\tau}}{\bar{\alpha}_t}}x_t + \sqrt{\bar{\alpha}_{t-\tau}(1-\frac{\bar{\alpha}_{t-\tau}}{\bar{\alpha}_t})}\cdot(-\epsilon_\theta(x_t,t)) \\
-      &\quad + \sqrt{1-\bar{\alpha}_{t-\tau}-\frac{\bar{\alpha}_{t-\tau}}{\bar{\alpha}_t}(1-\bar{\alpha}_t)}\cdot\eta\epsilon_\theta(x_t,t)
-      \end{align}
-      $$
+代入 $x_0=\frac{x_t-\sqrt{1-\bar{\alpha}_t}\epsilon_\theta(x_t,t)}{\sqrt{\bar{\alpha}_t}}$，可得最终迭代公式：
+
+$$
+\begin{aligned}
+x_{t-\tau} &= \sqrt{\frac{\bar{\alpha}_{t-\tau}}{\bar{\alpha}_t}}x_t + \sqrt{\bar{\alpha}_{t-\tau}(1-\frac{\bar{\alpha}_{t-\tau}}{\bar{\alpha}_t})}\cdot(-\epsilon_\theta(x_t,t)) \\
+&\quad + \sqrt{1-\bar{\alpha}_{t-\tau}-\frac{\bar{\alpha}_{t-\tau}}{\bar{\alpha}_t}(1-\bar{\alpha}_t)}\cdot\eta\epsilon_\theta(x_t,t)
+\end{aligned}
+$$
 
   其中$\eta$为**随机性系数**：
 - $\eta=0$：**确定性采样**，无额外噪声注入，路径固定；
