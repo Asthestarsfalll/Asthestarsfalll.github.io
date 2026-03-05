@@ -1,6 +1,18 @@
 {
   "recentFiles": [
     {
+      "basename": "BeyondMimic",
+      "path": "deeplearning/EmbodiedIntelligence/ImitationLearning/BeyondMimic.md"
+    },
+    {
+      "basename": "LeggedLab",
+      "path": "deeplearning/EmbodiedIntelligence/LocoMotion/LeggedLab.md"
+    },
+    {
+      "basename": "locoformer",
+      "path": "deeplearning/EmbodiedIntelligence/LocoMotion/locoformer.md"
+    },
+    {
       "basename": "ddim",
       "path": "deeplearning/Generation/ddim.md"
     },
@@ -113,10 +125,6 @@
       "path": "deeplearning/EmbodiedIntelligence/ImitationLearning/DeepMimic.md"
     },
     {
-      "basename": "BeyondMimic",
-      "path": "deeplearning/EmbodiedIntelligence/ImitationLearning/BeyondMimic.md"
-    },
-    {
       "basename": "BeingM05",
       "path": "deeplearning/EmbodiedIntelligence/VLMM/BeingM05.md"
     },
@@ -131,10 +139,6 @@
     {
       "basename": "BFM",
       "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/BFM.md"
-    },
-    {
-      "basename": "locoformer",
-      "path": "deeplearning/EmbodiedIntelligence/LocoMotion/locoformer.md"
     },
     {
       "basename": "groot-n1",

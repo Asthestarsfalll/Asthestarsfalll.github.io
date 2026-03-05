@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/Generation/ddim.md",
+                "file": "deeplearning/EmbodiedIntelligence/ImitationLearning/BeyondMimic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ddim"
+              "title": "BeyondMimic"
             }
           }
         ],
@@ -227,6 +227,9 @@
   },
   "active": "5749887bca7d576f",
   "lastOpenFiles": [
+    "deeplearning/EmbodiedIntelligence/LocoMotion/LeggedLab.md",
+    "deeplearning/EmbodiedIntelligence/LocoMotion/locoformer.md",
+    "deeplearning/Generation/ddim.md",
     "deeplearning/ReinforcementLearning/GSPO.md",
     "deeplearning/ReinforcementLearning/DPO.md",
     "deeplearning/ReinforcementLearning/DAPO.md",
@@ -238,7 +241,6 @@
     "deeplearning/Generation/flow_matching.md",
     "deeplearning/Generation/ddpm.md",
     "deeplearning/Generation/Normalizing_Flows.md",
-    "deeplearning/Generation/ddim.md",
     "deeplearning/Generation/gumbel-softmax.md",
     "deeplearning/ComputerVision/Segmentation/Survey.md",
     "deeplearning/ComputerVision/Segmentation/LargeModel.md",
@@ -251,8 +253,6 @@
     "notes/数学/线性代数/quadratic_form.md",
     "notes/数学/线性代数/system_of_linear_equations.md",
     "notes/数学/线性代数/order.md",
-    "notes/数学/线性代数/block_matrix.md",
-    "notes/数学/通用/characteristic_equation.md",
     "Pasted image 20251030180107.png",
     "Pasted image 20251030180053.png",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_exp2.png",
