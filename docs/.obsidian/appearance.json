@@ -1,7 +1,10 @@
 {
   "showRibbon": false,
   "baseFontSizeAction": true,
-  "baseFontSize": 13,
+  "baseFontSize": 14,
   "cssTheme": "AnuPpuccin",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "textFontFamily": "AR PL UKai CN,AR PL UKai TW MBE",
+  "monospaceFontFamily": "CaskaydiaCove Nerd Font",
+  "interfaceFontFamily": "Noto Fangsong KSS Vertical,CaskaydiaCove Nerd Font"
 }

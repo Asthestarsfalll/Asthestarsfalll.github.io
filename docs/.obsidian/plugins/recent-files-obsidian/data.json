@@ -1,12 +1,60 @@
 {
   "recentFiles": [
     {
-      "basename": "BeyondMimic",
-      "path": "deeplearning/EmbodiedIntelligence/ImitationLearning/BeyondMimic.md"
+      "basename": "Base Learn",
+      "path": "deeplearning/ReinforcementLearning/Base Learn.md"
+    },
+    {
+      "basename": "KL",
+      "path": "deeplearning/ReinforcementLearning/KL.md"
+    },
+    {
+      "basename": "DDPG",
+      "path": "deeplearning/ReinforcementLearning/DDPG.md"
+    },
+    {
+      "basename": "force_control",
+      "path": "deeplearning/EmbodiedIntelligence/force_control.md"
+    },
+    {
+      "basename": "groot-n1",
+      "path": "deeplearning/EmbodiedIntelligence/VLA/groot-n1.md"
+    },
+    {
+      "basename": "BFM",
+      "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/BFM.md"
+    },
+    {
+      "basename": "AMO",
+      "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/AMO.md"
+    },
+    {
+      "basename": "RAPO",
+      "path": "deeplearning/ReinforcementLearning/RAPO.md"
+    },
+    {
+      "basename": "ddpm",
+      "path": "deeplearning/Generation/ddpm.md"
+    },
+    {
+      "basename": "flow_matching",
+      "path": "deeplearning/Generation/flow_matching.md"
+    },
+    {
+      "basename": "Normalizing_Flows",
+      "path": "deeplearning/Generation/Normalizing_Flows.md"
+    },
+    {
+      "basename": "GSPO",
+      "path": "deeplearning/ReinforcementLearning/GSPO.md"
     },
     {
       "basename": "LeggedLab",
       "path": "deeplearning/EmbodiedIntelligence/LocoMotion/LeggedLab.md"
+    },
+    {
+      "basename": "BeyondMimic",
+      "path": "deeplearning/EmbodiedIntelligence/MotionTracking/BeyondMimic.md"
     },
     {
       "basename": "locoformer",
@@ -21,20 +69,8 @@
       "path": "deeplearning/ReinforcementLearning/DAPO.md"
     },
     {
-      "basename": "GSPO",
-      "path": "deeplearning/ReinforcementLearning/GSPO.md"
-    },
-    {
       "basename": "DPO",
       "path": "deeplearning/ReinforcementLearning/DPO.md"
-    },
-    {
-      "basename": "ddpm",
-      "path": "deeplearning/Generation/ddpm.md"
-    },
-    {
-      "basename": "AWAC",
-      "path": "deeplearning/ReinforcementLearning/AWAC.md"
     },
     {
       "basename": "GRPO",
@@ -51,14 +87,6 @@
     {
       "basename": "GAE",
       "path": "deeplearning/ReinforcementLearning/GAE.md"
-    },
-    {
-      "basename": "flow_matching",
-      "path": "deeplearning/Generation/flow_matching.md"
-    },
-    {
-      "basename": "Normalizing_Flows",
-      "path": "deeplearning/Generation/Normalizing_Flows.md"
     },
     {
       "basename": "gumbel-softmax",
@@ -122,7 +150,7 @@
     },
     {
       "basename": "DeepMimic",
-      "path": "deeplearning/EmbodiedIntelligence/ImitationLearning/DeepMimic.md"
+      "path": "deeplearning/EmbodiedIntelligence/MotionTracking/DeepMimic.md"
     },
     {
       "basename": "BeingM05",
@@ -131,18 +159,6 @@
     {
       "basename": "twist",
       "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/twist.md"
-    },
-    {
-      "basename": "AMO",
-      "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/AMO.md"
-    },
-    {
-      "basename": "BFM",
-      "path": "deeplearning/EmbodiedIntelligence/WholeBodyControl/BFM.md"
-    },
-    {
-      "basename": "groot-n1",
-      "path": "deeplearning/EmbodiedIntelligence/VLA/groot-n1.md"
     },
     {
       "basename": "nwm",
@@ -179,10 +195,6 @@
     {
       "basename": "RSPrompter",
       "path": "deeplearning/ComputerVision/RemoteSense/RSPrompter.md"
-    },
-    {
-      "basename": "关于自残与自杀",
-      "path": "meaningless/博客收录/关于自残与自杀.md"
     }
   ],
   "omittedPaths": [],

@@ -111,3 +111,102 @@ $$\mu_\theta(x_t,t)=\frac{1}{\sqrt{\alpha_t}}\left(x_t-\frac{1-\alpha_t}{\sqrt{1
 $$x_{t-1}=\mu_\theta(x_t,t)+\sigma_t\cdot z,z\sim\mathcal{N}(0,\mathbf{I})$$
 
 其中$\sigma_t=\sqrt{\frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_t}\cdot\beta_t}$，且当$t=1$时，$z=0$（避免最终样本引入额外噪声）。
+
+## 噪声推导过程
+
+### 符号定义
+
+- $x_0 \sim q(x_0)$：真实数据分布
+- $x_1,\dots,x_T$：隐变量，逐步加噪
+- $T$：总扩散步数
+- $\beta_t \in (0,1)$：第 $t$ 步噪声强度，通常递增
+- $\alpha_t = 1-\beta_t$
+- $\bar\alpha_t = \prod_{i=1}^t \alpha_i$
+- $\epsilon_t \sim \mathcal{N}(0,I)$：标准高斯噪声
+
+### 前向过程（加噪）：从 $x_0 \to x_T$
+
+**一步加噪**
+
+条件分布为**高斯**：
+
+$$q(x_t \mid x_{t-1}) = \mathcal{N}\bigl(x_t;\ \sqrt{\alpha_t}x_{t-1},\ \beta_t I\bigr)$$
+
+重参数，这z高斯分布上：
+
+$$x_t = \sqrt{\alpha_t}x_{t-1} + \sqrt{\beta_t}\epsilon_{t-1}$$
+
+### 递推合并：直接从 $x_0$ 得到 $x_t$（关键推导）
+
+对递推式展开：
+
+$$\begin{aligned}
+x_1 &= \sqrt{\alpha_1}x_0 + \sqrt{\beta_1}\epsilon_0 \\
+x_2 &= \sqrt{\alpha_2}x_1 + \sqrt{\beta_2}\epsilon_1
+= \sqrt{\alpha_1\alpha_2}x_0 + \sqrt{\alpha_2\beta_1}\epsilon_0 + \sqrt{\beta_2}\epsilon_1 \\
+&\vdots \\
+x_t &= \sqrt{\bar\alpha_t}\,x_0 + \sqrt{1-\bar\alpha_t}\,\epsilon
+\end{aligned}$$
+其中 $\epsilon \sim \mathcal{N}(0,I)$，且**所有高斯噪声可合并为一个**。
+
+### 最终前向闭式公式
+$$
+q(x_t \mid x_0) = \mathcal{N}\bigl(x_t;\ \sqrt{\bar\alpha_t}\,x_0,\ (1-\bar\alpha_t)I\bigr)
+$$
+$$
+x_t = \sqrt{\bar\alpha_t}\,x_0 + \sqrt{1-\bar\alpha_t}\,\epsilon,\quad \epsilon\sim\mathcal{N}(0,I)
+$$
+
+---
+
+# 三、反向过程（去噪）：从 $x_T \to x_0$
+目标：学习 $p_\theta(x_{t-1}\mid x_t)$ 逼近真实后验 $q(x_{t-1}\mid x_t,x_0)$。
+
+## 1. 真实后验 $q(x_{t-1}\mid x_t,x_0)$（高斯）
+用贝叶斯 + 高斯乘积推导：
+$$q(x_{t-1}\mid x_t,x_0) = \mathcal{N}\bigl(x_{t-1};\ \tilde\mu_t(x_t,x_0),\ \tilde\beta_t I\bigr)$$
+
+### 推导均值 $\tilde\mu_t(x_t,x_0)$
+由前向闭式：
+$$x_0 = \frac{1}{\sqrt{\bar\alpha_t}}\left(x_t - \sqrt{1-\bar\alpha_t}\epsilon\right)$$
+代入后验均值：
+$$\tilde\mu_t(x_t,x_0) = \frac{1}{\sqrt{\alpha_t}}
+\left(
+x_t - \frac{\beta_t}{\sqrt{1-\bar\alpha_t}}\epsilon
+\right)$$
+
+---
+
+# 四、DDPM 训练目标（核心损失）
+模型不预测 $x_0$，而是**预测噪声 $\epsilon$**：
+$$\epsilon_\theta(x_t,t) \approx \epsilon$$
+
+## 训练损失
+$$\boxed{
+\mathcal{L}_{\text{simple}} = \mathbb{E}_{t,x_0,\epsilon}\bigl\|\epsilon - \epsilon_\theta(\sqrt{\bar\alpha_t}x_0+\sqrt{1-\bar\alpha_t}\epsilon,\ t)\bigr\|^2
+}$$
+
+---
+
+# 五、采样（生成）过程
+从纯噪声 $x_T\sim\mathcal{N}(0,I)$ 开始迭代：
+$$\boxed{
+x_{t-1} = \frac{1}{\sqrt{\alpha_t}}
+\left(
+x_t - \frac{\beta_t}{\sqrt{1-\bar\alpha_t}}\epsilon_\theta(x_t,t)
+\right)
++ \sigma_t z,\quad z\sim\mathcal{N}(0,I)
+}$$
+其中 $\sigma_t = \sqrt{\frac{1-\bar\alpha_{t-1}}{1-\bar\alpha_t}\beta_t}$（或简化 $\sigma_t=\sqrt{\beta_t}$）。
+
+---
+
+## 总结（最常用公式速记）
+1. **前向加噪**
+$$x_t = \sqrt{\bar\alpha_t}x_0 + \sqrt{1-\bar\alpha_t}\epsilon$$
+2. **训练目标**
+$$\mathcal{L} = \|\epsilon - \epsilon_\theta(x_t,t)\|^2$$
+3. **反向采样**
+$$x_{t-1} = \frac{1}{\sqrt{\alpha_t}}\Bigl(x_t - \frac{\beta_t}{\sqrt{1-\bar\alpha_t}}\epsilon_\theta(x_t,t)\Bigr) + \sigma_t z$$
+
+如果你需要，我可以把**每一步高斯乘积、贝叶斯展开、方差合并**写成更详细的逐行推导。

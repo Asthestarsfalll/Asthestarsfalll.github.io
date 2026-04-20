@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "deeplearning/EmbodiedIntelligence/ImitationLearning/BeyondMimic.md",
+                "file": "deeplearning/ReinforcementLearning/Base Learn.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BeyondMimic"
+              "title": "Base Learn"
             }
           }
         ],
@@ -84,7 +84,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -131,7 +131,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "cc3a7c11febad8be",
@@ -227,33 +228,33 @@
   },
   "active": "5749887bca7d576f",
   "lastOpenFiles": [
+    "Pasted image 20260420153914.png",
+    "deeplearning/ReinforcementLearning/Base Learn.md",
+    "Pasted image 20251030180107.png",
+    "deeplearning/ReinforcementLearning/KL.md",
+    "deeplearning/ReinforcementLearning/DDPG.md",
+    "deeplearning/ReinforcementLearning/TD3.md",
+    "deeplearning/ReinforcementLearning/AWAC.md",
+    "deeplearning/EmbodiedIntelligence/force_control.md",
+    "deeplearning/EmbodiedIntelligence/VLA/groot-n1.md",
+    "deeplearning/EmbodiedIntelligence/WholeBodyControl/BFM.md",
+    "deeplearning/EmbodiedIntelligence/WholeBodyControl/AMO.md",
+    "deeplearning/ReinforcementLearning/RAPO.md",
+    "deeplearning/Generation/ddpm.md",
+    "deeplearning/Generation/flow_matching.md",
+    "deeplearning/Generation/Normalizing_Flows.md",
+    "deeplearning/ReinforcementLearning/GSPO.md",
     "deeplearning/EmbodiedIntelligence/LocoMotion/LeggedLab.md",
+    "deeplearning/EmbodiedIntelligence/MotionTracking/BeyondMimic.md",
     "deeplearning/EmbodiedIntelligence/LocoMotion/locoformer.md",
     "deeplearning/Generation/ddim.md",
-    "deeplearning/ReinforcementLearning/GSPO.md",
     "deeplearning/ReinforcementLearning/DPO.md",
     "deeplearning/ReinforcementLearning/DAPO.md",
-    "deeplearning/ReinforcementLearning/AWAC.md",
     "deeplearning/ReinforcementLearning/GRPO.md",
     "deeplearning/ReinforcementLearning/Proximal_Policy_Optimization.md",
     "deeplearning/ReinforcementLearning/index.md",
     "deeplearning/ReinforcementLearning/GAE.md",
-    "deeplearning/Generation/flow_matching.md",
-    "deeplearning/Generation/ddpm.md",
-    "deeplearning/Generation/Normalizing_Flows.md",
     "deeplearning/Generation/gumbel-softmax.md",
-    "deeplearning/ComputerVision/Segmentation/Survey.md",
-    "deeplearning/ComputerVision/Segmentation/LargeModel.md",
-    "deeplearning/ComputerVision/Segmentation/SSL.md",
-    "deeplearning/ComputerVision/Segmentation/1.md",
-    "notes/计算机网络/data_link_layer.md",
-    "notes/计算机网络/transport_layer.md",
-    "notes/计算机组成原理/instruction_system.md",
-    "notes/计算机组成原理/storage_system.md",
-    "notes/数学/线性代数/quadratic_form.md",
-    "notes/数学/线性代数/system_of_linear_equations.md",
-    "notes/数学/线性代数/order.md",
-    "Pasted image 20251030180107.png",
     "Pasted image 20251030180053.png",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_exp2.png",
     "deeplearning/EmbodiedIntelligence/images/deepmimic_exp.png",
@@ -263,14 +264,13 @@
     "deeplearning/EmbodiedIntelligence/images/m05_pic.png",
     "deeplearning/EmbodiedIntelligence/images/m05_method.png",
     "deeplearning/EmbodiedIntelligence/images/m05_data.png",
-    "deeplearning/EmbodiedIntelligence/images/BFM_overview.png",
     "deeplearning/EmbodiedIntelligence/VLMM",
     "deeplearning/WorldModel",
     "deeplearning/EmbodiedIntelligence/LocoMotion",
     "deeplearning/EmbodiedIntelligence/images/未确认 855394.crdownload",
     "deeplearning/EmbodiedIntelligence/images/未确认 541684.crdownload",
     "deeplearning/EmbodiedIntelligence/images/未确认 329352.crdownload",
-    "deeplearning/EmbodiedIntelligence/ImitationLearning",
+    "deeplearning/EmbodiedIntelligence/MotionTracking",
     "deeplearning/EmbodiedIntelligence/VLA",
     "deeplearning/EmbodiedIntelligence/Navigation"
   ]
